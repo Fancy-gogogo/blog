@@ -2,7 +2,7 @@
 title: "AI Agent 三种范式深度详解"
 date: 2026-02-25
 draft: false
-tags: ["AI", "RAG"]
+tags: ["AI", "Agent"]
 description: "三种范式：ReAct（Reasoning + Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）"
 ---
 
