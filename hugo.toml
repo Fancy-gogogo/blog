@@ -1,6 +1,6 @@
 baseURL = '/'
 languageCode = 'zh-CN'
-title = 'Fancy'
+title = 'Fancy Blog'
 theme = 'brume'
 paginate = 8
 
