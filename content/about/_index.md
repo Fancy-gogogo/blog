@@ -6,7 +6,6 @@ layout: "list"
 ---
 
 <div class="about-section">
-  <div class="about-avatar">Fancy</div>
   <h2 class="about-name">Fancy</h2>
   <p class="about-bio">
     你好，我是Fancy。一个有强烈好奇心和热情的人。<br>
