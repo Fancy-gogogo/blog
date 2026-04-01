@@ -2,24 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Fancy</title>
-    <link>https://fancy-gogogo.github.io/blog/tags/</link>
+    <link>//localhost:31332/tags/</link>
     <description>Recent content in Tags on Fancy</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://fancy-gogogo.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:31332/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Harness Engineering</title>
+      <link>//localhost:31332/tags/harness-engineering/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:31332/tags/harness-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vibe Coding</title>
+      <link>//localhost:31332/tags/vibe-coding/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:31332/tags/vibe-coding/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AI</title>
-      <link>https://fancy-gogogo.github.io/blog/tags/ai/</link>
+      <link>//localhost:31332/tags/ai/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://fancy-gogogo.github.io/blog/tags/ai/</guid>
+      <guid>//localhost:31332/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>RAG</title>
-      <link>https://fancy-gogogo.github.io/blog/tags/rag/</link>
+      <link>//localhost:31332/tags/rag/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://fancy-gogogo.github.io/blog/tags/rag/</guid>
+      <guid>//localhost:31332/tags/rag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Agent</title>
+      <link>//localhost:31332/tags/agent/</link>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:31332/tags/agent/</guid>
       <description></description>
     </item>
   </channel>

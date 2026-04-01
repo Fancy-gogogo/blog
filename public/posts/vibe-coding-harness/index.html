@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy</title>
+  <meta name="description" content="记录技术、思考与生活">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fancy">
+  <meta property="og:description" content="记录技术、思考与生活">
+  <meta property="og:url" content="//localhost:1313/posts/vibe-coding-harness/">
+  <meta property="og:site_name" content="Fancy">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fancy">
+  <meta name="twitter:description" content="记录技术、思考与生活">
+
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  
+  <link rel="stylesheet" href="/css/style.552217d2298bec0de913fa87f801fb1e85b3a32c0e176e4daf48c8dcb9edfe4d.css">
+  
+</head>
+<body>
+
+  
+  <img src="/cover.jpg" alt="cover" class="cover-image">
+
+  
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        Fancy
+      </a>
+      <ul class="navbar-links">
+        
+        <li><a href="/" >主页</a></li>
+        
+        <li><a href="/about/" >关于</a></li>
+        
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  
+  <div class="site-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          
+          <a href="//localhost:1313/tags/agent/" class="tag-item">Agent</a>
+          
+          <a href="//localhost:1313/tags/ai/" class="tag-item">AI</a>
+          
+          <a href="//localhost:1313/tags/harness-engineering/" class="tag-item">Harness Engineering</a>
+          
+          <a href="//localhost:1313/tags/rag/" class="tag-item">RAG</a>
+          
+          <a href="//localhost:1313/tags/vibe-coding/" class="tag-item">Vibe Coding</a>
+          
+        </div>
+      </div>
+
+      
+    </aside>
+
+    
+    <main class="main-content">
+      
+<div class="about-section">
+  <div class="page-header">
+    <h1 class="page-title">Vibe Coding 凉了，2026年最火的新职业是：驯兽师</h1>
+    <p class="page-subtitle">LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？</p>
+  </div>
+  <div class="post-detail-body">
+    <p>你刚学会用Cursor写代码，感觉自己终于跟上时代了。</p>
+<p>结果：别人已经开始用AI批量生成项目，代码质量还比你稳定。</p>
+<p>问题来了：<strong>光会&quot;和AI对话&quot;，够用吗？</strong></p>
+<p>2026年，程序员最值钱的能力，不是写代码，是<strong>驾驭AI</strong>。</p>
+<p>一个新职业正在诞生——<strong>Harness Engineer（驯兽师）</strong>。</p>
+<hr>
+<h2 id="llm的四大原罪为什么ai写代码总出错">LLM的四大&quot;原罪&quot;——为什么AI写代码总出错？</h2>
+<p>先说问题，再给答案。</p>
+<p>AI看起来很聪明，能陪你聊人生哲学，能帮你写代码，看起来无所不能。</p>
+<p>但实际上，它有<strong>四个致命缺陷</strong>：</p>
+<hr>
+<p><strong>1. 幻觉——一本正经地胡说八道</strong></p>
+<p>AI最擅长的是什么？</p>
+<p>是<strong>编</strong>。</p>
+<p>它会用非常确定的语气，告诉你一个完全错误的API用法、一个根本不存在的函数名、一段看起来逻辑完美但跑不通的代码。</p>
+<p>你问它：&ldquo;这个库怎么用？&rdquo;</p>
+<p>它答：&ldquo;用<code>super_awesome_function()</code>就行。&rdquo;</p>
+<p>你一查文档——不存在。</p>
+<blockquote>
+<p>这不是AI在骗你，而是它真的&quot;相信&quot;这是对的。</p>
+<p>因为它的本质是&quot;预测下一个词&quot;，不是&quot;核实事实&quot;。</p>
+</blockquote>
+<hr>
+<p><strong>2. 上下文限制——超过极限就&quot;失忆&quot;</strong></p>
+<p>AI处理信息的能力是有限的。</p>
+<p>这个限制叫做&quot;上下文窗口&quot;。就好比你让一个人同时记住20件事——超过20件，他就开始遗忘。</p>
+<p>对AI来说，一旦代码库太大，它就会：</p>
+<ul>
+<li>忘记你5分钟前说的话</li>
+<li>忽略你新加的需求</li>
+<li>把之前否定的方案又拿出来重提</li>
+</ul>
+<blockquote>
+<p>所以AI不是记性不好，是<strong>内存就那么大</strong>。</p>
+<p>你不能怪手机打不开10G的游戏——硬件限制摆在那。</p>
+</blockquote>
+<hr>
+<p><strong>3. 推理不稳定——同样的问题，这次对，下次错</strong></p>
+<p>你有没有遇到过这种情况：</p>
+<p>同一个问题，换了个问法，AI的答案完全不一样。</p>
+<p>或者：</p>
+<p>第一次它写对了，你让AI按这个风格继续，结果后面全是错的。</p>
+<p>这不是你操作失误。</p>
+<p>而是LLM的推理本身有<strong>随机性</strong>。它像是一个天才，但心情时好时坏。</p>
+<blockquote>
+<p>换句话说：<strong>AI的输出不是确定性的，是概率性的。</strong></p>
+<p>同样的输入，可能产生完全不同的输出。</p>
+</blockquote>
+<hr>
+<p><strong>4. 不懂边界——你不说&quot;不能做&quot;，它什么都敢干</strong></p>
+<p>这是最要命的一个。</p>
+<p>AI没有&quot;常识&quot;。它不知道什么是危险的，什么是不可逆的。</p>
+<p>你让它&quot;删除没用的代码&quot;，它可能把你整个项目删了——因为它真的觉得这是&quot;没用&quot;的。</p>
+<p>你让它&quot;优化一下性能&quot;，它可能把核心业务逻辑改崩了——因为它不知道哪个逻辑是&quot;不能碰的&quot;。</p>
+<blockquote>
+<p><strong>AI像是一个听话但没分寸感的下属。</strong></p>
+<p>你说：&ldquo;把事情做好。&rdquo;</p>
+<p>它理解成：&ldquo;不惜一切代价做好。&rdquo;</p>
+<p>然后把公司搞没了。</p>
+</blockquote>
+<hr>
+<p><strong>一个扎心的真相：</strong></p>
+<blockquote>
+<p>AI写代码，就像让一个记忆力很好但情商为负的天才员工——</p>
+<p>它能一晚上写出你一周的代码量。</p>
+<p>但你得时时刻刻盯着它，否则它就会搞出&quot;史诗级灾难&quot;。</p>
+</blockquote>
+<p><strong>这就是为什么：光有AI不够，需要Harness。</strong></p>
+<hr>
+<h2 id="vibe-coding-为什么凉了">Vibe Coding 为什么凉了？</h2>
+<p>说完了LLM的缺陷，你就能理解为什么&quot;Vibe Coding&quot;凉了。</p>
+<p>什么是Vibe Coding？</p>
+<p><strong>Vibe Coding = 跟着感觉走，让AI帮你写，你负责改。</strong></p>
+<p>代表工具：Cursor、Copilot早期版本。</p>
+<p>巅峰期：2024-2025年。</p>
+<p>当时的口号是：&ldquo;你只管说，代码我来写！&rdquo;</p>
+<p>听起来很爽对不对？</p>
+<p>但现实是骨感的。</p>
+<hr>
+<p><strong>Vibe Coding的四个致命问题：</strong></p>
+<p><strong>1. 代码爆炸——产出100万行，人维护不过来</strong></p>
+<p>AI写代码太快了。</p>
+<p>快到人跟不上。</p>
+<p>OpenAI做过一个实验：3个人，5个月，0手写代码，产出100万行。</p>
+<p>听起来很牛。</p>
+<p>但问题是：<strong>谁来维护这100万行？</strong></p>
+<p>代码是人写的，也是给人读的。当代码量超过人脑的处理能力时，质量就开始崩塌。</p>
+<hr>
+<p><strong>2. 质量失控——代码风格混乱，技术债堆积</strong></p>
+<p>你让AI写一个模块，它用它的风格。</p>
+<p>你再让AI写另一个模块，它用另一种风格。</p>
+<p>两个模块放在一起——代码风格不一致，命名不规范，注释时有时无。</p>
+<p>一周后，你回头看自己三个月前的代码：</p>
+<p>&ldquo;这是谁写的？&rdquo;</p>
+<p>答：是你，但也不完全是你——是AI。</p>
+<hr>
+<p><strong>3. 幻觉问题——测试全绿，一上线就崩</strong></p>
+<p>这是最讽刺的。</p>
+<p>AI写的代码，<strong>测试用例也是AI写的</strong>。</p>
+<p>测试用例告诉AI：&ldquo;你的代码没问题，可以发布了。&rdquo;</p>
+<p>AI一发布——线上崩了。</p>
+<p>因为测试用例没覆盖到的场景，AI根本不知道。</p>
+<blockquote>
+<p><strong>自己出题，自己考试，还自己给自己打满分。</strong></p>
+<p>这在教育界叫&quot;作弊&quot;，在AI界叫&quot;幻觉&quot;。</p>
+</blockquote>
+<hr>
+<p><strong>4. 失败率高——67%的AI项目都挂了</strong></p>
+<p>数据不会说谎。</p>
+<p>2026年的统计：<strong>67%的AI项目最终失败</strong>。</p>
+<p>不是AI不够强，而是人们用它用错了方式。</p>
+<p>以为买了AI工具，就能躺平。</p>
+<p>结果：工具买了，人更累了，项目还是挂了。</p>
+<hr>
+<p><strong>一句话总结：</strong></p>
+<blockquote>
+<p>Vibe Coding适合&quot;玩&quot;，不适合&quot;干活&quot;。</p>
+<p>因为LLM的四大缺陷，Vibe Coding注定是个&quot;皇帝的新装&quot;——</p>
+<p>看着爽，一到生产环境就露馅。</p>
+</blockquote>
+<hr>
+<h2 id="harness-engineering-诞生不是驯服模型是驯服环境">Harness Engineering 诞生——不是驯服模型，是驯服环境</h2>
+<p>好，说了这么多问题。</p>
+<p><strong>答案来了。</strong></p>
+<hr>
+<p>2026年2月，HashiCorp联合创始人 Mitchell Hashimoto 提出了一个概念：</p>
+<p><strong>Harness Engineering（驾驭工程）</strong></p>
+<p>这个名字起得很直白：</p>
+<p><strong>Harness = 缰绳。</strong></p>
+<p>就像骑马一样——不是让马变聪明，而是给它一副好缰绳，让它在你设计的路线上跑。</p>
+<hr>
+<p><strong>核心思维转变：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>旧思维</th>
+          <th>新思维</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>换更强的模型</td>
+          <td>优化模型运行的环境</td>
+      </tr>
+      <tr>
+          <td>Prompt写得好就行</td>
+          <td>需要系统化的约束和控制</td>
+      </tr>
+      <tr>
+          <td>AI是工具，人是执行者</td>
+          <td>AI是执行者，人是设计者</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>关键洞察：</strong></p>
+<blockquote>
+<p><strong>真正的挑战不是&quot;让AI写得好&quot;，而是&quot;让AI稳定地写&quot;。</strong></p>
+</blockquote>
+<p>不是优化模型本身——那个是OpenAI、Google们的事。</p>
+<p>而是优化<strong>模型运行的环境</strong>——这个是我们自己能做的事。</p>
+<hr>
+<p><strong>LangChain的真实案例：</strong></p>
+<p>LangChain团队在一次测试中，仅优化了Harness（没有换模型），得分从52.8%飙升到66.5%。</p>
+<p>排名从30名开外，一跃进入前5。</p>
+<blockquote>
+<p><strong>没有换马，只是换了缰绳。</strong></p>
+<p>结果完全不同。</p>
+</blockquote>
+<hr>
+<h2 id="驯兽师的五大核心能力">驯兽师的五大核心能力</h2>
+<p>说了这么多，到底什么是Harness Engineer？</p>
+<p><strong>他们做什么？</strong></p>
+<hr>
+<h3 id="1-上下文工程让ai记住该记的">1. 上下文工程——让AI&quot;记住该记的&quot;</h3>
+<p>LLM有上下文限制，对吧？</p>
+<p>那解决方案不是&quot;给它更大的模型&quot;，而是<strong>动态管理它需要的信息</strong>。</p>
+<p>好比你不会让人一次性背完整本词典，而是给他一本精简的速查手册。</p>
+<p><strong>实践方法：</strong></p>
+<ul>
+<li>维护一个随AI失败案例更新的文档（叫<code>AGENTS.md</code>）</li>
+<li>告诉AI&quot;上次你在这个地方踩过坑，这次注意&quot;</li>
+<li>按需检索上下文，而不是一次性全部塞进去</li>
+</ul>
+<hr>
+<h3 id="2-架构约束告诉ai不能做什么">2. 架构约束——告诉AI&quot;不能做什么&quot;</h3>
+<p>这才是精髓。</p>
+<p><strong>告诉AI&quot;能做什么&quot;很重要，但告诉它&quot;不能做什么&quot;更重要。</strong></p>
+<p>怎么做到？</p>
+<p>用<strong>Linter规则</strong>。</p>
+<p>Linter本来是检查代码规范的。现在，你可以用它来定义架构边界：</p>
+<p>&ldquo;Config层不能依赖Service层。&rdquo;
+&ldquo;数据库操作只能在Repository层。&rdquo;
+&ldquo;这块代码不能超过50行。&rdquo;</p>
+<p>AI违反了？直接阻断，不让它提交。</p>
+<blockquote>
+<p><strong>画好跑道，AI只能在里面跑。</strong></p>
+<p>跑出去就报警。</p>
+</blockquote>
+<hr>
+<h3 id="3-运行时验证ai写完必须质检">3. 运行时验证——AI写完，必须&quot;质检&quot;</h3>
+<p>AI写完代码，不能直接上线。</p>
+<p>得像工厂一样，有质检流程。</p>
+<p><strong>实践方法：</strong></p>
+<ul>
+<li>AI写完代码，自动跑测试</li>
+<li>测试不通过，自动返回让AI重写</li>
+<li>用git worktree为AI创建独立测试环境，不影响主分支</li>
+</ul>
+<blockquote>
+<p><strong>工厂流水线，没有质检员，残次品就流出去了。</strong></p>
+<p>Harness就是那个质检员，而且是自动的。</p>
+</blockquote>
+<hr>
+<h3 id="4-熵管理让代码库定期打扫">4. 熵管理——让代码库&quot;定期打扫&quot;</h3>
+<p>代码会&quot;腐化&quot;。</p>
+<p>时间长了，注释过时了，函数命名混乱了，技术债越堆越高。</p>
+<p>Harness Engineer会部署<strong>清洁Agent</strong>，自动扫描这些&quot;垃圾&quot;：</p>
+<ul>
+<li>长时间没更新的注释</li>
+<li>与代码不一致的文档</li>
+<li>重复的代码块</li>
+</ul>
+<p>发现就自动修复。</p>
+<blockquote>
+<p><strong>代码库需要&quot;垃圾分类&quot;和&quot;定期清洁&quot;。</strong></p>
+<p>否则，混乱会像熵一样，不可逆地增长。</p>
+</blockquote>
+<hr>
+<h3 id="5-ai协作流程ai写ai审人类只做决策">5. AI协作流程——AI写，AI审，人类只做决策</h3>
+<p>最后一个，也是最反直觉的：</p>
+<p><strong>让AI来审AI的代码。</strong></p>
+<p>Agent A写代码，Agent B审代码，Agent C测试。</p>
+<p>人类只介入重大决策——架构选型、技术路线。</p>
+<blockquote>
+<p><strong>Ralph Wiggum循环：全自动代码审查与合并。</strong></p>
+<p>名字来自《辛普森一家》里那个活在自己世界的孩子——</p>
+<p>AI有时候也活在自己的世界里，需要另一个AI来&quot;拉回来&quot;。</p>
+</blockquote>
+<hr>
+<h2 id="为什么这个职业会火">为什么这个职业会火？</h2>
+<p>说了这么多，回到最初的问题：</p>
+<p><strong>为什么Harness Engineer会火？</strong></p>
+<hr>
+<p><strong>1. 供需缺口巨大</strong></p>
+<p>AI工具爆发，但会用的人极少。</p>
+<p>企业都在喊&quot;AI转型&quot;，但真正能驾驭AI的团队，凤毛麟角。</p>
+<hr>
+<p><strong>2. 失败率高，痛点真实</strong></p>
+<p>67%的AI项目失败——这不是纸面上的数字，是无数企业的血泪教训。</p>
+<p>老板们开始意识到：<strong>不是买AI就完事了，是需要有人设计AI的运行环境。</strong></p>
+<hr>
+<p><strong>3. 钱景可观</strong></p>
+<p>在美国，Harness Engineer的年薪已经达到<strong>25-50万美元</strong>。</p>
+<p>国内也在追赶这个趋势。</p>
+<hr>
+<p><strong>4. 门槛没那么高</strong></p>
+<p>你可能会想：&ldquo;这是不是又要学什么高深的技术？&rdquo;</p>
+<p>其实不然。</p>
+<p><strong>Harness Engineer的核心能力是：懂业务 + 懂AI + 懂系统设计。</strong></p>
+<p>不需要会写底层编译器，不需要懂芯片架构。</p>
+<p>需要的是：<strong>把&quot;怎么让AI稳定工作&quot;这件事想清楚。</strong></p>
+<hr>
+<h2 id="普通人入门三步">普通人入门三步</h2>
+<p>好了，我知道你在想什么：</p>
+<p>&ldquo;听起来很牛，但我能学会吗？&rdquo;</p>
+<p><strong>能。</strong></p>
+<p>不是开玩笑。</p>
+<p>普通人入门，分三步：</p>
+<hr>
+<p><strong>第一步：学会维护&quot;AI友好的文档&quot;</strong></p>
+<p>不是给自己看的文档，是<strong>给AI看的文档</strong>。</p>
+<p>怎么写？</p>
+<ul>
+<li>记录AI在哪里踩过坑</li>
+<li>记录你否定了哪些方案，为什么</li>
+<li>按模块组织，让AI能找到它需要的信息</li>
+</ul>
+<p>这就是上下文工程的基础。</p>
+<hr>
+<p><strong>第二步：学会写Linter规则</strong></p>
+<p>你不需要是编程大牛。</p>
+<p>Linter规则的本质是：<strong>用代码定义&quot;什么是好的代码&quot;。</strong></p>
+<p>比如：&ldquo;这个目录下不能有直接调用数据库的代码。&rdquo;</p>
+<p>写出来，放到CI流程里，AI违反了就会报错。</p>
+<p>这是架构约束的入门。</p>
+<hr>
+<p><strong>第三步：理解&quot;反馈循环&quot;</strong></p>
+<p>AI不是一次性的，用完就扔。</p>
+<p>它需要<strong>反馈</strong>——你告诉它&quot;这次对了，下次继续保持&quot;，&ldquo;这次错了，下次不要再犯&rdquo;。</p>
+<p>就像训练一只狗：<strong>做对了给零食，做错了喊No。</strong></p>
+<p>久而久之，AI的行为就会越来越稳定。</p>
+<hr>
+<h2 id="最后">最后</h2>
+<p>回到开头的问题：</p>
+<p><strong>光会&quot;和AI对话&quot;，够用吗？</strong></p>
+<p><strong>不够。</strong></p>
+<p>2026年，最值钱的能力，不是用AI，是<strong>驾驭AI</strong>。</p>
+<p>不是被AI替代，而是<strong>学会给AI上缰绳</strong>。</p>
+<hr>
+<p><strong>你呢？</strong></p>
+<h2 id="你现在用ai的方式是驯兽师还是被兽驯">你现在用AI的方式，是&quot;驯兽师&quot;，还是&quot;被兽驯&quot;？</h2>
+<p><em>本文参考资料：</em></p>
+<ul>
+<li><em>Mitchell Hashimoto 2026年2月演讲</em></li>
+<li><em>LangChain Terminal Bench 2.0 测试数据</em></li>
+<li><em>五岁博客：什么是Harness Engineering？</em></li>
+<li><em>晨涧AI资讯：Harness Engineering技术架构</em></li>
+</ul>
+
+  </div>
+</div>
+
+    </main>
+
+    
+    <footer class="site-footer">
+      <span>© 2026 Fancy · 用文字记录思考</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  
+  <script>
+    window.searchData = [
+      
+      { title: "\"Vibe Coding 凉了，2026年最火的新职业是：驯兽师\"", excerpt: "\"LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？\"", url: "\"//localhost:1313/posts/vibe-coding-harness/\"", tags: ["\"Vibe Coding\"","\"Harness Engineering\"",] },
+      
+      { title: "\"RAG 企业级构建指南\"", excerpt: "\"企业应用大模型，RAG知识库是第一优先级的选择，员工与管理者都有感知、可量化价值、可落地的最佳方案\"", url: "\"//localhost:1313/posts/rag-guild/\"", tags: ["\"AI\"","\"RAG\"",] },
+      
+      { title: "\"AI Agent 三种范式深度详解\"", excerpt: "\"三种范式：ReAct（Reasoning + Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）\"", url: "\"//localhost:1313/posts/ai-agent-paradigm/\"", tags: ["\"AI\"","\"Agent\"",] },
+      
+    ];
+  </script>
+
+  <script>
+    
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>

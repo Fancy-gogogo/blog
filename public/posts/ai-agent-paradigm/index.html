@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy</title>
+  <meta name="description" content="记录技术、思考与生活">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fancy">
+  <meta property="og:description" content="记录技术、思考与生活">
+  <meta property="og:url" content="//localhost:1313/posts/ai-agent-paradigm/">
+  <meta property="og:site_name" content="Fancy">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fancy">
+  <meta name="twitter:description" content="记录技术、思考与生活">
+
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  
+  <link rel="stylesheet" href="/css/style.552217d2298bec0de913fa87f801fb1e85b3a32c0e176e4daf48c8dcb9edfe4d.css">
+  
+</head>
+<body>
+
+  
+  <img src="/cover.jpg" alt="cover" class="cover-image">
+
+  
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        Fancy
+      </a>
+      <ul class="navbar-links">
+        
+        <li><a href="/" >主页</a></li>
+        
+        <li><a href="/about/" >关于</a></li>
+        
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  
+  <div class="site-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          
+          <a href="//localhost:1313/tags/agent/" class="tag-item">Agent</a>
+          
+          <a href="//localhost:1313/tags/ai/" class="tag-item">AI</a>
+          
+          <a href="//localhost:1313/tags/harness-engineering/" class="tag-item">Harness Engineering</a>
+          
+          <a href="//localhost:1313/tags/rag/" class="tag-item">RAG</a>
+          
+          <a href="//localhost:1313/tags/vibe-coding/" class="tag-item">Vibe Coding</a>
+          
+        </div>
+      </div>
+
+      
+    </aside>
+
+    
+    <main class="main-content">
+      
+<div class="about-section">
+  <div class="page-header">
+    <h1 class="page-title">AI Agent 三种范式深度详解</h1>
+    <p class="page-subtitle">三种范式：ReAct（Reasoning &#43; Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）</p>
+  </div>
+  <div class="post-detail-body">
+    <h2 id="总览为什么会有这三种范式">总览：为什么会有这三种范式？</h2>
+<p>Agent 的本质是让 LLM <strong>自主完成复杂任务</strong>。但 LLM 原生是&quot;问答机器&quot;，不会主动行动、规划、纠错。三种范式解决的是同一个问题的三个递进层次：</p>
+<table>
+  <thead>
+      <tr>
+          <th>层次</th>
+          <th>核心问题</th>
+          <th>范式</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>第一层</td>
+          <td>怎么<strong>边想边做</strong>？</td>
+          <td>ReAct</td>
+      </tr>
+      <tr>
+          <td>第二层</td>
+          <td>怎么<strong>先想清楚再做</strong>？</td>
+          <td>Plan-and-Execute</td>
+      </tr>
+      <tr>
+          <td>第三层</td>
+          <td>怎么<strong>做完之后反思变好</strong>？</td>
+          <td>Reflection</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="范式一reactreasoning--acting">范式一：ReAct（Reasoning + Acting）</h2>
+<h3 id="核心思想">核心思想</h3>
+<blockquote>
+<p><strong>交替推理与行动</strong>，每一步都依赖上一步的观察结果。</p>
+</blockquote>
+<p>论文来源：2022 年 Google/Princeton《ReAct: Synergizing Reasoning and Acting in Language Models》</p>
+<h3 id="运作循环">运作循环</h3>
+<pre tabindex="0"><code>Thought → Action → Observation → Thought → Action → Observation → ... → Final Answer
+</code></pre><p>每一轮：</p>
+<ul>
+<li><strong>Thought</strong>：LLM 想&quot;我现在应该做什么&quot;</li>
+<li><strong>Action</strong>：调用工具（搜索、代码执行、API 等）</li>
+<li><strong>Observation</strong>：获得工具返回结果</li>
+<li>根据结果重新思考，进入下一轮</li>
+</ul>
+<h3 id="真实例子">真实例子</h3>
+<blockquote>
+<p>任务：「特斯拉2024年全年营收是多少，换算成人民币是多少？」</p>
+</blockquote>
+<pre tabindex="0"><code>Thought: 需要先查特斯拉2024年营收数据
+Action: search(&#34;Tesla 2024 annual revenue&#34;)
+Observation: Tesla 2024 revenue = $97.69 billion
+
+Thought: 需要查当前美元兑人民币汇率
+Action: search(&#34;USD to CNY exchange rate&#34;)
+Observation: 1 USD = 7.25 CNY
+
+Thought: 可以计算了
+Action: calculator(97.69 * 7.25 * 1e9)
+Observation: 708,252,500,000
+
+Final Answer: 约7082亿人民币
+</code></pre><h3 id="核心价值">核心价值</h3>
+<ul>
+<li>✅ <strong>灵活应变</strong>：每步都能根据实际结果调整方向</li>
+<li>✅ <strong>可解释性强</strong>：推理过程透明，每步有据可查</li>
+<li>✅ <strong>实现简单</strong>：几乎所有主流框架（LangChain、LlamaIndex）的默认模式</li>
+<li>✅ <strong>适合短任务</strong>：步骤少、依赖实时反馈的任务性价比最高</li>
+</ul>
+<h3 id="核心缺陷">核心缺陷</h3>
+<ul>
+<li>❌ <strong>长任务容易迷失</strong>：10步以上容易&quot;偏航&quot;，忘记最初目标</li>
+<li>❌ <strong>步骤间无全局规划</strong>：走一步看一步，不会提前识别瓶颈</li>
+<li>❌ <strong>Token 消耗随步数线性增长</strong>：每轮都要把历史塞入上下文</li>
+<li>❌ <strong>容易陷入循环</strong>：某些环境下会反复调用同一工具</li>
+</ul>
+<h3 id="适用场景">适用场景</h3>
+<ul>
+<li>信息检索 + 计算的简单组合任务</li>
+<li>步骤 ≤ 5 步的工具调用链</li>
+<li>需要实时环境反馈的交互式任务（如网页操作）</li>
+<li>快速原型验证</li>
+</ul>
+<hr>
+<h2 id="范式二plan-and-execute谋定而后动">范式二：Plan-and-Execute（谋定而后动）</h2>
+<h3 id="核心思想-1">核心思想</h3>
+<blockquote>
+<p><strong>先生成完整计划，再逐步执行</strong>。规划者和执行者解耦。</p>
+</blockquote>
+<p>论文来源：2023 年《Plan-and-Solve: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models》</p>
+<h3 id="运作架构">运作架构</h3>
+<pre tabindex="0"><code>[Planner LLM] → 生成任务分解计划
+      ↓
+[Executor LLM/Agent] → 按计划逐步执行子任务
+      ↓（可带反馈）
+[Replanner] → 根据执行结果动态修正计划
+</code></pre><p>关键特征：<strong>Planner 和 Executor 可以是不同的模型</strong>（Planner 用强模型，Executor 用便宜模型）</p>
+<h3 id="真实例子-1">真实例子</h3>
+<blockquote>
+<p>任务：「帮我做一份竞品分析报告，对比我们的产品和市场上Top3竞品」</p>
+</blockquote>
+<pre tabindex="0"><code>[Planner 输出的计划]
+Step 1: 搜索市场上该品类Top3竞品名称
+Step 2: 分别抓取3个竞品的核心功能、定价、用户评价
+Step 3: 收集我方产品的同类数据
+Step 4: 按功能/价格/口碑三个维度建立对比矩阵
+Step 5: 撰写分析报告，给出结论建议
+
+[Executor 逐步执行，每步完成后标记，发现Step2需要登录则Replanner调整]
+</code></pre><h3 id="核心价值-1">核心价值</h3>
+<ul>
+<li>✅ <strong>全局视角</strong>：在执行前就能识别关键路径和潜在阻塞点</li>
+<li>✅ <strong>长任务稳定性</strong>：不会因为中途结果而&quot;走偏&quot;</li>
+<li>✅ <strong>成本可控</strong>：Planner 一次性规划，Executor 可用小模型</li>
+<li>✅ <strong>并行潜力</strong>：计划中无依赖的步骤可以并行执行</li>
+<li>✅ <strong>可审计</strong>：人类可以在执行前 review 计划，介入修改</li>
+</ul>
+<h3 id="核心缺陷-1">核心缺陷</h3>
+<ul>
+<li>❌ <strong>初始计划质量决定上限</strong>：如果规划错了，执行越认真越偏</li>
+<li>❌ <strong>对动态变化适应慢</strong>：计划制定时的假设可能在执行时失效</li>
+<li>❌ <strong>Replanner 增加复杂度</strong>：完整实现需要计划-执行-重规划三层</li>
+<li>❌ <strong>冷启动成本高</strong>：任务开始前必须完成完整规划，有延迟</li>
+</ul>
+<h3 id="适用场景-1">适用场景</h3>
+<ul>
+<li>需要多步骤、有明确结构的复杂任务（报告生成、数据分析）</li>
+<li>步骤间有依赖关系需要提前协调的任务</li>
+<li>对成本敏感、希望 Planner/Executor 分离降本的场景</li>
+<li>需要人类审核计划再执行的企业级工作流</li>
+<li>任务步骤 ≥ 7 步的长链任务</li>
+</ul>
+<hr>
+<h2 id="范式三reflection反思与自我改进">范式三：Reflection（反思与自我改进）</h2>
+<h3 id="核心思想-2">核心思想</h3>
+<blockquote>
+<p><strong>执行完成后（或执行中）进行自我评估，发现问题，主动改进输出质量。</strong></p>
+</blockquote>
+<p>论文来源：2023 年《Reflexion: Language Agents with Verbal Reinforcement Learning》</p>
+<h3 id="运作架构-1">运作架构</h3>
+<pre tabindex="0"><code>[Actor]：执行任务，生成输出
+   ↓
+[Evaluator]：评估输出质量（可以是 LLM 自评，也可以是外部验证）
+   ↓
+[Reflector]：生成语言化的反思：&#34;哪里错了？为什么？下次怎么改？&#34;
+   ↓
+[Memory]：反思结果写入 Episode Memory
+   ↓
+[Actor]：带着反思重新执行，循环直到满意或超出次数上限
+</code></pre><h3 id="两种-reflection-模式">两种 Reflection 模式</h3>
+<p><strong>模式A：Self-Reflection（自我反思）</strong></p>
+<pre tabindex="0"><code>输出初稿 → LLM 扮演评审角色批评自己 → 根据批评改稿 → 循环
+</code></pre><p><strong>模式B：Reflexion（带记忆的反思）</strong></p>
+<pre tabindex="0"><code>第一次尝试失败 → 写下反思记录 → 下次遇到同类任务，带着上次的反思去做
+</code></pre><h3 id="真实例子-2">真实例子</h3>
+<blockquote>
+<p>任务：「写一段 Python 代码，解析 JSON 并计算嵌套字段的平均值」</p>
+</blockquote>
+<pre tabindex="0"><code>[第1轮 Actor]：生成代码
+[Evaluator]：运行代码 → 报错 KeyError
+
+[Reflector 反思]：
+&#34;代码假设所有 JSON 对象都有 &#39;value&#39; 字段，但实际数据中部分对象该字段缺失。
+下次应加 .get() 防御性取值，并处理 None 的情况。&#34;
+
+[第2轮 Actor]：带着反思重写代码，加入容错处理
+[Evaluator]：运行通过 ✓
+
+[Memory 记录]：JSON 解析需注意字段缺失，用 .get() 代替直接访问
+</code></pre><h3 id="核心价值-2">核心价值</h3>
+<ul>
+<li>✅ <strong>质量持续提升</strong>：通过迭代逼近&quot;优秀&quot;而非&quot;勉强能用&quot;</li>
+<li>✅ <strong>跨任务学习</strong>：Reflexion 模式下，失败经验可以迁移</li>
+<li>✅ <strong>减少人工干预</strong>：Agent 自己发现问题自己修复</li>
+<li>✅ <strong>特别适合代码生成</strong>：有客观的执行反馈（报错/通过）</li>
+<li>✅ <strong>弥补 ReAct 的短板</strong>：为 ReAct 的每轮结果加一层质量门控</li>
+</ul>
+<h3 id="核心缺陷-2">核心缺陷</h3>
+<ul>
+<li>❌ <strong>成本倍增</strong>：每次反思都是额外的 LLM 调用，N轮反思 = N倍成本</li>
+<li>❌ <strong>反思质量依赖模型能力</strong>：弱模型的反思可能是错的，适得其反</li>
+<li>❌ <strong>收敛不保证</strong>：某些任务反思再多也无法解决根本问题</li>
+<li>❌ <strong>Memory 管理复杂</strong>：长期记忆如何压缩、过期是工程难题</li>
+<li>❌ <strong>延迟高</strong>：实时性要求高的场景不适合</li>
+</ul>
+<h3 id="适用场景-2">适用场景</h3>
+<ul>
+<li>代码生成与调试（有客观验证标准）</li>
+<li>文案创作、报告写作（需要多轮打磨的内容）</li>
+<li>数学推理和逻辑题（有明确对错）</li>
+<li>对质量要求极高、允许多轮迭代的任务</li>
+<li>可以积累经验的长期 Agent 系统</li>
+</ul>
+<hr>
+<h2 id="三范式核心对比">三范式核心对比</h2>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>ReAct</th>
+          <th>Plan-and-Execute</th>
+          <th>Reflection</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>决策节奏</strong></td>
+          <td>步步为营，走一步看一步</td>
+          <td>全局规划，按图索骥</td>
+          <td>完成后复盘，迭代优化</td>
+      </tr>
+      <tr>
+          <td><strong>核心隐喻</strong></td>
+          <td>探险家 🧭</td>
+          <td>将军 🎖️</td>
+          <td>工匠 🔨</td>
+      </tr>
+      <tr>
+          <td><strong>任务长度</strong></td>
+          <td>短任务（≤5步）最优</td>
+          <td>长任务（≥7步）最优</td>
+          <td>任意长度，注重质量</td>
+      </tr>
+      <tr>
+          <td><strong>实时适应</strong></td>
+          <td>★★★★★</td>
+          <td>★★☆☆☆</td>
+          <td>★★☆☆☆</td>
+      </tr>
+      <tr>
+          <td><strong>全局把控</strong></td>
+          <td>★★☆☆☆</td>
+          <td>★★★★★</td>
+          <td>★★★☆☆</td>
+      </tr>
+      <tr>
+          <td><strong>输出质量</strong></td>
+          <td>★★★☆☆</td>
+          <td>★★★☆☆</td>
+          <td>★★★★★</td>
+      </tr>
+      <tr>
+          <td><strong>实现复杂度</strong></td>
+          <td>低</td>
+          <td>中</td>
+          <td>高</td>
+      </tr>
+      <tr>
+          <td><strong>Token 成本</strong></td>
+          <td>中</td>
+          <td>中（Executor可降）</td>
+          <td>高</td>
+      </tr>
+      <tr>
+          <td><strong>可解释性</strong></td>
+          <td>高</td>
+          <td>极高</td>
+          <td>高</td>
+      </tr>
+      <tr>
+          <td><strong>典型框架</strong></td>
+          <td>LangChain AgentExecutor</td>
+          <td>LangGraph Plan节点</td>
+          <td>Reflexion / Self-Refine</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="如何选型一张决策图">如何选型？一张决策图</h2>
+<pre tabindex="0"><code>任务复杂吗？
+├── 否（≤3步）→ 直接用 ReAct，简单高效
+└── 是
+    ├── 有明确结构/阶段划分？
+    │   ├── 是 → Plan-and-Execute（先规划，再执行）
+    │   └── 否 → ReAct（动态探索）
+    │
+    └── 对输出质量要求高？允许多轮迭代？
+        ├── 是 → 加上 Reflection 层（包在 ReAct 或 P&amp;E 外面）
+        └── 否 → 保持 ReAct / P&amp;E 即可
+</code></pre><blockquote>
+<p>⚠️ 重要认知：<strong>三种范式不是互斥的，而是可以嵌套组合的</strong>
+最强 Agent = Plan-and-Execute 的骨架 + ReAct 的每步执行 + Reflection 的质量保障</p>
+</blockquote>
+<hr>
+<h2 id="一句话记住它们">一句话记住它们</h2>
+<table>
+  <thead>
+      <tr>
+          <th>范式</th>
+          <th>一句话</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>ReAct</strong></td>
+          <td>见招拆招，灵活但容易走偏</td>
+      </tr>
+      <tr>
+          <td><strong>Plan-and-Execute</strong></td>
+          <td>运筹帷幄，稳健但计划可能过时</td>
+      </tr>
+      <tr>
+          <td><strong>Reflection</strong></td>
+          <td>精益求精，高质量但代价是时间和成本</td>
+      </tr>
+  </tbody>
+</table>
+
+  </div>
+</div>
+
+    </main>
+
+    
+    <footer class="site-footer">
+      <span>© 2026 Fancy · 用文字记录思考</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  
+  <script>
+    window.searchData = [
+      
+      { title: "\"Vibe Coding 凉了，2026年最火的新职业是：驯兽师\"", excerpt: "\"LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？\"", url: "\"//localhost:1313/posts/vibe-coding-harness/\"", tags: ["\"Vibe Coding\"","\"Harness Engineering\"",] },
+      
+      { title: "\"RAG 企业级构建指南\"", excerpt: "\"企业应用大模型，RAG知识库是第一优先级的选择，员工与管理者都有感知、可量化价值、可落地的最佳方案\"", url: "\"//localhost:1313/posts/rag-guild/\"", tags: ["\"AI\"","\"RAG\"",] },
+      
+      { title: "\"AI Agent 三种范式深度详解\"", excerpt: "\"三种范式：ReAct（Reasoning + Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）\"", url: "\"//localhost:1313/posts/ai-agent-paradigm/\"", tags: ["\"AI\"","\"Agent\"",] },
+      
+    ];
+  </script>
+
+  <script>
+    
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>

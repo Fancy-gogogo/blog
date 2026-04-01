@@ -2,27 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fancy-gogogo.github.io/blog/tags/ai/</loc>
+    <loc>//localhost:31332/tags/harness-engineering/</loc>
+    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:31332/tags/</loc>
+    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:31332/tags/vibe-coding/</loc>
+    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:31332/posts/vibe-coding-harness/</loc>
+    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:31332/tags/ai/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fancy-gogogo.github.io/blog/tags/rag/</loc>
+    <loc>//localhost:31332/tags/rag/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fancy-gogogo.github.io/blog/posts/rag-guild/</loc>
+    <loc>//localhost:31332/posts/rag-guild/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fancy-gogogo.github.io/blog/tags/</loc>
+    <loc>//localhost:31332/about/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fancy-gogogo.github.io/blog/about/</loc>
-    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
+    <loc>//localhost:31332/tags/agent/</loc>
+    <lastmod>2026-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fancy-gogogo.github.io/blog/posts/</loc>
+    <loc>//localhost:31332/posts/ai-agent-paradigm/</loc>
+    <lastmod>2026-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:31332/posts/</loc>
     <lastmod>2023-01-01T08:30:00-07:00</lastmod>
   </url><url>
-    <loc>https://fancy-gogogo.github.io/blog/</loc>
+    <loc>//localhost:31332/</loc>
     <lastmod>2023-01-01T08:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://fancy-gogogo.github.io/blog/categories/</loc>
+    <loc>//localhost:31332/categories/</loc>
   </url>
 </urlset>
