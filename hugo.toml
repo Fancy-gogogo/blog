@@ -1,4 +1,4 @@
-baseURL = 'https://fancy-gogogo.github.io/blog/'
+baseURL = '/'
 languageCode = 'zh-CN'
 title = 'Fancy'
 theme = 'brume'

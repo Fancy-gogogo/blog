@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Fancy</title>
-    <link>https://fancy-gogogo.github.io/blog/tags/</link>
+    <link>//localhost:6297/tags/</link>
     <description>Recent content in Tags on Fancy</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://fancy-gogogo.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:6297/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI</title>
-      <link>https://fancy-gogogo.github.io/blog/tags/ai/</link>
+      <link>//localhost:6297/tags/ai/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://fancy-gogogo.github.io/blog/tags/ai/</guid>
+      <guid>//localhost:6297/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>RAG</title>
-      <link>https://fancy-gogogo.github.io/blog/tags/rag/</link>
+      <link>//localhost:6297/tags/rag/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://fancy-gogogo.github.io/blog/tags/rag/</guid>
+      <guid>//localhost:6297/tags/rag/</guid>
       <description></description>
     </item>
   </channel>
