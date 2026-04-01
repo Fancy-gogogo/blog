@@ -2,8 +2,8 @@
 title: "大模型科普系列二：Token 是什么？"
 date: 2026-03-01
 draft: false
-tags: ["科普", "LLM"]
-description: '大模型的字数，以及它背后的能源战争'
+tags: ["科普", "Token"]
+description: "大模型的字数，以及它背后的能源战争"
 ---
 
 
