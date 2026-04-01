@@ -1,0 +1,10 @@
+{{ define "title" }}{{ .Title }} — {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="page-header fade-in">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ with .Params.description }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+</div>
+
+{{ .Content }}
+{{ end }}

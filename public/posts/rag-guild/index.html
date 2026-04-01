@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy</title>
+  <meta name="description" content="记录技术、思考与生活">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fancy">
+  <meta property="og:description" content="记录技术、思考与生活">
+  <meta property="og:url" content="http://localhost:1313/posts/rag-guild/">
+  <meta property="og:site_name" content="Fancy">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fancy">
+  <meta name="twitter:description" content="记录技术、思考与生活">
+
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  
+  <link rel="stylesheet" href="/css/style.552217d2298bec0de913fa87f801fb1e85b3a32c0e176e4daf48c8dcb9edfe4d.css">
+  
+</head>
+<body>
+
+  
+  <img src="/cover.jpg" alt="cover" class="cover-image">
+
+  
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <span class="brand-dot"></span>
+        Fancy
+      </a>
+      <ul class="navbar-links">
+        
+        <li><a href="/" >主页</a></li>
+        
+        <li><a href="/about/" >关于</a></li>
+        
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  
+  <div class="site-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          
+          <a href="http://localhost:1313/tags/ai/" class="tag-item">AI</a>
+          
+          <a href="http://localhost:1313/tags/rag/" class="tag-item">RAG</a>
+          
+        </div>
+      </div>
+
+      
+    </aside>
+
+    
+    <main class="main-content">
+      
+<div class="about-section">
+  <div class="page-header">
+    <h1 class="page-title">RAG 企业级构建指南</h1>
+    <p class="page-subtitle">简短描述，会显示在卡片摘要里</p>
+  </div>
+  <div class="post-detail-body">
+    <p>从第一性原理来看，RAG 的本质是让 AI 在回答时能够&quot;查阅&quot;你的私有数据。企业级意味着要解决规模、安全、可靠、成本这四个基本约束。</p>
+<h2 id="一构建步骤从0到1">一、构建步骤（从0到1）</h2>
+<h3 id="阶段1数据准备决定上限的环节">阶段1：数据准备（决定上限的环节）</h3>
+<p>原始数据 → 清洗 → 分块 → 向量化 → 存储</p>
+<h4 id="关键步骤">关键步骤：</h4>
+<ul>
+<li><strong>数据收集</strong>
+<ul>
+<li>文档类型：PDF、Word、Markdown、Wiki、数据库、API</li>
+<li>元数据提取：作者、时间、部门、版本号、密级</li>
+</ul>
+</li>
+<li><strong>数据清洗</strong>
+<ul>
+<li>去除噪声（页眉页脚、乱码、无关内容）</li>
+<li>格式统一（转 Markdown 或纯文本）</li>
+<li>敏感信息脱敏</li>
+</ul>
+</li>
+<li><strong>智能分块（Chunking）</strong> ⚠️ 核心
+<ul>
+<li>不要固定字数切分！按语义边界切</li>
+<li>重叠策略：相邻块重叠 10-20%，避免信息割裂</li>
+<li>层级分块：大文档先分章节，章节内再分块</li>
+<li>保留上下文：每个块带文档标题、章节路径</li>
+</ul>
+</li>
+<li><strong>向量化嵌入</strong>
+<ul>
+<li>选择嵌入模型（中文推荐：bge-m3、text2vec）</li>
+<li>批量处理，控制并发</li>
+<li>记录嵌入版本（模型升级后可重新嵌入）</li>
+</ul>
+</li>
+<li><strong>存储索引</strong>
+<ul>
+<li>向量数据库：Milvus、Weaviate、Qdrant、PGVector</li>
+<li>混合索引：向量 + 关键词（BM25）+ 元数据过滤</li>
+</ul>
+</li>
+</ul>
+<h3 id="阶段2检索系统决定召回质量">阶段2：检索系统（决定召回质量）</h3>
+<h4 id="检索策略">检索策略：</h4>
+<ul>
+<li><strong>多路召回</strong>
+<ul>
+<li>向量检索（语义相似）</li>
+<li>关键词检索（精确匹配）</li>
+<li>元数据过滤（时间、部门、密级）</li>
+<li>融合排序（RRF 或加权）</li>
+</ul>
+</li>
+<li><strong>查询理解</strong>
+<ul>
+<li>查询改写（同义词扩展、拼写纠错）</li>
+<li>意图识别（是事实查询？还是开放问题？）</li>
+<li>多轮对话历史融合</li>
+</ul>
+</li>
+<li><strong>重排序（Rerank）</strong> ⚠️ 提升精度的关键
+<ul>
+<li>召回 50-100 条 → 用 Cross-Encoder 重排 → 取 top 5-10</li>
+<li>开源模型：bge-reranker、cohere-rerank</li>
+</ul>
+</li>
+</ul>
+<h3 id="阶段3生成系统决定回答质量">阶段3：生成系统（决定回答质量）</h3>
+<ul>
+<li><strong>Prompt 工程</strong>
+<ul>
+<li>系统指令：明确角色、回答边界、引用要求</li>
+<li>上下文组织：按相关性排序，标注来源</li>
+<li>防幻觉指令：&ldquo;不知道就说不知道，不要编造&rdquo;</li>
+</ul>
+</li>
+<li><strong>引用溯源</strong>
+<ul>
+<li>每个关键信息标注来源文档 + 页码/章节</li>
+<li>支持点击跳转原文</li>
+<li>低置信度答案标注&quot;仅供参考&quot;</li>
+</ul>
+</li>
+<li><strong>回答评估</strong>
+<ul>
+<li>自检：答案是否基于检索内容？</li>
+<li>置信度评分：检索质量 + 生成质量</li>
+</ul>
+</li>
+</ul>
+<h3 id="阶段4企业级能力区别于-demo-的关键">阶段4：企业级能力（区别于 demo 的关键）</h3>
+<table>
+  <thead>
+      <tr>
+          <th>能力</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>权限控制</td>
+          <td>文档级/字段级权限，用户只能检索有权访问的内容</td>
+      </tr>
+      <tr>
+          <td>审计日志</td>
+          <td>谁查了什么、什么时候、问了什么</td>
+      </tr>
+      <tr>
+          <td>版本管理</td>
+          <td>文档更新后，旧版本可追溯，向量索引可增量更新</td>
+      </tr>
+      <tr>
+          <td>多租户</td>
+          <td>不同部门/子公司数据隔离</td>
+      </tr>
+      <tr>
+          <td>监控告警</td>
+          <td>检索延迟、命中率、用户反馈、成本监控</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="二构建过程中的注意事项-">二、构建过程中的注意事项 ⚠️</h2>
+<ol>
+<li>
+<p><strong>数据质量 &gt; 模型选择</strong><br>
+垃圾进，垃圾出。清洗和分块的质量决定上限。花 70% 时间在数据准备上，不亏。</p>
+</li>
+<li>
+<p><strong>分块策略是核心杠杆</strong><br>
+固定 512 字切分是最懒的做法。按段落、标题、语义边界切分效果好 3-5 倍。代码文档按函数/类切分，表格单独处理。</p>
+</li>
+<li>
+<p><strong>检索不是越准越好</strong><br>
+召回率优先于精确率（宁可多召回，不能漏）。用 Rerank 做二次筛选，而不是卡死第一次检索。</p>
+</li>
+<li>
+<p><strong>一定要做评估体系</strong><br>
+构建前：准备 50-100 个测试问题 + 标准答案。每次改策略都跑一遍，看指标变化。不要凭感觉优化。</p>
+</li>
+<li>
+<p><strong>权限模型要前置设计</strong><br>
+事后加权限是灾难。每个文档块嵌入时就要带权限标签，检索时做权限过滤。</p>
+</li>
+<li>
+<p><strong>成本控制</strong><br>
+嵌入是一次性成本，可接受；检索是持续成本，要优化（缓存、索引剪枝）；生成是最大成本，控制 token（上下文长度、模型选择）。</p>
+</li>
+<li>
+<p><strong>用户反馈闭环</strong><br>
+点赞/点踩按钮，收集 bad case，定期分析。建立&quot;问题 - 答案 - 来源&quot;三元组数据库。</p>
+</li>
+</ol>
+<h2 id="三好的企业级-rag-衡量标准">三、好的企业级 RAG 衡量标准</h2>
+<h3 id="技术指标">技术指标</h3>
+<table>
+  <thead>
+      <tr>
+          <th>指标</th>
+          <th>目标值</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>检索召回率@K</td>
+          <td>85% @K=10</td>
+          <td>标准答案的文档在 top10 里</td>
+      </tr>
+      <tr>
+          <td>检索 MRR</td>
+          <td>0.7</td>
+          <td>正确答案的排名越靠前越好</td>
+      </tr>
+      <tr>
+          <td>回答准确率</td>
+          <td>90%</td>
+          <td>人工评估或 LLM-as-judge</td>
+      </tr>
+      <tr>
+          <td>幻觉率</td>
+          <td>&lt;5%</td>
+          <td>无中生有的信息占比</td>
+      </tr>
+      <tr>
+          <td>P95 延迟</td>
+          <td>&lt;2s</td>
+          <td>端到端响应时间</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="业务指标">业务指标</h3>
+<table>
+  <thead>
+      <tr>
+          <th>指标</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>用户满意度</td>
+          <td>点赞率、NPS、复问率</td>
+      </tr>
+      <tr>
+          <td>问题解决率</td>
+          <td>用户不再追问/转人工的比例</td>
+      </tr>
+      <tr>
+          <td>节省工时</td>
+          <td>相比人工查文档节省的时间</td>
+      </tr>
+      <tr>
+          <td>覆盖率</td>
+          <td>有多少业务场景/文档类型已接入</td>
+      </tr>
+      <tr>
+          <td>活跃用户</td>
+          <td>DAU/WAU、人均查询次数</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="运维指标">运维指标</h3>
+<table>
+  <thead>
+      <tr>
+          <th>指标</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>系统可用性</td>
+          <td>99.9%</td>
+      </tr>
+      <tr>
+          <td>数据新鲜度</td>
+          <td>新文档到可检索的延迟（小时级）</td>
+      </tr>
+      <tr>
+          <td>成本/查询</td>
+          <td>单次查询的平均成本</td>
+      </tr>
+      <tr>
+          <td>bad case 修复周期</td>
+          <td>从发现到修复的时间</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="四从第一性原理的总结">四、从第一性原理的总结</h2>
+<p><strong>RAG 的本质公式：</strong></p>
+<blockquote>
+<p>好答案 = 好数据 × 好检索 × 好生成 × 好评估</p>
+</blockquote>
+<ul>
+<li><strong>好数据</strong>：清洗、分块、元数据（70% 的功夫在这里）</li>
+<li><strong>好检索</strong>：多路召回 + Rerank（决定找到没有）</li>
+<li><strong>好生成</strong>：Prompt + 引用 + 防幻觉（决定说得对不对）</li>
+<li><strong>好评估</strong>：测试集 + 反馈闭环（决定能不能持续变好）</li>
+</ul>
+<p><strong>企业级的本质：</strong></p>
+<blockquote>
+<p>不是技术更复杂，而是可信赖、可维护、可审计、可扩展。</p>
+</blockquote>
+
+  </div>
+</div>
+
+    </main>
+
+    
+    <footer class="site-footer">
+      <span>© 2026 Fancy · 用文字记录思考</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  
+  <script>
+    window.searchData = [
+      
+      { title: "\"RAG 企业级构建指南\"", excerpt: "\"简短描述，会显示在卡片摘要里\"", url: "\"http://localhost:1313/posts/rag-guild/\"", tags: ["\"AI\"","\"RAG\"",] },
+      
+    ];
+  </script>
+
+  <script>
+    
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>

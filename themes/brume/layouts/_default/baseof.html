@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ block "og-title" . }}{{ .Site.Title }}{{ end }}">
+  <meta property="og:description" content="{{ .Site.Params.description }}">
+  <meta property="og:url" content="{{ .Permalink | absURL }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ block "twitter-title" . }}{{ .Site.Title }}{{ end }}">
+  <meta name="twitter:description" content="{{ .Site.Params.description }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  {{ $style := resources.Get "css/style.css" | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ if .IsHome }}<link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}">{{ end }}
+</head>
+<body>
+
+  <!-- Cover Image -->
+  <img src="/cover.jpg" alt="cover" class="cover-image">
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <span class="brand-dot"></span>
+        {{ .Site.Title }}
+      </a>
+      <ul class="navbar-links">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- Layout -->
+  <div class="site-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          {{ range .Site.Taxonomies.categories.ByCount }}
+          <a href="{{ .Page.Permalink }}" class="category-tag">{{ .Page.Title }}<span class="cat-count">{{ .Count }}</span></a>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          {{ range .Site.Taxonomies.tags.Alphabetical }}
+          <a href="{{ .Page.Permalink }}" class="tag-item">{{ .Page.Title }}</a>
+          {{ end }}
+        </div>
+      </div>
+
+      {{ if .IsHome }}
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">归档</h3>
+        <ul class="archive-list">
+          {{ range .Site.RegularPages.GroupByDate "2006" }}
+          <li class="archive-year">{{ .Key }}</li>
+          {{ range first 5 .Pages }}
+          <li><a href="{{ .Permalink }}" class="archive-item">
+            <span class="archive-date">{{ .Date.Format "01-02" }}</span>{{ .Title }}
+          </a></li>
+          {{ end }}
+          {{ if gt (len .Pages) 5 }}
+          <li><a href="/archive/" class="archive-item" style="color:var(--accent);">查看全部 →</a></li>
+          {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <span>{{ .Site.Params.copyright }}</span>
+      <div class="footer-links">
+        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Search index -->
+  <script>
+    window.searchData = [
+      {{ range where .Site.RegularPages "Section" "posts" }}
+      { title: {{ .Title | jsonify }}, excerpt: {{ .Params.description | default .Summary | jsonify }}, url: {{ .Permalink | jsonify }}, tags: [{{ range .Params.tags }}{{ . | jsonify }},{{ end }}] },
+      {{ end }}
+    ];
+  </script>
+
+  <script>
+    // Theme
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    // Init theme
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    // Mobile menu
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    // Search
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    // Scroll
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    // Fade in
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>

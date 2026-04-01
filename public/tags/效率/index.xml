@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>效率 on Fancy</title>
+    <link>//localhost:1314/tags/%E6%95%88%E7%8E%87/</link>
+    <description>Recent content in 效率 on Fancy</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1314/tags/%E6%95%88%E7%8E%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 AI 重塑工作流：从 Copilot 到自主 Agent</title>
+      <link>//localhost:1314/posts/ai-workflow/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1314/posts/ai-workflow/</guid>
+      <description>&lt;p&gt;探讨如何将 AI 工具深度整合进日常工作流，从代码辅助到自主决策的 Agent，分享实际使用经验和效率提升数据。&lt;/p&gt;&#xA;&lt;h2 id=&#34;从辅助到自主&#34;&gt;从辅助到自主&lt;/h2&gt;&#xA;&lt;p&gt;过去两年，AI 工具经历了从&amp;quot;锦上添花&amp;quot;到&amp;quot;不可或缺&amp;quot;的转变。一开始我们只是让 AI 帮忙补全代码，现在它已经能独立完成复杂的分析任务。&lt;/p&gt;&#xA;&lt;h2 id=&#34;实践经验&#34;&gt;实践经验&lt;/h2&gt;&#xA;&lt;h3 id=&#34;代码编写&#34;&gt;代码编写&lt;/h3&gt;&#xA;&lt;p&gt;Copilot 类工具已经显著提升了编码速度，但真正拉开差距的是如何写好 prompt。&lt;/p&gt;&#xA;&lt;h3 id=&#34;文档与沟通&#34;&gt;文档与沟通&lt;/h3&gt;&#xA;&lt;p&gt;AI 在技术文档、邮件撰写方面表现尤为出色。关键是提供足够的上下文。&lt;/p&gt;&#xA;&lt;h2 id=&#34;效率数据&#34;&gt;效率数据&lt;/h2&gt;&#xA;&lt;p&gt;经过三个月的追踪，使用 AI 辅助后我的日常开发效率提升了约 35%。但这个数字的意义不在于&amp;quot;更快&amp;quot;，而在于&amp;quot;把时间省下来做更有价值的事&amp;quot;。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;工具的价值不在于替代人，而在于放大人的能力。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;未来展望&#34;&gt;未来展望&lt;/h2&gt;&#xA;&lt;p&gt;Agent 模式是下一个趋势。当 AI 能自主规划和执行多步骤任务时，工作流将发生根本性变化。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

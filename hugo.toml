@@ -1,0 +1,36 @@
+baseURL = 'https://fancy-gogogo.github.io/'
+languageCode = 'zh-CN'
+title = 'Fancy'
+theme = 'brume'
+paginate = 8
+
+[params]
+  description = '记录技术、思考与生活'
+  author = 'Fancy'
+  copyright = '© 2026 Fancy · 用文字记录思考'
+  github = 'https://github.com'
+
+[markup]
+  [markup.highlight]
+    style = 'monokai'
+    lineNos = false
+    noClasses = false
+
+[markup.goldmark]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name = '主页'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    identifier = 'about'
+    name = '关于'
+    url = '/about/'
+    weight = 2
+
+[outputs]
+  home = ['HTML', 'RSS']

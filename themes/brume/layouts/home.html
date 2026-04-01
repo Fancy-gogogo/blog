@@ -1,0 +1,46 @@
+{{ define "main" }}
+<div class="post-list">
+  {{ range .Paginator.Pages }}
+  <article class="post-card fade-in">
+    <div class="post-card-header">
+      <a href="{{ .Permalink }}" class="post-card-title">{{ .Title }}</a>
+    </div>
+    <p class="post-card-excerpt">
+      {{ .Params.description | default .Summary }}
+    </p>
+    <div class="post-card-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        {{ .Date.Format "2006-01-02" }}
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        {{ .ReadingTime }} 分钟
+      </span>
+      {{ with .Params.tags }}
+      <div class="post-card-tags">
+        {{ range first 2 . }}
+        <span class="tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </article>
+  {{ end }}
+</div>
+
+<!-- Pagination -->
+{{ if gt .Paginator.TotalPages 1 }}
+<div class="pagination">
+  {{ if .Paginator.HasPrev }}
+  <a href="{{ .Paginator.Prev.URL }}">←</a>
+  {{ end }}
+  {{ range .Paginator.Pagers }}
+  <a href="{{ .URL }}" {{ if eq .PageNumber $.Paginator.PageNumber }}class="active"{{ end }}>{{ .PageNumber }}</a>
+  {{ end }}
+  {{ if .Paginator.HasNext }}
+  <a href="{{ .Paginator.Next.URL }}">→</a>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}
