@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>关于 on Fancy</title>
-    <link>//localhost:31332/about/</link>
-    <description>Recent content in 关于 on Fancy</description>
+    <title>关于 on 小舟从此逝，江海寄余生</title>
+    <link>//localhost:1313/about/</link>
+    <description>Recent content in 关于 on 小舟从此逝，江海寄余生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="//localhost:31332/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

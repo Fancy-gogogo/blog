@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Blog</title>
+  <meta name="description" content="记录技术、思考与生活">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fancy Blog">
+  <meta property="og:description" content="记录技术、思考与生活">
+  <meta property="og:url" content="//localhost:1313/posts/05-%E4%BB%80%E4%B9%88%E6%98%AFskills/">
+  <meta property="og:site_name" content="Fancy Blog">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fancy Blog">
+  <meta name="twitter:description" content="记录技术、思考与生活">
+
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  
+  <link rel="stylesheet" href="/css/style.552217d2298bec0de913fa87f801fb1e85b3a32c0e176e4daf48c8dcb9edfe4d.css">
+  
+</head>
+<body>
+
+  
+  <img src="/cover.jpg" alt="cover" class="cover-image">
+
+  
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        Fancy Blog
+      </a>
+      <ul class="navbar-links">
+        
+        <li><a href="/" >主页</a></li>
+        
+        <li><a href="/about/" >关于</a></li>
+        
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  
+  <div class="site-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          
+          <a href="//localhost:1313/tags/agent/" class="tag-item">Agent</a>
+          
+          <a href="//localhost:1313/tags/agi/" class="tag-item">AGI</a>
+          
+          <a href="//localhost:1313/tags/ai/" class="tag-item">AI</a>
+          
+          <a href="//localhost:1313/tags/harness-engineering/" class="tag-item">Harness Engineering</a>
+          
+          <a href="//localhost:1313/tags/llm/" class="tag-item">LLM</a>
+          
+          <a href="//localhost:1313/tags/prompt/" class="tag-item">Prompt</a>
+          
+          <a href="//localhost:1313/tags/rag/" class="tag-item">RAG</a>
+          
+          <a href="//localhost:1313/tags/token/" class="tag-item">Token</a>
+          
+          <a href="//localhost:1313/tags/vibe-coding/" class="tag-item">Vibe Coding</a>
+          
+          <a href="//localhost:1313/tags/%E7%A7%91%E6%99%AE/" class="tag-item">科普</a>
+          
+        </div>
+      </div>
+
+      
+    </aside>
+
+    
+    <main class="main-content">
+      
+<div class="about-section">
+  <div class="page-header">
+    <h1 class="page-title"></h1>
+    
+  </div>
+  <div class="post-detail-body">
+    <h1 id="什么是skills">什么是Skills？</h1>
+<blockquote>
+<p>给大模型装上&quot;手脚&quot;，让它不只是&quot;会说话&quot;</p>
+</blockquote>
+<p>你有没有遇到过这种情况：问AI&quot;今天天气怎么样&quot;，它说&quot;我没有实时数据，无法查询&quot;。</p>
+<p>这是大模型的一个&quot;先天缺陷&quot;——它只会根据训练数据&quot;编&quot;答案，它不会真的去查天气。</p>
+<p>怎么解决这个问题？答案就是：<strong>给大模型装上&quot; Skills &ldquo;</strong>。</p>
+<hr>
+<h2 id="一skills是什么">一、Skills是什么？</h2>
+<h3 id="11-一句话定义">1.1 一句话定义</h3>
+<p><strong>Skills</strong>（也叫做 Plugins 或 Tools）是给大模型使用的&quot;工具包&rdquo;。</p>
+<p>你可以理解为：Skills是API的包装器。它告诉大模型：&ldquo;如果你遇到这种情况，就去调用这个工具。&rdquo;</p>
+<h3 id="12-通俗比喻给哑巴配上翻译和助手">1.2 通俗比喻：给哑巴配上翻译和助手</h3>
+<p>以前的大模型，就像一个很有知识但不会行动的哑巴学者。你问它问题，它能回答，但它不会帮你查资料、不会帮你发邮件、不会帮你算数学。</p>
+<p>Skills就是给它配上：</p>
+<ul>
+<li>一个翻译（理解你的需求）</li>
+<li>一双手（去执行操作）</li>
+<li>各种工具（查天气、发邮件、写代码）</li>
+</ul>
+<p>从此，大模型不仅能说，还能干。</p>
+<hr>
+<h2 id="二skills是怎么工作的">二、Skills是怎么工作的？</h2>
+<h3 id="21-三步走流程">2.1 三步走流程</h3>
+<p><strong>第一步：识别意图</strong></p>
+<p>当你说&quot;帮我查一下北京明天天气&quot;时，Skills系统会先识别：哦，用户想查天气。</p>
+<p><strong>第二步：调用工具</strong></p>
+<p>系统知道你想查天气，就会去调用天气预报的API，获取实时数据。</p>
+<p><strong>第三步：整合回答</strong></p>
+<p>拿到数据后，大模型把它&quot;翻译&quot;成人话还给你：&ldquo;北京明天晴转多云，15-28度，适合出行。&rdquo;</p>
+<h3 id="22-案例一个数学渣的逆袭">2.2 案例：一个数学渣的逆袭</h3>
+<p>假设你用的大模型是个&quot;数学渣&quot;，连&quot;123×456&quot;都会算错。</p>
+<p>但你给它挂载了一个&quot;Python解释器&quot;Skill之后，情况完全不同了。</p>
+<p>当你问它：&ldquo;帮我算一下123乘以456等于多少，顺便画个函数图像y=x^2&rdquo;</p>
+<p>它会：</p>
+<ol>
+<li>识别到需要计算 -&gt; 调用Python解释器</li>
+<li>执行代码完成计算和绘图</li>
+<li>把结果整合成文字回答你</li>
+</ol>
+<p>一个原本连乘法都不会的模型，瞬间变成了数学+可视化全能选手。</p>
+<hr>
+<h2 id="三常见的skills类型">三、常见的Skills类型</h2>
+<h3 id="31-搜索工具">3.1 搜索工具</h3>
+<ul>
+<li>查新闻、查百科、查资料</li>
+<li>实时信息必备</li>
+</ul>
+<h3 id="32-计算工具">3.2 计算工具</h3>
+<ul>
+<li>数学计算、函数绘图</li>
+<li>解决大模型算不准的问题</li>
+</ul>
+<h3 id="33-编程工具">3.3 编程工具</h3>
+<ul>
+<li>执行代码、调试程序</li>
+<li>Python解释器、代码沙箱</li>
+</ul>
+<h3 id="34-浏览器工具">3.4 浏览器工具</h3>
+<ul>
+<li>访问网页、爬取内容</li>
+<li>让你AI替你上网</li>
+</ul>
+<h3 id="35-办公工具">3.5 办公工具</h3>
+<ul>
+<li>发送邮件、读写文件</li>
+<li>日历管理、待办事项</li>
+</ul>
+<h3 id="36-数据库工具">3.6 数据库工具</h3>
+<ul>
+<li>查询企业知识库</li>
+<li>读取内部文档</li>
+</ul>
+<hr>
+<h2 id="四skills-vs-普通对话">四、Skills vs 普通对话</h2>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>普通对话模式</th>
+          <th>Skills模式</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>查天气</td>
+          <td>&ldquo;我没有实时数据&rdquo;</td>
+          <td>&ldquo;北京明天晴，20-28度&rdquo;</td>
+      </tr>
+      <tr>
+          <td>算数学</td>
+          <td>&ldquo;可能约等于&hellip;&rdquo;</td>
+          <td>&ldquo;答案是56088&rdquo;</td>
+      </tr>
+      <tr>
+          <td>查新闻</td>
+          <td>&ldquo;据我所知&hellip;&rdquo;</td>
+          <td>&ldquo;今天的热点新闻是&hellip;&rdquo;</td>
+      </tr>
+      <tr>
+          <td>发邮件</td>
+          <td>&ldquo;我不能发邮件&rdquo;</td>
+          <td>&ldquo;已帮你发送成功&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<p>核心区别：<strong>Skills让大模型从&quot;说&quot;变成&quot;做&quot;。</strong></p>
+<hr>
+<h2 id="五skills的意义">五、Skills的意义</h2>
+<h3 id="51-解决实时性问题">5.1 解决&quot;实时性&quot;问题</h3>
+<p>大模型的知识有截止日期，Skills可以让它&quot;看到&quot;最新的信息。</p>
+<h3 id="52-解决准确性问题">5.2 解决&quot;准确性&quot;问题</h3>
+<p>数学计算、代码执行这些需要精确结果的任务，交给专业工具比让大模型&quot;编&quot;靠谱得多。</p>
+<h3 id="53-扩展能力边界">5.3 扩展能力边界</h3>
+<p>不会画画？用绘图Skill。不会发邮件？用邮件Skill。</p>
+<p>大模型不再是一个&quot;全能但有限&quot;的系统，而是一个可以调用各种工具的&quot;中枢&quot;。</p>
+<hr>
+<h2 id="六未来展望">六、未来展望</h2>
+<p>未来的大模型，可能会像智能手机一样——本身功能有限，但装上各种App之后，无所不能。</p>
+<p>你不需要是技术大牛，只需要告诉AI你想干什么，它会自己找工具、想办法、完成任务。</p>
+<p><strong>这就是Agent的雏形。</strong></p>
+<p>下一个话题，我们会详细展开：AI Agent到底是什么。</p>
+<hr>
+<p><em>下一个话题我们来聊聊：AI Agent是如何让AI从&quot;对话&quot;走向&quot;行动&quot;的。</em></p>
+
+  </div>
+</div>
+
+    </main>
+
+    
+    <footer class="site-footer">
+      <span>© 2026 Fancy · 用文字记录思考</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  
+  <script>
+    window.searchData = [
+      
+      { title: "\"ARC-AGI-3 深度解析：为什么当前的 AI 在“抽象游戏”面前依然像一个婴儿？？\"", excerpt: "\"AI擅长干什么？人类擅长干什么？一文告诉你\"", url: "\"//localhost:1313/posts/arc-agi-3/\"", tags: ["\"AGI\"","\"LLM\"",] },
+      
+      { title: "\"Vibe Coding 凉了，2026年最火的新职业是：驯兽师\"", excerpt: "\"LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？\"", url: "\"//localhost:1313/posts/vibe-coding-harness/\"", tags: ["\"Vibe Coding\"","\"Harness Engineering\"",] },
+      
+      { title: "\"RAG 企业级构建指南\"", excerpt: "\"企业应用大模型，RAG知识库是第一优先级的选择，员工与管理者都有感知、可量化价值、可落地的最佳方案\"", url: "\"//localhost:1313/posts/rag-guild/\"", tags: ["\"AI\"","\"RAG\"",] },
+      
+      { title: "\"AI Agent 三种范式深度详解\"", excerpt: "\"三种范式：ReAct（Reasoning + Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）\"", url: "\"//localhost:1313/posts/ai-agent-paradigm/\"", tags: ["\"AI\"","\"Agent\"",] },
+      
+      { title: "\"大模型科普系列四：什么是Vibe Coding？\"", excerpt: "\"一个编码小白，如何写代码？想做一个小程序记录每天读书笔记？想给自己做一个自动化的爬虫脚本？\"", url: "\"//localhost:1313/posts/lesson-4-vibecoding/\"", tags: ["\"科普\"","\"Vibe Coding\"",] },
+      
+      { title: "\"大模型科普系列三：普通人如何用好提示词？\"", excerpt: "\"写提示词（Prompt）这件事，跟使唤人有点像。这篇文章，就教你几个简单实用的提示词技巧\"", url: "\"//localhost:1313/posts/lesson-3-prompt/\"", tags: ["\"科普\"","\"Prompt\"",] },
+      
+      { title: "\"大模型科普系列二：Token 是什么？\"", excerpt: "\"大模型的字数，以及它背后的能源战争\"", url: "\"//localhost:1313/posts/lesson-2-token/\"", tags: ["\"科普\"","\"Token\"",] },
+      
+      { title: "\"大模型科普系列一：大模型到底是什么？\"", excerpt: "\"用它写周报、问问题、生成内容——好像什么都会。但为什么有时候它会一本正经地胡说八道？大模型的原理、能耐与边界，这篇文章一次讲清楚\"", url: "\"//localhost:1313/posts/lesson-1-llm/\"", tags: ["\"科普\"","\"LLM\"",] },
+      
+      { title: "\"\"", excerpt: "\"\\u003ch1 id=\\\"什么是skills\\\"\\u003e什么是Skills？\\u003c/h1\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e给大模型装上\\u0026quot;手脚\\u0026quot;，让它不只是\\u0026quot;会说话\\u0026quot;\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003cp\\u003e你有没有遇到过这种情况：问AI\\u0026quot;今天天气怎么样\\u0026quot;，它说\\u0026quot;我没有实时数据，无法查询\\u0026quot;。\\u003c/p\\u003e\\n\\u003cp\\u003e这是大模型的一个\\u0026quot;先天缺陷\\u0026quot;——它只会根据训练数据\\u0026quot;编\\u0026quot;答案，它不会真的去查天气。\\u003c/p\\u003e\\n\\u003cp\\u003e怎么解决这个问题？答案就是：\\u003cstrong\\u003e给大模型装上\\u0026quot; Skills \\u0026ldquo;\\u003c/strong\\u003e。\\u003c/p\\u003e\\n\\u003chr\\u003e\\n\\u003ch2 id=\\\"一skills是什么\\\"\\u003e一、Skills是什么？\\u003c/h2\\u003e\\n\\u003ch3 id=\\\"11-一句话定义\\\"\\u003e1.1 一句话定义\\u003c/h3\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003eSkills\\u003c/strong\\u003e（也叫做 Plugins 或 Tools）是给大模型使用的\\u0026quot;工具包\\u0026rdquo;。\\u003c/p\\u003e\\n\\u003cp\\u003e你可以理解为：Skills是API的包装器。它告诉大模型：\\u0026ldquo;如果你遇到这种情况，就去调用这个工具。\\u0026rdquo;\\u003c/p\\u003e\\n\\u003ch3 id=\\\"12-通俗比喻给哑巴配上翻译和助手\\\"\\u003e1.2 通俗比喻：给哑巴配上翻译和助手\\u003c/h3\\u003e\\n\\u003cp\\u003e以前的大模型，就像一个很有知识但不会行动的哑巴学者。你问它问题，它能回答，但它不会帮你查资料、不会帮你发邮件、不会帮你算数学。\\u003c/p\\u003e\\n\\u003cp\\u003eSkills就是给它配上：\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e一个翻译（理解你的需求）\\u003c/li\\u003e\\n\\u003cli\\u003e一双手（去执行操作）\\u003c/li\\u003e\\n\\u003cli\\u003e各种工具（查天气、发邮件、写代码）\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003e从此，大模型不仅能说，还能干。\\u003c/p\\u003e\\n\\u003chr\\u003e\\n\\u003ch2 id=\\\"二skills是怎么工作的\\\"\\u003e二、Skills是怎么工作的？\\u003c/h2\\u003e\\n\\u003ch3 id=\\\"21-三步走流程\\\"\\u003e2.1 三步走流程\\u003c/h3\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e第一步：识别意图\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cp\\u003e当你说\\u0026quot;帮我查一下北京明天天气\\u0026quot;时，Skills系统会先识别：哦，用户想查天气。\\u003c/p\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e第二步：调用工具\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cp\\u003e系统知道你想查天气，就会去调用天气预报的API，获取实时数据。\\u003c/p\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e第三步：整合回答\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cp\\u003e拿到数据后，大模型把它\\u0026quot;翻译\\u0026quot;成人话还给你：\\u0026ldquo;北京明天晴转多云，15-28度，适合出行。\\u0026rdquo;\\u003c/p\\u003e\\n\\u003ch3 id=\\\"22-案例一个数学渣的逆袭\\\"\\u003e2.2 案例：一个数学渣的逆袭\\u003c/h3\\u003e\\n\\u003cp\\u003e假设你用的大模型是个\\u0026quot;数学渣\\u0026quot;，连\\u0026quot;123×456\\u0026quot;都会算错。\\u003c/p\\u003e\\n\\u003cp\\u003e但你给它挂载了一个\\u0026quot;Python解释器\\u0026quot;Skill之后，情况完全不同了。\\u003c/p\\u003e\\n\\u003cp\\u003e当你问它：\\u0026ldquo;帮我算一下123乘以456等于多少，顺便画个函数图像y=x^2\\u0026rdquo;\\u003c/p\\u003e\\n\\u003cp\\u003e它会：\\u003c/p\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e识别到需要计算 -\\u0026gt; 调用Python解释器\\u003c/li\\u003e\\n\\u003cli\\u003e执行代码完成计算和绘图\\u003c/li\\u003e\\n\\u003cli\\u003e把结果整合成文字回答你\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003cp\\u003e一个原本连乘法都不会的模型，瞬间变成了数学+可视化全能选手。\\u003c/p\\u003e\\n\\u003chr\\u003e\\n\\u003ch2 id=\\\"三常见的skills类型\\\"\\u003e三、常见的Skills类型\\u003c/h2\\u003e\\n\\u003ch3 id=\\\"31-搜索工具\\\"\\u003e3.1 搜索工具\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e查新闻、查百科、查资料\\u003c/li\\u003e\\n\\u003cli\\u003e实时信息必备\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3 id=\\\"32-计算工具\\\"\\u003e3.2 计算工具\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e数学计算、函数绘图\\u003c/li\\u003e\\n\\u003cli\\u003e解决大模型算不准的问题\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3 id=\\\"33-编程工具\\\"\\u003e3.3 编程工具\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e执行代码、调试程序\\u003c/li\\u003e\\n\\u003cli\\u003ePython解释器、代码沙箱\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3 id=\\\"34-浏览器工具\\\"\\u003e3.4 浏览器工具\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e访问网页、爬取内容\\u003c/li\\u003e\\n\\u003cli\\u003e让你AI替你上网\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3 id=\\\"35-办公工具\\\"\\u003e3.5 办公工具\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e发送邮件、读写文件\\u003c/li\\u003e\\n\\u003cli\\u003e日历管理、待办事项\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003ch3 id=\\\"36-数据库工具\\\"\\u003e3.6 数据库工具\\u003c/h3\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e查询企业知识库\\u003c/li\\u003e\\n\\u003cli\\u003e读取内部文档\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003chr\\u003e\\n\\u003ch2 id=\\\"四skills-vs-普通对话\\\"\\u003e四、Skills vs 普通对话\\u003c/h2\\u003e\\n\\u003ctable\\u003e\\n  \\u003cthead\\u003e\\n      \\u003ctr\\u003e\\n          \\u003cth\\u003e\\u003c/th\\u003e\\n          \\u003cth\\u003e普通对话模式\\u003c/th\\u003e\\n          \\u003cth\\u003eSkills模式\\u003c/th\\u003e\\n      \\u003c/tr\\u003e\\n  \\u003c/thead\\u003e\\n  \\u003ctbody\\u003e\\n      \\u003ctr\\u003e\\n          \\u003ctd\\u003e查天气\\u003c/td\\u003e\\n          \\u003ctd\\u003e\\u0026ldquo;我没有实时数据\\u0026rdquo;\\u003c/td\\u003e\\n          \\u003ctd\\u003e\\u0026ldquo;北京明天晴，20-28度\\u0026rdquo;\\u003c/td\\u003e\\n      \\u003c/tr\\u003e\\n      \\u003ctr\\u003e\\n          \\u003ctd\\u003e算数学\\u003c/td\\u003e\\n          \\u003ctd\\u003e\\u0026ldquo;可能约等于\\u0026hellip;\\u0026rdquo;\\u003c/td\\u003e\\n          \\u003ctd\\u003e\\u0026ldquo;答案是56088\\u0026rdquo;\\u003c/td\\u003e\\n      \\u003c/tr\\u003e\\n      \\u003ctr\\u003e\\n          \\u003ctd\\u003e查新闻\\u003c/td\\u003e\\n          \\u003ctd\\u003e\\u0026ldquo;据我所知\\u0026hellip;\\u0026rdquo;\\u003c/td\\u003e\\n          \\u003ctd\\u003e\\u0026ldquo;今天的热点新闻是\\u0026hellip;\\u0026rdquo;\\u003c/td\\u003e\\n      \\u003c/tr\\u003e\\n      \\u003ctr\\u003e\\n          \\u003ctd\\u003e发邮件\\u003c/td\\u003e\\n          \\u003ctd\\u003e\\u0026ldquo;我不能发邮件\\u0026rdquo;\\u003c/td\\u003e\\n          \\u003ctd\\u003e\\u0026ldquo;已帮你发送成功\\u0026rdquo;\\u003c/td\\u003e\\n      \\u003c/tr\\u003e\\n  \\u003c/tbody\\u003e\\n\\u003c/table\\u003e\\n\\u003cp\\u003e核心区别：\\u003cstrong\\u003eSkills让大模型从\\u0026quot;说\\u0026quot;变成\\u0026quot;做\\u0026quot;。\\u003c/strong\\u003e\\u003c/p\\u003e\"", url: "\"//localhost:1313/posts/05-%E4%BB%80%E4%B9%88%E6%98%AFskills/\"", tags: [] },
+      
+    ];
+  </script>
+
+  <script>
+    
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>

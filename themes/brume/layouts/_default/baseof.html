@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ .Site.Params.description }}">
+  <link rel="canonical" href="{{ .Permalink | absURL }}">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -17,6 +18,21 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ block "twitter-title" . }}{{ .Site.Title }}{{ end }}">
   <meta name="twitter:description" content="{{ .Site.Params.description }}">
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "{{ .Site.Title }}",
+    "description": "{{ .Site.Params.description }}",
+    "url": "{{ .Site.Home.Permalink | absURL }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Site.Params.author }}"
+    }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">

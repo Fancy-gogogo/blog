@@ -1,11 +1,11 @@
 baseURL = '/'
 languageCode = 'zh-CN'
-title = 'Fancy Blog'
+title = '小舟从此逝，江海寄余生'
 theme = 'brume'
 paginate = 8
 
 [params]
-  description = '记录技术、思考与生活'
+  description = '记录技术、思考与生活、大模型科普知识'
   author = 'Fancy'
   copyright = '© 2026 Fancy · 用文字记录思考'
   github = 'https://github.com'
@@ -27,10 +27,15 @@ paginate = 8
     url = '/'
     weight = 1
   [[menu.main]]
+    identifier = 'archive'
+    name = '归档'
+    url = '/archive/'
+    weight = 2
+  [[menu.main]]
     identifier = 'about'
     name = '关于'
     url = '/about/'
-    weight = 2
+    weight = 3
 
 [outputs]
   home = ['HTML', 'RSS']

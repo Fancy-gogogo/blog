@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Blog</title>
+  <meta name="description" content="记录技术、思考与生活">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fancy Blog">
+  <meta property="og:description" content="记录技术、思考与生活">
+  <meta property="og:url" content="//localhost:1313/posts/03-%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%A8%E5%A5%BD%E6%8F%90%E7%A4%BA%E8%AF%8D/">
+  <meta property="og:site_name" content="Fancy Blog">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fancy Blog">
+  <meta name="twitter:description" content="记录技术、思考与生活">
+
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  
+  <link rel="stylesheet" href="/css/style.552217d2298bec0de913fa87f801fb1e85b3a32c0e176e4daf48c8dcb9edfe4d.css">
+  
+</head>
+<body>
+
+  
+  <img src="/cover.jpg" alt="cover" class="cover-image">
+
+  
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        Fancy Blog
+      </a>
+      <ul class="navbar-links">
+        
+        <li><a href="/" >主页</a></li>
+        
+        <li><a href="/about/" >关于</a></li>
+        
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  
+  <div class="site-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          
+          <a href="//localhost:1313/tags/agent/" class="tag-item">Agent</a>
+          
+          <a href="//localhost:1313/tags/agi/" class="tag-item">AGI</a>
+          
+          <a href="//localhost:1313/tags/ai/" class="tag-item">AI</a>
+          
+          <a href="//localhost:1313/tags/harness-engineering/" class="tag-item">Harness Engineering</a>
+          
+          <a href="//localhost:1313/tags/llm/" class="tag-item">LLM</a>
+          
+          <a href="//localhost:1313/tags/rag/" class="tag-item">RAG</a>
+          
+          <a href="//localhost:1313/tags/token/" class="tag-item">Token</a>
+          
+          <a href="//localhost:1313/tags/vibe-coding/" class="tag-item">Vibe Coding</a>
+          
+          <a href="//localhost:1313/tags/%E7%A7%91%E6%99%AE/" class="tag-item">科普</a>
+          
+        </div>
+      </div>
+
+      
+    </aside>
+
+    
+    <main class="main-content">
+      
+<div class="about-section">
+  <div class="page-header">
+    <h1 class="page-title"></h1>
+    
+  </div>
+  <div class="post-detail-body">
+    <h1 id="普通人如何用好提示词">普通人如何用好提示词？</h1>
+<blockquote>
+<p>告别&quot;无效投喂&quot;，让AI真正为你干活</p>
+</blockquote>
+<p>很多人用过AI后会说：&ldquo;这玩意儿不好用，回答得太泛了。&rdquo;</p>
+<p>但真相往往是：不是AI不好用，是你不会问。</p>
+<p>写提示词（Prompt）这件事，跟使唤人有点像。你说&quot;帮我做件事&quot;，对方可能一脸茫然；你说&quot;帮我把这份报告PDF转成Word，重点内容用黄色标记&quot;，对方立马就懂。</p>
+<p>AI也是一样的道理。这篇文章，就教你几个简单实用的提示词技巧。</p>
+<hr>
+<h2 id="一提示词万能公式">一、提示词万能公式</h2>
+<p>别看AI Responses很灵活，其实它最怕的就是&quot;模糊&quot;。</p>
+<p>一个万能公式，记住这四个要素：</p>
+<blockquote>
+<p><strong>立人设 + 给背景 + 下指令 + 设约束</strong></p>
+</blockquote>
+<h3 id="11-立人设你是谁">1.1 立人设：你是谁？</h3>
+<p>告诉AI它应该扮演什么角色。</p>
+<p>比如：</p>
+<ul>
+<li>&ldquo;你是一位有10年经验的Python工程师&rdquo;</li>
+<li>&ldquo;你是一位专业的文案编辑&rdquo;</li>
+<li>&ldquo;你是一位幽默的脱口秀演员&rdquo;</li>
+</ul>
+<p>人设一立，AI回答的风格和角度就变了。</p>
+<h3 id="12-给背景什么情况">1.2 给背景：什么情况？</h3>
+<p>说明任务的前因后果，让AI理解上下文。</p>
+<p>比如：</p>
+<ul>
+<li>&ldquo;我正在写一篇关于AI的公众号文章&rdquo;</li>
+<li>&ldquo;用户来咨询我们的退款政策&rdquo;</li>
+<li>&ldquo;这是一个面向小学生的科普视频&rdquo;</li>
+</ul>
+<p>背景越清晰，AI越知道你在说什么。</p>
+<h3 id="13-下指令具体做什么">1.3 下指令：具体做什么？</h3>
+<p>这是最核心的部分，要明确告诉AI你要什么。</p>
+<p>❌ 模糊指令：&ldquo;帮我写点东西&rdquo;
+✅ 明确指令：&ldquo;帮我写3条公众号标题，字数控制在20字以内&rdquo;</p>
+<h3 id="14-设约束不要做什么怎么输出">1.4 设约束：不要做什么/怎么输出？</h3>
+<p>约束条件决定了输出的边界。</p>
+<p>比如：</p>
+<ul>
+<li>&ldquo;不要使用专业术语，用大白话解释&rdquo;</li>
+<li>&ldquo;用JSON格式输出&rdquo;</li>
+<li>&ldquo;只列出优点，不要提缺点&rdquo;</li>
+</ul>
+<hr>
+<h2 id="二三种高阶技巧">二、三种高阶技巧</h2>
+<h3 id="21-少样本提示few-shot-prompting">2.1 少样本提示（Few-shot Prompting）</h3>
+<p>有时候你怎么说AI都做不好，但给它看几个例子，它瞬间就懂了。</p>
+<p>这就是<strong>少样本提示</strong>——直接喂例子，让它模仿。</p>
+<p>❌ 只说要求：&ldquo;帮我把句子改成礼貌版本&rdquo;
+✅ 給例子：</p>
+<blockquote>
+<p>原文：&ldquo;开门！&rdquo;
+礼貌版：&ldquo;请问可以帮我开一下门吗？&rdquo;</p>
+<p>原文：&ldquo;让一下！&rdquo;
+礼貌版：&ldquo;不好意思，请借过一下可以吗？&rdquo;</p>
+</blockquote>
+<p>AI看到例子后，会自动理解你想让它干什么，准确率飙升。</p>
+<p><strong>适用场景</strong>：格式转换、风格调整、规则性任务</p>
+<h3 id="22-思维链chain-of-thought">2.2 思维链（Chain of Thought）</h3>
+<p>你有没有遇到过这种情况：让AI做一道数学题，它算错了。</p>
+<p>但如果你告诉它&quot;请一步步思考&quot;，它就做对了。</p>
+<p>这就是<strong>思维链</strong>技巧——强制AI把推理过程写出来。</p>
+<p>原理很简单：AI在生成每一步推理的时候，实际上在重新组织自己的&quot;思路&quot;，错误率就会降低。</p>
+<p><strong>万能句式</strong>：</p>
+<ul>
+<li>&ldquo;请一步步思考&rdquo;</li>
+<li>&ldquo;让我们一步步来分析&rdquo;</li>
+<li>&ldquo;show your reasoning&rdquo;</li>
+</ul>
+<p><strong>适用场景</strong>：数学题、逻辑推理、复杂决策</p>
+<h3 id="23-迭代法好答案是聊出来的">2.3 迭代法：好答案是聊出来的</h3>
+<p>很多人期望一步到位——问一个问题，AI就给出完美答案。</p>
+<p>但现实往往是：好答案都是聊出来的。</p>
+<p><strong>正确姿势</strong>：</p>
+<ol>
+<li>先问一个宽泛的问题</li>
+<li>根据AI的回答，继续追问或补充细节</li>
+<li>循环往复，直到满意</li>
+</ol>
+<p>比如你想让AI帮你写一篇文章：</p>
+<ul>
+<li>第一轮：&ldquo;帮我列一个关于&rsquo;AI时代个人如何提升竞争力&rsquo;的提纲&rdquo;</li>
+<li>第二轮：&ldquo;第三点&rsquo;持续学习&rsquo;展开详细一点，加一些具体方法&rdquo;</li>
+<li>第三轮：&ldquo;把语气改得更口语化一点，加几个段子&rdquo;</li>
+</ul>
+<p><strong>适用场景</strong>：长文写作、复杂任务、深度研究</p>
+<hr>
+<h2 id="三避坑指南">三、避坑指南</h2>
+<h3 id="31-禁止说写得好一点">3.1 禁止说&quot;写得好一点&quot;</h3>
+<p>这是提示词届的第一大坑。</p>
+<p>什么叫&quot;好&quot;？你不说清楚，AI怎么知道？</p>
+<p>❌ &ldquo;写得好一点&rdquo;
+✅ &ldquo;用专业但易懂的语气，字数控制在500字以内&rdquo;</p>
+<h3 id="32-禁止说我只要你想要的">3.2 禁止说&quot;我只要你想要的&quot;</h3>
+<p>这种话AI听不懂。</p>
+<p>❌ &ldquo;我只要你想要的&rdquo;
+✅ &ldquo;直接输出结果，不需要解释过程&rdquo;</p>
+<h3 id="33-禁止一次给太多要求">3.3 禁止一次给太多要求</h3>
+<p>有的人一次性把10个要求全塞进去，指望AI全部满足。</p>
+<p>结果往往是：每个点都做得一般，不如集中精力做好一件。</p>
+<p><strong>建议</strong>：一次只提1-2个核心要求，其他约束逐步添加。</p>
+<h3 id="34-记得ai会遗忘">3.4 记得AI会&quot;遗忘&quot;</h3>
+<p>参考我们上一篇文章——AI有Token窗口限制。</p>
+<p>如果你的对话已经很长了，AI可能会&quot;忘记&quot;早期的指令。</p>
+<p><strong>建议</strong>：复杂任务用新对话，或者在开头重新强调核心要求。</p>
+<hr>
+<h2 id="四总结">四、总结</h2>
+<p>提示词不是玄学，是有套路的。</p>
+<p>记住万能公式：</p>
+<blockquote>
+<p><strong>立人设 + 给背景 + 下指令 + 设约束</strong></p>
+</blockquote>
+<p>加上三个高阶技巧：</p>
+<ul>
+<li>少样本提示：给例子让它模仿</li>
+<li>思维链：让它一步步思考</li>
+<li>迭代法：好答案聊出来</li>
+</ul>
+<p>最后避坑：</p>
+<ul>
+<li>拒绝模糊，要求具体</li>
+<li>一次别塞太多</li>
+<li>长对话记得&quot;复习&quot;</li>
+</ul>
+<p>会用提示词的人和不会用的人，用同一个AI，差距可能是云泥之别。</p>
+<p>下次觉得AI不好用，先问问自己：我的提示词，写清楚了吗？</p>
+<hr>
+<p><em>下一个话题我们来聊聊：2026年最火的编程方式——Vibe Coding。</em></p>
+
+  </div>
+</div>
+
+    </main>
+
+    
+    <footer class="site-footer">
+      <span>© 2026 Fancy · 用文字记录思考</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  
+  <script>
+    window.searchData = [
+      
+      { title: "\"ARC-AGI-3 深度解析：为什么当前的 AI 在“抽象游戏”面前依然像一个婴儿？？\"", excerpt: "\"AI擅长干什么？人类擅长干什么？一文告诉你\"", url: "\"//localhost:1313/posts/arc-agi-3/\"", tags: ["\"AGI\"","\"LLM\"",] },
+      
+      { title: "\"Vibe Coding 凉了，2026年最火的新职业是：驯兽师\"", excerpt: "\"LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？\"", url: "\"//localhost:1313/posts/vibe-coding-harness/\"", tags: ["\"Vibe Coding\"","\"Harness Engineering\"",] },
+      
+      { title: "\"RAG 企业级构建指南\"", excerpt: "\"企业应用大模型，RAG知识库是第一优先级的选择，员工与管理者都有感知、可量化价值、可落地的最佳方案\"", url: "\"//localhost:1313/posts/rag-guild/\"", tags: ["\"AI\"","\"RAG\"",] },
+      
+      { title: "\"AI Agent 三种范式深度详解\"", excerpt: "\"三种范式：ReAct（Reasoning + Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）\"", url: "\"//localhost:1313/posts/ai-agent-paradigm/\"", tags: ["\"AI\"","\"Agent\"",] },
+      
+      { title: "\"大模型科普系列二：Token 是什么？\"", excerpt: "\"大模型的字数，以及它背后的能源战争\"", url: "\"//localhost:1313/posts/lesson-2-token/\"", tags: ["\"科普\"","\"Token\"",] },
+      
+      { title: "\"大模型科普系列一：大模型到底是什么？\"", excerpt: "\"用它写周报、问问题、生成内容——好像什么都会。但为什么有时候它会一本正经地胡说八道？大模型的原理、能耐与边界，这篇文章一次讲清楚\"", url: "\"//localhost:1313/posts/lesson-1-llm/\"", tags: ["\"科普\"","\"LLM\"",] },
+      
+      { title: "\"\"", excerpt: "\"\\u003ch1 id=\\\"普通人如何用好提示词\\\"\\u003e普通人如何用好提示词？\\u003c/h1\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e告别\\u0026quot;无效投喂\\u0026quot;，让AI真正为你干活\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003cp\\u003e很多人用过AI后会说：\\u0026ldquo;这玩意儿不好用，回答得太泛了。\\u0026rdquo;\\u003c/p\\u003e\\n\\u003cp\\u003e但真相往往是：不是AI不好用，是你不会问。\\u003c/p\\u003e\\n\\u003cp\\u003e写提示词（Prompt）这件事，跟使唤人有点像。你说\\u0026quot;帮我做件事\\u0026quot;，对方可能一脸茫然；你说\\u0026quot;帮我把这份报告PDF转成Word，重点内容用黄色标记\\u0026quot;，对方立马就懂。\\u003c/p\\u003e\\n\\u003cp\\u003eAI也是一样的道理。这篇文章，就教你几个简单实用的提示词技巧。\\u003c/p\\u003e\\n\\u003chr\\u003e\\n\\u003ch2 id=\\\"一提示词万能公式\\\"\\u003e一、提示词万能公式\\u003c/h2\\u003e\\n\\u003cp\\u003e别看AI Responses很灵活，其实它最怕的就是\\u0026quot;模糊\\u0026quot;。\\u003c/p\\u003e\\n\\u003cp\\u003e一个万能公式，记住这四个要素：\\u003c/p\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e立人设 + 给背景 + 下指令 + 设约束\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003ch3 id=\\\"11-立人设你是谁\\\"\\u003e1.1 立人设：你是谁？\\u003c/h3\\u003e\\n\\u003cp\\u003e告诉AI它应该扮演什么角色。\\u003c/p\\u003e\\n\\u003cp\\u003e比如：\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e\\u0026ldquo;你是一位有10年经验的Python工程师\\u0026rdquo;\\u003c/li\\u003e\\n\\u003cli\\u003e\\u0026ldquo;你是一位专业的文案编辑\\u0026rdquo;\\u003c/li\\u003e\\n\\u003cli\\u003e\\u0026ldquo;你是一位幽默的脱口秀演员\\u0026rdquo;\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003e人设一立，AI回答的风格和角度就变了。\\u003c/p\\u003e\\n\\u003ch3 id=\\\"12-给背景什么情况\\\"\\u003e1.2 给背景：什么情况？\\u003c/h3\\u003e\\n\\u003cp\\u003e说明任务的前因后果，让AI理解上下文。\\u003c/p\\u003e\\n\\u003cp\\u003e比如：\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e\\u0026ldquo;我正在写一篇关于AI的公众号文章\\u0026rdquo;\\u003c/li\\u003e\\n\\u003cli\\u003e\\u0026ldquo;用户来咨询我们的退款政策\\u0026rdquo;\\u003c/li\\u003e\\n\\u003cli\\u003e\\u0026ldquo;这是一个面向小学生的科普视频\\u0026rdquo;\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003e背景越清晰，AI越知道你在说什么。\\u003c/p\\u003e\\n\\u003ch3 id=\\\"13-下指令具体做什么\\\"\\u003e1.3 下指令：具体做什么？\\u003c/h3\\u003e\\n\\u003cp\\u003e这是最核心的部分，要明确告诉AI你要什么。\\u003c/p\\u003e\\n\\u003cp\\u003e❌ 模糊指令：\\u0026ldquo;帮我写点东西\\u0026rdquo;\\n✅ 明确指令：\\u0026ldquo;帮我写3条公众号标题，字数控制在20字以内\\u0026rdquo;\\u003c/p\\u003e\\n\\u003ch3 id=\\\"14-设约束不要做什么怎么输出\\\"\\u003e1.4 设约束：不要做什么/怎么输出？\\u003c/h3\\u003e\\n\\u003cp\\u003e约束条件决定了输出的边界。\\u003c/p\\u003e\\n\\u003cp\\u003e比如：\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e\\u0026ldquo;不要使用专业术语，用大白话解释\\u0026rdquo;\\u003c/li\\u003e\\n\\u003cli\\u003e\\u0026ldquo;用JSON格式输出\\u0026rdquo;\\u003c/li\\u003e\\n\\u003cli\\u003e\\u0026ldquo;只列出优点，不要提缺点\\u0026rdquo;\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003chr\\u003e\\n\\u003ch2 id=\\\"二三种高阶技巧\\\"\\u003e二、三种高阶技巧\\u003c/h2\\u003e\\n\\u003ch3 id=\\\"21-少样本提示few-shot-prompting\\\"\\u003e2.1 少样本提示（Few-shot Prompting）\\u003c/h3\\u003e\\n\\u003cp\\u003e有时候你怎么说AI都做不好，但给它看几个例子，它瞬间就懂了。\\u003c/p\\u003e\\n\\u003cp\\u003e这就是\\u003cstrong\\u003e少样本提示\\u003c/strong\\u003e——直接喂例子，让它模仿。\\u003c/p\\u003e\\n\\u003cp\\u003e❌ 只说要求：\\u0026ldquo;帮我把句子改成礼貌版本\\u0026rdquo;\\n✅ 給例子：\\u003c/p\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e原文：\\u0026ldquo;开门！\\u0026rdquo;\\n礼貌版：\\u0026ldquo;请问可以帮我开一下门吗？\\u0026rdquo;\\u003c/p\\u003e\\n\\u003cp\\u003e原文：\\u0026ldquo;让一下！\\u0026rdquo;\\n礼貌版：\\u0026ldquo;不好意思，请借过一下可以吗？\\u0026rdquo;\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003cp\\u003eAI看到例子后，会自动理解你想让它干什么，准确率飙升。\\u003c/p\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e适用场景\\u003c/strong\\u003e：格式转换、风格调整、规则性任务\\u003c/p\\u003e\\n\\u003ch3 id=\\\"22-思维链chain-of-thought\\\"\\u003e2.2 思维链（Chain of Thought）\\u003c/h3\\u003e\\n\\u003cp\\u003e你有没有遇到过这种情况：让AI做一道数学题，它算错了。\\u003c/p\\u003e\\n\\u003cp\\u003e但如果你告诉它\\u0026quot;请一步步思考\\u0026quot;，它就做对了。\\u003c/p\\u003e\\n\\u003cp\\u003e这就是\\u003cstrong\\u003e思维链\\u003c/strong\\u003e技巧——强制AI把推理过程写出来。\\u003c/p\\u003e\"", url: "\"//localhost:1313/posts/03-%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%A8%E5%A5%BD%E6%8F%90%E7%A4%BA%E8%AF%8D/\"", tags: [] },
+      
+    ];
+  </script>
+
+  <script>
+    
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>

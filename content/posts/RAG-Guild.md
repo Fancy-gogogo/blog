@@ -2,7 +2,7 @@
 title: "RAG 企业级构建指南"
 date: 2026-03-31
 draft: false
-tags: ["AI", "RAG"]
+tags: ["RAG", "企业应用"]
 description: "企业应用大模型，RAG知识库是第一优先级的选择，员工与管理者都有感知、可量化价值、可落地的最佳方案"
 ---
 

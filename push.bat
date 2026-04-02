@@ -2,8 +2,7 @@
 cd /d "%~dp0"
 echo Push to GitHub...
 echo.
-git add content/posts/*.md
-git add push.bat
+git add -A
 git commit -m "update: sync articles"
 git push origin main
 echo.

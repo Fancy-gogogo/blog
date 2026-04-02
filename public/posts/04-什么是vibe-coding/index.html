@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Blog</title>
+  <meta name="description" content="记录技术、思考与生活">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fancy Blog">
+  <meta property="og:description" content="记录技术、思考与生活">
+  <meta property="og:url" content="//localhost:1313/posts/04-%E4%BB%80%E4%B9%88%E6%98%AFvibe-coding/">
+  <meta property="og:site_name" content="Fancy Blog">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fancy Blog">
+  <meta name="twitter:description" content="记录技术、思考与生活">
+
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  
+  <link rel="stylesheet" href="/css/style.552217d2298bec0de913fa87f801fb1e85b3a32c0e176e4daf48c8dcb9edfe4d.css">
+  
+</head>
+<body>
+
+  
+  <img src="/cover.jpg" alt="cover" class="cover-image">
+
+  
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        Fancy Blog
+      </a>
+      <ul class="navbar-links">
+        
+        <li><a href="/" >主页</a></li>
+        
+        <li><a href="/about/" >关于</a></li>
+        
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  
+  <div class="site-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          
+          <a href="//localhost:1313/tags/agent/" class="tag-item">Agent</a>
+          
+          <a href="//localhost:1313/tags/agi/" class="tag-item">AGI</a>
+          
+          <a href="//localhost:1313/tags/ai/" class="tag-item">AI</a>
+          
+          <a href="//localhost:1313/tags/harness-engineering/" class="tag-item">Harness Engineering</a>
+          
+          <a href="//localhost:1313/tags/llm/" class="tag-item">LLM</a>
+          
+          <a href="//localhost:1313/tags/prompt/" class="tag-item">Prompt</a>
+          
+          <a href="//localhost:1313/tags/rag/" class="tag-item">RAG</a>
+          
+          <a href="//localhost:1313/tags/token/" class="tag-item">Token</a>
+          
+          <a href="//localhost:1313/tags/vibe-coding/" class="tag-item">Vibe Coding</a>
+          
+          <a href="//localhost:1313/tags/%E7%A7%91%E6%99%AE/" class="tag-item">科普</a>
+          
+        </div>
+      </div>
+
+      
+    </aside>
+
+    
+    <main class="main-content">
+      
+<div class="about-section">
+  <div class="page-header">
+    <h1 class="page-title"></h1>
+    
+  </div>
+  <div class="post-detail-body">
+    <h1 id="什么是vibe-coding">什么是Vibe Coding？</h1>
+<blockquote>
+<p>2026年最火的编程方式，不懂代码也能做软件</p>
+</blockquote>
+<p>&ldquo;不懂代码怎么做软件？&quot;——这个问题在2026年有了全新的答案。</p>
+<p>有一种新的编程方式正在席卷全球，它让无数不会写代码的人实现了&quot;程序员梦&rdquo;。这种方式叫做 <strong>Vibe Coding</strong>，中文有人叫&quot;氛围编程&quot;，或者&quot;感觉驱动编程&quot;。</p>
+<hr>
+<h2 id="一什么是vibe-coding">一、什么是Vibe Coding？</h2>
+<h3 id="11-一句话定义">1.1 一句话定义</h3>
+<p>传统的编程是这样的：你告诉计算机&quot;怎么一步一步做&quot;（代码）。
+Vibe Coding是这样的：你告诉计算机&quot;我要什么结果&quot;（需求），AI负责写代码，你负责检查&quot;感觉对不对&quot;。</p>
+<p>你可以把它理解成：你是&quot;包工头&quot;，AI是&quot;砌砖工&quot;。</p>
+<p>你不需要知道水泥怎么配、砖怎么砌，但你需要知道&quot;这面墙砌歪了&quot;。</p>
+<h3 id="12-核心转变从砌砖工到包工头">1.2 核心转变：从&quot;砌砖工&quot;到&quot;包工头&quot;</h3>
+<p>以前的程序员：</p>
+<ul>
+<li>早上9点：写代码</li>
+<li>下午2点：写代码</li>
+<li>晚上8点：还在写代码</li>
+</ul>
+<p>Vibe Coding时代的程序员：</p>
+<ul>
+<li>早上9点：用自然语言描述需求</li>
+<li>下午2点：和AI讨论实现方案</li>
+<li>晚上8点：指挥AI改bug</li>
+</ul>
+<p><strong>你不需要知道怎么实现，你只需要知道&quot;我要什么&quot;。</strong></p>
+<hr>
+<h2 id="二vibe-coding怎么玩">二、Vibe Coding怎么玩？</h2>
+<h3 id="21-主流工具">2.1 主流工具</h3>
+<p><strong>Cursor</strong></p>
+<p>现在最火的AI编程IDE。它本质上是VS Code加了AI大脑。</p>
+<p>你可以在右边和AI对话，让它帮你：</p>
+<ul>
+<li>写一个新功能</li>
+<li>解释某段代码在干什么</li>
+<li>找出并修复bug</li>
+<li>解释项目结构</li>
+</ul>
+<p><strong>Replit Agent</strong></p>
+<p>更激进的方向——你用一句话描述需求，它直接给你一个能跑的网站。</p>
+<p>比如你说：&ldquo;帮我做一个首页，展示我的摄影作品，有瀑布流布局和灯箱效果。&rdquo;</p>
+<p>几分钟后，一个完整的网站就出来了。</p>
+<p><strong>Windsurf</strong></p>
+<p>新兴的AI编程工具，专注于&quot;Agent&quot;模式的编程——不是回答你的问题，而是主动帮你干活。</p>
+<h3 id="22-典型工作流">2.2 典型工作流</h3>
+<ol>
+<li><strong>描述需求</strong>：&ldquo;帮我做一个登录页面，有邮箱和验证码登录&rdquo;</li>
+<li><strong>AI生成代码</strong>：自动创建页面、样式、验证逻辑</li>
+<li><strong>实时预览</strong>：打开浏览器看效果</li>
+<li><strong>调整</strong>：&ldquo;按钮颜色换成蓝色的&rdquo;、&ldquo;改成响应式布局&rdquo;</li>
+<li><strong>重复</strong>：直到满意为止</li>
+</ol>
+<p>整个过程，你几乎不需要碰代码。</p>
+<hr>
+<h2 id="三vibe-coding能做什么">三、Vibe Coding能做什么？</h2>
+<h3 id="31-个人工具和小应用">3.1 个人工具和小应用</h3>
+<p>想做个&quot;周末去哪儿&quot;的决策工具？想做一个小程序记录每天读书笔记？想给自己做一个自动化的爬虫脚本？</p>
+<p>以前：去GitHub搜、找教程、配置环境、学语法……
+现在：告诉AI，等几分钟就能用。</p>
+<h3 id="32-快速原型">3.2 快速原型</h3>
+<p>产品经理想验证一个想法，不需要找程序员排期，自己就能做一个能看的原型。</p>
+<p>投资人想展示概念演示，自己就能搭一个。</p>
+<p>创业者想先做个MVP验证市场，Vibe Coding是神兵利器。</p>
+<h3 id="33-学习辅助">3.3 学习辅助</h3>
+<p>即使你正在学编程，Vibe Coding也是好帮手：</p>
+<ul>
+<li>不懂的语法，直接问AI</li>
+<li>遇到报错，粘贴给AI让它解释</li>
+<li>想实现某个功能，让AI先写，自己再学习</li>
+</ul>
+<hr>
+<h2 id="四争议这样写出来的代码能维护吗">四、争议：这样写出来的代码能维护吗？</h2>
+<p>这是所有人最关心的问题。</p>
+<h3 id="41-乐观派观点">4.1 乐观派观点</h3>
+<ul>
+<li>AI生成的代码是&quot;可读&quot;的，不满意可以让AI重写</li>
+<li>很多小工具本来就不需要长期维护</li>
+<li>未来的AI会越来越懂你的项目上下文</li>
+<li>关键是&quot;想法&quot;，代码只是表达形式</li>
+</ul>
+<h3 id="42-悲观派观点">4.2 悲观派观点</h3>
+<ul>
+<li>代码可能很&quot;脏&quot;，有隐藏的bug</li>
+<li>没有人知道整个项目是怎么工作的</li>
+<li>当需求变更时，可能需要推倒重来</li>
+<li>商业项目不敢这样搞，风险太大</li>
+</ul>
+<h3 id="43-理性结论">4.3 理性结论</h3>
+<p>Vibe Coding适合：</p>
+<ul>
+<li>个人工具、小原型、一次性脚本</li>
+<li>不需要大规模维护的项目</li>
+<li>快速验证想法的场景</li>
+</ul>
+<p>不太适合：</p>
+<ul>
+<li>大型企业级项目</li>
+<li>对稳定性要求极高的系统</li>
+<li>需要多人协作的长期项目</li>
+</ul>
+<hr>
+<h2 id="五2026年的现实">五、2026年的现实</h2>
+<p>Vibe Coding不是取代程序员，而是<strong>降低了编程的门槛</strong>。</p>
+<p>以前你要学几个月语法才能写一个Hello World，现在几分钟就能做一个能用的东西。</p>
+<p>但门槛降低不意味着没有门槛。你需要：</p>
+<ul>
+<li>清晰的逻辑表达能力</li>
+<li>基本的审美和判断力</li>
+<li>知道什么功能&quot;对&quot;、什么&quot;错&quot;</li>
+<li>能够描述&quot;哪里不对&quot;</li>
+</ul>
+<p><strong>AI负责执行，你负责决策。</strong></p>
+<p>这就是2026年&quot;程序员&quot;的新定义。</p>
+<hr>
+<h2 id="六总结">六、总结</h2>
+<p>Vibe Coding = 用自然语言描述需求 + AI生成代码 + 人类把控质量</p>
+<p>它让编程变成了一种&quot;对话&quot;，而不是&quot;独舞&quot;。</p>
+<p>不会写代码？没关系。你只需要会&quot;说人话&quot;。</p>
+<p>下一个话题我们来聊聊：怎么给大模型装上&quot;手脚&quot;——也就是什么是Skills。</p>
+<hr>
+<p><em>下一个话题我们来聊聊：Skills是怎么让大模型拥有&quot;工具&quot;的。</em></p>
+
+  </div>
+</div>
+
+    </main>
+
+    
+    <footer class="site-footer">
+      <span>© 2026 Fancy · 用文字记录思考</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  
+  <script>
+    window.searchData = [
+      
+      { title: "\"ARC-AGI-3 深度解析：为什么当前的 AI 在“抽象游戏”面前依然像一个婴儿？？\"", excerpt: "\"AI擅长干什么？人类擅长干什么？一文告诉你\"", url: "\"//localhost:1313/posts/arc-agi-3/\"", tags: ["\"AGI\"","\"LLM\"",] },
+      
+      { title: "\"Vibe Coding 凉了，2026年最火的新职业是：驯兽师\"", excerpt: "\"LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？\"", url: "\"//localhost:1313/posts/vibe-coding-harness/\"", tags: ["\"Vibe Coding\"","\"Harness Engineering\"",] },
+      
+      { title: "\"RAG 企业级构建指南\"", excerpt: "\"企业应用大模型，RAG知识库是第一优先级的选择，员工与管理者都有感知、可量化价值、可落地的最佳方案\"", url: "\"//localhost:1313/posts/rag-guild/\"", tags: ["\"AI\"","\"RAG\"",] },
+      
+      { title: "\"AI Agent 三种范式深度详解\"", excerpt: "\"三种范式：ReAct（Reasoning + Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）\"", url: "\"//localhost:1313/posts/ai-agent-paradigm/\"", tags: ["\"AI\"","\"Agent\"",] },
+      
+      { title: "\"大模型科普系列三：普通人如何用好提示词？\"", excerpt: "\"写提示词（Prompt）这件事，跟使唤人有点像。这篇文章，就教你几个简单实用的提示词技巧\"", url: "\"//localhost:1313/posts/lesson-3-prompt/\"", tags: ["\"科普\"","\"Prompt\"",] },
+      
+      { title: "\"大模型科普系列二：Token 是什么？\"", excerpt: "\"大模型的字数，以及它背后的能源战争\"", url: "\"//localhost:1313/posts/lesson-2-token/\"", tags: ["\"科普\"","\"Token\"",] },
+      
+      { title: "\"大模型科普系列一：大模型到底是什么？\"", excerpt: "\"用它写周报、问问题、生成内容——好像什么都会。但为什么有时候它会一本正经地胡说八道？大模型的原理、能耐与边界，这篇文章一次讲清楚\"", url: "\"//localhost:1313/posts/lesson-1-llm/\"", tags: ["\"科普\"","\"LLM\"",] },
+      
+      { title: "\"\"", excerpt: "\"\\u003ch1 id=\\\"什么是vibe-coding\\\"\\u003e什么是Vibe Coding？\\u003c/h1\\u003e\\n\\u003cblockquote\\u003e\\n\\u003cp\\u003e2026年最火的编程方式，不懂代码也能做软件\\u003c/p\\u003e\\n\\u003c/blockquote\\u003e\\n\\u003cp\\u003e\\u0026ldquo;不懂代码怎么做软件？\\u0026quot;——这个问题在2026年有了全新的答案。\\u003c/p\\u003e\\n\\u003cp\\u003e有一种新的编程方式正在席卷全球，它让无数不会写代码的人实现了\\u0026quot;程序员梦\\u0026rdquo;。这种方式叫做 \\u003cstrong\\u003eVibe Coding\\u003c/strong\\u003e，中文有人叫\\u0026quot;氛围编程\\u0026quot;，或者\\u0026quot;感觉驱动编程\\u0026quot;。\\u003c/p\\u003e\\n\\u003chr\\u003e\\n\\u003ch2 id=\\\"一什么是vibe-coding\\\"\\u003e一、什么是Vibe Coding？\\u003c/h2\\u003e\\n\\u003ch3 id=\\\"11-一句话定义\\\"\\u003e1.1 一句话定义\\u003c/h3\\u003e\\n\\u003cp\\u003e传统的编程是这样的：你告诉计算机\\u0026quot;怎么一步一步做\\u0026quot;（代码）。\\nVibe Coding是这样的：你告诉计算机\\u0026quot;我要什么结果\\u0026quot;（需求），AI负责写代码，你负责检查\\u0026quot;感觉对不对\\u0026quot;。\\u003c/p\\u003e\\n\\u003cp\\u003e你可以把它理解成：你是\\u0026quot;包工头\\u0026quot;，AI是\\u0026quot;砌砖工\\u0026quot;。\\u003c/p\\u003e\\n\\u003cp\\u003e你不需要知道水泥怎么配、砖怎么砌，但你需要知道\\u0026quot;这面墙砌歪了\\u0026quot;。\\u003c/p\\u003e\\n\\u003ch3 id=\\\"12-核心转变从砌砖工到包工头\\\"\\u003e1.2 核心转变：从\\u0026quot;砌砖工\\u0026quot;到\\u0026quot;包工头\\u0026quot;\\u003c/h3\\u003e\\n\\u003cp\\u003e以前的程序员：\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e早上9点：写代码\\u003c/li\\u003e\\n\\u003cli\\u003e下午2点：写代码\\u003c/li\\u003e\\n\\u003cli\\u003e晚上8点：还在写代码\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003eVibe Coding时代的程序员：\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e早上9点：用自然语言描述需求\\u003c/li\\u003e\\n\\u003cli\\u003e下午2点：和AI讨论实现方案\\u003c/li\\u003e\\n\\u003cli\\u003e晚上8点：指挥AI改bug\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003e你不需要知道怎么实现，你只需要知道\\u0026quot;我要什么\\u0026quot;。\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003chr\\u003e\\n\\u003ch2 id=\\\"二vibe-coding怎么玩\\\"\\u003e二、Vibe Coding怎么玩？\\u003c/h2\\u003e\\n\\u003ch3 id=\\\"21-主流工具\\\"\\u003e2.1 主流工具\\u003c/h3\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003eCursor\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cp\\u003e现在最火的AI编程IDE。它本质上是VS Code加了AI大脑。\\u003c/p\\u003e\\n\\u003cp\\u003e你可以在右边和AI对话，让它帮你：\\u003c/p\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003e写一个新功能\\u003c/li\\u003e\\n\\u003cli\\u003e解释某段代码在干什么\\u003c/li\\u003e\\n\\u003cli\\u003e找出并修复bug\\u003c/li\\u003e\\n\\u003cli\\u003e解释项目结构\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003eReplit Agent\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cp\\u003e更激进的方向——你用一句话描述需求，它直接给你一个能跑的网站。\\u003c/p\\u003e\\n\\u003cp\\u003e比如你说：\\u0026ldquo;帮我做一个首页，展示我的摄影作品，有瀑布流布局和灯箱效果。\\u0026rdquo;\\u003c/p\\u003e\\n\\u003cp\\u003e几分钟后，一个完整的网站就出来了。\\u003c/p\\u003e\\n\\u003cp\\u003e\\u003cstrong\\u003eWindsurf\\u003c/strong\\u003e\\u003c/p\\u003e\\n\\u003cp\\u003e新兴的AI编程工具，专注于\\u0026quot;Agent\\u0026quot;模式的编程——不是回答你的问题，而是主动帮你干活。\\u003c/p\\u003e\\n\\u003ch3 id=\\\"22-典型工作流\\\"\\u003e2.2 典型工作流\\u003c/h3\\u003e\\n\\u003col\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003e描述需求\\u003c/strong\\u003e：\\u0026ldquo;帮我做一个登录页面，有邮箱和验证码登录\\u0026rdquo;\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003eAI生成代码\\u003c/strong\\u003e：自动创建页面、样式、验证逻辑\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003e实时预览\\u003c/strong\\u003e：打开浏览器看效果\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003e调整\\u003c/strong\\u003e：\\u0026ldquo;按钮颜色换成蓝色的\\u0026rdquo;、\\u0026ldquo;改成响应式布局\\u0026rdquo;\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003cstrong\\u003e重复\\u003c/strong\\u003e：直到满意为止\\u003c/li\\u003e\\n\\u003c/ol\\u003e\\n\\u003cp\\u003e整个过程，你几乎不需要碰代码。\\u003c/p\\u003e\\n\\u003chr\\u003e\\n\\u003ch2 id=\\\"三vibe-coding能做什么\\\"\\u003e三、Vibe Coding能做什么？\\u003c/h2\\u003e\\n\\u003ch3 id=\\\"31-个人工具和小应用\\\"\\u003e3.1 个人工具和小应用\\u003c/h3\\u003e\\n\\u003cp\\u003e想做个\\u0026quot;周末去哪儿\\u0026quot;的决策工具？想做一个小程序记录每天读书笔记？想给自己做一个自动化的爬虫脚本？\\u003c/p\\u003e\\n\\u003cp\\u003e以前：去GitHub搜、找教程、配置环境、学语法……\\n现在：告诉AI，等几分钟就能用。\\u003c/p\\u003e\\n\\u003ch3 id=\\\"32-快速原型\\\"\\u003e3.2 快速原型\\u003c/h3\\u003e\\n\\u003cp\\u003e产品经理想验证一个想法，不需要找程序员排期，自己就能做一个能看的原型。\\u003c/p\\u003e\\n\\u003cp\\u003e投资人想展示概念演示，自己就能搭一个。\\u003c/p\\u003e\\n\\u003cp\\u003e创业者想先做个MVP验证市场，Vibe Coding是神兵利器。\\u003c/p\\u003e\\n\\u003ch3 id=\\\"33-学习辅助\\\"\\u003e3.3 学习辅助\\u003c/h3\\u003e\\n\\u003cp\\u003e即使你正在学编程，Vibe Coding也是好帮手：\\u003c/p\\u003e\"", url: "\"//localhost:1313/posts/04-%E4%BB%80%E4%B9%88%E6%98%AFvibe-coding/\"", tags: [] },
+      
+    ];
+  </script>
+
+  <script>
+    
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>
