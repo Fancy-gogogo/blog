@@ -1,5 +1,5 @@
 ---
-title: "GitHub开源项目深度分析系列一：agency-agents"
+title: "GitHub开源项目深度分析系列二：agency-agents"
 date: 2026-04-03
 draft: false
 tags: ["Agent", "GitHub"]
