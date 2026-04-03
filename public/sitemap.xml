@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:1313/tags/agent/</loc>
+    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/github/</loc>
+    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/github-2-agency-agents/</loc>
+    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/github-1-openclaw/</loc>
+    <lastmod>2026-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/openclaw/</loc>
+    <lastmod>2026-04-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/tags/agi/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -31,9 +49,6 @@
   </url><url>
     <loc>//localhost:1313/about/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/agent/</loc>
-    <lastmod>2026-03-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/ai-agent-paradigm/</loc>
     <lastmod>2026-03-21T00:00:00+00:00</lastmod>
@@ -73,8 +88,6 @@
   </url><url>
     <loc>//localhost:1313/</loc>
     <lastmod>2023-01-01T08:00:00-07:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/ai/</loc>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
   </url><url>

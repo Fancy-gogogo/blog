@@ -6,8 +6,29 @@
     <description>Recent content in Tags on 小舟从此逝，江海寄余生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agent</title>
+      <link>//localhost:1313/tags/agent/</link>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/agent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GitHub</title>
+      <link>//localhost:1313/tags/github/</link>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/github/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenClaw</title>
+      <link>//localhost:1313/tags/openclaw/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/openclaw/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AGI</title>
       <link>//localhost:1313/tags/agi/</link>
@@ -37,13 +58,6 @@
       <description></description>
     </item>
     <item>
-      <title>AI</title>
-      <link>//localhost:1313/tags/ai/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/ai/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>RAG</title>
       <link>//localhost:1313/tags/rag/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
@@ -51,10 +65,10 @@
       <description></description>
     </item>
     <item>
-      <title>Agent</title>
-      <link>//localhost:1313/tags/agent/</link>
-      <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/agent/</guid>
+      <title>企业应用</title>
+      <link>//localhost:1313/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/</guid>
       <description></description>
     </item>
     <item>

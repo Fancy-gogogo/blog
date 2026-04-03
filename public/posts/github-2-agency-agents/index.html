@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小舟从此逝，江海寄余生</title>
+  <meta name="description" content="记录技术、思考与生活、大模型科普知识">
+  <link rel="canonical" href="//localhost:1313/posts/github-2-agency-agents/">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="小舟从此逝，江海寄余生">
+  <meta property="og:description" content="记录技术、思考与生活、大模型科普知识">
+  <meta property="og:url" content="//localhost:1313/posts/github-2-agency-agents/">
+  <meta property="og:site_name" content="小舟从此逝，江海寄余生">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="小舟从此逝，江海寄余生">
+  <meta name="twitter:description" content="记录技术、思考与生活、大模型科普知识">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "小舟从此逝，江海寄余生",
+    "description": "记录技术、思考与生活、大模型科普知识",
+    "url": "\/\/localhost:1313\/",
+    "author": {
+      "@type": "Person",
+      "name": "Fancy"
+    }
+  }
+  </script>
+
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  
+  <link rel="stylesheet" href="/css/style.552217d2298bec0de913fa87f801fb1e85b3a32c0e176e4daf48c8dcb9edfe4d.css">
+  
+</head>
+<body>
+
+  
+  <img src="/cover.jpg" alt="cover" class="cover-image">
+
+  
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        小舟从此逝，江海寄余生
+      </a>
+      <ul class="navbar-links">
+        
+        <li><a href="/" >主页</a></li>
+        
+        <li><a href="/archive/" >归档</a></li>
+        
+        <li><a href="/about/" >关于</a></li>
+        
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  
+  <div class="site-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          
+          <a href="//localhost:1313/tags/agent/" class="tag-item">Agent</a>
+          
+          <a href="//localhost:1313/tags/agi/" class="tag-item">AGI</a>
+          
+          <a href="//localhost:1313/tags/github/" class="tag-item">GitHub</a>
+          
+          <a href="//localhost:1313/tags/harness-engineering/" class="tag-item">Harness Engineering</a>
+          
+          <a href="//localhost:1313/tags/llm/" class="tag-item">LLM</a>
+          
+          <a href="//localhost:1313/tags/openclaw/" class="tag-item">OpenClaw</a>
+          
+          <a href="//localhost:1313/tags/prompt/" class="tag-item">Prompt</a>
+          
+          <a href="//localhost:1313/tags/rag/" class="tag-item">RAG</a>
+          
+          <a href="//localhost:1313/tags/skills/" class="tag-item">Skills</a>
+          
+          <a href="//localhost:1313/tags/token/" class="tag-item">Token</a>
+          
+          <a href="//localhost:1313/tags/vibe-coding/" class="tag-item">Vibe Coding</a>
+          
+          <a href="//localhost:1313/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/" class="tag-item">企业应用</a>
+          
+          <a href="//localhost:1313/tags/%E7%A7%91%E6%99%AE/" class="tag-item">科普</a>
+          
+          <a href="//localhost:1313/tags/%E8%8C%83%E5%BC%8F/" class="tag-item">范式</a>
+          
+        </div>
+      </div>
+
+      
+    </aside>
+
+    
+    <main class="main-content">
+      
+<div class="about-section">
+  <div class="page-header">
+    <h1 class="page-title">GitHub开源项目深度分析系列一：agency-agents</h1>
+    <p class="page-subtitle">提供了一套“AI员工岗位说明书”，让你可以把Claude Code、Cursor、GitHub Copilot等AI编程工具，一键“变身”为你需要的专业角色</p>
+  </div>
+  <div class="post-detail-body">
+    <blockquote>
+<p>🔗 项目地址：https://github.com/msitarzewski/agency-agents<br>
+⭐ 当前Star数：约 69,000+（3月全月新增 65,000+，是3月GitHub增长最快项目）<br>
+🍴 Fork数：10,500+<br>
+📋 开源协议：MIT<br>
+🛠 主要语言：Shell / Markdown</p>
+</blockquote>
+<hr>
+<h2 id="一这个项目是干什么的">一、这个项目是干什么的？</h2>
+<h3 id="一句话定位">一句话定位</h3>
+<p><strong>agency-agents（又名&quot;The Agency&quot;）不是一个AI框架，而是一个&quot;开箱即用的AI专家团队&quot;——一套标准化的AI智能体角色库。</strong></p>
+<p>想象你有一家公司，里面有144个各有专长的员工：有专写React的前端工程师、有懂渗透测试的安全专家、有能写品牌方案的营销策划、有懂金融分析的数据师……而这些&quot;员工&quot;，全部是AI智能体。</p>
+<p>这就是agency-agents在做的事：它提供了一套&quot;AI员工岗位说明书&quot;，让你可以把Claude Code、Cursor、GitHub Copilot等AI编程工具，一键&quot;变身&quot;为你需要的专业角色。</p>
+<h3 id="具体包含什么">具体包含什么？</h3>
+<p>项目包含 <strong>12个部门，144个专业化智能体</strong>，覆盖：</p>
+<table>
+  <thead>
+      <tr>
+          <th>部门 </th>
+          <th>代表角色</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>工程研发 </td>
+          <td>前端工程师、后端工程师、DevOps、安全专家、Rust系统开发、智能合约工程师</td>
+      </tr>
+      <tr>
+          <td>产品设计 </td>
+          <td>产品经理、UI/UX设计师、用户体验研究员</td>
+      </tr>
+      <tr>
+          <td>市场营销 </td>
+          <td>品牌策划、SEO专员、社区运营、内容创作</td>
+      </tr>
+      <tr>
+          <td>销售业务 </td>
+          <td>销售策略师、CRM分析师</td>
+      </tr>
+      <tr>
+          <td>项目管理 </td>
+          <td>Scrum Master、项目协调</td>
+      </tr>
+      <tr>
+          <td>测试质量 </td>
+          <td>QA工程师、自动化测试工程师</td>
+      </tr>
+      <tr>
+          <td>空间计算 </td>
+          <td>AR/VR开发、空间音频设计</td>
+      </tr>
+      <tr>
+          <td>游戏开发 </td>
+          <td>游戏机制设计、关卡设计、叙事设计</td>
+      </tr>
+      <tr>
+          <td>学术研究 </td>
+          <td>心理学分析、历史文献整理、量化研究</td>
+      </tr>
+      <tr>
+          <td>专项职能 </td>
+          <td>现实检验师、奇想注入师（Whimsy Injector）等创意角色</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="技术架构给开发者看">技术架构（给开发者看）</h3>
+<p>项目极其轻量，没有任何依赖：</p>
+<pre tabindex="0"><code>角色定义层（.md文件）
+    ↓
+转换层（convert.sh 脚本）
+    ↓  
+安装层（install.sh 脚本）
+    ↓
+工具适配层（支持 Claude Code / Cursor / Gemini CLI / Aider / Windsurf等）
+</code></pre><p>每个智能体是一个结构化的Markdown文件，格式如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Frontend Developer&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;专精 React/TypeScript 的资深前端工程师&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;engineering&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;frontend&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">tools</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;Claude Code&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Cursor&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># 工作流程</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="m">1</span><span class="l">. 优先使用 TypeScript 和 React Hooks</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="m">2</span><span class="l">. 交付前必须通过 ESLint 和类型检查</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nn">...</span><span class="w">
+</span></span></span></code></pre></div><p><strong>关键技术点</strong>：通过 <code>convert.sh</code> 将同一套角色定义转换为不同工具的格式（Cursor需要<code>.mdc</code>文件，Claude Code需要<code>AGENT.md</code>，Gemini CLI有自己的技能格式），实现&quot;<strong>一次定义，多端分发</strong>&quot;。</p>
+<hr>
+<h2 id="二为什么star增长这么快">二、为什么Star增长这么快？</h2>
+<h3 id="数据先说话">数据先说话</h3>
+<ul>
+<li><strong>上线时间</strong>：2026年3月12日左右正式进入GitHub热榜</li>
+<li><strong>7天后</strong>：净增12,000+ Stars</li>
+<li><strong>3月底</strong>：已突破6万，7天内爆增2.3万</li>
+<li><strong>4月初</strong>：约69,000 Stars，位列GitHub历史上爆发速度最快的纯提示词工程项目</li>
+</ul>
+<p>一个没有任何服务器、没有模型训练、没有数据库的<strong>纯Markdown+Shell脚本项目</strong>，能在一个月内涨6.5万Star，背后有深层逻辑。</p>
+<h3 id="原因一精准击中大模型全能幻觉的破灭时刻">原因一：精准击中&quot;大模型全能幻觉&quot;的破灭时刻</h3>
+<p>2025年底到2026年初，大量企业和开发者在用通用AI（GPT、Claude等）处理具体业务时，发现了一个共同问题：</p>
+<blockquote>
+<p>通用大模型什么都会，但什么都不精。让它&quot;扮演一个前端工程师&quot;，它能写代码，但风格飘忽、不遵守规范、缺乏项目上下文。</p>
+</blockquote>
+<p>agency-agents的出现，用一种极其直白的方式宣告：<strong>与其期待一个AI全能，不如组建一支AI专业团队</strong>。这与2026年Multi-Agent（多智能体）成为AI落地主流范式的时间节点完美重合。</p>
+<h3 id="原因二降低到零门槛的贡献方式">原因二：降低到&quot;零门槛&quot;的贡献方式</h3>
+<p>传统开源项目的贡献门槛很高：你需要懂代码、理解架构、通过PR审查。</p>
+<p>agency-agents把贡献门槛降低到了<strong>会写Markdown就行</strong>：</p>
+<ul>
+<li>你是Salesforce顾问？写个Salesforce架构师的角色。</li>
+<li>你是运营总监？写个Reddit社区运营的角色。</li>
+<li>贡献成本：30分钟，一个.md文件。</li>
+</ul>
+<p>这种极低的参与门槛，造就了高速的社区聚集效应——每天都有新角色被合并，每天都有新的热议，项目像滚雪球一样持续发酵。</p>
+<h3 id="原因三时机精准claude-code生态爆发期">原因三：时机精准——Claude Code生态爆发期</h3>
+<p>2026年Q1，Claude Code成为最受开发者欢迎的AI编程工具，其&quot;Agents&quot;功能刚开放不久，大量开发者在寻找&quot;怎么用好Claude Code的Agent功能&quot;。</p>
+<p>agency-agents恰好填补了这个空白：<strong>官方的Agent示例太简单，自己从零写太麻烦，这个库直接给了144个可用的生产级Agent</strong>。</p>
+<p>在Claude Code生态爆发的浪头上，它成了最快的&quot;冲浪板&quot;。</p>
+<h3 id="原因四概念极具传播性">原因四：概念极具传播性</h3>
+<p>&ldquo;在GitHub上开外包公司&rdquo;——这个比喻在社交媒体上迅速走红。</p>
+<p>不像&quot;多智能体编排框架&quot;这类技术词汇，&quot;<strong>你的AI外包团队，随时待命</strong>&ldquo;这个表述让任何人——开发者、产品经理、老板——都能立刻理解这个项目的价值。</p>
+<p>概念的通俗性 × 技术的实用性 = 病毒式传播。</p>
+<h3 id="原因五起源于reddit的真实需求">原因五：起源于Reddit的真实需求</h3>
+<p>项目并非凭空创建，而是从Reddit一场&quot;AI能否真正实现专业化分工&quot;的讨论中孕育，经过数月打磨后开源。这意味着项目从诞生之初就有真实用户的需求验证，发布即有口碑。</p>
+<hr>
+<h2 id="三这个项目的价值在哪里">三、这个项目的价值在哪里？</h2>
+<h3 id="价值一验证了ai应用的下一个范式转移">价值一：验证了AI应用的下一个范式转移</h3>
+<p>agency-agents的爆红，是一个行业信号：</p>
+<p><strong>AI应用的焦点已经从&quot;模型有多强&quot;转向&quot;如何组织AI协作&rdquo;。</strong></p>
+<p>就像工业时代从&quot;机器有多强大&quot;到&quot;工厂如何组织流水线&quot;，AI时代的生产力革命也将发生在&quot;协作层&quot;而非&quot;能力层&quot;。多智能体、角色分工、工作流编排——这才是2026年之后AI落地的核心命题。</p>
+<p>这个项目用69,000个Star投票告诉整个行业：<strong>专业化、组件化、协作化</strong>，是AI落地的正确方向。</p>
+<h3 id="价值二将提示词工程升级为组织能力">价值二：将&quot;提示词工程&quot;升级为&quot;组织能力&quot;</h3>
+<p>提示词工程长期被视为&quot;技巧&quot;而非&quot;工程&quot;。</p>
+<p>agency-agents完成了一次关键升级：</p>
+<table>
+  <thead>
+      <tr>
+          <th>旧范式</th>
+          <th>新范式（agency-agents）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>临时的聊天提示词</td>
+          <td>版本化、可维护的角色定义文件</td>
+      </tr>
+      <tr>
+          <td>个人技巧，难以分享</td>
+          <td>团队共享的资产，可协作改进</td>
+      </tr>
+      <tr>
+          <td>依赖特定工具</td>
+          <td>工具无关，跨平台分发</td>
+      </tr>
+      <tr>
+          <td>输出不稳定，风格飘忽</td>
+          <td>标准化流程，成功指标明确</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>提示词资产化</strong>——这是agency-agents给整个AI工程化领域带来的最重要的方法论贡献。</p>
+<h3 id="价值三对个人开发者ai工作流的标准配件">价值三：对个人开发者——AI工作流的标准配件</h3>
+<p>对于使用Claude Code、Cursor等工具的个人开发者：</p>
+<ul>
+<li>不用再反复编写&quot;你是一个资深前端工程师……&ldquo;这类重复Prompt</li>
+<li>可以直接调用&quot;经过大量用户验证&quot;的专业角色</li>
+<li>跨项目复用，一次安装，处处可用</li>
+<li>还能学习其他人如何定义专业AI角色</li>
+</ul>
+<p><strong>最短10分钟完成安装，立刻提升所有AI工具的输出质量。</strong></p>
+<h3 id="价值四对技术团队ai落地的组织基础设施">价值四：对技术团队——AI落地的组织基础设施</h3>
+<p>对于CTO或技术负责人：</p>
+<ul>
+<li><strong>统一团队AI协作标准</strong>：无论用Claude Code还是Cursor，团队成员调用的是同一套角色，输出风格一致</li>
+<li><strong>沉淀组织AI经验</strong>：可以基于公共库，添加公司特有的角色（如&quot;我们的前端规范+Angular技术栈的定制版&rdquo;）</li>
+<li><strong>降低AI落地的人力成本</strong>：新员工入职，不需要从零探索AI怎么用，直接调用公司AI角色库</li>
+</ul>
+<p>它是团队AI落地从&quot;个人实践&quot;到&quot;组织能力&quot;的基础设施。</p>
+<h3 id="价值五生态位价值开源ai工具链的连接器">价值五：生态位价值——开源AI工具链的&quot;连接器&quot;</h3>
+<p>agency-agents的另一重价值被很多人忽视：它是<strong>AI工具生态的中间层</strong>。</p>
+<p>面对碎片化的AI工具生态（Claude Code、Cursor、Gemini CLI、Aider……各自为政），agency-agents提供了一个&quot;工具无关的中间层&quot;：</p>
+<pre tabindex="0"><code>你的角色定义（通用Markdown）
+    ↓ convert.sh
+Claude Code格式 / Cursor格式 / Gemini格式 / Aider格式
+</code></pre><p>这意味着：<strong>你对AI角色的投资，不会因为换了工具而浪费</strong>。在工具迭代快速的AI时代，这种&quot;跨工具可移植性&quot;是极其稀缺的价值。</p>
+<hr>
+<h2 id="四从开发者视野看这件事的意义远不止这个项目">四、从开发者视野看：这件事的意义远不止这个项目</h2>
+<h3 id="信号一ai软件工程进入组织层竞争">信号一：AI软件工程进入&quot;组织层&quot;竞争</h3>
+<p>agency-agents的走红说明，开发者群体已经从&quot;学会用AI&quot;进化到&quot;学会组织AI&quot;。这是一个重要的认知跃迁：</p>
+<blockquote>
+<p>未来最有竞争力的不是&quot;会用ChatGPT的人&quot;，而是&quot;能设计AI协作流程的人&quot;。</p>
+</blockquote>
+<p>就像当年的&quot;会写代码&quot;→&ldquo;能设计架构&rdquo;→&ldquo;能管理工程团队&quot;的进化路径，AI时代也将走向&quot;会用AI&rdquo;→&ldquo;能设计AI工作流&rdquo;→&ldquo;能管理AI智能体团队&rdquo;。</p>
+<h3 id="信号二提示词正在成为一种代码资产">信号二：提示词正在成为一种&quot;代码资产&quot;</h3>
+<p>当提示词被版本管理、被代码审查、被团队协作维护时，它就已经是代码了。</p>
+<p>agency-agents预示着一个新的软件工程方向：<strong>Prompt as Code（提示词即代码）</strong>。</p>
+<p>这不是玩概念，而是真实的工程需求：</p>
+<ul>
+<li>谁改了哪个AI角色的定义？（git blame）</li>
+<li>这个角色定义的第3版比第2版强在哪里？（version diff）</li>
+<li>这个角色我们自己团队用，不想开源，怎么私有化管理？（private fork）</li>
+</ul>
+<p>这些问题，agency-agents用现有的git工具链完美解答了。</p>
+<h3 id="信号三开源的最小可行产品策略依然奏效">信号三：开源的&quot;最小可行产品&quot;策略依然奏效</h3>
+<p>agency-agents的技术含量并不高——Markdown+Shell脚本，任何开发者都能在一周内实现类似的架构。但它的成功恰恰证明：</p>
+<p><strong>在AI时代，第一个把需求&quot;说清楚&quot;的项目，往往比第一个把技术&quot;做出来&quot;的项目，更容易成为标准。</strong></p>
+<p>&ldquo;一个AI专家团队的角色库，支持主流AI工具，MIT开源&rdquo;——这个产品定义极其清晰，执行也足够快。这对所有想做开源项目的开发者都是一个启发。</p>
+<hr>
+<h2 id="五局限性与风险保持客观">五、局限性与风险（保持客观）</h2>
+<table>
+  <thead>
+      <tr>
+          <th>局限</th>
+          <th>影响</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>不是自治系统</td>
+          <td>无法自动分解任务、协调多Agent协作，仍需人工调度</td>
+      </tr>
+      <tr>
+          <td>工具强依赖</td>
+          <td>必须已经在用Claude Code/Cursor等工具，对不用这些工具的人价值有限</td>
+      </tr>
+      <tr>
+          <td>通用角色需调优</td>
+          <td>公共库的角色偏通用，用于具体项目时需要本地化改造</td>
+      </tr>
+      <tr>
+          <td>企业级功能缺失</td>
+          <td>无数据安全管控、权限管理、任务审计等企业级能力</td>
+      </tr>
+      <tr>
+          <td>角色质量参差不齐</td>
+          <td>社区贡献门槛低，意味着质量审核压力大，部分角色可能不可靠</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="六总结为什么值得关注">六、总结：为什么值得关注？</h2>
+<p>agency-agents的爆红，不只是&quot;又一个好用的开源项目&quot;，它是一面镜子，照出了AI时代开发者工作方式正在发生的深层变革。</p>
+<p><strong>从一个项目读懂三件事：</strong></p>
+<ol>
+<li><strong>Multi-Agent是未来</strong>：专业分工的AI团队，正在取代通用AI助手成为主流落地模式</li>
+<li><strong>Prompt as Code是趋势</strong>：提示词的版本化、模块化、可分发化，是AI工程化的必经之路</li>
+<li><strong>最小切口+最大共鸣</strong>：技术不需要最复杂，需求要被最精准地表达，开源成功的秘诀依然是&quot;解决真实痛点&quot;</li>
+</ol>
+<p>对于大BOSS来说，这个项目也有直接的实践价值：如果你在用Claude Code或Cursor，10分钟安装之后，你就有了一支144人的AI专家团队随时待命。</p>
+<hr>
+<p><em>报告生成时间：2026-04-03</em><br>
+<em>数据来源：GitHub、网易、git.edu.kg、aipuzi.cn、silenceper.com、wsleepybear.cn等</em></p>
+
+  </div>
+</div>
+
+    </main>
+
+    
+    <footer class="site-footer">
+      <span>© 2026 Fancy · 用文字记录思考</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  
+  <script>
+    window.searchData = [
+      
+      { title: "\"GitHub开源项目深度分析系列一：agency-agents\"", excerpt: "\"提供了一套“AI员工岗位说明书”，让你可以把Claude Code、Cursor、GitHub Copilot等AI编程工具，一键“变身”为你需要的专业角色\"", url: "\"//localhost:1313/posts/github-2-agency-agents/\"", tags: ["\"Agent\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列一：OpenClaw\"", excerpt: "\"大家熟悉的“龙虾”，大家有详细了解过她吗？她为什么成为GitHub历史上增长最快的项目？\"", url: "\"//localhost:1313/posts/github-1-openclaw/\"", tags: ["\"OpenClaw\"","\"GitHub\"",] },
+      
+      { title: "\"ARC-AGI-3 深度解析：为什么当前的 AI 在“抽象游戏”面前依然像一个婴儿？？\"", excerpt: "\"AI擅长干什么？人类擅长干什么？一文告诉你\"", url: "\"//localhost:1313/posts/arc-agi-3/\"", tags: ["\"AGI\"","\"LLM\"",] },
+      
+      { title: "\"Vibe Coding 凉了，2026年最火的新职业是：驯兽师\"", excerpt: "\"LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？\"", url: "\"//localhost:1313/posts/vibe-coding-harness/\"", tags: ["\"Harness Engineering\"","\"Vibe Coding\"",] },
+      
+      { title: "\"RAG 企业级构建指南\"", excerpt: "\"企业应用大模型，RAG知识库是第一优先级的选择，员工与管理者都有感知、可量化价值、可落地的最佳方案\"", url: "\"//localhost:1313/posts/rag-guild/\"", tags: ["\"RAG\"","\"企业应用\"",] },
+      
+      { title: "\"AI Agent 三种范式深度详解\"", excerpt: "\"三种范式：ReAct（Reasoning + Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）\"", url: "\"//localhost:1313/posts/ai-agent-paradigm/\"", tags: ["\"Agent\"","\"范式\"",] },
+      
+      { title: "\"大模型科普系列五：什么是AI Agent Skills？\"", excerpt: "\"Skill = 工具 + 使用指南 + 场景说明。一种结构化的能力封装：把「做什么 + 怎么做」打包成一个可复用、可组合的单元。\"", url: "\"//localhost:1313/posts/lesson-5-skill/\"", tags: ["\"科普\"","\"Skills\"",] },
+      
+      { title: "\"大模型科普系列四：什么是Vibe Coding？\"", excerpt: "\"一个编码小白，如何写代码？想做一个小程序记录每天读书笔记？想给自己做一个自动化的爬虫脚本？\"", url: "\"//localhost:1313/posts/lesson-4-vibecoding/\"", tags: ["\"科普\"","\"Vibe Coding\"",] },
+      
+      { title: "\"大模型科普系列三：普通人如何用好提示词？\"", excerpt: "\"写提示词（Prompt）这件事，跟使唤人有点像。这篇文章，就教你几个简单实用的提示词技巧\"", url: "\"//localhost:1313/posts/lesson-3-prompt/\"", tags: ["\"科普\"","\"Prompt\"",] },
+      
+      { title: "\"大模型科普系列二：Token 是什么？\"", excerpt: "\"大模型的字数，以及它背后的能源战争\"", url: "\"//localhost:1313/posts/lesson-2-token/\"", tags: ["\"科普\"","\"Token\"",] },
+      
+      { title: "\"大模型科普系列一：大模型到底是什么？\"", excerpt: "\"用它写周报、问问题、生成内容——好像什么都会。但为什么有时候它会一本正经地胡说八道？大模型的原理、能耐与边界，这篇文章一次讲清楚\"", url: "\"//localhost:1313/posts/lesson-1-llm/\"", tags: ["\"科普\"","\"LLM\"",] },
+      
+    ];
+  </script>
+
+  <script>
+    
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>
