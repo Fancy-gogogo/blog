@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:1313/tags/github/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/github-3-superpowers/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/vibe-coding/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/tags/agent/</loc>
     <lastmod>2026-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/github/</loc>
-    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/posts/github-2-agency-agents/</loc>
-    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/</loc>
     <lastmod>2026-04-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/github-1-openclaw/</loc>
@@ -30,9 +36,6 @@
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/llm/</loc>
-    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/vibe-coding/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/vibe-coding-harness/</loc>
