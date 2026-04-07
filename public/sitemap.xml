@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/tags/github/</loc>
-    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <loc>//localhost:1313/tags/claude-code/</loc>
+    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/github-3-superpowers/</loc>
-    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+    <loc>//localhost:1313/tags/github/</loc>
+    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/github-4-claw-code/</loc>
+    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/</loc>
+    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/github-3-superpowers/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/vibe-coding/</loc>

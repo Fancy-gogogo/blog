@@ -6,8 +6,15 @@
     <description>Recent content in Posts on 小舟从此逝，江海寄余生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub开源项目深度分析系列四：Claw-Code</title>
+      <link>//localhost:1313/posts/github-4-claw-code/</link>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/github-4-claw-code/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;项目地址：https://github.com/ultraworkers/claw-code&#xA;官方文档：https://claw-code.codes&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一项目概况与核心数据&#34;&gt;一、项目概况与核心数据&lt;/h2&gt;&#xA;&lt;h3 id=&#34;这是什么项目&#34;&gt;这是什么项目？&lt;/h3&gt;&#xA;&lt;p&gt;Claw Code 是一个&lt;strong&gt;开源 AI 编程助手框架&lt;/strong&gt;——对 Anthropic 公司 Claude Code 智能体架构的&amp;quot;净室重写&amp;quot;（Clean-Room Rewrite）。它不复制任何专有代码，而是基于公开的架构模式，使用 Python 和 Rust 从零开始独立实现。&lt;/p&gt;&#xA;&lt;p&gt;简单说：Anthropic 花了大量人力物力打造的 AI 编码代理，被一次意外泄露后，开源社区在 &lt;strong&gt;48 小时内&lt;/strong&gt;完成了功能等效的替代品。&lt;/p&gt;&#xA;&lt;h3 id=&#34;核心数据&#34;&gt;核心数据&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;指标&lt;/th&gt;&#xA;          &lt;th&gt;数据&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;GitHub Stars&lt;/td&gt;&#xA;          &lt;td&gt;&lt;strong&gt;174,200+&lt;/strong&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;GitHub Forks&lt;/td&gt;&#xA;          &lt;td&gt;106,000+&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;全球排名&lt;/td&gt;&#xA;          &lt;td&gt;&lt;strong&gt;GitHub 全站第 34 名&lt;/strong&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;创建日期&lt;/td&gt;&#xA;          &lt;td&gt;2026年3月31日&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;达到 10 万 Star&lt;/td&gt;&#xA;          &lt;td&gt;&lt;strong&gt;24 小时内&lt;/strong&gt;（GitHub 历史最快）&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;达到 5 万 Star&lt;/td&gt;&#xA;          &lt;td&gt;&lt;strong&gt;2 小时&lt;/strong&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;本周新增 Star&lt;/td&gt;&#xA;          &lt;td&gt;+10,900&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;主要语言&lt;/td&gt;&#xA;          &lt;td&gt;Rust (72.9%) + Python (27.1%)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;许可证&lt;/td&gt;&#xA;          &lt;td&gt;MIT&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;&lt;strong&gt;仅用 7 天，从一个零星仓库变成全球排名第 34 的开源项目。&lt;/strong&gt; 这是 GitHub 历史上前所未有的增长速度。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>GitHub开源项目深度分析系列三：superpowers</title>
       <link>//localhost:1313/posts/github-3-superpowers/</link>
