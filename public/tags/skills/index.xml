@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Skills on 小舟从此逝，江海寄余生</title>
-    <link>//localhost:1313/tags/skills/</link>
+    <link>//localhost:46587/tags/skills/</link>
     <description>Recent content in Skills on 小舟从此逝，江海寄余生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 05 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/skills/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:46587/tags/skills/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>大模型科普系列五：什么是AI Agent Skills？</title>
-      <link>//localhost:1313/posts/lesson-5-skill/</link>
+      <link>//localhost:46587/posts/lesson-5-skill/</link>
       <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/lesson-5-skill/</guid>
+      <guid>//localhost:46587/posts/lesson-5-skill/</guid>
       <description>&lt;p&gt;&amp;ldquo;当你拥有锤子时，一切看起来都像钉子。但如果你有一整套工具，你会发现更多可能解决的问题。&amp;rdquo;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一回到第一性原理什么是能力&#34;&gt;一、回到第一性原理：什么是「能力」？&lt;/h2&gt;&#xA;&lt;p&gt;让我们先问一个看似简单的问题：&lt;strong&gt;什么是能力？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;从最底层来看，能力 = 做某件事的资格与方法。它包含两个核心要素：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;知道做什么&lt;/strong&gt;（认知层面）—— 理解任务、识别问题&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;知道怎么做&lt;/strong&gt;（执行层面）—— 有工具、有方法、有流程&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;举几个例子：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;角色&lt;/th&gt;&#xA;          &lt;th&gt;能力&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;厨师&lt;/td&gt;&#xA;          &lt;td&gt;知道怎么做菜 + 有锅有灶有食材&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;医生&lt;/td&gt;&#xA;          &lt;td&gt;知道怎么诊断 + 有听诊器有药有手术室&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;程序员&lt;/td&gt;&#xA;          &lt;td&gt;知道怎么写代码 + 有电脑有IDE有编译器&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;**没有工具的能力是抽象的，没有能力的工具是僵死的。**二者结合，才能发挥作用。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二ai-agent-的-skills-是什么&#34;&gt;二、AI Agent 的 Skills 是什么？&lt;/h2&gt;&#xA;&lt;p&gt;在 AI Agent 的语境下，Skill 是：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;一种结构化的能力封装：把「做什么 + 怎么做」打包成一个可复用、可组合的单元。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;更直白地说：&lt;strong&gt;Skill = 工具 + 使用指南 + 场景说明&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;一个典型的 Skill 包括：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Skill&#xA;├── 描述（什么场景下使用）&#xA;├── 工具/能力（能做什么）&#xA;├── 使用方法（怎么调用）&#xA;└── 示例（什么时候该用它）&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;举一个具体的例子 —— 假设有一个 weather Skill：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;## weather Skill&#xA;&#xA;- **什么时候用**：用户问天气、气温、预报&#xA;- **能做什么**：调用天气 API 获取当前和未来天气&#xA;- **怎么用**：只需要告诉它城市/地点&#xA;- **示例**：&amp;#34;北京明天天气怎么样？&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这就是一个完整的 Skill —— 不需要你写代码，只需要告诉 Agent 什么时候该用它。&lt;/p&gt;</description>
     </item>
   </channel>

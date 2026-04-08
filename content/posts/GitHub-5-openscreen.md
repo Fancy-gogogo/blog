@@ -1,5 +1,5 @@
 ---
-title: "GitHub开源项目深度分析系列四：OpenScreen"
+title: "GitHub开源项目深度分析系列五：OpenScreen"
 date: 2026-04-08
 draft: false
 tags: ["开源工具", "GitHub"]
