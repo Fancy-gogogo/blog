@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小舟从此逝，江海寄余生</title>
+  <meta name="description" content="记录技术、思考与生活、大模型科普知识">
+  <link rel="canonical" href="//localhost:1313/posts/github-7-hermes-agent/">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="小舟从此逝，江海寄余生">
+  <meta property="og:description" content="记录技术、思考与生活、大模型科普知识">
+  <meta property="og:url" content="//localhost:1313/posts/github-7-hermes-agent/">
+  <meta property="og:site_name" content="小舟从此逝，江海寄余生">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="小舟从此逝，江海寄余生">
+  <meta name="twitter:description" content="记录技术、思考与生活、大模型科普知识">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "小舟从此逝，江海寄余生",
+    "description": "记录技术、思考与生活、大模型科普知识",
+    "url": "\/\/localhost:1313\/",
+    "author": {
+      "@type": "Person",
+      "name": "Fancy"
+    }
+  }
+  </script>
+
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  
+  <link rel="stylesheet" href="/css/style.552217d2298bec0de913fa87f801fb1e85b3a32c0e176e4daf48c8dcb9edfe4d.css">
+  
+</head>
+<body>
+
+  
+  <img src="/cover.jpg" alt="cover" class="cover-image">
+
+  
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        小舟从此逝，江海寄余生
+      </a>
+      <ul class="navbar-links">
+        
+        <li><a href="/" >主页</a></li>
+        
+        <li><a href="/archive/" >归档</a></li>
+        
+        <li><a href="/about/" >关于</a></li>
+        
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  
+  <div class="site-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          
+          <a href="//localhost:1313/tags/agent/" class="tag-item">Agent</a>
+          
+          <a href="//localhost:1313/tags/agi/" class="tag-item">AGI</a>
+          
+          <a href="//localhost:1313/tags/claude-code/" class="tag-item">Claude Code</a>
+          
+          <a href="//localhost:1313/tags/github/" class="tag-item">GitHub</a>
+          
+          <a href="//localhost:1313/tags/harness/" class="tag-item">Harness</a>
+          
+          <a href="//localhost:1313/tags/harness-engineering/" class="tag-item">Harness Engineering</a>
+          
+          <a href="//localhost:1313/tags/llm/" class="tag-item">LLM</a>
+          
+          <a href="//localhost:1313/tags/openclaw/" class="tag-item">OpenClaw</a>
+          
+          <a href="//localhost:1313/tags/prompt/" class="tag-item">Prompt</a>
+          
+          <a href="//localhost:1313/tags/rag/" class="tag-item">RAG</a>
+          
+          <a href="//localhost:1313/tags/skills/" class="tag-item">Skills</a>
+          
+          <a href="//localhost:1313/tags/token/" class="tag-item">Token</a>
+          
+          <a href="//localhost:1313/tags/vibe-coding/" class="tag-item">Vibe Coding</a>
+          
+          <a href="//localhost:1313/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/" class="tag-item">企业应用</a>
+          
+          <a href="//localhost:1313/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="tag-item">大模型</a>
+          
+          <a href="//localhost:1313/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/" class="tag-item">开源工具</a>
+          
+          <a href="//localhost:1313/tags/%E7%A7%91%E6%99%AE/" class="tag-item">科普</a>
+          
+          <a href="//localhost:1313/tags/%E8%8C%83%E5%BC%8F/" class="tag-item">范式</a>
+          
+          <a href="//localhost:1313/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/" class="tag-item">记忆系统</a>
+          
+        </div>
+      </div>
+
+      
+    </aside>
+
+    
+    <main class="main-content">
+      
+<div class="about-section">
+  <div class="page-header">
+    <h1 class="page-title">GitHub开源项目深度分析系列七：Hermes-Agent</h1>
+    <p class="page-subtitle">Hermes Agent 最大的价值不在于某一个具体功能，而在于它提出并验证了一个新的范式：Agent 可以是“活的”——它从经验中学习、在使用中成长、跨会话积累对用户的理解。</p>
+  </div>
+  <div class="post-detail-body">
+    <blockquote>
+<p><strong>项目地址</strong>: <a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a>
+<strong>当前 Star</strong>: 52,500+ ⭐ | Fork: 6,800+ | 许可证: MIT
+<strong>周新增 Star</strong>: +14,811（2026 年 4 月第二周全站第一）</p>
+</blockquote>
+<hr>
+<h2 id="一项目是什么">一、项目是什么？</h2>
+<h3 id="一句话定位">一句话定位</h3>
+<p><strong>Hermes Agent 是目前唯一内置学习闭环的开源 AI Agent——它不是&quot;用完即走&quot;的工具，而是一个会从经验中创建技能、在使用中自我改进、跨会话积累对用户深度理解的持久智能体。</strong></p>
+<p>它的官方标语是 <strong>&ldquo;The agent that grows with you&rdquo;</strong>（与你共同成长的 Agent）。</p>
+<h3 id="核心功能一览">核心功能一览</h3>
+<table>
+  <thead>
+      <tr>
+          <th>功能模块</th>
+          <th>具体能力</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>闭环学习系统</strong></td>
+          <td>从经验中自动创建技能、使用中持续改进技能、自主巩固知识、FTS5 跨会话搜索历史</td>
+      </tr>
+      <tr>
+          <td><strong>多模型支持</strong></td>
+          <td>OpenRouter 200+ 模型、Nous Portal、OpenAI、Anthropic、智谱 GLM、Kimi、MiniMax、自定义端点，一键切换</td>
+      </tr>
+      <tr>
+          <td><strong>全平台消息网关</strong></td>
+          <td>Telegram、Discord、Slack、WhatsApp、Signal、Email、飞书、企业微信、钉钉，统一管理</td>
+      </tr>
+      <tr>
+          <td><strong>多后端运行</strong></td>
+          <td>本地、Docker、SSH、Daytona（serverless 休眠/唤醒）、Modal（按需计算）、Singularity（HPC）</td>
+      </tr>
+      <tr>
+          <td><strong>40+ 内置工具</strong></td>
+          <td>文件操作、代码执行、网页搜索、API 调用、浏览器自动化、定时调度等</td>
+      </tr>
+      <tr>
+          <td><strong>子 Agent 委托</strong></td>
+          <td>自动生成隔离的子 Agent 处理并行工作流，最多 3 个并行</td>
+      </tr>
+      <tr>
+          <td><strong>Cron 定时任务</strong></td>
+          <td>自然语言配置定时任务，支持投递到任意平台，无人值守运行</td>
+      </tr>
+      <tr>
+          <td><strong>MCP 协议集成</strong></td>
+          <td>原生支持 MCP（Model Context Protocol），连接任意 MCP 服务器扩展能力</td>
+      </tr>
+      <tr>
+          <td><strong>RL 研究工具链</strong></td>
+          <td>批量轨迹生成、Atropos RL 训练环境、轨迹压缩——用于训练下一代工具调用模型</td>
+      </tr>
+      <tr>
+          <td><strong>OpenClaw 迁移</strong></td>
+          <td>一键从 OpenClaw 导入设置、记忆、技能、API 密钥</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="运行成本">运行成本</h3>
+<p>这是开发者最关心的问题之一——<strong>$5/月的 VPS 即可运行</strong>。配合 Daytona 或 Modal 的无服务器持久化（Agent 空闲时休眠、按需唤醒），闲置成本几乎为零。预计月度 API 成本在 $10–25 之间。</p>
+<hr>
+<h2 id="二背后团队是谁">二、背后团队是谁？</h2>
+<h3 id="nous-research">Nous Research</h3>
+<p><strong>Nous Research</strong> 是美国开源 AI 运动的领导团队之一，成立于 2023 年，起源于 Discord 社区中 AI 爱好者的草根协作。</p>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>信息</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>联合创始人</strong></td>
+          <td>Teknium（灵魂人物，AI 研究者 &amp; 工程师）</td>
+      </tr>
+      <tr>
+          <td><strong>核心业务</strong></td>
+          <td>开源大语言模型训练、分布式 AI 基础设施、Agent 框架</td>
+      </tr>
+      <tr>
+          <td><strong>代表产品</strong></td>
+          <td>Hermes 系列模型（Hermes 1 → 4）、Psyche 模型、Hermes Agent</td>
+      </tr>
+      <tr>
+          <td><strong>融资情况</strong></td>
+          <td>2025 年 4 月完成 <strong>$5000 万 A 轮</strong>，由 Paradigm 领投，估值 <strong>$10 亿</strong></td>
+      </tr>
+      <tr>
+          <td><strong>累计融资</strong></td>
+          <td>$7000 万（3 轮）</td>
+      </tr>
+      <tr>
+          <td><strong>使命</strong></td>
+          <td>通过创建和推广开源语言模型，促进人权与自由</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="teknium-其人">Teknium 其人</h3>
+<p>Teknium 是 Nous Research 的联合创始人兼后训练负责人。他不是从大厂出来的职业经理人，而是从开源社区成长起来的原生力量。早在 2023 年，他就在 HuggingFace 上贡献了 Nous-Hermes-Llama2-7B 等广受使用的开源模型，是开源 LLM 微调领域的先驱人物之一。</p>
+<h3 id="为什么团队背景重要">为什么团队背景重要？</h3>
+<p>Nous Research 有两个独特优势：</p>
+<ol>
+<li><strong>端到端闭环能力</strong>：他们既做模型（Hermes 系列）、又做 Agent 框架（Hermes Agent）、还有自己的推理平台（Nous Portal）。这意味着 Agent 框架和底层模型可以协同优化，实现其他框架做不到的&quot;自产自销&quot;效应。</li>
+<li><strong>开源基因纯正</strong>：从社区中来、为社区而生。MIT 协议、零供应商锁定、开放标准（agentskills.io）——这些不是市场策略，而是团队 DNA。</li>
+</ol>
+<hr>
+<h2 id="三为什么-star-增长这么快">三、为什么 Star 增长这么快？</h2>
+<h3 id="增长数据时间线">增长数据时间线</h3>
+<table>
+  <thead>
+      <tr>
+          <th>时间节点</th>
+          <th>事件</th>
+          <th>Star 数据</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>2026.02.25</td>
+          <td>项目首次在 GitHub 创建</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>2026.03.12</td>
+          <td>v0.2.0 首次正式发布（多平台网关 + MCP + 技能生态）</td>
+          <td>~5K</td>
+      </tr>
+      <tr>
+          <td>2026.03.17</td>
+          <td>v0.3.0（流式输出 + 插件架构 + 浏览器连接）</td>
+          <td>~10K</td>
+      </tr>
+      <tr>
+          <td>2026.03.23</td>
+          <td>v0.4.0（OpenAI API 服务器 + 6 个新消息适配器）</td>
+          <td>~18K</td>
+      </tr>
+      <tr>
+          <td>2026.03.28</td>
+          <td>v0.5.0（HuggingFace 提供商 + 供应链安全审计）</td>
+          <td>~25K</td>
+      </tr>
+      <tr>
+          <td>2026.03.30</td>
+          <td>v0.6.0（多实例运行 + Docker + 飞书/企微支持）</td>
+          <td>~30K</td>
+      </tr>
+      <tr>
+          <td>2026.04.03</td>
+          <td>v0.7.0（可插拔内存 + 反检测浏览器 + 凭证池）</td>
+          <td>~40K</td>
+      </tr>
+      <tr>
+          <td>2026.04.08</td>
+          <td>v0.8.0（后台任务通知 + 实时模型切换 + MCP OAuth）</td>
+          <td>~50K</td>
+      </tr>
+      <tr>
+          <td>2026.04.11</td>
+          <td>今日 Trending 仍在快速增长</td>
+          <td><strong>52,500+</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>不到两个月，从 0 到 5 万 Star。</strong> 这个增速在 GitHub 历史上都属于顶级。</p>
+<h3 id="爆发原因的深层分析">爆发原因的深层分析</h3>
+<h4 id="1-踩准了-ai-agent-的执行元年">1. 踩准了 AI Agent 的&quot;执行元年&quot;</h4>
+<p>2026 年 AI 的核心叙事从&quot;能对话&quot;转向了&quot;能执行&quot;。而 Hermes Agent 恰好是这个叙事的最佳载体——它不是一个聊天机器人框架，而是一个<strong>真正能干活、能积累经验、能自我改进的持久智能体</strong>。</p>
+<p>AI Agent 相关项目在 2026 年 4 月第二周的 GitHub Trending 前十中占据了 <strong>7 席</strong>，Hermes Agent 以 +14,811 的周增量排名第一，不是因为它蹭了热点，而是因为它<strong>定义了这个热点</strong>。</p>
+<h4 id="2-精准打击了-openclaw-的痛点">2. 精准打击了 OpenClaw 的痛点</h4>
+<p>OpenClaw 是目前最大的 AI Agent 框架（346K Star，OpenRouter 全球日榜 token 消耗第一），但它存在几个被广泛诟病的问题：</p>
+<table>
+  <thead>
+      <tr>
+          <th>OpenClaw 的痛点</th>
+          <th>Hermes Agent 的回应</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>高频更新导致兼容性问题频发</td>
+          <td>版本发布有节奏，每个版本都有明确主题</td>
+      </tr>
+      <tr>
+          <td>安全漏洞（有 CVE 记录）</td>
+          <td>零 CVE 安全记录</td>
+      </tr>
+      <tr>
+          <td>运营成本较高</td>
+          <td>$5/月起，serverless 闲置近零成本</td>
+      </tr>
+      <tr>
+          <td>生态复杂，学习曲线陡峭</td>
+          <td>功能聚焦，CLI 设计简洁</td>
+      </tr>
+      <tr>
+          <td>缺乏自我改进能力</td>
+          <td><strong>唯一内置学习闭环</strong>的 Agent</td>
+      </tr>
+  </tbody>
+</table>
+<p>Hermes Agent 甚至提供了 <code>hermes claw migrate</code> 一键从 OpenClaw 迁移，这种&quot;前门请客&quot;的姿态直接降低了用户切换的心理门槛。</p>
+<h4 id="3-极其恐怖的迭代速度">3. 极其恐怖的迭代速度</h4>
+<p>从 v0.2.0 到 v0.8.0，<strong>不到一个月发布了 7 个版本</strong>，平均 2-5 天一个版本。而且每个版本都不是小修小补：</p>
+<ul>
+<li>v0.4.0 一次增加了 6 个消息适配器</li>
+<li>v0.6.0 一次加入了飞书、企业微信支持（对中国开发者来说是重大利好）</li>
+<li>v0.8.0 一次合并了 <strong>209 个 PR</strong></li>
+</ul>
+<p>这种迭代速度意味着：你今天看到的功能列表，下周就会更丰富。这种&quot;每天都在变强&quot;的感觉，是用户持续关注和传播的核心动力。</p>
+<h4 id="4-模型无关--低门槛--病毒式传播">4. 模型无关 + 低门槛 = 病毒式传播</h4>
+<ul>
+<li>不绑定任何特定模型，200+ 模型一键切换 → 用户不用为模型选择焦虑</li>
+<li>$5 VPS 即可运行 → 门槛极低</li>
+<li>MIT 协议 → 企业可以放心使用和二次开发</li>
+<li>支持 Android Termux → 连手机都能跑</li>
+</ul>
+<p>这种&quot;低成本尝鲜 + 高自由度定制&quot;的组合，是开源项目病毒式传播的经典配方。</p>
+<h4 id="5-会学习这个概念本身就有传播力">5. &ldquo;会学习&quot;这个概念本身就有传播力</h4>
+<p>&ldquo;AI 越用越聪明&quot;是一个极具想象力的概念。与&quot;每次对话都是全新的&rdquo;（OpenAI ChatGPT）或&quot;需要你手动配置&rdquo;（LangChain/Dify）相比，&ldquo;Agent 会自己学习、自己成长&quot;的叙事天然具有话题性和传播力。</p>
+<hr>
+<h2 id="四这个项目的价值在哪里">四、这个项目的价值在哪里？</h2>
+<h3 id="对开发者的价值">对开发者的价值</h3>
+<h4 id="1-从工具到伙伴的范式转换">1. &ldquo;从工具到伙伴&quot;的范式转换</h4>
+<p>传统 AI 工具是&quot;金鱼式&quot;的——每次对话独立，没有记忆，没有积累。Hermes Agent 是&quot;记忆型&quot;的——它记住你的偏好、你的项目、你的工作方式，并且越用越懂你。</p>
+<p>对开发者来说，这意味着你不用每次都重复描述需求。你的 Agent 会积累关于你的知识模型，逐渐变成一个&quot;了解你&quot;的协作伙伴。</p>
+<h4 id="2-研究级-agent-架构的开源化">2. 研究级 Agent 架构的开源化</h4>
+<p>Hermes Agent 内置了完整的 RL 研究工具链：</p>
+<ul>
+<li><strong>批量轨迹生成</strong>：自动收集 Agent 的决策轨迹</li>
+<li><strong>轨迹压缩</strong>：将海量轨迹压缩为高效训练数据</li>
+<li><strong>Atropos RL 环境</strong>：直接用于训练下一代工具调用模型</li>
+</ul>
+<p>这意味着 Hermes Agent 不仅是 LLM 的&quot;消费者&rdquo;，更是 LLM 的&quot;共同生产者&rdquo;。这种&quot;用 Agent 训练更好的模型、用更好的模型驱动更好的 Agent&quot;的飞轮效应，是其他框架不具备的。</p>
+<h4 id="3-技能生态系统的开放标准">3. 技能生态系统的开放标准</h4>
+<p>Hermes Agent 推出了 <a href="https://agentskills.io">agentskills.io</a> 开放标准。技能不是闭源的、不是绑定特定框架的，而是可以跨平台共享的。这类似于 Docker 之于容器——定义了一个通用的&quot;能力打包&quot;标准。</p>
+<h3 id="对企业的价值">对企业的价值</h3>
+<h4 id="1-私有化部署--数据不出门">1. 私有化部署 + 数据不出门</h4>
+<p>支持本地部署、Docker 容器隔离、SSH 远程执行，数据完全留在企业内部。对于金融、医疗、法律等隐私敏感行业，这是刚需。</p>
+<h4 id="2-多平台统一管理">2. 多平台统一管理</h4>
+<p>一个 Agent 同时接入 Telegram、飞书、企业微信、Slack、Discord——对于有跨国团队、多平台协作需求的企业来说，这是一个统一的 AI 入口。</p>
+<h4 id="3-mit-协议--零法律风险">3. MIT 协议 = 零法律风险</h4>
+<p>完全开源，MIT 协议，可以自由商用、修改、分发。不存在 SaaS 产品突然涨价或停服的风险。</p>
+<h3 id="对-ai-行业的价值">对 AI 行业的价值</h3>
+<h4 id="1-证明了自改进-agent路线的可行性">1. 证明了&quot;自改进 Agent&quot;路线的可行性</h4>
+<p>在 Hermes Agent 之前，&ldquo;AI 自我学习&quot;更多是学术概念。Hermes Agent 用 52K Star 和实际用户证明：开发者真的需要这个能力，而且它可以在开源框架中实现。</p>
+<h4 id="2-重新定义了-agent-框架的竞争维度">2. 重新定义了 Agent 框架的竞争维度</h4>
+<p>以前 Agent 框架的竞争维度是&quot;支持多少工具&rdquo;、&ldquo;支持多少平台&rdquo;。Hermes Agent 把竞争维度提升到了&quot;能学习多少&quot;、&ldquo;能积累多少经验&rdquo;——从静态能力比拼变成了动态成长能力比拼。</p>
+<h4 id="3-openrouter-生态的数据验证">3. OpenRouter 生态的数据验证</h4>
+<p>Hermes Agent 在一个月内冲上 OpenRouter 全球日榜第四，周增长率 +498%。它使用最广泛的模型是 Claude Sonnet 4.6（~180B token），其次是中国厂商的 GLM-5 Turbo（~140B）和 Step 3.5 Flash（~120B）。这组数据本身就说明了：<strong>中国模型在 Agent 场景中的竞争力已经不容忽视</strong>。</p>
+<hr>
+<h2 id="五工程架构亮点">五、工程架构亮点</h2>
+<h3 id="冻结快照记忆设计">冻结快照记忆设计</h3>
+<p>Hermes Agent 的记忆系统采用了&quot;有界策展式&quot;设计——MEMORY.md 上限 2200 字符，USER.md 上限 1375 字符。看似是限制，实则是<strong>迫使 Agent 学会优先级管理</strong>。</p>
+<p>会话开始时冻结记忆快照，中间写入只持久化但不改变系统提示——这个设计精妙地平衡了两个矛盾需求：LLM 推理成本（系统提示越长越贵）和信息新鲜度。</p>
+<h3 id="工具-schema-动态重建">工具 Schema 动态重建</h3>
+<p>运行时自动检测哪些工具可用（比如检查 API Key 是否配置），然后动态重建工具 Schema，移除不可用工具的交叉引用。这个看似微小的设计，直接防止了&quot;模型幻觉调用不存在的工具&quot;这类常见 bug。</p>
+<h3 id="进程全局状态保护">进程全局状态保护</h3>
+<p>子 Agent 委托时自动保存/恢复 <code>_last_resolved_tool_names</code>，避免并行子 Agent 之间的状态污染。这是&quot;看似简单但极其容易出错&quot;的并发问题，Hermes Agent 从框架层面解决了它。</p>
+<h3 id="参数类型强转">参数类型强转</h3>
+<p><code>coerce_tool_args()</code> 函数自动处理字符串 &ldquo;42&rdquo; → int 42 的类型转换问题。这是一个极其常见的 Agent bug 来源，却被大多数框架忽视了。</p>
+<hr>
+<h2 id="六与其他-agent-框架对比">六、与其他 Agent 框架对比</h2>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>Hermes Agent</th>
+          <th>OpenClaw</th>
+          <th>Claude Code</th>
+          <th>AutoGPT</th>
+          <th>Dify</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>核心定位</strong></td>
+          <td>自改进个人 Agent</td>
+          <td>全平台消费级助手</td>
+          <td>编程 Agent</td>
+          <td>通用任务 Agent</td>
+          <td>低代码 Agent 平台</td>
+      </tr>
+      <tr>
+          <td><strong>Star 数</strong></td>
+          <td>52K</td>
+          <td>346K</td>
+          <td>36K</td>
+          <td>182K</td>
+          <td>104K</td>
+      </tr>
+      <tr>
+          <td><strong>学习闭环</strong></td>
+          <td>✅ 内置</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td><strong>跨会话记忆</strong></td>
+          <td>✅ FTS5 搜索</td>
+          <td>✅ 插件式</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td><strong>模型绑定</strong></td>
+          <td>不绑定</td>
+          <td>不绑定</td>
+          <td>绑定 Claude</td>
+          <td>不绑定</td>
+          <td>不绑定</td>
+      </tr>
+      <tr>
+          <td><strong>消息平台</strong></td>
+          <td>9+</td>
+          <td>26+</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>集成式</td>
+      </tr>
+      <tr>
+          <td><strong>RL 研究支持</strong></td>
+          <td>✅ 独有</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td><strong>开源协议</strong></td>
+          <td>MIT</td>
+          <td>Apache 2.0</td>
+          <td>商业</td>
+          <td>MIT</td>
+          <td>Apache 2.0</td>
+      </tr>
+      <tr>
+          <td><strong>部署成本</strong></td>
+          <td>$5/月起</td>
+          <td>较高</td>
+          <td>$20/月起</td>
+          <td>$5/月起</td>
+          <td>需服务器</td>
+      </tr>
+      <tr>
+          <td><strong>适合人群</strong></td>
+          <td>开发者/研究者</td>
+          <td>所有用户</td>
+          <td>开发者</td>
+          <td>技术用户</td>
+          <td>产品/运营</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>核心差异化</strong>: Hermes Agent 是唯一一个把&quot;学习&quot;作为第一公民的 Agent 框架。其他框架在比拼工具数量、平台覆盖时，Hermes Agent 在回答一个更根本的问题：<strong>Agent 能不能越用越强？</strong></p>
+<hr>
+<h2 id="七局限性与风险">七、局限性与风险</h2>
+<table>
+  <thead>
+      <tr>
+          <th>风险维度</th>
+          <th>具体描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>部署门槛</strong></td>
+          <td>需要一定技术能力维护服务器，非开箱即用</td>
+      </tr>
+      <tr>
+          <td><strong>生态仍在早期</strong></td>
+          <td>与 OpenClaw 的 44K 技能生态相比，技能数量较少</td>
+      </tr>
+      <tr>
+          <td><strong>商业可持续性</strong></td>
+          <td>依赖母公司 Nous Research 的 $5000 万融资支撑，盈利模式不明确</td>
+      </tr>
+      <tr>
+          <td><strong>安全模型较弱</strong></td>
+          <td>&ldquo;默认信任 + 选择性防护&quot;策略，不如 OpenClaw 的三级沙箱系统完善</td>
+      </tr>
+      <tr>
+          <td><strong>高频迭代的双刃剑</strong></td>
+          <td>版本更新太快可能导致 API 不稳定，对生产环境使用有风险</td>
+      </tr>
+      <tr>
+          <td><strong>团队能力集中</strong></td>
+          <td>核心开发严重依赖 Teknium 等少数人，bus factor（公交车因子）低</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="八开发者的行动建议">八、开发者的行动建议</h2>
+<h3 id="如果你正在选型-ai-agent-框架">如果你正在选型 AI Agent 框架</h3>
+<ul>
+<li><strong>选 Hermes Agent</strong>: 如果你的核心需求是&quot;长期陪伴 + 自我改进&rdquo;，或者你有 RL 研究需求</li>
+<li><strong>选 OpenClaw</strong>: 如果你需要最丰富的渠道覆盖和最成熟的消费级体验</li>
+<li><strong>选 Claude Code</strong>: 如果你只需要编程辅助，不在乎平台扩展</li>
+<li><strong>选 Dify</strong>: 如果你是产品/运营人员，需要可视化编排而非代码开发</li>
+</ul>
+<h3 id="如果你只是想了解趋势">如果你只是想了解趋势</h3>
+<p>Hermes Agent 代表了 AI Agent 发展的一个重要方向：<strong>从&quot;工具&quot;到&quot;伙伴&quot;的进化</strong>。它证明了开发者社区对&quot;能学习的 AI&quot;有真实、强烈的需求。这个方向值得持续关注，即使你暂时不需要部署它。</p>
+<h3 id="值得学习的工程实践">值得学习的工程实践</h3>
+<p>即使你不用 Hermes Agent，以下几个设计思想值得借鉴：</p>
+<ol>
+<li><strong>有界记忆</strong>：用限制倒逼优先级管理</li>
+<li><strong>冻结快照</strong>：平衡推理成本和信息新鲜度</li>
+<li><strong>工具 Schema 动态重建</strong>：从框架层面防止模型幻觉</li>
+<li><strong>版本命名法</strong>：每个版本一个主题（如&quot;智能版本&quot;&ldquo;韧性版本&rdquo;），让用户一眼知道更新了什么</li>
+</ol>
+<hr>
+<h2 id="九总结">九、总结</h2>
+<p>Hermes Agent 的爆发不是偶然。它是<strong>三个力量交汇</strong>的结果：</p>
+<ol>
+<li><strong>技术趋势</strong>：2026 年 AI 从&quot;对话&quot;进化到&quot;执行&quot;，Agent 成为核心命题</li>
+<li><strong>产品差异化</strong>：唯一内置学习闭环的 Agent 框架，精准打击了 OpenClaw 的痛点</li>
+<li><strong>开源策略</strong>：MIT 协议 + 模型无关 + 低部署成本 = 病毒式传播</li>
+</ol>
+<p>从开发者视角看，Hermes Agent 最大的价值不在于某一个具体功能，而在于它提出并验证了一个新的范式：<strong>Agent 可以是&quot;活的&quot;——它从经验中学习、在使用中成长、跨会话积累对用户的理解。</strong> 这种范式如果持续成熟，可能会重新定义我们与 AI 的协作方式。</p>
+<blockquote>
+<p><strong>一句话总结</strong>: Hermes Agent 是 2026 年开源 AI 领域最具&quot;成长性&quot;的项目——不只是一个框架在增长 Star，而是一个&quot;会自我增长的框架&quot;在增长 Star。这种元叙事本身就是最好的传播。</p>
+</blockquote>
+<hr>
+<p><em>数据来源：GitHub Trending、OpenRouter 公开数据、项目 Release Notes、社区评测文章</em>
+<em>参考链接：<a href="https://github.com/NousResearch/hermes-agent">GitHub 仓库</a> | <a href="https://hermes-agent.nousresearch.com/docs">官方文档</a> | <a href="https://agentskills.io">Skills Hub</a></em></p>
+
+  </div>
+</div>
+
+    </main>
+
+    
+    <footer class="site-footer">
+      <span>© 2026 Fancy · 用文字记录思考</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  
+  <script>
+    window.searchData = [
+      
+      { title: "\"GitHub开源项目深度分析系列七：Hermes-Agent\"", excerpt: "\"Hermes Agent 最大的价值不在于某一个具体功能，而在于它提出并验证了一个新的范式：Agent 可以是“活的”——它从经验中学习、在使用中成长、跨会话积累对用户的理解。\"", url: "\"//localhost:1313/posts/github-7-hermes-agent/\"", tags: ["\"Agent\"","\"GitHub\"",] },
+      
+      { title: "\"一文讲明白AI大模型基本知识\"", excerpt: "\"大模型到底能做什么？怎么解决大模型的幻觉？我们会被AI替代吗？\"", url: "\"//localhost:1313/posts/llm-ppt/\"", tags: ["\"科普\"","\"大模型\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列六：mempalace\"", excerpt: "\"一个好莱坞演员亲自发布 GitHub 仓库，解决AI遗忘问题，史上基准测试最高分 +完全免费 + 纯本地运行\"", url: "\"//localhost:1313/posts/github-6-mempalace/\"", tags: ["\"记忆系统\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列五：OpenScreen\"", excerpt: "\"订阅经济时代的反叛者——一个开源工具如何在两周内收获2.5万颗星，OpenScreen 是一款免费、开源的屏幕录制和演示视频制作工具\"", url: "\"//localhost:1313/posts/github-5-openscreen/\"", tags: ["\"开源工具\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列四：Claw-Code\"", excerpt: "\"对 Anthropic 公司 Claude Code 智能体架构的“净室重写”（Clean-Room Rewrite）。它不复制任何专有代码，而是基于公开的架构模式，使用 Python 和 Rust 从零开始独立实现。\"", url: "\"//localhost:1313/posts/github-4-claw-code/\"", tags: ["\"Claude Code\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列三：superpowers\"", excerpt: "\"superpowers 是一套给编码AI智能体（Coding Agent）安装“行为规范”的技能框架。定义了一套完整的软件开发工作流，教AI成为一个合格的工程师\"", url: "\"//localhost:1313/posts/github-3-superpowers/\"", tags: ["\"Vibe Coding\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列二：agency-agents\"", excerpt: "\"提供了一套“AI员工岗位说明书”，让你可以把Claude Code、Cursor、GitHub Copilot等AI编程工具，一键“变身”为你需要的专业角色\"", url: "\"//localhost:1313/posts/github-2-agency-agents/\"", tags: ["\"Agent\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列一：OpenClaw\"", excerpt: "\"大家熟悉的“龙虾”，大家有详细了解过她吗？她为什么成为GitHub历史上增长最快的项目？\"", url: "\"//localhost:1313/posts/github-1-openclaw/\"", tags: ["\"OpenClaw\"","\"GitHub\"",] },
+      
+      { title: "\"ARC-AGI-3 深度解析：为什么当前的 AI 在“抽象游戏”面前依然像一个婴儿？？\"", excerpt: "\"AI擅长干什么？人类擅长干什么？一文告诉你\"", url: "\"//localhost:1313/posts/arc-agi-3/\"", tags: ["\"AGI\"","\"LLM\"",] },
+      
+      { title: "\"Vibe Coding 凉了，2026年最火的新职业是：驯兽师\"", excerpt: "\"LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？\"", url: "\"//localhost:1313/posts/vibe-coding-harness/\"", tags: ["\"Harness Engineering\"","\"Vibe Coding\"",] },
+      
+      { title: "\"RAG 企业级构建指南\"", excerpt: "\"企业应用大模型，RAG知识库是第一优先级的选择，员工与管理者都有感知、可量化价值、可落地的最佳方案\"", url: "\"//localhost:1313/posts/rag-guild/\"", tags: ["\"RAG\"","\"企业应用\"",] },
+      
+      { title: "\"AI Agent 三种范式深度详解\"", excerpt: "\"三种范式：ReAct（Reasoning + Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）\"", url: "\"//localhost:1313/posts/ai-agent-paradigm/\"", tags: ["\"Agent\"","\"范式\"",] },
+      
+      { title: "\"大模型科普系列六：Agent = Model +Harness？\"", excerpt: "\"为什么同一个模型，在不同的产品，差异那么大？这篇文章告诉你，关键是Harness\"", url: "\"//localhost:1313/posts/lesson-6-harness/\"", tags: ["\"科普\"","\"Agent\"","\"Harness\"",] },
+      
+      { title: "\"大模型科普系列五：什么是AI Agent Skills？\"", excerpt: "\"Skill = 工具 + 使用指南 + 场景说明。一种结构化的能力封装：把「做什么 + 怎么做」打包成一个可复用、可组合的单元。\"", url: "\"//localhost:1313/posts/lesson-5-skill/\"", tags: ["\"科普\"","\"Skills\"",] },
+      
+      { title: "\"大模型科普系列四：什么是Vibe Coding？\"", excerpt: "\"一个编码小白，如何写代码？想做一个小程序记录每天读书笔记？想给自己做一个自动化的爬虫脚本？\"", url: "\"//localhost:1313/posts/lesson-4-vibecoding/\"", tags: ["\"科普\"","\"Vibe Coding\"",] },
+      
+      { title: "\"大模型科普系列三：普通人如何用好提示词？\"", excerpt: "\"写提示词（Prompt）这件事，跟使唤人有点像。这篇文章，就教你几个简单实用的提示词技巧\"", url: "\"//localhost:1313/posts/lesson-3-prompt/\"", tags: ["\"科普\"","\"Prompt\"",] },
+      
+      { title: "\"大模型科普系列二：Token 是什么？\"", excerpt: "\"大模型的字数，以及它背后的能源战争\"", url: "\"//localhost:1313/posts/lesson-2-token/\"", tags: ["\"科普\"","\"Token\"",] },
+      
+      { title: "\"大模型科普系列一：大模型到底是什么？\"", excerpt: "\"用它写周报、问问题、生成内容——好像什么都会。但为什么有时候它会一本正经地胡说八道？大模型的原理、能耐与边界，这篇文章一次讲清楚\"", url: "\"//localhost:1313/posts/lesson-1-llm/\"", tags: ["\"科普\"","\"LLM\"",] },
+      
+    ];
+  </script>
+
+  <script>
+    
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>

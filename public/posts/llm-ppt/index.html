@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小舟从此逝，江海寄余生</title>
+  <meta name="description" content="记录技术、思考与生活、大模型科普知识">
+  <link rel="canonical" href="//localhost:1313/posts/llm-ppt/">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="小舟从此逝，江海寄余生">
+  <meta property="og:description" content="记录技术、思考与生活、大模型科普知识">
+  <meta property="og:url" content="//localhost:1313/posts/llm-ppt/">
+  <meta property="og:site_name" content="小舟从此逝，江海寄余生">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="小舟从此逝，江海寄余生">
+  <meta name="twitter:description" content="记录技术、思考与生活、大模型科普知识">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "小舟从此逝，江海寄余生",
+    "description": "记录技术、思考与生活、大模型科普知识",
+    "url": "\/\/localhost:1313\/",
+    "author": {
+      "@type": "Person",
+      "name": "Fancy"
+    }
+  }
+  </script>
+
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  
+  <link rel="stylesheet" href="/css/style.552217d2298bec0de913fa87f801fb1e85b3a32c0e176e4daf48c8dcb9edfe4d.css">
+  
+</head>
+<body>
+
+  
+  <img src="/cover.jpg" alt="cover" class="cover-image">
+
+  
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        小舟从此逝，江海寄余生
+      </a>
+      <ul class="navbar-links">
+        
+        <li><a href="/" >主页</a></li>
+        
+        <li><a href="/archive/" >归档</a></li>
+        
+        <li><a href="/about/" >关于</a></li>
+        
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  
+  <div class="site-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          
+          <a href="//localhost:1313/tags/agent/" class="tag-item">Agent</a>
+          
+          <a href="//localhost:1313/tags/agi/" class="tag-item">AGI</a>
+          
+          <a href="//localhost:1313/tags/claude-code/" class="tag-item">Claude Code</a>
+          
+          <a href="//localhost:1313/tags/github/" class="tag-item">GitHub</a>
+          
+          <a href="//localhost:1313/tags/harness/" class="tag-item">Harness</a>
+          
+          <a href="//localhost:1313/tags/harness-engineering/" class="tag-item">Harness Engineering</a>
+          
+          <a href="//localhost:1313/tags/llm/" class="tag-item">LLM</a>
+          
+          <a href="//localhost:1313/tags/openclaw/" class="tag-item">OpenClaw</a>
+          
+          <a href="//localhost:1313/tags/prompt/" class="tag-item">Prompt</a>
+          
+          <a href="//localhost:1313/tags/rag/" class="tag-item">RAG</a>
+          
+          <a href="//localhost:1313/tags/skills/" class="tag-item">Skills</a>
+          
+          <a href="//localhost:1313/tags/token/" class="tag-item">Token</a>
+          
+          <a href="//localhost:1313/tags/vibe-coding/" class="tag-item">Vibe Coding</a>
+          
+          <a href="//localhost:1313/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/" class="tag-item">企业应用</a>
+          
+          <a href="//localhost:1313/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="tag-item">大模型</a>
+          
+          <a href="//localhost:1313/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/" class="tag-item">开源工具</a>
+          
+          <a href="//localhost:1313/tags/%E7%A7%91%E6%99%AE/" class="tag-item">科普</a>
+          
+          <a href="//localhost:1313/tags/%E8%8C%83%E5%BC%8F/" class="tag-item">范式</a>
+          
+          <a href="//localhost:1313/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/" class="tag-item">记忆系统</a>
+          
+        </div>
+      </div>
+
+      
+    </aside>
+
+    
+    <main class="main-content">
+      
+<div class="about-section">
+  <div class="page-header">
+    <h1 class="page-title">一文讲明白AI大模型基本知识</h1>
+    <p class="page-subtitle">大模型到底能做什么？怎么解决大模型的幻觉？我们会被AI替代吗？</p>
+  </div>
+  <div class="post-detail-body">
+    <h2 id="第1页封面你的同事正在被重新定义">第1页｜封面：你的同事，正在被重新定义</h2>
+<p><strong>核心观点：</strong> AI不是工具升级，是工作方式的范式转移</p>
+<ul>
+<li>从&quot;人用软件&quot;到&quot;人指挥AI&quot;，白领的核心价值正在重构</li>
+<li>这场变革不是10年后，是现在进行时</li>
+<li>本次分享回答三个问题：大模型是什么、能做什么、会改变什么</li>
+</ul>
+<hr>
+<h2 id="第2页大模型到底是什么别被名词唬住">第2页｜大模型到底是什么？别被名词唬住</h2>
+<p><strong>核心观点：</strong> 大模型本质是&quot;压缩了人类知识的概率推理机器&quot;</p>
+<ul>
+<li>不是数据库（不是查表），不是搜索引擎（不是检索），是<strong>模式归纳+概率生成</strong></li>
+<li>训练逻辑：读完互联网→学会&quot;下一个词最可能是什么&quot;→涌现出推理、写作、分析能力</li>
+<li>类比：像一个读过所有书但没有亲身经历的天才实习生</li>
+<li>关键参数&quot;参数量&quot;≈神经元连接数，GPT-4约1.8万亿，决定&quot;智力上限&quot;</li>
+<li><strong>白领需知：</strong> 它不理解，它预测；它不记忆，它生成</li>
+</ul>
+<hr>
+<h2 id="第3页进化史从聊天框到数字员工">第3页｜进化史：从聊天框到数字员工</h2>
+<p><strong>核心观点：</strong> AI经历了三代跃迁，我们正站在第三代门口</p>
+<table>
+  <thead>
+      <tr>
+          <th>阶段</th>
+          <th>代表产品</th>
+          <th>能力边界</th>
+          <th>交互方式</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>对话式AI</td>
+          <td>ChatGPT初版</td>
+          <td>问答、写作</td>
+          <td>你问它答</td>
+      </tr>
+      <tr>
+          <td>工具式AI</td>
+          <td>Copilot/插件</td>
+          <td>嵌入软件流程</td>
+          <td>边用边问</td>
+      </tr>
+      <tr>
+          <td>数字员工</td>
+          <td>Agent系统</td>
+          <td>自主完成任务链</td>
+          <td>交代目标即可</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>关键跨越：</strong> 从&quot;回答问题&quot;到&quot;完成任务&quot;，从被动响应到主动执行</li>
+<li>数字员工特征：能调用工具、能拆解任务、能自我纠错、能跨系统协作</li>
+</ul>
+<hr>
+<h2 id="第4页大模型能做什么能力全景图">第4页｜大模型能做什么？能力全景图</h2>
+<p><strong>核心观点：</strong> 大模型的核心能力是&quot;语言→思维→行动&quot;的统一</p>
+<p><strong>🧠 理解与分析</strong></p>
+<ul>
+<li>读懂合同、报告、邮件；提炼关键信息；识别逻辑漏洞</li>
+</ul>
+<p><strong>✍️ 生成与创作</strong></p>
+<ul>
+<li>写方案、写代码、写文案、写PPT脚本；多语言翻译；风格模仿</li>
+</ul>
+<p><strong>🔄 转化与结构化</strong></p>
+<ul>
+<li>会议录音→结构化纪要；非结构数据→表格；口述需求→流程图</li>
+</ul>
+<p><strong>💬 对话与决策辅助</strong></p>
+<ul>
+<li>头脑风暴伙伴；方案评审；模拟客户提问；压力测试逻辑</li>
+</ul>
+<p><strong>白领高频场景：</strong> 写周报、做分析、准备演讲、处理大量文档</p>
+<hr>
+<h2 id="第5页大模型不能做什么认清边界才不踩坑">第5页｜大模型不能做什么？认清边界才不踩坑</h2>
+<p><strong>核心观点：</strong> 大模型的三大天然缺陷，必须知道</p>
+<p><strong>❌ 缺陷一：没有实时信息</strong></p>
+<ul>
+<li>知识有截止日期，不知道今天的股价、新闻、你公司的内部数据</li>
+<li>踩坑案例：让它查竞品最新动态→它会&quot;编&quot;一个听起来合理的答案</li>
+</ul>
+<p><strong>❌ 缺陷二：不能执行动作（原生状态）</strong></p>
+<ul>
+<li>只会&quot;说&quot;，不会&quot;做&quot;——不能发邮件、不能改系统、不能查数据库</li>
+<li>就像一个只能动嘴的顾问</li>
+</ul>
+<p><strong>❌ 缺陷三：会幻觉（Hallucination）</strong></p>
+<ul>
+<li>编造参考文献、虚构数据、捏造案例，且口气十足、毫不犹豫</li>
+<li>根本原因：它优化的是&quot;听起来合理&quot;，而非&quot;事实正确&quot;</li>
+</ul>
+<p><strong>使用原则：</strong> 让AI起草，让人类审核；高风险决策必须人工验证</p>
+<hr>
+<h2 id="第6页幻觉问题为什么ai会一本正经地胡说八道">第6页｜幻觉问题：为什么AI会&quot;一本正经地胡说八道&quot;？</h2>
+<p><strong>核心观点：</strong> 幻觉不是bug，是大模型架构的必然产物</p>
+<ul>
+<li><strong>产生机制：</strong> 训练目标是预测下一个token的概率，不是&quot;说真话&quot;</li>
+<li><strong>幻觉高发场景：</strong> 冷门知识、精确数字、引用来源、你公司的私有信息</li>
+<li><strong>危险在于：</strong> 它的幻觉和它的真话，在形式上无法区分</li>
+</ul>
+<p><strong>幻觉严重性分级：</strong></p>
+<ul>
+<li>低风险：写作润色、头脑风暴（错了也无妨）</li>
+<li>中风险：竞品分析、市场数据（需人工核实）</li>
+<li>高风险：法律条款、财务数字、医疗建议（绝不可盲信）</li>
+</ul>
+<p><strong>解法预告→</strong> RAG技术（下一页）</p>
+<hr>
+<h2 id="第7页解决幻觉rag让ai有据可查">第7页｜解决幻觉：RAG让AI&quot;有据可查&quot;</h2>
+<p><strong>核心观点：</strong> RAG = 给大模型装上&quot;实时图书馆&quot;，让它回答前先查资料</p>
+<p><strong>RAG工作流程：</strong></p>
+<pre tabindex="0"><code>用户提问 → 检索知识库（你的文档/数据库）→ 把相关内容喂给AI → AI基于真实资料回答
+</code></pre><p><strong>没有RAG：</strong> AI凭记忆回答，可能编造<br>
+<strong>有了RAG：</strong> AI先找到原文，再基于原文作答，答案可溯源</p>
+<p><strong>企业RAG典型应用：</strong></p>
+<ul>
+<li>内部知识库问答（HR政策、产品手册、合同模板）</li>
+<li>客服机器人接入产品文档</li>
+<li>财报分析助手接入实时数据</li>
+<li>法务助手基于真实法条作答</li>
+</ul>
+<p><strong>核心价值：</strong> 把大模型的通用智能 + 企业私有数据结合，产生专属&quot;领域专家&quot;</p>
+<hr>
+<h2 id="第8页解决只想不动手agent让ai真正干活">第8页｜解决&quot;只想不动手&quot;：Agent让AI真正干活</h2>
+<p><strong>核心观点：</strong> Agent = 大模型 + 工具调用 + 自主规划，是AI从&quot;顾问&quot;变&quot;员工&quot;的关键</p>
+<p><strong>Agent vs 普通大模型：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>普通大模型</th>
+          <th>Agent</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>能力</td>
+          <td>输出文字</td>
+          <td>执行动作</td>
+      </tr>
+      <tr>
+          <td>任务</td>
+          <td>单轮问答</td>
+          <td>多步骤任务链</td>
+      </tr>
+      <tr>
+          <td>工具</td>
+          <td>无</td>
+          <td>搜索/代码/API/文件</td>
+      </tr>
+      <tr>
+          <td>纠错</td>
+          <td>不能</td>
+          <td>失败后重试</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Agent执行示例（帮你做竞品分析）：</strong></p>
+<ol>
+<li>自动搜索竞品官网</li>
+<li>抓取关键信息</li>
+<li>调用代码整理成表格</li>
+<li>生成分析报告草稿</li>
+<li>发送至你的邮箱</li>
+</ol>
+<hr>
+<h2 id="第9页2026年最火的agent工具claude-code-vs-openclaw">第9页｜2026年最火的Agent工具：Claude Code vs OpenClaw</h2>
+<p><strong>核心观点：</strong> Agent时代已经到来，两款最具代表性的工具，定位截然不同</p>
+<p><strong>背景：</strong></p>
+<ul>
+<li>Claude Code：Anthropic官方出品，专为开发者在终端中写代码设计</li>
+<li>OpenClaw：奥地利开发者Peter Steinberger于2025年11月发布的开源Agent，60天内GitHub星数突破25万，被Nvidia CEO Jensen Huang称为&quot;下一个ChatGPT&quot;</li>
+</ul>
+<p><strong>核心对比：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>Claude Code</th>
+          <th>OpenClaw</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>定位</td>
+          <td>专业编程Agent</td>
+          <td>通用个人数字员工</td>
+      </tr>
+      <tr>
+          <td>运行方式</td>
+          <td>终端命令行</td>
+          <td>本地常驻后台，全天候运行</td>
+      </tr>
+      <tr>
+          <td>交互入口</td>
+          <td>开发者终端</td>
+          <td>WhatsApp / Telegram / 微信等</td>
+      </tr>
+      <tr>
+          <td>支持模型</td>
+          <td>Claude系列</td>
+          <td>200+模型（Claude/GPT/Gemini均可）</td>
+      </tr>
+      <tr>
+          <td>核心能力</td>
+          <td>读大型代码库、写代码、调试、跑测试</td>
+          <td>管邮件、控系统、浏览网页、跨应用自动化</td>
+      </tr>
+      <tr>
+          <td>使用门槛</td>
+          <td>面向开发者</td>
+          <td>普通用户也可上手</td>
+      </tr>
+      <tr>
+          <td>数据安全</td>
+          <td>在Anthropic生态内</td>
+          <td>本地部署，数据不出机器（但有安全漏洞风险）</td>
+      </tr>
+      <tr>
+          <td>费用模型</td>
+          <td>按API Token计费</td>
+          <td>开源免费，自付LLM API费用</td>
+      </tr>
+      <tr>
+          <td>适合谁</td>
+          <td>程序员、技术团队</td>
+          <td>所有想要&quot;AI私人助理&quot;的人</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>一句话总结：</strong> Claude Code是AI程序员，OpenClaw是AI管家</p>
+<hr>
+<h2 id="第10页api调用与token搞懂ai世界的水电煤">第10页｜API调用与Token：搞懂AI世界的&quot;水电煤&quot;</h2>
+<p><strong>核心观点：</strong> API是管道，Token是计量单位，不懂这两个就看不懂AI的成本结构</p>
+<p><strong>什么是API调用？</strong></p>
+<ul>
+<li>API = 应用程序接口，理解为&quot;插头&quot;——企业系统通过API把大模型能力&quot;插&quot;进自己的产品</li>
+<li>你用的企业AI客服、智能助手、文档分析工具，背后都是API调用</li>
+<li>调用流程：你的系统 → 发送请求（含Prompt）→ 大模型处理 → 返回结果</li>
+<li><strong>白领视角：</strong> 你在网页上用ChatGPT是&quot;用产品&quot;，企业把AI嵌入自己系统是&quot;调API&quot;，两者天壤之别</li>
+</ul>
+<p><strong>什么是Token？</strong></p>
+<ul>
+<li>Token是大模型处理文字的最小单位：
+<ul>
+<li>英文：1 Token ≈ 0.75个单词</li>
+<li>中文：1 Token ≈ 0.5～1个汉字</li>
+</ul>
+</li>
+<li>输入和输出都消耗Token，Token就是计费单位</li>
+<li><strong>直观感受：</strong>
+<ul>
+<li>一封500字邮件 ≈ 700 Token</li>
+<li>一份5000字分析报告 ≈ 7,000 Token</li>
+<li>一份20页PDF ≈ 15,000～30,000 Token</li>
+</ul>
+</li>
+</ul>
+<p><strong>Context Window（上下文窗口）= AI的&quot;短期记忆&quot;</strong></p>
+<ul>
+<li>模型一次能处理的Token总量上限</li>
+<li>Claude 3.5：20万Token（约15万字）；GPT-4o：12.8万Token</li>
+<li>窗口越大，能处理的文档越长，但成本也越高</li>
+<li><strong>白领需知：</strong> 超长文档要分段处理，或选择大窗口模型；每次对话结束记忆清零，它不认识&quot;昨天的你&quot;</li>
+</ul>
+<hr>
+<h2 id="第11页模型定价全景--开源vs闭源怎么选">第11页｜模型定价全景 &amp; 开源vs闭源怎么选？</h2>
+<p><strong>核心观点：</strong> 选模型不是选&quot;最强的&quot;，是选&quot;最适合你场景的&quot;</p>
+<p><strong>主流模型价格对比（2026年Q1参考价）：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>模型</th>
+          <th>厂商</th>
+          <th>输入价（/百万Token）</th>
+          <th>输出价（/百万Token）</th>
+          <th>特点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Claude Sonnet 4.6</td>
+          <td>Anthropic</td>
+          <td>~$3</td>
+          <td>~$15</td>
+          <td>综合能力强，推理优秀</td>
+      </tr>
+      <tr>
+          <td>GPT-4o</td>
+          <td>OpenAI</td>
+          <td>~$5</td>
+          <td>~$15</td>
+          <td>生态最广，多模态</td>
+      </tr>
+      <tr>
+          <td>Gemini 1.5 Pro</td>
+          <td>Google</td>
+          <td>~$3.5</td>
+          <td>~$10.5</td>
+          <td>超长上下文，128万Token</td>
+      </tr>
+      <tr>
+          <td>DeepSeek V3</td>
+          <td>深度求索</td>
+          <td>¥1</td>
+          <td>¥4</td>
+          <td>国内顶级，价格极低</td>
+      </tr>
+      <tr>
+          <td>通义千问Max</td>
+          <td>阿里云</td>
+          <td>¥4</td>
+          <td>¥12</td>
+          <td>中文优化，阿里生态</td>
+      </tr>
+      <tr>
+          <td>文心4.0</td>
+          <td>百度</td>
+          <td>¥30</td>
+          <td>¥90</td>
+          <td>国产合规，政务场景强</td>
+      </tr>
+      <tr>
+          <td>Kimi k1.5</td>
+          <td>月之暗面</td>
+          <td>¥8</td>
+          <td>¥32</td>
+          <td>超长上下文，中文理解强</td>
+      </tr>
+      <tr>
+          <td>混元Turbo</td>
+          <td>腾讯</td>
+          <td>¥0.8</td>
+          <td>¥2</td>
+          <td>性价比极高，腾讯生态</td>
+      </tr>
+      <tr>
+          <td>开源模型（自部署）</td>
+          <td>Meta/阿里等</td>
+          <td>仅算力成本</td>
+          <td>仅算力成本</td>
+          <td>数据不出域，需技术团队</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>📌 国内模型受益于竞争激烈，价格普遍比海外低5～10倍，且持续下降</p>
+</blockquote>
+<p><strong>开源 vs 闭源：企业选型四问</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>问题</th>
+          <th>选闭源（API）</th>
+          <th>选开源（自部署）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>数据能出公司吗？</td>
+          <td>✅ 可以</td>
+          <td>❌ 不行→必须开源</td>
+      </tr>
+      <tr>
+          <td>有技术团队维护吗？</td>
+          <td>不需要</td>
+          <td>✅ 需要</td>
+      </tr>
+      <tr>
+          <td>调用量大吗？</td>
+          <td>低频→闭源划算</td>
+          <td>高频→开源摊薄成本</td>
+      </tr>
+      <tr>
+          <td>需要定制微调吗？</td>
+          <td>难定制</td>
+          <td>✅ 可完全定制</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>一句话决策逻辑：</strong></p>
+<ul>
+<li>数据敏感 或 调用量极大 → 开源自部署（DeepSeek、Llama、Qwen）</li>
+<li>快速上线 或 效果优先 → 闭源API（Claude、GPT-4o、通义）</li>
+<li>政务/金融/医疗等强合规场景 → 优先国内厂商（文心、通义、混元）</li>
+</ul>
+<hr>
+<h2 id="第12页多agent协作ai版虚拟团队">第12页｜多Agent协作：AI版&quot;虚拟团队&quot;</h2>
+<p><strong>核心观点：</strong> 单个Agent有上限，多Agent协作才能完成复杂企业任务</p>
+<p><strong>多Agent架构类比：</strong></p>
+<ul>
+<li><strong>主管Agent（Orchestrator）：</strong> 接收目标，拆解任务，分配给下属</li>
+<li><strong>执行Agent：</strong> 各司其职（调研Agent、写作Agent、数据Agent、审核Agent）</li>
+<li><strong>协调机制：</strong> 异步通信、结果校验、失败重试</li>
+</ul>
+<p><strong>真实案例逻辑：</strong></p>
+<blockquote>
+<p>目标：生成一份Q3市场分析报告</p>
+<ul>
+<li>调研Agent：搜集行业数据</li>
+<li>分析Agent：数据建模解读</li>
+<li>写作Agent：生成报告正文</li>
+<li>审核Agent：事实核查+风格统一</li>
+<li>输出Agent：格式化并推送</li>
+</ul>
+</blockquote>
+<p><strong>白领启示：</strong> 未来的工作是&quot;设计任务流程&quot;而非&quot;执行任务步骤&quot;</p>
+<hr>
+<h2 id="第13页提示词工程你和ai之间的沟通艺术">第13页｜提示词工程：你和AI之间的&quot;沟通艺术&quot;</h2>
+<p><strong>核心观点：</strong> 同样的AI，提示词好不好，结果差10倍</p>
+<p><strong>坏提示 vs 好提示：</strong></p>
+<ul>
+<li>❌ &ldquo;帮我写个方案&rdquo;</li>
+<li>✅ &ldquo;你是一位有10年经验的ToB SaaS销售总监，请为我们针对制造业中型企业的ERP产品，写一份3000字的解决方案，结构包括：痛点分析、产品价值、实施路径、ROI测算&rdquo;</li>
+</ul>
+<p><strong>提示词黄金公式：</strong></p>
+<pre tabindex="0"><code>角色设定 + 背景信息 + 明确任务 + 输出格式 + 约束条件
+</code></pre><p><strong>进阶技巧：</strong></p>
+<ul>
+<li><strong>思维链（CoT）：</strong> 加上&quot;请一步步思考&quot;，推理质量提升30%+</li>
+<li><strong>Few-shot示例：</strong> 给1-3个例子，输出风格立刻对齐</li>
+<li><strong>角色扮演：</strong> &ldquo;扮演一个挑剔的客户，质疑我的方案&rdquo;</li>
+</ul>
+<p><strong>结论：</strong> 提示词能力 = 新时代的核心职场技能</p>
+<hr>
+<h2 id="第14页企业ai落地的四个层次">第14页｜企业AI落地的四个层次</h2>
+<p><strong>核心观点：</strong> 企业用AI不是装个软件，是分阶段的能力建设</p>
+<p><strong>Level 1 — 个人提效（现在）</strong><br>
+工具使用：员工自发用ChatGPT/Copilot，点状提效，无系统整合</p>
+<p><strong>Level 2 — 流程嵌入（近期）</strong><br>
+AI进入标准化流程：合同审查、客服回复、报告生成有AI参与节点</p>
+<p><strong>Level 3 — 知识资产化（中期）</strong><br>
+企业搭建私有知识库+RAG，AI能调用企业专属知识，形成竞争壁垒</p>
+<p><strong>Level 4 — 数字员工体系（未来）</strong><br>
+多Agent协同，AI承担完整业务职能，人主要做决策和创意</p>
+<p><strong>判断你的公司在哪级：</strong> 大多数企业现在在Level 1和2之间，Level 3是核心战场</p>
+<hr>
+<h2 id="第15页哪些岗位最先被重塑">第15页｜哪些岗位最先被重塑？</h2>
+<p><strong>核心观点：</strong> 不是&quot;AI取代人&quot;，是&quot;用AI的人取代不用AI的人&quot;</p>
+<p><strong>高影响岗位（工作内容大幅变化）：</strong></p>
+<ul>
+<li>内容运营/文案：从&quot;写&quot;变成&quot;审+导&quot;</li>
+<li>数据分析师：从&quot;取数+建模&quot;变成&quot;提问+解读&quot;</li>
+<li>客服/售前：大量标准问题由AI处理，人处理复杂情绪场景</li>
+<li>程序员：从&quot;写代码&quot;变成&quot;审代码+架构决策&quot;</li>
+</ul>
+<p><strong>低影响岗位（暂时）：</strong></p>
+<ul>
+<li>需要实体操作的（工厂、服务业现场）</li>
+<li>高度创意+人际关系的（谈判、客情维护、战略决策）</li>
+</ul>
+<p><strong>新兴能力需求：</strong></p>
+<ul>
+<li>AI任务设计能力</li>
+<li>结果审核与纠错能力</li>
+<li>人机协作流程设计能力</li>
+</ul>
+<hr>
+<h2 id="第16页未来企业组织结构的重构">第16页｜未来企业组织结构的重构</h2>
+<p><strong>核心观点：</strong> AI让组织从&quot;金字塔&quot;走向&quot;小团队+AI集群&quot;</p>
+<p><strong>传统组织：</strong></p>
+<pre tabindex="0"><code>高管 → 中层（传递信息、分配任务）→ 执行层（大量人力重复工作）
+</code></pre><p><strong>AI时代组织：</strong></p>
+<pre tabindex="0"><code>决策者 + 少量核心人才 + AI Agent集群（执行大量标准化工作）
+</code></pre><p><strong>具体变化：</strong></p>
+<ul>
+<li><strong>中层管理：</strong> 信息传递功能消失，保留判断与协调功能</li>
+<li><strong>团队规模：</strong> 10人团队+AI能干原来50人的活</li>
+<li><strong>汇报节奏：</strong> AI实时产出数据，减少低效会议</li>
+<li><strong>新角色出现：</strong> AI系统设计师、Prompt工程师、AI审核员</li>
+</ul>
+<p><strong>预测：</strong> 5年内，&ldquo;会管理AI&quot;将是中层晋升的必要条件</p>
+<hr>
+<h2 id="第17页数据安全与ai治理企业不能忽视的红线">第17页｜数据安全与AI治理：企业不能忽视的红线</h2>
+<p><strong>核心观点：</strong> AI用得越深，数据风险越大，治理要同步跟上</p>
+<p><strong>三大风险：</strong></p>
+<ul>
+<li><strong>数据泄露：</strong> 员工把客户数据、商业机密输入公共AI，等于&quot;免费送给对手&rdquo;</li>
+<li><strong>合规风险：</strong> AI生成内容的版权归属、虚假信息责任尚无定论</li>
+<li><strong>决策失误：</strong> 盲信AI输出，出现系统性错误无法追责</li>
+</ul>
+<p><strong>OpenClaw的安全警示（真实案例）：</strong></p>
+<ul>
+<li>安全研究公司已在OpenClaw生态中发现138+个漏洞，存在数据渗漏和提示词注入攻击</li>
+<li>中国政府已于2026年3月限制国有企业和政府机关使用OpenClaw</li>
+<li>教训：开源Agent能力强大，但权限越大、风险越高，企业使用须严格管控</li>
+</ul>
+<p><strong>企业必建规则：</strong></p>
+<ul>
+<li>禁止将敏感数据输入公共大模型</li>
+<li>AI输出内容必须人工审核才能对外使用</li>
+<li>建立私有化部署或使用企业版（数据不出域）</li>
+</ul>
+<hr>
+<h2 id="第18页现在就能做的三件事">第18页｜现在就能做的三件事</h2>
+<p><strong>核心观点：</strong> 等待观望是最大的风险，从小处开始，今天就能开始</p>
+<p><strong>个人层面：</strong></p>
+<ol>
+<li>选一个你每周重复3次以上的工作任务，今天用AI做一遍，感受差距</li>
+<li>学会写结构化Prompt（角色+任务+格式+约束），提升10倍输出质量</li>
+<li>建立&quot;AI初稿+人工审核&quot;的个人工作流</li>
+</ol>
+<p><strong>团队层面：</strong></p>
+<ol>
+<li>找到团队中最耗时的重复性工作，设计AI嵌入方案</li>
+<li>共享高质量Prompt库，让团队集体提效</li>
+<li>指定一名AI试验官，专门探索新工具并向团队分享</li>
+</ol>
+<p><strong>公司层面：</strong></p>
+<ol>
+<li>评估当前处于哪个AI成熟度等级</li>
+<li>优先在知识密集型流程（客服/合规/分析）做RAG试点</li>
+<li>制定AI使用规范，防范数据风险</li>
+</ol>
+<hr>
+<h2 id="第19页结语在ai时代你的不可替代性从哪里来">第19页｜结语：在AI时代，你的不可替代性从哪里来？</h2>
+<p><strong>核心观点：</strong> AI放大能力，但无法替代判断力、创造力和人与人之间的信任</p>
+<p><strong>AI做不到的事（短期内）：</strong></p>
+<ul>
+<li>理解组织政治与人心</li>
+<li>在模糊中做高风险决策并承担责任</li>
+<li>建立真实的人际信任与情感连接</li>
+<li>提出颠覆性问题（AI只能优化已知框架）</li>
+</ul>
+<p><strong>新时代白领的核心竞争力：</strong></p>
+<ul>
+<li><strong>提问能力：</strong> 知道问什么比知道答案更重要</li>
+<li><strong>判断能力：</strong> 对AI输出的结果有独立审视力</li>
+<li><strong>整合能力：</strong> 把AI工具、数据、人、流程串联成价值</li>
+</ul>
+<p><strong>最后一句话：</strong></p>
+<blockquote>
+<p>AI是杠杆，你的思维是支点。支点越强，杠杆撬动的世界越大。</p>
+</blockquote>
+
+  </div>
+</div>
+
+    </main>
+
+    
+    <footer class="site-footer">
+      <span>© 2026 Fancy · 用文字记录思考</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  
+  <script>
+    window.searchData = [
+      
+      { title: "\"GitHub开源项目深度分析系列七：Hermes-Agent\"", excerpt: "\"Hermes Agent 最大的价值不在于某一个具体功能，而在于它提出并验证了一个新的范式：Agent 可以是“活的”——它从经验中学习、在使用中成长、跨会话积累对用户的理解。\"", url: "\"//localhost:1313/posts/github-7-hermes-agent/\"", tags: ["\"Agent\"","\"GitHub\"",] },
+      
+      { title: "\"一文讲明白AI大模型基本知识\"", excerpt: "\"大模型到底能做什么？怎么解决大模型的幻觉？我们会被AI替代吗？\"", url: "\"//localhost:1313/posts/llm-ppt/\"", tags: ["\"科普\"","\"大模型\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列六：mempalace\"", excerpt: "\"一个好莱坞演员亲自发布 GitHub 仓库，解决AI遗忘问题，史上基准测试最高分 +完全免费 + 纯本地运行\"", url: "\"//localhost:1313/posts/github-6-mempalace/\"", tags: ["\"记忆系统\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列五：OpenScreen\"", excerpt: "\"订阅经济时代的反叛者——一个开源工具如何在两周内收获2.5万颗星，OpenScreen 是一款免费、开源的屏幕录制和演示视频制作工具\"", url: "\"//localhost:1313/posts/github-5-openscreen/\"", tags: ["\"开源工具\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列四：Claw-Code\"", excerpt: "\"对 Anthropic 公司 Claude Code 智能体架构的“净室重写”（Clean-Room Rewrite）。它不复制任何专有代码，而是基于公开的架构模式，使用 Python 和 Rust 从零开始独立实现。\"", url: "\"//localhost:1313/posts/github-4-claw-code/\"", tags: ["\"Claude Code\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列三：superpowers\"", excerpt: "\"superpowers 是一套给编码AI智能体（Coding Agent）安装“行为规范”的技能框架。定义了一套完整的软件开发工作流，教AI成为一个合格的工程师\"", url: "\"//localhost:1313/posts/github-3-superpowers/\"", tags: ["\"Vibe Coding\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列二：agency-agents\"", excerpt: "\"提供了一套“AI员工岗位说明书”，让你可以把Claude Code、Cursor、GitHub Copilot等AI编程工具，一键“变身”为你需要的专业角色\"", url: "\"//localhost:1313/posts/github-2-agency-agents/\"", tags: ["\"Agent\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列一：OpenClaw\"", excerpt: "\"大家熟悉的“龙虾”，大家有详细了解过她吗？她为什么成为GitHub历史上增长最快的项目？\"", url: "\"//localhost:1313/posts/github-1-openclaw/\"", tags: ["\"OpenClaw\"","\"GitHub\"",] },
+      
+      { title: "\"ARC-AGI-3 深度解析：为什么当前的 AI 在“抽象游戏”面前依然像一个婴儿？？\"", excerpt: "\"AI擅长干什么？人类擅长干什么？一文告诉你\"", url: "\"//localhost:1313/posts/arc-agi-3/\"", tags: ["\"AGI\"","\"LLM\"",] },
+      
+      { title: "\"Vibe Coding 凉了，2026年最火的新职业是：驯兽师\"", excerpt: "\"LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？\"", url: "\"//localhost:1313/posts/vibe-coding-harness/\"", tags: ["\"Harness Engineering\"","\"Vibe Coding\"",] },
+      
+      { title: "\"RAG 企业级构建指南\"", excerpt: "\"企业应用大模型，RAG知识库是第一优先级的选择，员工与管理者都有感知、可量化价值、可落地的最佳方案\"", url: "\"//localhost:1313/posts/rag-guild/\"", tags: ["\"RAG\"","\"企业应用\"",] },
+      
+      { title: "\"AI Agent 三种范式深度详解\"", excerpt: "\"三种范式：ReAct（Reasoning + Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）\"", url: "\"//localhost:1313/posts/ai-agent-paradigm/\"", tags: ["\"Agent\"","\"范式\"",] },
+      
+      { title: "\"大模型科普系列六：Agent = Model +Harness？\"", excerpt: "\"为什么同一个模型，在不同的产品，差异那么大？这篇文章告诉你，关键是Harness\"", url: "\"//localhost:1313/posts/lesson-6-harness/\"", tags: ["\"科普\"","\"Agent\"","\"Harness\"",] },
+      
+      { title: "\"大模型科普系列五：什么是AI Agent Skills？\"", excerpt: "\"Skill = 工具 + 使用指南 + 场景说明。一种结构化的能力封装：把「做什么 + 怎么做」打包成一个可复用、可组合的单元。\"", url: "\"//localhost:1313/posts/lesson-5-skill/\"", tags: ["\"科普\"","\"Skills\"",] },
+      
+      { title: "\"大模型科普系列四：什么是Vibe Coding？\"", excerpt: "\"一个编码小白，如何写代码？想做一个小程序记录每天读书笔记？想给自己做一个自动化的爬虫脚本？\"", url: "\"//localhost:1313/posts/lesson-4-vibecoding/\"", tags: ["\"科普\"","\"Vibe Coding\"",] },
+      
+      { title: "\"大模型科普系列三：普通人如何用好提示词？\"", excerpt: "\"写提示词（Prompt）这件事，跟使唤人有点像。这篇文章，就教你几个简单实用的提示词技巧\"", url: "\"//localhost:1313/posts/lesson-3-prompt/\"", tags: ["\"科普\"","\"Prompt\"",] },
+      
+      { title: "\"大模型科普系列二：Token 是什么？\"", excerpt: "\"大模型的字数，以及它背后的能源战争\"", url: "\"//localhost:1313/posts/lesson-2-token/\"", tags: ["\"科普\"","\"Token\"",] },
+      
+      { title: "\"大模型科普系列一：大模型到底是什么？\"", excerpt: "\"用它写周报、问问题、生成内容——好像什么都会。但为什么有时候它会一本正经地胡说八道？大模型的原理、能耐与边界，这篇文章一次讲清楚\"", url: "\"//localhost:1313/posts/lesson-1-llm/\"", tags: ["\"科普\"","\"LLM\"",] },
+      
+    ];
+  </script>
+
+  <script>
+    
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>
