@@ -2,16 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/tags/agent/</loc>
-    <lastmod>2026-04-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/tags/github/</loc>
+    <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/github-8-kronos/</loc>
+    <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/%E9%87%8F%E5%8C%96/</loc>
+    <lastmod>2026-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/agent/</loc>
     <lastmod>2026-04-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/github-7-hermes-agent/</loc>
     <lastmod>2026-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>//localhost:1313/posts/llm-ppt/</loc>
+    <lastmod>2026-04-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2026-04-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/%E7%A7%91%E6%99%AE/</loc>
     <lastmod>2026-04-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/github-6-mempalace/</loc>
@@ -84,9 +99,6 @@
     <lastmod>2026-03-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/lesson-6-harness/</loc>
-    <lastmod>2026-03-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/%E7%A7%91%E6%99%AE/</loc>
     <lastmod>2026-03-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/skills/</loc>
