@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Skill on 小舟从此逝，江海寄余生</title>
+    <link>//localhost:1313/tags/skill/</link>
+    <description>Recent content in Skill on 小舟从此逝，江海寄余生</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 16 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/skill/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub开源项目深度分析系列九：andrej-karpathy-skills</title>
+      <link>//localhost:1313/posts/github-10-karpathy-skills/</link>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/github-10-karpathy-skills/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;项目地址&lt;/strong&gt;：https://github.com/forrestchang/andrej-karpathy-skills&lt;br&gt;&#xA;&lt;strong&gt;分析日期&lt;/strong&gt;：2026 年 4 月 16 日&lt;br&gt;&#xA;&lt;strong&gt;今日新增 Stars&lt;/strong&gt;：+9,646（GitHub Trending 今日全站第一）&lt;br&gt;&#xA;&lt;strong&gt;总 Stars&lt;/strong&gt;：44,062&lt;br&gt;&#xA;&lt;strong&gt;Forks&lt;/strong&gt;：3,600+&lt;br&gt;&#xA;&lt;strong&gt;创建时间&lt;/strong&gt;：2026 年 1 月 27 日&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一这个项目是干什么的&#34;&gt;一、这个项目是干什么的？&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-一句话本质&#34;&gt;1.1 一句话本质&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;一个 Markdown 文件，装了 4 条规矩，让 AI 写代码少犯低级错误。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;整个项目的核心交付物，就是一个 &lt;code&gt;CLAUDE.md&lt;/code&gt; 文件。没有框架，没有依赖，没有安装脚本。这件事本身就值得思考：为什么一个 Markdown 文件能拿到 4.4 万 Star？&lt;/p&gt;&#xA;&lt;h3 id=&#34;12-起源karpathy-发了什么&#34;&gt;1.2 起源：Karpathy 发了什么&lt;/h3&gt;&#xA;&lt;p&gt;项目名字里的 Andrej Karpathy，是 AI 领域公认的&amp;quot;最会讲课的人&amp;quot;之一：OpenAI 联合创始人、特斯拉 AI 总监、斯坦福 CS231n 主讲教授。他在 2026 年初的一次分享里，系统性地梳理了他用 Claude Code 的真实感受——&lt;/p&gt;&#xA;&lt;p&gt;不是夸奖，而是&lt;strong&gt;吐槽&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;他提炼出了 AI 写代码时反复出现的四个毛病：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;毛病&lt;/th&gt;&#xA;          &lt;th&gt;具体表现&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;乱做假设&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;不问你，直接猜，猜错了你还不知道&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;藏着困惑&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;遇到模糊需求，不澄清，自己选一个然后干&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;过度复杂&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;3 行能搞定的事，写出 30 行带工厂类的架构&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;破坏性编辑&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;改一个 bug，顺手删了注释、改了风格、动了无关代码&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;然后他说了一句话，后来被反复引用：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
