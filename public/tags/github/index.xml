@@ -6,10 +6,17 @@
     <description>Recent content in GitHub on 小舟从此逝，江海寄余生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 16 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GitHub开源项目深度分析系列九：andrej-karpathy-skills</title>
+      <title>GitHub开源项目深度分析系列十二：mattpocock-skills</title>
+      <link>//localhost:1313/posts/github-12-mattpocock-skills/</link>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/github-12-mattpocock-skills/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;分析日期：2026-04-29&#xA;仓库：https://github.com/mattpocock/skills&#xA;GitHub 热度：日增 ⭐ 7,321 | 总 ⭐ 37,270 | 登顶 Trending 第一&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一项目是什么&#34;&gt;一、项目是什么&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-一句话定义&#34;&gt;1.1 一句话定义&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Matt Pocock 将自己日常使用 AI 编程助手（Claude Code / Codex）的完整工作流，开源为一套可安装、可复用的技能（Skills）集合。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这不是一个框架，不是一个工具，更不是一个&amp;quot;提示词合集&amp;quot;。它是一个经过真实工程实践验证的 &lt;strong&gt;AI Agent 工作流操作系统&lt;/strong&gt;，每一个 Skill 都对应一个真实工程师每天都会遇到的具体场景。&lt;/p&gt;&#xA;&lt;h3 id=&#34;12-作者背景为什么他的作品有说服力&#34;&gt;1.2 作者背景：为什么他的作品有说服力&lt;/h3&gt;&#xA;&lt;p&gt;Matt Pocock 是 TypeScript 社区的知名教育者，以制作高质量 TypeScript 教程著称，全网拥有数十万开发者粉丝。他的核心竞争力是&lt;strong&gt;把复杂的技术概念讲得清晰易懂&lt;/strong&gt;——这个能力迁移到 AI 编程领域，表现为：他能精准识别 AI 辅助开发中的常见失败模式，并给出结构化的解决方案。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;这一点至关重要：市面上绝大多数 AI 编程技巧都是&amp;quot;技巧的堆砌&amp;quot;，而 Matt 输出的是&lt;strong&gt;经过系统化整理的工程方法论&lt;/strong&gt;。这决定了该项目不是昙花一现的热点，而是真正可沉淀的知识资产。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;13-核心架构skill-的本质是什么&#34;&gt;1.3 核心架构：Skill 的本质是什么&lt;/h3&gt;&#xA;&lt;p&gt;Skill 文件的本质是一个 &lt;strong&gt;Markdown 格式的结构化指令集&lt;/strong&gt;：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---&#xA;name: /tdd&#xA;description: Test-Driven Development&#xA;---&#xA;## 步骤 1: 写一个失败的测试&#xA;...&#xA;## 步骤 2: 让测试通过&#xA;...&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这意味着：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GitHub开源项目深度分析系列十：andrej-karpathy-skills</title>
       <link>//localhost:1313/posts/github-10-karpathy-skills/</link>
       <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/github-10-karpathy-skills/</guid>
