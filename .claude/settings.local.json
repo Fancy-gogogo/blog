@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where hugo *)",
+      "Bash(hugo version *)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Bash(winget install *)",
+      "Bash(scoop install *)",
+      "Bash(cd /tmp)",
+      "Bash(curl -L -o hugo.zip \"https://github.com/gohugoio/hugo/releases/download/v0.144.2/hugo_extended_0.144.2_windows-amd64.zip\")",
+      "Bash(cmd.exe /c \"where hugo 2>nul\")",
+      "Read(//c/ProgramData/chocolatey/bin/**)",
+      "Bash(cmd.exe /c \"dir /s /b C:\\\\\\\\hugo.exe 2>nul\")",
+      "Bash(echo \"not in C:\\\\\\\\\")",
+      "Read(//d/hugo/**)",
+      "Read(//c/hugo/**)",
+      "Bash(cmd.exe /c \"echo %USERPROFILE%\")",
+      "Read(//c/Users/HUAWEI/AppData/Local/**)",
+      "Bash(powershell.exe -Command \"Get-Command hugo -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(cmd.exe /c \"set PATH\")",
+      "Read(//d/Tools/**)",
+      "Read(//c/Tools/**)",
+      "Read(//c/Users/HUAWEI/.local/bin/**)",
+      "Read(//c/Users/HUAWEI/.cargo/bin/**)",
+      "Bash(cmd.exe /c \"dir /s /b C:\\\\\\\\Users\\\\\\\\HUAWEI\\\\\\\\AppData\\\\\\\\hugo.exe 2>nul & dir /s /b C:\\\\\\\\Users\\\\\\\\HUAWEI\\\\\\\\.hugo* 2>nul\")",
+      "Bash(cmd.exe /c \"set\")",
+      "Bash(powershell.exe -Command \"[Environment]::GetEnvironmentVariable\\('Path', 'User'\\)\")",
+      "Bash(powershell.exe -Command \"[Environment]::GetEnvironmentVariable\\('Path', 'Machine'\\)\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem -Path 'C:\\\\Users\\\\HUAWEI\\\\AppData\\\\Local\\\\Programs' -Recurse -Filter 'hugo.exe' -ErrorAction SilentlyContinue | Select-Object -First 3 -ExpandProperty FullName\")",
+      "Bash(powershell.exe -Command \"Test-Path 'D:\\\\hugo\\\\hugo.exe'\")",
+      "Bash(powershell.exe -Command \"[Environment]::SetEnvironmentVariable\\('Path', [Environment]::GetEnvironmentVariable\\('Path', 'Machine'\\) + ';D:\\\\hugo', 'Machine'\\)\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem -Path 'C:\\\\Users\\\\HUAWEI' -Filter 'hugo.exe' -Recurse -ErrorAction SilentlyContinue | Select-Object -First 5 -ExpandProperty FullName\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem -Path 'D:\\\\' -Filter 'hugo.exe' -Recurse -ErrorAction SilentlyContinue | Select-Object -First 3 -ExpandProperty FullName\")",
+      "Bash(powershell.exe -Command \"[Environment]::SetEnvironmentVariable\\('Path', [Environment]::GetEnvironmentVariable\\('Path', 'Machine'\\) + ';C:\\\\Users\\\\HUAWEI\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Packages\\\\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe', 'Machine'\\)\")"
+    ]
+  }
+}
