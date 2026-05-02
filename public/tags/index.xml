@@ -2,178 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 小舟从此逝，江海寄余生</title>
-    <link>//localhost:47522/tags/</link>
+    <link>//localhost:1313/tags/</link>
     <description>Recent content in Tags on 小舟从此逝，江海寄余生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:47522/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>未来</title>
+      <link>//localhost:1313/tags/%E6%9C%AA%E6%9D%A5/</link>
+      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/%E6%9C%AA%E6%9D%A5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>职场</title>
+      <link>//localhost:1313/tags/%E8%81%8C%E5%9C%BA/</link>
+      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/%E8%81%8C%E5%9C%BA/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Agent</title>
-      <link>//localhost:47522/tags/agent/</link>
+      <link>//localhost:1313/tags/agent/</link>
       <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/agent/</guid>
+      <guid>//localhost:1313/tags/agent/</guid>
       <description></description>
     </item>
     <item>
       <title>智能体</title>
-      <link>//localhost:47522/tags/%E6%99%BA%E8%83%BD%E4%BD%93/</link>
+      <link>//localhost:1313/tags/%E6%99%BA%E8%83%BD%E4%BD%93/</link>
       <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/%E6%99%BA%E8%83%BD%E4%BD%93/</guid>
+      <guid>//localhost:1313/tags/%E6%99%BA%E8%83%BD%E4%BD%93/</guid>
       <description></description>
     </item>
     <item>
       <title>GitHub</title>
-      <link>//localhost:47522/tags/github/</link>
+      <link>//localhost:1313/tags/github/</link>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/github/</guid>
+      <guid>//localhost:1313/tags/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Skill</title>
-      <link>//localhost:47522/tags/skill/</link>
+      <link>//localhost:1313/tags/skill/</link>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/skill/</guid>
+      <guid>//localhost:1313/tags/skill/</guid>
       <description></description>
     </item>
     <item>
       <title>金融</title>
-      <link>//localhost:47522/tags/%E9%87%91%E8%9E%8D/</link>
+      <link>//localhost:1313/tags/%E9%87%91%E8%9E%8D/</link>
       <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/%E9%87%91%E8%9E%8D/</guid>
+      <guid>//localhost:1313/tags/%E9%87%91%E8%9E%8D/</guid>
       <description></description>
     </item>
     <item>
       <title>Markdown</title>
-      <link>//localhost:47522/tags/markdown/</link>
+      <link>//localhost:1313/tags/markdown/</link>
       <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/markdown/</guid>
+      <guid>//localhost:1313/tags/markdown/</guid>
       <description></description>
     </item>
     <item>
       <title>量化</title>
-      <link>//localhost:47522/tags/%E9%87%8F%E5%8C%96/</link>
+      <link>//localhost:1313/tags/%E9%87%8F%E5%8C%96/</link>
       <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/%E9%87%8F%E5%8C%96/</guid>
+      <guid>//localhost:1313/tags/%E9%87%8F%E5%8C%96/</guid>
       <description></description>
     </item>
     <item>
       <title>大模型</title>
-      <link>//localhost:47522/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
+      <link>//localhost:1313/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</guid>
+      <guid>//localhost:1313/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</guid>
       <description></description>
     </item>
     <item>
       <title>科普</title>
-      <link>//localhost:47522/tags/%E7%A7%91%E6%99%AE/</link>
+      <link>//localhost:1313/tags/%E7%A7%91%E6%99%AE/</link>
       <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/%E7%A7%91%E6%99%AE/</guid>
+      <guid>//localhost:1313/tags/%E7%A7%91%E6%99%AE/</guid>
       <description></description>
     </item>
     <item>
       <title>记忆系统</title>
-      <link>//localhost:47522/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/</link>
+      <link>//localhost:1313/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>//localhost:1313/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/</guid>
       <description></description>
     </item>
     <item>
       <title>开源工具</title>
-      <link>//localhost:47522/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</link>
+      <link>//localhost:1313/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</guid>
+      <guid>//localhost:1313/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     <item>
       <title>Claude Code</title>
-      <link>//localhost:47522/tags/claude-code/</link>
+      <link>//localhost:1313/tags/claude-code/</link>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/claude-code/</guid>
+      <guid>//localhost:1313/tags/claude-code/</guid>
       <description></description>
     </item>
     <item>
       <title>Vibe Coding</title>
-      <link>//localhost:47522/tags/vibe-coding/</link>
+      <link>//localhost:1313/tags/vibe-coding/</link>
       <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/vibe-coding/</guid>
+      <guid>//localhost:1313/tags/vibe-coding/</guid>
       <description></description>
     </item>
     <item>
       <title>OpenClaw</title>
-      <link>//localhost:47522/tags/openclaw/</link>
+      <link>//localhost:1313/tags/openclaw/</link>
       <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/openclaw/</guid>
+      <guid>//localhost:1313/tags/openclaw/</guid>
       <description></description>
     </item>
     <item>
       <title>AGI</title>
-      <link>//localhost:47522/tags/agi/</link>
+      <link>//localhost:1313/tags/agi/</link>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/agi/</guid>
+      <guid>//localhost:1313/tags/agi/</guid>
       <description></description>
     </item>
     <item>
       <title>Harness Engineering</title>
-      <link>//localhost:47522/tags/harness-engineering/</link>
+      <link>//localhost:1313/tags/harness-engineering/</link>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/harness-engineering/</guid>
+      <guid>//localhost:1313/tags/harness-engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>LLM</title>
-      <link>//localhost:47522/tags/llm/</link>
+      <link>//localhost:1313/tags/llm/</link>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/llm/</guid>
+      <guid>//localhost:1313/tags/llm/</guid>
       <description></description>
     </item>
     <item>
       <title>RAG</title>
-      <link>//localhost:47522/tags/rag/</link>
+      <link>//localhost:1313/tags/rag/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/rag/</guid>
+      <guid>//localhost:1313/tags/rag/</guid>
       <description></description>
     </item>
     <item>
       <title>企业应用</title>
-      <link>//localhost:47522/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/</link>
+      <link>//localhost:1313/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/</guid>
+      <guid>//localhost:1313/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>范式</title>
-      <link>//localhost:47522/tags/%E8%8C%83%E5%BC%8F/</link>
+      <link>//localhost:1313/tags/%E8%8C%83%E5%BC%8F/</link>
       <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/%E8%8C%83%E5%BC%8F/</guid>
+      <guid>//localhost:1313/tags/%E8%8C%83%E5%BC%8F/</guid>
       <description></description>
     </item>
     <item>
       <title>Harness</title>
-      <link>//localhost:47522/tags/harness/</link>
+      <link>//localhost:1313/tags/harness/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/harness/</guid>
+      <guid>//localhost:1313/tags/harness/</guid>
       <description></description>
     </item>
     <item>
       <title>Skills</title>
-      <link>//localhost:47522/tags/skills/</link>
+      <link>//localhost:1313/tags/skills/</link>
       <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/skills/</guid>
+      <guid>//localhost:1313/tags/skills/</guid>
       <description></description>
     </item>
     <item>
       <title>Prompt</title>
-      <link>//localhost:47522/tags/prompt/</link>
+      <link>//localhost:1313/tags/prompt/</link>
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/prompt/</guid>
+      <guid>//localhost:1313/tags/prompt/</guid>
       <description></description>
     </item>
     <item>
       <title>Token</title>
-      <link>//localhost:47522/tags/token/</link>
+      <link>//localhost:1313/tags/token/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/tags/token/</guid>
+      <guid>//localhost:1313/tags/token/</guid>
       <description></description>
     </item>
   </channel>

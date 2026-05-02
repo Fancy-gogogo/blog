@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>归档 on 小舟从此逝，江海寄余生</title>
-    <link>//localhost:47522/archive/</link>
+    <link>//localhost:1313/archive/</link>
     <description>Recent content in 归档 on 小舟从此逝，江海寄余生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <atom:link href="//localhost:47522/archive/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/archive/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

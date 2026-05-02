@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Token on 小舟从此逝，江海寄余生</title>
-    <link>//localhost:47522/tags/token/</link>
+    <link>//localhost:1313/tags/token/</link>
     <description>Recent content in Token on 小舟从此逝，江海寄余生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:47522/tags/token/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/token/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>大模型科普系列二：Token 是什么？</title>
-      <link>//localhost:47522/posts/lesson-2-token/</link>
+      <link>//localhost:1313/posts/lesson-2-token/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/posts/lesson-2-token/</guid>
+      <guid>//localhost:1313/posts/lesson-2-token/</guid>
       <description>&lt;p&gt;很多人用过 ChatGPT、Kimi，但你可能从没听过&amp;quot;Token&amp;quot;这个词。&lt;/p&gt;&#xA;&lt;p&gt;没关系。如果只是聊天，确实不需要懂它。但如果你想搞清楚 AI 的成本、为什么 API 越来越便宜、为什么中国大模型突然在全球崛起——那 Token 就是你必须搞懂的概念。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一token-是什么&#34;&gt;一、Token 是什么？&lt;/h2&gt;&#xA;&lt;p&gt;大模型按&amp;quot;Token&amp;quot;计费，不是按字数。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;一个 Token 大约等于：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;1 个汉字&lt;/strong&gt;（&amp;ldquo;你好&amp;rdquo; ≈ 1-2 个 Token）&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;4 个英文字母&lt;/strong&gt;（&amp;ldquo;hello&amp;rdquo; ≈ 1-2 个 Token）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;给你个具体的感觉：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;内容&lt;/th&gt;&#xA;          &lt;th&gt;大约 Token 数&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;一个汉字&lt;/td&gt;&#xA;          &lt;td&gt;1-2 个&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;一句话（10个汉字）&lt;/td&gt;&#xA;          &lt;td&gt;10-20 个&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;一段话（100个汉字）&lt;/td&gt;&#xA;          &lt;td&gt;100-200 个&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;一页 A4 纸的文字&lt;/td&gt;&#xA;          &lt;td&gt;1000-2000 个&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;也就是说，你写一篇 1000 字的文章，Token 消耗大约在 1500-2000 左右。&lt;strong&gt;输入和输出都算 Token，都要付费。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;两种使用大模型的方式&#34;&gt;两种使用大模型的方式&lt;/h3&gt;&#xA;&lt;p&gt;你用过的大模型，可能是这两种形式之一：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;对话框形式&lt;/strong&gt;（ChatGPT、Kimi、Claude网页版）—— 这是普通用户最常用的方式。你打字，它回答，按月订阅或者有免费额度。&lt;strong&gt;你不需要懂 Token，用就完了。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;API 调用&lt;/strong&gt;（程序员、企业、Agent 调用）—— 这是另一种玩法。开发者直接调用大模型的接口，让程序替人做事。&lt;strong&gt;这里必须懂 Token，因为是按量付费。&lt;/strong&gt; 你一次发多少字进去、它一次回多少字出来，都要算钱。&lt;/p&gt;&#xA;&lt;p&gt;打个比方：对话框就像坐出租车，你买的是「这段路」而不是「烧了多少油」。API 就像自己开车，油箱里每一滴油都得自己掏钱。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二2026年为什么-token-突然火了&#34;&gt;二、2026年，为什么 Token 突然火了？&lt;/h2&gt;&#xA;&lt;p&gt;过去一年，如果你关注 AI 行业，会发现一个词反复出现：&lt;strong&gt;AI Agent&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
   </channel>

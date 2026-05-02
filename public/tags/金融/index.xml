@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>金融 on 小舟从此逝，江海寄余生</title>
-    <link>//localhost:47522/tags/%E9%87%91%E8%9E%8D/</link>
+    <link>//localhost:1313/tags/%E9%87%91%E8%9E%8D/</link>
     <description>Recent content in 金融 on 小舟从此逝，江海寄余生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:47522/tags/%E9%87%91%E8%9E%8D/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/%E9%87%91%E8%9E%8D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub开源项目深度分析系列十一：FinceptTerminal</title>
-      <link>//localhost:47522/posts/github-11-finceptterminal/</link>
+      <link>//localhost:1313/posts/github-11-finceptterminal/</link>
       <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:47522/posts/github-11-finceptterminal/</guid>
+      <guid>//localhost:1313/posts/github-11-finceptterminal/</guid>
       <description>&lt;h1 id=&#34;finceptterminal开源版彭博终端金融数据民主化的终极实验&#34;&gt;FinceptTerminal：开源版&amp;quot;彭博终端&amp;quot;——金融数据民主化的终极实验&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;分析日期&lt;/strong&gt;：2026年4月22日&#xA;&lt;strong&gt;项目地址&lt;/strong&gt;：https://github.com/Fincept-Corporation/FinceptTerminal&#xA;&lt;strong&gt;GitHub 排名&lt;/strong&gt;：今日 Trending 全站第一（+2,548 stars/日）&#xA;&lt;strong&gt;总 Stars&lt;/strong&gt;：11,900+&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一项目定位用开源重塑金融基础设施&#34;&gt;一、项目定位：用开源重塑金融基础设施&lt;/h2&gt;&#xA;&lt;p&gt;FinceptTerminal 是一个开源金融情报平台，定位为 &lt;strong&gt;Bloomberg Terminal 的免费替代品&lt;/strong&gt;。它不是一个简单的行情工具，而是一个集实时行情、量化回测、AI 智能体分析、宏观经济数据于一体的&lt;strong&gt;机构级金融研究工作台&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;核心卖点极其激进：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;维度&lt;/th&gt;&#xA;          &lt;th&gt;Bloomberg Terminal&lt;/th&gt;&#xA;          &lt;th&gt;FinceptTerminal&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;年费&lt;/td&gt;&#xA;          &lt;td&gt;$24,000–$31,980&lt;/td&gt;&#xA;          &lt;td&gt;&lt;strong&gt;免费开源&lt;/strong&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;部署方式&lt;/td&gt;&#xA;          &lt;td&gt;专用硬件 + 本地安装&lt;/td&gt;&#xA;          &lt;td&gt;跨平台桌面应用&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;数据源&lt;/td&gt;&#xA;          &lt;td&gt;封闭专有&lt;/td&gt;&#xA;          &lt;td&gt;100+ 数据连接器&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;AI 能力&lt;/td&gt;&#xA;          &lt;td&gt;有限&lt;/td&gt;&#xA;          &lt;td&gt;37 个 AI 投资智能体&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;量化回测&lt;/td&gt;&#xA;          &lt;td&gt;专业级&lt;/td&gt;&#xA;          &lt;td&gt;内置回测 + 机器学习模块&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;交易执行&lt;/td&gt;&#xA;          &lt;td&gt;内置&lt;/td&gt;&#xA;          &lt;td&gt;16 家券商直连&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;代码透明度&lt;/td&gt;&#xA;          &lt;td&gt;不透明&lt;/td&gt;&#xA;          &lt;td&gt;完全开源可审计&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;一个数据点足以说明市场情绪：Bloomberg Terminal 年费约 &lt;strong&gt;2.4 万美元&lt;/strong&gt;，这个数字在中文社区被反复提及，构成了 FinceptTerminal 传播的核心叙事——&amp;ldquo;每年省下 2.4 万美金&amp;rdquo;。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二核心架构从-web-到-c20-的激进重构&#34;&gt;二、核心架构：从 Web 到 C++20 的激进重构&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-技术演进&#34;&gt;2.1 技术演进&lt;/h3&gt;&#xA;&lt;p&gt;FinceptTerminal 经历了一次极其罕见的技术栈重构：&lt;/p&gt;</description>
     </item>
   </channel>
