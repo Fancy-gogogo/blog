@@ -1,6 +1,6 @@
 baseURL = '/'
 languageCode = 'zh-CN'
-title = '小舟从此逝，江海寄余生'
+title = 'Fancy Bolg'
 theme = 'brume'
 paginate = 8
 
