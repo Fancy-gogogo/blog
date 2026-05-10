@@ -47,6 +47,7 @@
   {{ $style := resources.Get "css/style.css" | fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
   {{ if .IsHome }}<link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}">{{ end }}
+  {{ partial "analytics.html" . }}
 </head>
 <body>
 

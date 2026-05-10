@@ -9,6 +9,7 @@ paginate = 8
   author = 'Fancy'
   copyright = '© 2026 Fancy · 用文字记录思考'
   github = 'https://github.com'
+  baiduAnalytics = 'c0d5e3279e4ca68c51881d0322d024e1'
 
 [markup]
   [markup.highlight]
