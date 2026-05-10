@@ -1,3 +1,5 @@
+{{ define "title" }}{{ .Title }} — {{ .Site.Title }}{{ end }}
+
 {{ define "main" }}
 <div class="page-header">
   <h1 class="page-title">{{ .Title }}</h1>
@@ -6,7 +8,7 @@
   {{ range .Paginator.Pages }}
   <article class="post-card fade-in">
     <div class="post-card-header">
-      <a href="{{ .Permalink }}" class="post-card-title">{{ .Title }}</a>
+      <h2><a href="{{ .Permalink }}" class="post-card-title">{{ .Title }}</a></h2>
     </div>
     <p class="post-card-excerpt">
       {{ .Params.description | default .Summary }}

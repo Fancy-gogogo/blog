@@ -2,6 +2,7 @@
 title: "GitHub开源项目深度分析系列二：agency-agents"
 date: 2026-04-03
 draft: false
+categories: ["项目实战"]
 tags: ["Agent", "GitHub"]
 description: "提供了一套“AI员工岗位说明书”，让你可以把Claude Code、Cursor、GitHub Copilot等AI编程工具，一键“变身”为你需要的专业角色"
 ---
@@ -64,6 +65,7 @@ description: "提供了一套“AI员工岗位说明书”，让你可以把Clau
 ---
 name: "Frontend Developer"
 description: "专精 React/TypeScript 的资深前端工程师"
+categories: ["项目实战"]
 tags: ["engineering", "frontend"]
 tools: ["Claude Code", "Cursor"]
 ---

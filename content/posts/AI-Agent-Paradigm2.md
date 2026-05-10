@@ -2,6 +2,7 @@
 title: "Agent 架构的范式转移：AI 从「回答问题」到「解决问题」的产业革命"
 date: 2026-05-04
 draft: false
+categories: ["技术思考"]
 tags: ["Agent", "范式"]
 description: " Agent 的本质：AI + 工具 + 循环，Agent 不会「取代」人，而是「放大」人"
 ---

@@ -2,6 +2,7 @@
 title: "AI Agent 浪潮：从“对话”到“行动”的范式大革命"
 date: 2026-05-07
 draft: false
+categories: ["技术思考"]
 tags: ["Agent", "范式"]
 description: " 从技术原理、产业格局、商业落地三个角度，再次法系AI Agent"
 ---

@@ -2,6 +2,7 @@
 title: "Token经济学：智能工业化时代的商品定价逻辑"
 date: 2026-05-05
 draft: false
+categories: ["技术思考"]
 tags: ["Token", "AI商业"]
 description: "Token Economics的本质，是智能工业化时代的商品定价逻辑——它正在重塑全球价值链，而这场重构的深层驱动力不是算法，是能源与算力的地缘政治。"
 ---

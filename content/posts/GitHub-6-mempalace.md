@@ -3,6 +3,7 @@
 title: "GitHub开源项目深度分析系列六：mempalace"
 date: 2026-04-10
 draft: false
+categories: ["项目实战"]
 tags: ["记忆系统", "GitHub"]
 description: "一个好莱坞演员亲自发布 GitHub 仓库，解决AI遗忘问题，史上基准测试最高分 +完全免费 + 纯本地运行"
 ---

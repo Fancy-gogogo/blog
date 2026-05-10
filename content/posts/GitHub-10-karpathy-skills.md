@@ -2,6 +2,7 @@
 title: GitHub开源项目深度分析系列十：andrej-karpathy-skills
 date: 2026-04-16
 draft: false
+categories: ["项目实战"]
 tags:
   - Skill
   - GitHub

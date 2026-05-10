@@ -2,6 +2,7 @@
 title: "GitHub开源项目深度分析系列一：OpenClaw"
 date: 2026-04-02
 draft: false
+categories: ["项目实战"]
 tags: ["OpenClaw", "GitHub"]
 description: "大家熟悉的“龙虾”，大家有详细了解过她吗？她为什么成为GitHub历史上增长最快的项目？"
 ---

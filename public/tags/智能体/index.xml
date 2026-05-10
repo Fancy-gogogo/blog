@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>智能体 on Fancy Bolg</title>
+    <title>智能体 on Fancy Blog</title>
     <link>//localhost:1313/tags/%E6%99%BA%E8%83%BD%E4%BD%93/</link>
-    <description>Recent content in 智能体 on Fancy Bolg</description>
+    <description>Recent content in 智能体 on Fancy Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>

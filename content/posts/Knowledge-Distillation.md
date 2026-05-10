@@ -2,6 +2,7 @@
 title: "模型蒸馏战争：为什么 OpenAI 和 Anthropic 开始害怕开源？"
 date: 2026-05-08
 draft: false
+categories: ["AI科普"]
 tags: ["蒸馏", "开源"]
 description: "一篇文章，深度了解蒸馏的技术原理、产业格局等问题"
 ---

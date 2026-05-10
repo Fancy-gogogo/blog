@@ -2,6 +2,7 @@
 title: GitHub开源项目深度分析系列八：Kronos
 date: 2026-04-13
 draft: false
+categories: ["项目实战"]
 tags:
   - 量化
   - GitHub

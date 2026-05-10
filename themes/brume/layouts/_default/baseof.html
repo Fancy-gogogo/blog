@@ -4,22 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-  <meta name="description" content="{{ .Site.Params.description }}">
+  <meta name="description" content="{{ block "meta-description" . }}{{ .Site.Params.description }}{{ end }}">
   <link rel="canonical" href="{{ .Permalink | absURL }}">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ block "og-title" . }}{{ .Site.Title }}{{ end }}">
-  <meta property="og:description" content="{{ .Site.Params.description }}">
+  <meta property="og:description" content="{{ block "og-description" . }}{{ .Site.Params.description }}{{ end }}">
   <meta property="og:url" content="{{ .Permalink | absURL }}">
   <meta property="og:site_name" content="{{ .Site.Title }}">
+  {{ $image := .Params.coverImage | default .Site.Params.ogImage | default "" }}
+  {{ with $image }}
+  <meta property="og:image" content="{{ . | absURL }}">
+  {{ end }}
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="{{ with $image }}summary_large_image{{ else }}summary{{ end }}">
   <meta name="twitter:title" content="{{ block "twitter-title" . }}{{ .Site.Title }}{{ end }}">
-  <meta name="twitter:description" content="{{ .Site.Params.description }}">
+  <meta name="twitter:description" content="{{ block "twitter-description" . }}{{ .Site.Params.description }}{{ end }}">
+  {{ with $image }}
+  <meta name="twitter:image" content="{{ . | absURL }}">
+  {{ end }}
 
   <!-- JSON-LD Schema -->
+  {{ if and .IsPage (eq .Section "posts") }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ .Title }}",
+    "description": "{{ .Params.description | default .Summary }}",
+    "datePublished": "{{ .Date.Format "2006-01-02" }}",
+    {{ with .Lastmod }}"dateModified": "{{ .Format "2006-01-02" }}",{{ end }}
+    "author": { "@type": "Person", "name": "{{ .Site.Params.author }}" },
+    "url": "{{ .Permalink | absURL }}"
+  }
+  </script>
+  {{ else }}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -33,20 +54,17 @@
     }
   }
   </script>
+  {{ end }}
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com/preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-  </noscript>
   {{ $style := resources.Get "css/style.css" | fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-  {{ if .IsHome }}<link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}">{{ end }}
+  <link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}">
   {{ partial "analytics.html" . }}
 </head>
 <body>

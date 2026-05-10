@@ -2,6 +2,7 @@
 title: 多 Agent 协作的企业落地：从框架狂热到生产现实的鸿沟
 date: 2026-05-09
 draft: false
+categories: ["技术思考"]
 tags:
    - Agent
 description: 多Agent是趋势，是未来，但是如何更好的落地多Agent，是这篇文章要讲清楚的

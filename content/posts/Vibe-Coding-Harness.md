@@ -2,6 +2,7 @@
 title: "Vibe Coding 凉了，2026年最火的新职业是：驯兽师"
 date: 2026-04-01
 draft: false
+categories: ["技术思考"]
 tags: ["Harness Engineering","Vibe Coding" ]
 description: "LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？"
 ---

@@ -1,9 +1,10 @@
 {{ define "main" }}
+<h1 class="sr-only">{{ .Site.Title }} — {{ .Site.Params.description }}</h1>
 <div class="post-list">
   {{ range .Paginator.Pages }}
   <article class="post-card fade-in">
     <div class="post-card-header">
-      <a href="{{ .Permalink }}" class="post-card-title">{{ .Title }}</a>
+      <h2><a href="{{ .Permalink }}" class="post-card-title">{{ .Title }}</a></h2>
     </div>
     <p class="post-card-excerpt">
       {{ .Params.description | default .Summary }}

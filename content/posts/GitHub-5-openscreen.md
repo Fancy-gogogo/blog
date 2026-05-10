@@ -2,6 +2,7 @@
 title: "GitHub开源项目深度分析系列五：OpenScreen"
 date: 2026-04-08
 draft: false
+categories: ["项目实战"]
 tags: ["开源工具", "GitHub"]
 description: "订阅经济时代的反叛者——一个开源工具如何在两周内收获2.5万颗星，OpenScreen 是一款免费、开源的屏幕录制和演示视频制作工具"
 ---

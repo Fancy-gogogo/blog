@@ -2,6 +2,7 @@
 title: "GitHub开源项目深度分析系列四：Claw-Code"
 date: 2026-04-07
 draft: false
+categories: ["项目实战"]
 tags: ["Claude Code", "GitHub"]
 description: "对 Anthropic 公司 Claude Code 智能体架构的“净室重写”（Clean-Room Rewrite）。它不复制任何专有代码，而是基于公开的架构模式，使用 Python 和 Rust 从零开始独立实现。"
 ---

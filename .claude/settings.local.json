@@ -32,7 +32,11 @@
       "Bash(powershell.exe -Command \"[Environment]::SetEnvironmentVariable\\('Path', [Environment]::GetEnvironmentVariable\\('Path', 'Machine'\\) + ';D:\\\\hugo', 'Machine'\\)\")",
       "Bash(powershell.exe -Command \"Get-ChildItem -Path 'C:\\\\Users\\\\HUAWEI' -Filter 'hugo.exe' -Recurse -ErrorAction SilentlyContinue | Select-Object -First 5 -ExpandProperty FullName\")",
       "Bash(powershell.exe -Command \"Get-ChildItem -Path 'D:\\\\' -Filter 'hugo.exe' -Recurse -ErrorAction SilentlyContinue | Select-Object -First 3 -ExpandProperty FullName\")",
-      "Bash(powershell.exe -Command \"[Environment]::SetEnvironmentVariable\\('Path', [Environment]::GetEnvironmentVariable\\('Path', 'Machine'\\) + ';C:\\\\Users\\\\HUAWEI\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Packages\\\\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe', 'Machine'\\)\")"
+      "Bash(powershell.exe -Command \"[Environment]::SetEnvironmentVariable\\('Path', [Environment]::GetEnvironmentVariable\\('Path', 'Machine'\\) + ';C:\\\\Users\\\\HUAWEI\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Packages\\\\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe', 'Machine'\\)\")",
+      "Bash(sed -i '/^tags:/i categories: [\"AI科普\"]' content/posts/__TRACKED_VAR__)",
+      "Bash(sed -i '/^tags:/i categories: [\"项目实战\"]' content/posts/__TRACKED_VAR__)",
+      "Bash(sed -i '/^tags:/i categories: [\"技术思考\"]' content/posts/__TRACKED_VAR__)",
+      "Bash(hugo --minify)"
     ]
   }
 }

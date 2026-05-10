@@ -2,6 +2,7 @@
 title: GitHub开源项目深度分析系列十二：mattpocock-skills
 date: 2026-04-29
 draft: false
+categories: ["项目实战"]
 tags:
   - Skill
   - GitHub

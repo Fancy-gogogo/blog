@@ -2,6 +2,7 @@
 title: "大模型科普系列三：普通人如何用好提示词？"
 date: 2026-03-02
 draft: false
+categories: ["AI科普"]
 tags: ["科普", "Prompt"]
 description: "写提示词（Prompt）这件事，跟使唤人有点像。这篇文章，就教你几个简单实用的提示词技巧"
 ---

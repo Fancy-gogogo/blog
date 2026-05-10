@@ -2,6 +2,7 @@
 title: GitHub开源项目深度分析系列九：markitdown
 date: 2026-04-15
 draft: false
+categories: ["项目实战"]
 tags:
   - Markdown
   - GitHub

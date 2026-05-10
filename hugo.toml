@@ -1,6 +1,6 @@
 baseURL = '/'
 languageCode = 'zh-CN'
-title = 'Fancy Bolg'
+title = 'Fancy Blog'
 theme = 'brume'
 paginate = 8
 
@@ -10,6 +10,7 @@ paginate = 8
   copyright = '© 2026 Fancy · 用文字记录思考'
   github = 'https://github.com'
   baiduAnalytics = 'c0d5e3279e4ca68c51881d0322d024e1'
+  ogImage = '/cover.jpg'
 
 [markup]
   [markup.highlight]
@@ -40,3 +41,14 @@ paginate = 8
 
 [outputs]
   home = ['HTML', 'RSS']
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+  [[related.indices]]
+    name = 'tags'
+    weight = 100
+  [[related.indices]]
+    name = 'categories'
+    weight = 50

@@ -2,6 +2,7 @@
 title: "AI Agent 浪潮来袭：2026年智能体商业化深度分析报告"
 date: 2026-04-30
 draft: false
+categories: ["技术思考"]
 tags: ["Agent","智能体"]
 description: "从未来趋势、技术架构、商业模式等方面，深度分析AI agent；解释为什么今年是AI智能体元年"
 ---

@@ -2,6 +2,7 @@
 title: GitHub开源项目深度分析系列七：Hermes-Agent
 date: 2026-04-11
 draft: false
+categories: ["项目实战"]
 tags:
   - Agent
   - GitHub

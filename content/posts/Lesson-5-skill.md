@@ -2,6 +2,7 @@
 title: "大模型科普系列五：什么是AI Agent Skills？"
 date: 2026-03-05
 draft: false
+categories: ["AI科普"]
 tags: ["科普", "Skills"]
 description: "Skill = 工具 + 使用指南 + 场景说明。一种结构化的能力封装：把「做什么 + 怎么做」打包成一个可复用、可组合的单元。"
 ---

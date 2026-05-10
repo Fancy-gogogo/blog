@@ -2,6 +2,7 @@
 title: "ARC-AGI-3 深度解析：为什么当前的 AI 在“抽象游戏”面前依然像一个婴儿？？"
 date: 2026-04-01
 draft: false
+categories: ["AI科普"]
 tags: ["AGI", "LLM"]
 description: "AI擅长干什么？人类擅长干什么？一文告诉你"
 ---

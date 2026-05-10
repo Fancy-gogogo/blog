@@ -2,6 +2,7 @@
 title: "GitHub开源项目深度分析系列三：superpowers"
 date: 2026-04-04
 draft: false
+categories: ["项目实战"]
 tags: ["Vibe Coding", "GitHub"]
 description: "superpowers 是一套给编码AI智能体（Coding Agent）安装“行为规范”的技能框架。定义了一套完整的软件开发工作流，教AI成为一个合格的工程师"
 ---

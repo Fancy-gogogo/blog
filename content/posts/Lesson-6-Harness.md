@@ -2,6 +2,7 @@
 title: 大模型科普系列六：Agent = Model +Harness？
 date: 2026-03-06
 draft: false
+categories: ["AI科普"]
 tags:
   - 科普
   - Agent

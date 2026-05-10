@@ -3,6 +3,7 @@
 title: 一文讲明白AI大模型基本知识
 date: 2026-04-11
 draft: false
+categories: ["AI科普"]
 tags:
   - 科普
   - 大模型

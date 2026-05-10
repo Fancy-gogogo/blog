@@ -2,6 +2,7 @@
 title: GitHub开源项目深度分析系列十一：FinceptTerminal
 date: 2026-04-22
 draft: false
+categories: ["项目实战"]
 tags:
   - 金融
   - GitHub

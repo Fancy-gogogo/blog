@@ -2,6 +2,7 @@
 title: "大模型科普系列四：什么是Vibe Coding？"
 date: 2026-03-03
 draft: false
+categories: ["AI科普"]
 tags: ["科普", "Vibe Coding"]
 description: "一个编码小白，如何写代码？想做一个小程序记录每天读书笔记？想给自己做一个自动化的爬虫脚本？"
 ---
