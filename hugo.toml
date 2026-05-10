@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = '/blog/'
 languageCode = 'zh-CN'
 title = 'Fancy Blog'
 theme = 'brume'

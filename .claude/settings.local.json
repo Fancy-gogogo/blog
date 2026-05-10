@@ -36,7 +36,9 @@
       "Bash(sed -i '/^tags:/i categories: [\"AI科普\"]' content/posts/__TRACKED_VAR__)",
       "Bash(sed -i '/^tags:/i categories: [\"项目实战\"]' content/posts/__TRACKED_VAR__)",
       "Bash(sed -i '/^tags:/i categories: [\"技术思考\"]' content/posts/__TRACKED_VAR__)",
-      "Bash(hugo --minify)"
+      "Bash(hugo --minify)",
+      "WebFetch(domain:fancy-gogogo.github.io)",
+      "Bash(curl -s https://fancy-gogogo.github.io/blog/)"
     ]
   }
 }
