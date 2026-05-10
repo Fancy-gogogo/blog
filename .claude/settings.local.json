@@ -40,7 +40,9 @@
       "WebFetch(domain:fancy-gogogo.github.io)",
       "Bash(curl -s https://fancy-gogogo.github.io/blog/)",
       "Bash(curl -sI https://fancy-gogogo.github.io/blog/)",
-      "Bash(curl -sI https://fancy-gogogo.github.io/)"
+      "Bash(curl -sI https://fancy-gogogo.github.io/)",
+      "Bash(curl -sI https://fancy-gogogo.github.io/blog/posts/)",
+      "Bash(curl -sI https://fancy-gogogo.github.io/blog/favicon.ico)"
     ]
   }
 }
