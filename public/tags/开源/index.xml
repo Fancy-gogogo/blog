@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开源 on Fancy Bolg</title>
+    <link>//localhost:1313/tags/%E5%BC%80%E6%BA%90/</link>
+    <description>Recent content in 开源 on Fancy Bolg</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>模型蒸馏战争：为什么 OpenAI 和 Anthropic 开始害怕开源？</title>
+      <link>//localhost:1313/posts/knowledge-distillation/</link>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/knowledge-distillation/</guid>
+      <description>&lt;p&gt;2026年的AI世界，正在发生一场静悄悄的革命。&lt;/p&gt;&#xA;&lt;p&gt;过去几年，我们习惯了这样的叙事：OpenAI 是绝对的王者，Anthropic 是最有希望的挑战者，中国厂商在后面追赶。大家都相信一个&amp;quot;理所当然&amp;quot;的规律——拥有最多算力、最多数据的公司，会永远赢下去。&lt;/p&gt;&#xA;&lt;p&gt;但现在，局面开始变得有趣了。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Meta 发布 Llama 4 之后，整个行业的风向变了。&lt;/strong&gt; 不是因为 Llama 4 的性能超过了 GPT-4，而是因为它通过模型蒸馏技术，用远小于原模型的参数量，达到了接近 95% 的性能。更关键的是，它是开源的。&lt;/p&gt;&#xA;&lt;p&gt;这意味着什么？意味着 AI 能力的&amp;quot;护城河&amp;quot;，可能没有我们想象的那么宽。&lt;/p&gt;&#xA;&lt;p&gt;今天我想深入聊聊&lt;strong&gt;模型蒸馏&lt;/strong&gt;这个技术，以及它正在如何改变 AI 产业的权力格局。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一技术原理模型蒸馏到底是什么&#34;&gt;一、技术原理：模型蒸馏到底是什么？&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-蒸馏的核心思想&#34;&gt;1.1 蒸馏的核心思想&lt;/h3&gt;&#xA;&lt;p&gt;模型蒸馏（Knowledge Distillation）不是一个新概念。2015年，Geoffrey Hinton 等人在论文《Distilling the Knowledge in a Neural Network》中首次系统性地提出了这个想法。Hinton 被称为&amp;quot;深度学习之父&amp;quot;，2018年与 LeCun、Bengio 一起获得了图灵奖。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;核心思想很简单：大模型（teacher）学习到的&amp;quot;知识&amp;quot;，能不能传递给小模型（student）？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;想象一下，你在准备一场考试。老师（大的神经网络）刷了 1000 道题，积累了丰富的解题经验。现在你要把这个经验传授给一个记忆力没那么好的学生（小模型），让学生不用刷那么多题，也能达到不错的考试分数。&lt;/p&gt;&#xA;&lt;p&gt;这个&amp;quot;经验传授&amp;quot;的过程，就是蒸馏。&lt;/p&gt;&#xA;&lt;p&gt;但这里有一个深刻的洞见：&lt;strong&gt;教师模型学到的&amp;quot;知识&amp;quot;，并不只是它输出的最终答案，还包括它内部的推理过程、对各个选项的信心程度、以及不同概念之间的关联。&lt;/strong&gt; 这些隐含的知识，被称为&amp;quot;暗知识&amp;quot;（dark knowledge），是蒸馏的核心。&lt;/p&gt;&#xA;&lt;h3 id=&#34;12-蒸馏是怎么实现的&#34;&gt;1.2 蒸馏是怎么实现的？&lt;/h3&gt;&#xA;&lt;p&gt;传统的机器学习，目标是让模型的输出接近真实标签（ground truth）。比如图片分类，目标是让模型预测的类别接近&amp;quot;这是猫&amp;quot;这个真实标签。&lt;/p&gt;&#xA;&lt;p&gt;但蒸馏的思路不同。它让小模型直接学习大模型的&amp;quot;软预测&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;举一个具体的例子：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;假设你有一个 1000 亿参数的大模型，它对一张图片的输出是：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;猫：97.3%&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;狗：1.8%&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;老虎：0.6%&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;其他：0.3%&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这个输出包含了大量信息。大模型不仅告诉了&amp;quot;这是猫&amp;quot;，还告诉了&amp;quot;这不太像狗，也不太像老虎 but 有一丝可能&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;如果只看真实标签，我们只能学到&amp;quot;这是猫&amp;quot;。但学习这个软输出，我们学到了大模型对各个类别的&amp;quot;感觉&amp;quot;——这就是所谓的&amp;quot;暗知识&amp;quot;（dark knowledge）。&lt;/p&gt;&#xA;&lt;p&gt;传统的标签是&amp;quot;硬目标&amp;quot;（hard target），只有 0 和 1。大模型的输出是&amp;quot;软目标&amp;quot;（soft target），是一个概率分布。&lt;strong&gt;通过让学生学习软目标，学生能学到超越简单标签的深层规律。&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

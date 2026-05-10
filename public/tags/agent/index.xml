@@ -6,8 +6,15 @@
     <description>Recent content in Agent on Fancy Bolg</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/tags/agent/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>多 Agent 协作的企业落地：从框架狂热到生产现实的鸿沟</title>
+      <link>//localhost:1313/posts/multi-agent/</link>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/multi-agent/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;多 Agent 系统正在从&amp;quot;Demo 炫技&amp;quot;走向&amp;quot;生产存活&amp;quot;——2026 年 4 月是关键转折点，但 75% 的试点项目仍倒在从实验到量产的最后一公里，根本原因不是技术不行，而是组织不知道自己搭的是一个需要治理的&amp;quot;AI 社会&amp;quot;。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一现象层你看到的世界&#34;&gt;一、现象层：你看到的世界&lt;/h2&gt;&#xA;&lt;p&gt;如果你过去半年参加过任何一场 AI 大会，听到最多的词不是&amp;quot;大模型&amp;quot;，而是&amp;quot;Agent&amp;quot;和&amp;quot;多 Agent 协作&amp;quot;。CrewAI、LangGraph、AutoGen、MetaGPT、Google ADK、SmolAgents——框架列表每个月都在膨胀，每个框架都在声称自己解决了&amp;quot;最难的多 Agent 编排问题&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;数字会说话，但说的不全是好消息：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Gartner 预测 2026 年底，企业软件交互中有 30% 将由 Agentic 系统驱动&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;截至 2025 年，AI Agent 嵌入企业应用的比例不足 5%；预计 2026 年底达到 40%——这是 8 倍的增长&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;大型组织中，78-97% 正在运行某种形式的 Agent 试点或实验（&lt;a href=&#34;http://Writer.com&#34;&gt;Writer.com&lt;/a&gt; Enterprise AI Adoption 2026）&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;然而，直到 2026 年 4 月，持续活跃在生产环境的项目不足 25%&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;换句话说：几乎所有企业都在玩命试点，但大多数试点永远停在试点。&lt;/p&gt;&#xA;&lt;p&gt;这个 Gap，才是真正值得挖的东西。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二机制层为什么多-agent-落地这么难&#34;&gt;二、机制层：为什么多 Agent 落地这么难&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-单体-ai-的天花板催生了多-agent-的需求&#34;&gt;2.1 单体 AI 的天花板，催生了多 Agent 的需求&lt;/h3&gt;&#xA;&lt;p&gt;第一波企业 AI 落地走的是&amp;quot;超级助手&amp;quot;路线：一个 LLM 负责所有任务。这种模式有三个天然瓶颈：&lt;/p&gt;</description>
+    </item>
     <item>
       <title>AI Agent 浪潮：从“对话”到“行动”的范式大革命</title>
       <link>//localhost:1313/posts/ai-agent-vs-conversation/</link>

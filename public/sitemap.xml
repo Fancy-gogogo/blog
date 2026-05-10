@@ -3,12 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//localhost:1313/tags/agent/</loc>
-    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/posts/ai-agent-vs-conversation/</loc>
-    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/</loc>
+    <lastmod>2026-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/multi-agent/</loc>
+    <lastmod>2026-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/%E5%BC%80%E6%BA%90/</loc>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/knowledge-distillation/</loc>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/%E8%92%B8%E9%A6%8F/</loc>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/ai-agent-vs-conversation/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/%E8%8C%83%E5%BC%8F/</loc>
