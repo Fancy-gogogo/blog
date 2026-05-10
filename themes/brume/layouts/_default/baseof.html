@@ -57,7 +57,7 @@
   {{ end }}
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="{{ "/favicon.ico" | relURL }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,7 +75,7 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="navbar-inner">
-      <a href="/" class="navbar-brand">
+      <a href="{{ "/" | relURL }}" class="navbar-brand">
         {{ .Site.Title }}
       </a>
       <ul class="navbar-links">
@@ -140,7 +140,7 @@
           </a></li>
           {{ end }}
           {{ if gt (len .Pages) 5 }}
-          <li><a href="/archive/" class="archive-item" style="color:var(--accent);">查看全部 →</a></li>
+          <li><a href="{{ "/archive/" | relURL }}" class="archive-item" style="color:var(--accent);">查看全部 →</a></li>
           {{ end }}
           {{ end }}
         </ul>
@@ -158,7 +158,7 @@
       <span>{{ .Site.Params.copyright }}</span>
       <div class="footer-links">
         <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
-        <a href="/index.xml">RSS</a>
+        <a href="{{ "/index.xml" | relURL }}">RSS</a>
       </div>
     </footer>
   </div>
