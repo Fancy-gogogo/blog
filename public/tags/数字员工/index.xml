@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数字员工 on Fancy Blog</title>
+    <link>//localhost:1313///blog/tags/%E6%95%B0%E5%AD%97%E5%91%98%E5%B7%A5/</link>
+    <description>Recent content in 数字员工 on Fancy Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 12 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313///blog/tags/%E6%95%B0%E5%AD%97%E5%91%98%E5%B7%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数字员工入职季：你的AI团队已到岗，请查收入职通知</title>
+      <link>//localhost:1313///blog/posts/digital-employee/</link>
+      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313///blog/posts/digital-employee/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;一句话结论：&lt;/strong&gt; AI Agent 已从&amp;quot;能说不能做&amp;quot;的聊天机器人，升级为能独立完成复杂任务的数字员工——但 76% 的企业部署以失败告终，不是技术不行，是入职培训（context engineering）和团队管理（human-agent orchestration）没做到位。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一现象层数字员工正在批量入职&#34;&gt;一、现象层：数字员工正在批量入职&lt;/h2&gt;&#xA;&lt;p&gt;2026年，企业 AI Agent 商用元年，正式到来。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;规模数据：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;全球 AI Agent 市场规模预计 2026 年超过 &lt;strong&gt;109亿美元&lt;/strong&gt;（2025年约76-78亿美元），年复合增长率43%（Gartner, Pixelbrainy）&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Gartner 预测：到 2026 年底，&lt;strong&gt;40%&lt;/strong&gt; 的企业应用将内置任务专用 AI Agent——而2025年初这个数字还不到 5%&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;2026年Q1，&lt;strong&gt;80%&lt;/strong&gt; 的企业新上线/更新应用已内置至少一个 AI Agent（Gartner），但同期只有 &lt;strong&gt;31%&lt;/strong&gt; 的组织真正有 Agent 在生产环境运行（S&amp;amp;P Global Market Intelligence）&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;实施成功率：分析 847 个企业 AI Agent 部署案例，&lt;strong&gt;76% 失败&lt;/strong&gt;；Stanford 2026 AI Index 确认生产环境中 Agent 任务失败率达 &lt;strong&gt;33%&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;73% 的企业 AI Agent 无法从试点扩展到规模化部署，原因是治理框架缺失，而非技术问题（Enterprise AI Research Institute）&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;但成功部署的企业里，&lt;strong&gt;80%&lt;/strong&gt; 报告了可量化的 ROI（&lt;a href=&#34;http://ibl.ai&#34;&gt;ibl.ai&lt;/a&gt;）&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;中国语境：&lt;/strong&gt; 2026年被国内从业者称为&amp;quot;AI Agent 商用元年&amp;quot;——从 CSDN 到各大云厂商，所有人都在讨论&amp;quot;数字员工&amp;quot;。但国内企业普遍关注&amp;quot;能不能用&amp;quot;，极少关注&amp;quot;怎么用好&amp;quot;，这恰恰是失败率高的根源。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
