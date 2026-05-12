@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>未来 on Fancy Blog</title>
-    <link>//localhost:1313/tags/%E6%9C%AA%E6%9D%A5/</link>
+    <link>//localhost:1313///blog/tags/%E6%9C%AA%E6%9D%A5/</link>
     <description>Recent content in 未来 on Fancy Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 02 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/%E6%9C%AA%E6%9D%A5/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313///blog/tags/%E6%9C%AA%E6%9D%A5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI 淘汰赛：谁在丢掉工作，谁在赢得未来</title>
-      <link>//localhost:1313/posts/ai-knockout/</link>
+      <link>//localhost:1313///blog/posts/ai-knockout/</link>
       <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/ai-knockout/</guid>
+      <guid>//localhost:1313///blog/posts/ai-knockout/</guid>
       <description>&lt;h2 id=&#34;一现象层你身边的消失已经开始了&#34;&gt;一、现象层：你身边的&amp;quot;消失&amp;quot;已经开始了&lt;/h2&gt;&#xA;&lt;p&gt;2026年的职场正在发生一种很多人不愿意承认的位移。&lt;/p&gt;&#xA;&lt;p&gt;不是我危言耸听，这是数据层面的现实：GitHub Copilot 2025年的使用报告显示，已经有超过 40% 的代码提交由 AI 辅助生成。注意是&amp;quot;辅助&amp;quot;，但这个比例每季度还在上升。Cursor 的用户里有相当比例是初级工程师在做&amp;quot;prompt + 审查&amp;quot;的工作，而不再是手写每一行逻辑。Claude Code 正在被越来越多的开发者用作主力开发环境，而不是调试工具。&lt;/p&gt;&#xA;&lt;p&gt;这不是&amp;quot;AI 即将取代人类工作&amp;quot;，这是&lt;strong&gt;取代已经在发生，只是大多数当事人还没意识到&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;具体来看几个领域：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;软件开发&lt;/strong&gt;：最讽刺的地方在于，程序员是第一批大规模使用 AI 工具的人，但也是第一批因此面临裁员压力的人。原因是：生产力提升了，但需求没有同比增长。公司用 2 个会用 AI 的工程师替代了 5 个传统工程师，这不是阴谋论，这是 2025 年多个科技公司财报电话会里管理层亲口说的&amp;quot;效率提升&amp;quot;。GitHub Copilot 的数据是平均减少开发者 30% 的编码时间——但问题在于，这节省下来的时间并没有转化为更多功能，而是直接变成了人头削减。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;法律服务&lt;/strong&gt;：美国那边已经有多个法学院教授公开指出，入门级律师（associate）的工作量在过去 18 个月里下降了 40-50%。因为 AI 可以做文件审查、合同分析、判例检索这些事情，而这些恰恰是初级律师花费最多时间的工作。当然，法庭辩护和复杂谈判还需要人，但这个比例在下降。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;财务分析&lt;/strong&gt;：Bloomberg 在 2025 年初的报告指出， sell-side 分析师的基础研究工作（财报解读、行业数据整理、模型搭建）已经有大量被 LLM 取代。四大也在悄悄推进 AI 审计试点，目标是减少初级审计员的基础工作量。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;咨询服务&lt;/strong&gt;：麦肯锡 2026 年的内部文件（部分泄露）显示，AI 已经可以完成 60% 的 standard consulting deliverable。这意味着咨询公司的商业模式正在受到结构性冲击——如果客户自己用 AI 就能得到标准答案，为什么还要付几百万的咨询费？&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;反直觉的现实&lt;/strong&gt;：建筑业、制造业、护理、餐饮这些&amp;quot;蓝领&amp;quot;工作反而是相对安全的。制造业因为需要精细的手工操作和现场应变，护理因为需要物理接触和情感共情，建筑业因为现场情况的不可预测性——这些领域要么 AI 机械臂成本太高，要么人机协作的性价比不如纯人工。&lt;strong&gt;真正高危的反而是高学历白领&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二机制层为什么这一次和以前不一样&#34;&gt;二、机制层：为什么这一次和以前不一样&lt;/h2&gt;&#xA;&lt;p&gt;要理解为什么 AI 对职业的冲击和工业革命、自动化革命性质不同，需要先理解 AI 本身在做什么。&lt;/p&gt;&#xA;&lt;h3 id=&#34;21-过去的自动化替代的是肌肉这一次替代的是认知&#34;&gt;2.1 过去的自动化替代的是&amp;quot;肌肉&amp;quot;，这一次替代的是&amp;quot;认知&amp;quot;&lt;/h3&gt;&#xA;&lt;p&gt;工业革命替代的是体力劳动，自动化替代的是重复性物理操作。但 AI 这一次，替代的是&lt;strong&gt;信息处理能力&lt;/strong&gt;——阅读、理解、分析、推理、生成文字和代码。这些恰恰是高等教育培养的核心能力。&lt;/p&gt;</description>
     </item>
   </channel>

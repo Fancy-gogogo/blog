@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prompt on Fancy Blog</title>
-    <link>//localhost:1313/tags/prompt/</link>
+    <link>//localhost:1313///blog/tags/prompt/</link>
     <description>Recent content in Prompt on Fancy Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 02 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/prompt/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313///blog/tags/prompt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>大模型科普系列三：普通人如何用好提示词？</title>
-      <link>//localhost:1313/posts/lesson-3-prompt/</link>
+      <link>//localhost:1313///blog/posts/lesson-3-prompt/</link>
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/lesson-3-prompt/</guid>
+      <guid>//localhost:1313///blog/posts/lesson-3-prompt/</guid>
       <description>&lt;h1 id=&#34;普通人如何用好提示词&#34;&gt;普通人如何用好提示词？&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;告别&amp;quot;无效投喂&amp;quot;，让AI真正为你干活&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;很多人用过AI后会说：&amp;ldquo;这玩意儿不好用，回答得太泛了。&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;但真相往往是：不是AI不好用，是你不会问。&lt;/p&gt;&#xA;&lt;p&gt;写提示词（Prompt）这件事，跟使唤人有点像。你说&amp;quot;帮我做件事&amp;quot;，对方可能一脸茫然；你说&amp;quot;帮我把这份报告PDF转成Word，重点内容用黄色标记&amp;quot;，对方立马就懂。&lt;/p&gt;&#xA;&lt;p&gt;AI也是一样的道理。这篇文章，就教你几个简单实用的提示词技巧。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一提示词万能公式&#34;&gt;一、提示词万能公式&lt;/h2&gt;&#xA;&lt;p&gt;别看AI Responses很灵活，其实它最怕的就是&amp;quot;模糊&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;一个万能公式，记住这四个要素：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;立人设 + 给背景 + 下指令 + 设约束&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;11-立人设你是谁&#34;&gt;1.1 立人设：你是谁？&lt;/h3&gt;&#xA;&lt;p&gt;告诉AI它应该扮演什么角色。&lt;/p&gt;&#xA;&lt;p&gt;比如：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&amp;ldquo;你是一位有10年经验的Python工程师&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;你是一位专业的文案编辑&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;你是一位幽默的脱口秀演员&amp;rdquo;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;人设一立，AI回答的风格和角度就变了。&lt;/p&gt;&#xA;&lt;h3 id=&#34;12-给背景什么情况&#34;&gt;1.2 给背景：什么情况？&lt;/h3&gt;&#xA;&lt;p&gt;说明任务的前因后果，让AI理解上下文。&lt;/p&gt;&#xA;&lt;p&gt;比如：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&amp;ldquo;我正在写一篇关于AI的公众号文章&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;用户来咨询我们的退款政策&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;这是一个面向小学生的科普视频&amp;rdquo;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;背景越清晰，AI越知道你在说什么。&lt;/p&gt;&#xA;&lt;h3 id=&#34;13-下指令具体做什么&#34;&gt;1.3 下指令：具体做什么？&lt;/h3&gt;&#xA;&lt;p&gt;这是最核心的部分，要明确告诉AI你要什么。&lt;/p&gt;&#xA;&lt;p&gt;❌ 模糊指令：&amp;ldquo;帮我写点东西&amp;rdquo;&#xA;✅ 明确指令：&amp;ldquo;帮我写3条公众号标题，字数控制在20字以内&amp;rdquo;&lt;/p&gt;&#xA;&lt;h3 id=&#34;14-设约束不要做什么怎么输出&#34;&gt;1.4 设约束：不要做什么/怎么输出？&lt;/h3&gt;&#xA;&lt;p&gt;约束条件决定了输出的边界。&lt;/p&gt;&#xA;&lt;p&gt;比如：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&amp;ldquo;不要使用专业术语，用大白话解释&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;用JSON格式输出&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;只列出优点，不要提缺点&amp;rdquo;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二三种高阶技巧&#34;&gt;二、三种高阶技巧&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-少样本提示few-shot-prompting&#34;&gt;2.1 少样本提示（Few-shot Prompting）&lt;/h3&gt;&#xA;&lt;p&gt;有时候你怎么说AI都做不好，但给它看几个例子，它瞬间就懂了。&lt;/p&gt;&#xA;&lt;p&gt;这就是&lt;strong&gt;少样本提示&lt;/strong&gt;——直接喂例子，让它模仿。&lt;/p&gt;&#xA;&lt;p&gt;❌ 只说要求：&amp;ldquo;帮我把句子改成礼貌版本&amp;rdquo;&#xA;✅ 給例子：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;原文：&amp;ldquo;开门！&amp;rdquo;&#xA;礼貌版：&amp;ldquo;请问可以帮我开一下门吗？&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;原文：&amp;ldquo;让一下！&amp;rdquo;&#xA;礼貌版：&amp;ldquo;不好意思，请借过一下可以吗？&amp;rdquo;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;AI看到例子后，会自动理解你想让它干什么，准确率飙升。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：格式转换、风格调整、规则性任务&lt;/p&gt;&#xA;&lt;h3 id=&#34;22-思维链chain-of-thought&#34;&gt;2.2 思维链（Chain of Thought）&lt;/h3&gt;&#xA;&lt;p&gt;你有没有遇到过这种情况：让AI做一道数学题，它算错了。&lt;/p&gt;&#xA;&lt;p&gt;但如果你告诉它&amp;quot;请一步步思考&amp;quot;，它就做对了。&lt;/p&gt;&#xA;&lt;p&gt;这就是&lt;strong&gt;思维链&lt;/strong&gt;技巧——强制AI把推理过程写出来。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>量化 on Fancy Blog</title>
-    <link>//localhost:1313/tags/%E9%87%8F%E5%8C%96/</link>
+    <link>//localhost:1313///blog/tags/%E9%87%8F%E5%8C%96/</link>
     <description>Recent content in 量化 on Fancy Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 13 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/%E9%87%8F%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313///blog/tags/%E9%87%8F%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub开源项目深度分析系列八：Kronos</title>
-      <link>//localhost:1313/posts/github-8-kronos/</link>
+      <link>//localhost:1313///blog/posts/github-8-kronos/</link>
       <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/github-8-kronos/</guid>
+      <guid>//localhost:1313///blog/posts/github-8-kronos/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;项目地址&lt;/strong&gt;：https://github.com/shiyu-coder/Kronos&lt;br&gt;&#xA;&lt;strong&gt;当日 GitHub Trending 排名&lt;/strong&gt;：第 7 位（日增 ⭐ 3,000+，总 Star 16,200+）&lt;br&gt;&#xA;&lt;strong&gt;论文&lt;/strong&gt;：AAAI 2026 录用 | arXiv: 2508.02739&lt;br&gt;&#xA;&lt;strong&gt;作者团队&lt;/strong&gt;：清华大学信息科学研究院&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一这是什么-用语言模型的逻辑读懂k线&#34;&gt;一、这是什么？—— 用&amp;quot;语言模型的逻辑&amp;quot;读懂K线&lt;/h2&gt;&#xA;&lt;h3 id=&#34;核心一句话&#34;&gt;核心一句话&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Kronos 是第一个专门为金融 K 线序列设计的开源基础大模型（Foundation Model）&lt;/strong&gt;，它把股票/加密货币的价格走势当作一门&amp;quot;语言&amp;quot;来学习，而不是普通的数字时间序列。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;它解决什么问题&#34;&gt;它解决什么问题？&lt;/h3&gt;&#xA;&lt;p&gt;在 Kronos 之前，量化交易者面临一个尴尬的困境：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;现有方案&lt;/th&gt;&#xA;          &lt;th&gt;缺陷&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;通用时序模型&lt;/strong&gt;（LSTM、Transformer）&lt;/td&gt;&#xA;          &lt;td&gt;金融数据高噪声、非平稳，泛化极差&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;通用大模型&lt;/strong&gt;（GPT-4、LLaMA 等）&lt;/td&gt;&#xA;          &lt;td&gt;不理解 OHLCV 数据，无法处理连续价格序列&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;通用时序基础模型&lt;/strong&gt;（TimesFM、Moirai）&lt;/td&gt;&#xA;          &lt;td&gt;面向通用时间序列，不懂金融特有模式：跳空、涨停、流动性断层&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;传统量化因子模型&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;需要大量人工特征工程，零样本能力为零&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;Kronos 的核心洞察：&lt;strong&gt;K 线数据有其独特的&amp;quot;语法&amp;quot;&lt;/strong&gt;——开盘价、收盘价、最高价、最低价、成交量（OHLCV）之间存在结构性约束（如 Low ≤ Open/Close ≤ High），市场情绪有特定的序列模式（吞没形态、头肩顶等）。这些规律可以像学习人类语言一样被预训练。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二它是怎么工作的-技术架构的直觉理解&#34;&gt;二、它是怎么工作的？—— 技术架构的直觉理解&lt;/h2&gt;&#xA;&lt;p&gt;不需要看代码，理解这三层架构就够了：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;原始 K 线数据 (OHLCV)&#xA;        ↓&#xA;【第一层：KronosTokenizer — 翻译官】&#xA;把连续的价格数字 → 离散的 token&#xA;（就像把文字分词一样，把价格模式分成可学习的&amp;#34;词汇&amp;#34;）&#xA;        ↓&#xA;【第二层：Kronos Transformer — 理解者】&#xA;Decoder-only 架构，在 token 序列上做因果预测&#xA;（就像 GPT 预测下一个词，Kronos 预测下一根 K 线）&#xA;        ↓&#xA;输出：未来 K 线的点预测 或 概率分布&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;为什么分词这一步是关键创新&#34;&gt;为什么&amp;quot;分词&amp;quot;这一步是关键创新？&lt;/h3&gt;&#xA;&lt;p&gt;这是 Kronos 最精妙的设计。传统方案直接对价格数值做回归，但这存在两个死穴：&lt;/p&gt;</description>
     </item>
   </channel>

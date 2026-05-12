@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Skill on Fancy Blog</title>
-    <link>//localhost:1313/tags/skill/</link>
+    <link>//localhost:1313///blog/tags/skill/</link>
     <description>Recent content in Skill on Fancy Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/skill/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313///blog/tags/skill/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub开源项目深度分析系列十二：mattpocock-skills</title>
-      <link>//localhost:1313/posts/github-12-mattpocock-skills/</link>
+      <link>//localhost:1313///blog/posts/github-12-mattpocock-skills/</link>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/github-12-mattpocock-skills/</guid>
+      <guid>//localhost:1313///blog/posts/github-12-mattpocock-skills/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;分析日期：2026-04-29&#xA;仓库：https://github.com/mattpocock/skills&#xA;GitHub 热度：日增 ⭐ 7,321 | 总 ⭐ 37,270 | 登顶 Trending 第一&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一项目是什么&#34;&gt;一、项目是什么&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-一句话定义&#34;&gt;1.1 一句话定义&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Matt Pocock 将自己日常使用 AI 编程助手（Claude Code / Codex）的完整工作流，开源为一套可安装、可复用的技能（Skills）集合。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这不是一个框架，不是一个工具，更不是一个&amp;quot;提示词合集&amp;quot;。它是一个经过真实工程实践验证的 &lt;strong&gt;AI Agent 工作流操作系统&lt;/strong&gt;，每一个 Skill 都对应一个真实工程师每天都会遇到的具体场景。&lt;/p&gt;&#xA;&lt;h3 id=&#34;12-作者背景为什么他的作品有说服力&#34;&gt;1.2 作者背景：为什么他的作品有说服力&lt;/h3&gt;&#xA;&lt;p&gt;Matt Pocock 是 TypeScript 社区的知名教育者，以制作高质量 TypeScript 教程著称，全网拥有数十万开发者粉丝。他的核心竞争力是&lt;strong&gt;把复杂的技术概念讲得清晰易懂&lt;/strong&gt;——这个能力迁移到 AI 编程领域，表现为：他能精准识别 AI 辅助开发中的常见失败模式，并给出结构化的解决方案。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;这一点至关重要：市面上绝大多数 AI 编程技巧都是&amp;quot;技巧的堆砌&amp;quot;，而 Matt 输出的是&lt;strong&gt;经过系统化整理的工程方法论&lt;/strong&gt;。这决定了该项目不是昙花一现的热点，而是真正可沉淀的知识资产。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;13-核心架构skill-的本质是什么&#34;&gt;1.3 核心架构：Skill 的本质是什么&lt;/h3&gt;&#xA;&lt;p&gt;Skill 文件的本质是一个 &lt;strong&gt;Markdown 格式的结构化指令集&lt;/strong&gt;：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---&#xA;name: /tdd&#xA;description: Test-Driven Development&#xA;---&#xA;## 步骤 1: 写一个失败的测试&#xA;...&#xA;## 步骤 2: 让测试通过&#xA;...&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这意味着：&lt;/p&gt;</description>
     </item>
     <item>
       <title>GitHub开源项目深度分析系列十：andrej-karpathy-skills</title>
-      <link>//localhost:1313/posts/github-10-karpathy-skills/</link>
+      <link>//localhost:1313///blog/posts/github-10-karpathy-skills/</link>
       <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/github-10-karpathy-skills/</guid>
+      <guid>//localhost:1313///blog/posts/github-10-karpathy-skills/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;项目地址&lt;/strong&gt;：https://github.com/forrestchang/andrej-karpathy-skills&lt;br&gt;&#xA;&lt;strong&gt;分析日期&lt;/strong&gt;：2026 年 4 月 16 日&lt;br&gt;&#xA;&lt;strong&gt;今日新增 Stars&lt;/strong&gt;：+9,646（GitHub Trending 今日全站第一）&lt;br&gt;&#xA;&lt;strong&gt;总 Stars&lt;/strong&gt;：44,062&lt;br&gt;&#xA;&lt;strong&gt;Forks&lt;/strong&gt;：3,600+&lt;br&gt;&#xA;&lt;strong&gt;创建时间&lt;/strong&gt;：2026 年 1 月 27 日&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一这个项目是干什么的&#34;&gt;一、这个项目是干什么的？&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-一句话本质&#34;&gt;1.1 一句话本质&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;一个 Markdown 文件，装了 4 条规矩，让 AI 写代码少犯低级错误。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;整个项目的核心交付物，就是一个 &lt;code&gt;CLAUDE.md&lt;/code&gt; 文件。没有框架，没有依赖，没有安装脚本。这件事本身就值得思考：为什么一个 Markdown 文件能拿到 4.4 万 Star？&lt;/p&gt;&#xA;&lt;h3 id=&#34;12-起源karpathy-发了什么&#34;&gt;1.2 起源：Karpathy 发了什么&lt;/h3&gt;&#xA;&lt;p&gt;项目名字里的 Andrej Karpathy，是 AI 领域公认的&amp;quot;最会讲课的人&amp;quot;之一：OpenAI 联合创始人、特斯拉 AI 总监、斯坦福 CS231n 主讲教授。他在 2026 年初的一次分享里，系统性地梳理了他用 Claude Code 的真实感受——&lt;/p&gt;&#xA;&lt;p&gt;不是夸奖，而是&lt;strong&gt;吐槽&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;他提炼出了 AI 写代码时反复出现的四个毛病：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;毛病&lt;/th&gt;&#xA;          &lt;th&gt;具体表现&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;乱做假设&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;不问你，直接猜，猜错了你还不知道&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;藏着困惑&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;遇到模糊需求，不澄清，自己选一个然后干&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;过度复杂&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;3 行能搞定的事，写出 30 行带工厂类的架构&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;破坏性编辑&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;改一个 bug，顺手删了注释、改了风格、动了无关代码&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;然后他说了一句话，后来被反复引用：&lt;/p&gt;</description>
     </item>
   </channel>
