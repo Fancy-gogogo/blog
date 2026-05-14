@@ -1,75 +1,584 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>技术思考 on Fancy Blog</title>
-    <link>//localhost:50476///blog/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/</link>
-    <description>Recent content in 技术思考 on Fancy Blog</description>
-    <generator>Hugo</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sat, 09 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:50476///blog/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>多 Agent 协作的企业落地：从框架狂热到生产现实的鸿沟</title>
-      <link>//localhost:50476///blog/posts/multi-agent/</link>
-      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/multi-agent/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;多 Agent 系统正在从&amp;quot;Demo 炫技&amp;quot;走向&amp;quot;生产存活&amp;quot;——2026 年 4 月是关键转折点，但 75% 的试点项目仍倒在从实验到量产的最后一公里，根本原因不是技术不行，而是组织不知道自己搭的是一个需要治理的&amp;quot;AI 社会&amp;quot;。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一现象层你看到的世界&#34;&gt;一、现象层：你看到的世界&lt;/h2&gt;&#xA;&lt;p&gt;如果你过去半年参加过任何一场 AI 大会，听到最多的词不是&amp;quot;大模型&amp;quot;，而是&amp;quot;Agent&amp;quot;和&amp;quot;多 Agent 协作&amp;quot;。CrewAI、LangGraph、AutoGen、MetaGPT、Google ADK、SmolAgents——框架列表每个月都在膨胀，每个框架都在声称自己解决了&amp;quot;最难的多 Agent 编排问题&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;数字会说话，但说的不全是好消息：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Gartner 预测 2026 年底，企业软件交互中有 30% 将由 Agentic 系统驱动&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;截至 2025 年，AI Agent 嵌入企业应用的比例不足 5%；预计 2026 年底达到 40%——这是 8 倍的增长&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;大型组织中，78-97% 正在运行某种形式的 Agent 试点或实验（&lt;a href=&#34;http://Writer.com&#34;&gt;Writer.com&lt;/a&gt; Enterprise AI Adoption 2026）&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;然而，直到 2026 年 4 月，持续活跃在生产环境的项目不足 25%&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;换句话说：几乎所有企业都在玩命试点，但大多数试点永远停在试点。&lt;/p&gt;&#xA;&lt;p&gt;这个 Gap，才是真正值得挖的东西。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二机制层为什么多-agent-落地这么难&#34;&gt;二、机制层：为什么多 Agent 落地这么难&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-单体-ai-的天花板催生了多-agent-的需求&#34;&gt;2.1 单体 AI 的天花板，催生了多 Agent 的需求&lt;/h3&gt;&#xA;&lt;p&gt;第一波企业 AI 落地走的是&amp;quot;超级助手&amp;quot;路线：一个 LLM 负责所有任务。这种模式有三个天然瓶颈：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AI Agent 浪潮：从“对话”到“行动”的范式大革命</title>
-      <link>//localhost:50476///blog/posts/ai-agent-vs-conversation/</link>
-      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/ai-agent-vs-conversation/</guid>
-      <description>&lt;p&gt;引言：从Siri到&amp;quot;数字员工&amp;quot;，我们走了多远&lt;/p&gt;&#xA;&lt;p&gt;2026年的AI产业，正在经历一场静默但深刻的范式转移。&lt;/p&gt;&#xA;&lt;p&gt;如果你在2023年告诉我，AI将会在18个月内&amp;quot;学会使用工具&amp;quot;、自主规划任务、甚至替我订机票、填表格、写代码，我会觉得这是科幻。但今天，这些事情正在真实发生——不是Demo，是生产级落地。&lt;/p&gt;&#xA;&lt;p&gt;改变的信号来自一个词：Agent（智能体）。&lt;/p&gt;&#xA;&lt;p&gt;本文的核心论点：AI Agent不是&amp;quot;更强的聊天机器人&amp;quot;，而是从&amp;quot;回答问题&amp;quot;到&amp;quot;解决问题&amp;quot;的范式跃迁。它意味着AI从被动的信息检索工具，升级为主动的执行代理。这一转变的产业意义，可能超过ChatGPT本身的诞生。&lt;/p&gt;&#xA;&lt;p&gt;我将用三个章节来论证这个判断：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;技术原理——Agent为何能&amp;quot;行动&amp;quot;而非仅&amp;quot;说话&amp;quot;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;产业格局——谁在布局、竞争格局如何演变&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;商业落地——Agent如何改变企业的AI采用路径&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;我的思考——关于未来3-5年的判断&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;第一章：Agent为何是&amp;quot;下一代AI&amp;quot;&lt;/p&gt;&#xA;&lt;p&gt;1.1 传统LLM的局限：它知道但做不到&lt;/p&gt;&#xA;&lt;p&gt;我们在2023-2024年经历了LLM的爆发式增长。但一个核心问题始终存在：大模型很&amp;quot;聪明&amp;quot;，但很&amp;quot;懒&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;具体表现：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;你问它&amp;quot;帮我查今天上海的天气&amp;quot;，它会回答但不会真的查&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;你让它&amp;quot;帮我写个Python脚本清理Excel&amp;quot;，它会写但不会运行&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;你问&amp;quot;最近有什么AI论文&amp;quot;，它可以总结但不会真的去arXiv抓取&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这种现象，业界叫**&amp;ldquo;对齐错位&amp;rdquo;（Alignment Gap）**——模型知道答案，但无法将&amp;quot;知识&amp;quot;转化为&amp;quot;行动&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;1.2 Agent的三层能力：ReAct + Tool Use + Planning&lt;/p&gt;&#xA;&lt;p&gt;Agent之所以能&amp;quot;行动&amp;quot;，核心靠三层技术能力：&lt;/p&gt;&#xA;&lt;p&gt;第一层：ReAct（Reasoning + Acting）&lt;/p&gt;&#xA;&lt;p&gt;2022年Google提出的ReAct范式，是Agent的理论基座。传统LLM是&amp;quot;先思考后回答&amp;quot;（Reason-then-Act），而ReAct是&amp;quot;边思考边行动&amp;quot;（Reason + Act交错）。&lt;/p&gt;&#xA;&lt;p&gt;一个经典例子：&lt;/p&gt;&#xA;&lt;p&gt;用户：帮我查北京到上海的航班&lt;br&gt;&#xA;Agent Thought：我需要先查航班信息 → Action：调用航班API → Observation：返回结果 → Thought：价格偏高 → Action：再查另一个航司&amp;hellip; → Final Answer&lt;/p&gt;&#xA;&lt;p&gt;这就是人类做决策的方式：行动-反馈-调整-再行动。ReAct让AI学会了这一点。&lt;/p&gt;&#xA;&lt;p&gt;第二层：Tool Use（工具调用）&lt;/p&gt;&#xA;&lt;p&gt;这是Agent落地的关键突破。2023-2024年，OpenAI、Anthropic等相继开放了Function Calling——让模型可以调用外部工具：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;搜索引擎——实时获取最新信息&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;API——订票、付款、发邮件&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;代码执行——运行Python、SQL查询&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;文件系统——读写本地文档&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;2025年，OpenAI的Agent框架已经支持200+工具调用，Anthropic的Computer Use甚至可以让AI&amp;quot;操纵鼠标键盘&amp;quot;——它能自己打开浏览器、点击按钮、填入表单。&lt;/p&gt;&#xA;&lt;p&gt;第三层：Planning（任务规划）&lt;/p&gt;&#xA;&lt;p&gt;这是最难的一层。人类可以在复杂任务中做多步规划：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;先做A&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;如果B发生，就做C；否则做D&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;最后整合结果&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;这就是Agentic Workflow（智能体工作流）。Anthropic在2025年初提出的&amp;quot;Computer Use&amp;quot;论文中，展示了一个令人印象深刻的demo：AI可以独立完成&amp;quot;订一杯星巴克咖啡&amp;quot;的全流程——从打开App、搜索店铺、加购、下单、支付，全程无需人工介入。&lt;/p&gt;&#xA;&lt;p&gt;1.3 为什么说Agent是&amp;quot;范式转移&amp;quot;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Token经济学：智能工业化时代的商品定价逻辑</title>
-      <link>//localhost:50476///blog/posts/token-economics/</link>
-      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/token-economics/</guid>
-      <description>&lt;h2 id=&#34;零一个被所有人忽视的事实&#34;&gt;零、一个被所有人忽视的事实&lt;/h2&gt;&#xA;&lt;p&gt;2026年，一个BTC（比特币）的价格大约在10万美元上下波动。&lt;/p&gt;&#xA;&lt;p&gt;2026年，一枚GPT-4o API的token，大约是$2.5/百万token——一个中文用户平均每次对话消耗约3000个token，成本不到一厘钱。&lt;/p&gt;&#xA;&lt;p&gt;这两个数字放在一起，揭示了一个极其反直觉的现实：&lt;strong&gt;人类文明历史上最复杂的智力产品，正在以远低于白菜的价格进行交易。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这不是市场失灵。这是结构性定价错误的开始，还是智能工业化的必然终点？&lt;/p&gt;&#xA;&lt;p&gt;要回答这个问题，必须从Token经济学的第一性原理出发——而第一性原理的起点，不是token本身，是&lt;strong&gt;电力&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一token的物理本质电力凝固成算法&#34;&gt;一、Token的物理本质：电力凝固成算法&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-所有token的底层都是瓦特&#34;&gt;1.1 所有Token的底层都是瓦特&lt;/h3&gt;&#xA;&lt;p&gt;理解Token经济学的第一步，是忘掉&amp;quot;token&amp;quot;这个概念，转而思考一个更底层的等价物：&lt;strong&gt;每秒钟，有多少度电被消耗，来生产你能用到的每一个token。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这个换算关系是确定的：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;一块NVIDIA H100 GPU，功耗约700W&lt;/li&gt;&#xA;&lt;li&gt;在FP16精度下，H100的峰值算力约为989 TFLOPS（每秒989万亿次浮点运算）&lt;/li&gt;&#xA;&lt;li&gt;训练一个GPT-4o级别的模型需要约10^25次浮点运算&lt;/li&gt;&#xA;&lt;li&gt;假设训练时间为3个月，需要约4万块H100同时运行&lt;/li&gt;&#xA;&lt;li&gt;这些GPU的电力消耗是多少？粗略估算：4万 × 700W × 24h × 90天 ≈ 6亿度电&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;6亿度电。&lt;/strong&gt; 以工业电价0.6元/度计算，仅电力成本就超过3.6亿人民币。这还不包括GPU的采购成本、散热成本、人才成本、网络成本。&lt;/p&gt;&#xA;&lt;p&gt;现在，把这个庞大的物理过程，压缩到一个你花几分钱就能调用一次API的瞬间——每次调用的背后，是数毫秒的GPU运算时间，是精确计量到小数点后几位的电力消耗。&lt;/p&gt;&#xA;&lt;p&gt;Token，本质上是&lt;strong&gt;电力的凝结产物&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;h3 id=&#34;12-三层成本结构token价格的物理基底&#34;&gt;1.2 三层成本结构：Token价格的物理基底&lt;/h3&gt;&#xA;&lt;p&gt;Token的定价有三个物理层面的成本，每一层都比上一层更难被用户感知：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;第一层：边际计算成本&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这是最表层的成本——每生成一个token，GPU要跑多少计算。这是所有API定价的物理基础。OpenAI对GPT-4o的定价（$2.5/百万token输出）是基于其对边际计算成本的估算加上利润率得出的。&lt;/p&gt;&#xA;&lt;p&gt;但这个成本高度动态：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;芯片效率在提升（H100 → H200 → B200，每代约30-40%效率提升）&lt;/li&gt;&#xA;&lt;li&gt;推理架构在优化（KV cache、 batching、 speculative decoding）&lt;/li&gt;&#xA;&lt;li&gt;供应链价格在波动（2024年初H100价格约为3万美元/块，2025年下跌至约2.2万美元）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这意味着，Token的边际计算成本在持续下降，&lt;strong&gt;API价格的持续下跌是一个物理必然&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;第二层：固定成本摊销&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;训练一个大模型是一次性固定成本，但这个成本是天文数字。一个GPT-4o级别的模型，从预训练到RLHF，电力成本+GPU时间成本+人才成本，总投入约在10-50亿美元之间。&lt;/p&gt;&#xA;&lt;p&gt;这个成本需要被摊销。摊销的方式不同，商业模式就不同：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;OpenAI选择：&lt;strong&gt;用用户数量摊销&lt;/strong&gt;——用户越多，每个用户承担的固定成本越低&lt;/li&gt;&#xA;&lt;li&gt;DeepSeek选择：&lt;strong&gt;用低价策略快速获取用户基数&lt;/strong&gt;——先抢占市场，摊销的事以后再说&lt;/li&gt;&#xA;&lt;li&gt;Anthropic选择：&lt;strong&gt;用企业级定价+安全溢价&lt;/strong&gt;——不是摊销成本，是找到愿意付更高价格的细分市场&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这三种选择，是三种截然不同的商业哲学，而它们的底层都是同一个问题：&lt;strong&gt;固定成本如何回收&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;第三层：基础设施成本&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这是最隐蔽也最容易被忽视的一层。GPU需要：机房、散热系统、网络带宽、稳定的电力供应。这些成本不直接体现在API定价里，但它们决定了谁能真正把Token生产出来。&lt;/p&gt;&#xA;&lt;p&gt;中国在这一层有独特优势——丰富的火电/水电资源、相对低廉的电力价格、快速建设的超算中心。这意味着，&lt;strong&gt;中国生产Token的物理成本，天然低于美国&lt;/strong&gt;。这不是技术优势，是能源地缘优势。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二token价格战一场没有胜利者的囚徒困境&#34;&gt;二、Token价格战：一场没有胜利者的囚徒困境&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-deepseek的价格冲击一个标志性事件&#34;&gt;2.1 DeepSeek的价格冲击：一个标志性事件&lt;/h3&gt;&#xA;&lt;p&gt;2025年底，DeepSeek-V3以极低的价格进入市场，直接把API价格战打到近乎为0的边缘——它的输入token价格约为$0.27/百万token，输出约为$1.1/百万token，而OpenAI同级别的模型约为$2.5和$10。&lt;/p&gt;&#xA;&lt;p&gt;这个价格不是简单的&amp;quot;低价策略&amp;quot;。它是DeepSeek对整个行业定价逻辑的一次重新校准。&lt;/p&gt;&#xA;&lt;p&gt;关键问题来了：&lt;strong&gt;DeepSeek能以这个价格长期维持吗？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;从成本结构分析：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;DeepSeek-V3的训练据报道仅用了约600万美元的GPU时间（另有说法是约600万美元的硬件成本），这个数字远低于GPT-4o的10亿美元级训练成本&lt;/li&gt;&#xA;&lt;li&gt;这意味着DeepSeek的固定成本摊销压力远小于OpenAI&lt;/li&gt;&#xA;&lt;li&gt;当固定成本低到一定程度，低价策略可以是长期的，而不是短期的促销&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;但这个逻辑有一个隐含假设：&lt;strong&gt;DeepSeek愿意接受低利润率&lt;/strong&gt;。如果它希望提高利润率，价格就必须上涨；如果价格上涨，OpenAI和Anthropic的价格就有更大的竞争空间。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Agent 架构的范式转移：AI 从「回答问题」到「解决问题」的产业革命</title>
-      <link>//localhost:50476///blog/posts/ai-agent-paradigm2/</link>
-      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/ai-agent-paradigm2/</guid>
-      <description>&lt;p&gt;2025 年到 2026 年，AI 领域最重大的变化不是模型变大了一点、上下文长了一点——而是 AI 终于从「能说会道」进化到「能说会干」。这个「干」字，指的是 Agent（智能体）架构的成熟。&lt;/p&gt;&#xA;&lt;p&gt;过去一年，我们见证了 OpenAI、Anthropic、Google DeepMind 纷纷推出 Agent 方向的产品和功能：Claude Agent、Operator、Project Orion、ChatGPT Tasks&amp;hellip;而这背后是一条清晰的技术线索：AI 的核心价值正从「生成内容」转向「执行任务」。&lt;/p&gt;&#xA;&lt;p&gt;这是一个范式级的转变。本文要深度剖析的，就是这场变革背后的技术逻辑、产业影响和我们每个人的机会与挑战。&lt;/p&gt;&#xA;&lt;p&gt;一、 为什么 Agent 是必然？&lt;/p&gt;&#xA;&lt;p&gt;1.1 聊天机器人的天花板&lt;/p&gt;&#xA;&lt;p&gt;在 2022-2024 年的大模型时代，AI 的主要形态是对话。用户问问题，AI 回答。这个模式解决了大量信息获取的需求，但它有一个天然天花板：它只能响应，不能主动。&lt;/p&gt;&#xA;&lt;p&gt;想象一个场景：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;用户说「帮我订一张下周去上海的机票」&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;对话式 AI 可以帮你查航班、给建议、甚至生成一段购票代码&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;但它不能真正打开航空公司网站、填写信息、完成支付&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这就是「最后一公里」问题。AI 很聪明，但它 hands-free（ hands=0）。&lt;/p&gt;&#xA;&lt;p&gt;1.2 Agent 的本质：AI + 工具 + 循环&lt;/p&gt;&#xA;&lt;p&gt;Agent（智能体）的本质不是新概念，但在 LLM 时代它被重新定义。现代 Agent = 大语言模型 + 工具调用能力 + 循环执行机制。&lt;/p&gt;&#xA;&lt;p&gt;来看看最经典的 Agent 架构模式：&lt;/p&gt;&#xA;&lt;p&gt;User: &amp;ldquo;帮我分析一下苹果公司的投资价值&amp;rdquo;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Planning（规划）&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;模型分解任务：查财报 → 提取关键指标 → 对比行业 → 生成报告&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;Tool Use（工具调用）&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;调用 browser tool 访问 AAPL 财报页面&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AI 淘汰赛：谁在丢掉工作，谁在赢得未来</title>
-      <link>//localhost:50476///blog/posts/ai-knockout/</link>
-      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/ai-knockout/</guid>
-      <description>&lt;h2 id=&#34;一现象层你身边的消失已经开始了&#34;&gt;一、现象层：你身边的&amp;quot;消失&amp;quot;已经开始了&lt;/h2&gt;&#xA;&lt;p&gt;2026年的职场正在发生一种很多人不愿意承认的位移。&lt;/p&gt;&#xA;&lt;p&gt;不是我危言耸听，这是数据层面的现实：GitHub Copilot 2025年的使用报告显示，已经有超过 40% 的代码提交由 AI 辅助生成。注意是&amp;quot;辅助&amp;quot;，但这个比例每季度还在上升。Cursor 的用户里有相当比例是初级工程师在做&amp;quot;prompt + 审查&amp;quot;的工作，而不再是手写每一行逻辑。Claude Code 正在被越来越多的开发者用作主力开发环境，而不是调试工具。&lt;/p&gt;&#xA;&lt;p&gt;这不是&amp;quot;AI 即将取代人类工作&amp;quot;，这是&lt;strong&gt;取代已经在发生，只是大多数当事人还没意识到&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;具体来看几个领域：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;软件开发&lt;/strong&gt;：最讽刺的地方在于，程序员是第一批大规模使用 AI 工具的人，但也是第一批因此面临裁员压力的人。原因是：生产力提升了，但需求没有同比增长。公司用 2 个会用 AI 的工程师替代了 5 个传统工程师，这不是阴谋论，这是 2025 年多个科技公司财报电话会里管理层亲口说的&amp;quot;效率提升&amp;quot;。GitHub Copilot 的数据是平均减少开发者 30% 的编码时间——但问题在于，这节省下来的时间并没有转化为更多功能，而是直接变成了人头削减。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;法律服务&lt;/strong&gt;：美国那边已经有多个法学院教授公开指出，入门级律师（associate）的工作量在过去 18 个月里下降了 40-50%。因为 AI 可以做文件审查、合同分析、判例检索这些事情，而这些恰恰是初级律师花费最多时间的工作。当然，法庭辩护和复杂谈判还需要人，但这个比例在下降。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;财务分析&lt;/strong&gt;：Bloomberg 在 2025 年初的报告指出， sell-side 分析师的基础研究工作（财报解读、行业数据整理、模型搭建）已经有大量被 LLM 取代。四大也在悄悄推进 AI 审计试点，目标是减少初级审计员的基础工作量。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;咨询服务&lt;/strong&gt;：麦肯锡 2026 年的内部文件（部分泄露）显示，AI 已经可以完成 60% 的 standard consulting deliverable。这意味着咨询公司的商业模式正在受到结构性冲击——如果客户自己用 AI 就能得到标准答案，为什么还要付几百万的咨询费？&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;反直觉的现实&lt;/strong&gt;：建筑业、制造业、护理、餐饮这些&amp;quot;蓝领&amp;quot;工作反而是相对安全的。制造业因为需要精细的手工操作和现场应变，护理因为需要物理接触和情感共情，建筑业因为现场情况的不可预测性——这些领域要么 AI 机械臂成本太高，要么人机协作的性价比不如纯人工。&lt;strong&gt;真正高危的反而是高学历白领&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二机制层为什么这一次和以前不一样&#34;&gt;二、机制层：为什么这一次和以前不一样&lt;/h2&gt;&#xA;&lt;p&gt;要理解为什么 AI 对职业的冲击和工业革命、自动化革命性质不同，需要先理解 AI 本身在做什么。&lt;/p&gt;&#xA;&lt;h3 id=&#34;21-过去的自动化替代的是肌肉这一次替代的是认知&#34;&gt;2.1 过去的自动化替代的是&amp;quot;肌肉&amp;quot;，这一次替代的是&amp;quot;认知&amp;quot;&lt;/h3&gt;&#xA;&lt;p&gt;工业革命替代的是体力劳动，自动化替代的是重复性物理操作。但 AI 这一次，替代的是&lt;strong&gt;信息处理能力&lt;/strong&gt;——阅读、理解、分析、推理、生成文字和代码。这些恰恰是高等教育培养的核心能力。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AI Agent 浪潮来袭：2026年智能体商业化深度分析报告</title>
-      <link>//localhost:50476///blog/posts/ai-agent-deeprearch/</link>
-      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/ai-agent-deeprearch/</guid>
-      <description>&lt;h2 id=&#34;一引言一个新时代的开端&#34;&gt;一、引言：一个新时代的开端&lt;/h2&gt;&#xA;&lt;p&gt;2026年的AI产业，正在经历一场静默但深刻的范式转移。&lt;/p&gt;&#xA;&lt;p&gt;如果说2022-2024年是&lt;strong&gt;大语言模型（LLM）爆发的年代&lt;/strong&gt;，那么2025-2026年则正在成为&lt;strong&gt;AI Agent（智能体）规模化落地的元年&lt;/strong&gt;。 这不是简单的技术演进，而是一次人机交互方式的根本性变革——从&amp;quot;你问我答&amp;quot;的工具，变成了&amp;quot;你说我做&amp;quot;的助理。&lt;/p&gt;&#xA;&lt;p&gt;据业界普遍预测，2026年全球AI Agent市场规模将突破200亿美元，而到2030年有望达到千亿美元级别。微软、OpenAI、Google、Anthropic等巨头已纷纷布局，各垂直领域的AI Agent创业公司更是如雨后春笋。&lt;/p&gt;&#xA;&lt;p&gt;但问题是：&lt;strong&gt;AI Agent到底解决了什么真问题？它的商业化路径是否清晰？与传统软件相比，它的企业级价值在哪里？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这篇文章，我将从一个产业研究者的视角，深入剖析AI Agent的技术本质、商业逻辑和产业格局，尝试回答这些关键问题。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二技术原理ai-agent究竟是什么&#34;&gt;二、技术原理：AI Agent究竟是什么？&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-从llm到agent一字之差天壤之别&#34;&gt;2.1 从LLM到Agent：一字之差，天壤之别&lt;/h3&gt;&#xA;&lt;p&gt;要理解AI Agent，首先需要厘清它与传统LLM应用的本质区别。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;传统LLM应用&lt;/strong&gt;（以ChatGPT为代表）的核心模式是：&lt;strong&gt;输入→理解→生成→输出&lt;/strong&gt;。用户给出提示，模型生成回复，任务即完成。这是一种&lt;strong&gt;被动响应式&lt;/strong&gt;的交互方式。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;AI Agent&lt;/strong&gt;则完全不同。它的核心模式是：&lt;strong&gt;感知→规划→执行→反馈&lt;/strong&gt;的循环。Agent不仅能理解用户意图，还能：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;制定行动计划&lt;/strong&gt;——将复杂任务分解为多个步骤&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;调用外部工具&lt;/strong&gt;——执行代码、查询数据库、操作软件&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;自主决策&lt;/strong&gt;——在执行过程中根据反馈调整策略&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;持续迭代&lt;/strong&gt;——直到任务完成或达到目标&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;简单来说：&lt;strong&gt;LLM是&amp;quot;大脑&amp;quot;，Agent是&amp;quot;大脑+手+脚&amp;quot;&lt;/strong&gt;。它不仅能思考，还能行动。&lt;/p&gt;&#xA;&lt;h3 id=&#34;22-agent的核心技术架构&#34;&gt;2.2 Agent的核心技术架构&lt;/h3&gt;&#xA;&lt;p&gt;一个完整的AI Agent通常包含以下核心组件：&lt;/p&gt;&#xA;&lt;h4 id=&#34;221-规划引擎planning-engine&#34;&gt;2.2.1 规划引擎（Planning Engine）&lt;/h4&gt;&#xA;&lt;p&gt;这是Agent的&amp;quot;大脑皮层&amp;quot;。主流方案包括：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Chain-of-Thought（思维链）&lt;/strong&gt;：让模型逐步推理，类似人类的心算过程&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;ReAct（推理+行动）&lt;/strong&gt;：结合推理与动作执行，在推理中行动，在行动中推理&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tree of Thought（思维树）&lt;/strong&gt;：探索多种可能路径，选择最优解&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Reflexion（反思）&lt;/strong&gt;：在执行后评估结果，调整策略重新出发&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这些技术让Agent具备了&lt;strong&gt;分解复杂任务&lt;/strong&gt;和&lt;strong&gt;动态规划&lt;/strong&gt;的能力。&lt;/p&gt;&#xA;&lt;h4 id=&#34;222-工具箱toolbox&#34;&gt;2.2.2 工具箱（Toolbox）&lt;/h4&gt;&#xA;&lt;p&gt;Agent的&amp;quot;手&amp;quot;和&amp;quot;脚&amp;quot;体现在它能调用外部系统：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;函数调用（Function Calling）&lt;/strong&gt;：让LLM生成结构化的API调用参数&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;工具定义（Tool Definition）&lt;/strong&gt;：预先注册可调用的工具及其参数规范&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;向量检索增强（RAG）&lt;/strong&gt;：结合企业知识库提供实时上下文&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;多模态工具&lt;/strong&gt;：支持图像识别、语音合成、文件处理等&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;据OpenAI 2025年底的数据，GPT-4o模型已支持超过100种内置工具调用，覆盖搜索、代码执行、数据分析等场景。&lt;/p&gt;&#xA;&lt;h4 id=&#34;223-记忆系统memory&#34;&gt;2.2.3 记忆系统（Memory）&lt;/h4&gt;&#xA;&lt;p&gt;这是Agent的&amp;quot;海马体&amp;quot;，分几个层次：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;短期记忆&lt;/strong&gt;：当前会话中的上下文&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;长期记忆&lt;/strong&gt;：跨会话的用户偏好、任务历史&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;向量记忆&lt;/strong&gt;：企业知识库、RAG检索结果&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;程序记忆&lt;/strong&gt;：学会的技能、工作流程&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;224-多agent协作multi-agent&#34;&gt;2.2.4 多Agent协作（Multi-Agent）&lt;/h4&gt;&#xA;&lt;p&gt;当单个Agent能力有限时，多个Agent可以协作：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;专家混合（Mixture of Experts）&lt;/strong&gt;：不同Agent专精不同领域&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;辩论/共识机制&lt;/strong&gt;：多个Agent讨论达成最优解&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;层级指挥&lt;/strong&gt;：上层Agent分配任务，下层Agent执行&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;OpenAI的&amp;quot;Swarm&amp;quot;框架、Anthropic的&amp;quot;Computer Use&amp;quot;都展示了多Agent协作的可能。&lt;/p&gt;&#xA;&lt;h3 id=&#34;23-技术瓶颈与突破&#34;&gt;2.3 技术瓶颈与突破&lt;/h3&gt;&#xA;&lt;p&gt;尽管Agent概念火热，但技术挑战依然严峻：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Vibe Coding 凉了，2026年最火的新职业是：驯兽师</title>
-      <link>//localhost:50476///blog/posts/vibe-coding-harness/</link>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/vibe-coding-harness/</guid>
-      <description>&lt;p&gt;你刚学会用Cursor写代码，感觉自己终于跟上时代了。&lt;/p&gt;&#xA;&lt;p&gt;结果：别人已经开始用AI批量生成项目，代码质量还比你稳定。&lt;/p&gt;&#xA;&lt;p&gt;问题来了：&lt;strong&gt;光会&amp;quot;和AI对话&amp;quot;，够用吗？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;2026年，程序员最值钱的能力，不是写代码，是&lt;strong&gt;驾驭AI&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;一个新职业正在诞生——&lt;strong&gt;Harness Engineer（驯兽师）&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;llm的四大原罪为什么ai写代码总出错&#34;&gt;LLM的四大&amp;quot;原罪&amp;quot;——为什么AI写代码总出错？&lt;/h2&gt;&#xA;&lt;p&gt;先说问题，再给答案。&lt;/p&gt;&#xA;&lt;p&gt;AI看起来很聪明，能陪你聊人生哲学，能帮你写代码，看起来无所不能。&lt;/p&gt;&#xA;&lt;p&gt;但实际上，它有&lt;strong&gt;四个致命缺陷&lt;/strong&gt;：&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;1. 幻觉——一本正经地胡说八道&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;AI最擅长的是什么？&lt;/p&gt;&#xA;&lt;p&gt;是&lt;strong&gt;编&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;它会用非常确定的语气，告诉你一个完全错误的API用法、一个根本不存在的函数名、一段看起来逻辑完美但跑不通的代码。&lt;/p&gt;&#xA;&lt;p&gt;你问它：&amp;ldquo;这个库怎么用？&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;它答：&amp;ldquo;用&lt;code&gt;super_awesome_function()&lt;/code&gt;就行。&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;你一查文档——不存在。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;这不是AI在骗你，而是它真的&amp;quot;相信&amp;quot;这是对的。&lt;/p&gt;&#xA;&lt;p&gt;因为它的本质是&amp;quot;预测下一个词&amp;quot;，不是&amp;quot;核实事实&amp;quot;。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;2. 上下文限制——超过极限就&amp;quot;失忆&amp;quot;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;AI处理信息的能力是有限的。&lt;/p&gt;&#xA;&lt;p&gt;这个限制叫做&amp;quot;上下文窗口&amp;quot;。就好比你让一个人同时记住20件事——超过20件，他就开始遗忘。&lt;/p&gt;&#xA;&lt;p&gt;对AI来说，一旦代码库太大，它就会：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;忘记你5分钟前说的话&lt;/li&gt;&#xA;&lt;li&gt;忽略你新加的需求&lt;/li&gt;&#xA;&lt;li&gt;把之前否定的方案又拿出来重提&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;所以AI不是记性不好，是&lt;strong&gt;内存就那么大&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;你不能怪手机打不开10G的游戏——硬件限制摆在那。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;3. 推理不稳定——同样的问题，这次对，下次错&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;你有没有遇到过这种情况：&lt;/p&gt;&#xA;&lt;p&gt;同一个问题，换了个问法，AI的答案完全不一样。&lt;/p&gt;&#xA;&lt;p&gt;或者：&lt;/p&gt;&#xA;&lt;p&gt;第一次它写对了，你让AI按这个风格继续，结果后面全是错的。&lt;/p&gt;&#xA;&lt;p&gt;这不是你操作失误。&lt;/p&gt;&#xA;&lt;p&gt;而是LLM的推理本身有&lt;strong&gt;随机性&lt;/strong&gt;。它像是一个天才，但心情时好时坏。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;换句话说：&lt;strong&gt;AI的输出不是确定性的，是概率性的。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;同样的输入，可能产生完全不同的输出。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;4. 不懂边界——你不说&amp;quot;不能做&amp;quot;，它什么都敢干&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这是最要命的一个。&lt;/p&gt;&#xA;&lt;p&gt;AI没有&amp;quot;常识&amp;quot;。它不知道什么是危险的，什么是不可逆的。&lt;/p&gt;&#xA;&lt;p&gt;你让它&amp;quot;删除没用的代码&amp;quot;，它可能把你整个项目删了——因为它真的觉得这是&amp;quot;没用&amp;quot;的。&lt;/p&gt;&#xA;&lt;p&gt;你让它&amp;quot;优化一下性能&amp;quot;，它可能把核心业务逻辑改崩了——因为它不知道哪个逻辑是&amp;quot;不能碰的&amp;quot;。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;AI像是一个听话但没分寸感的下属。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;你说：&amp;ldquo;把事情做好。&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;它理解成：&amp;ldquo;不惜一切代价做好。&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;然后把公司搞没了。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;一个扎心的真相：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;AI写代码，就像让一个记忆力很好但情商为负的天才员工——&lt;/p&gt;&#xA;&lt;p&gt;它能一晚上写出你一周的代码量。&lt;/p&gt;&#xA;&lt;p&gt;但你得时时刻刻盯着它，否则它就会搞出&amp;quot;史诗级灾难&amp;quot;。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;这就是为什么：光有AI不够，需要Harness。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;vibe-coding-为什么凉了&#34;&gt;Vibe Coding 为什么凉了？&lt;/h2&gt;&#xA;&lt;p&gt;说完了LLM的缺陷，你就能理解为什么&amp;quot;Vibe Coding&amp;quot;凉了。&lt;/p&gt;&#xA;&lt;p&gt;什么是Vibe Coding？&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Vibe Coding = 跟着感觉走，让AI帮你写，你负责改。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;代表工具：Cursor、Copilot早期版本。&lt;/p&gt;&#xA;&lt;p&gt;巅峰期：2024-2025年。&lt;/p&gt;&#xA;&lt;p&gt;当时的口号是：&amp;ldquo;你只管说，代码我来写！&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;听起来很爽对不对？&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>RAG 企业级构建指南</title>
-      <link>//localhost:50476///blog/posts/rag-guild/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/rag-guild/</guid>
-      <description>&lt;p&gt;从第一性原理来看，RAG 的本质是让 AI 在回答时能够&amp;quot;查阅&amp;quot;你的私有数据。企业级意味着要解决规模、安全、可靠、成本这四个基本约束。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一构建步骤从0到1&#34;&gt;一、构建步骤（从0到1）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;阶段1数据准备决定上限的环节&#34;&gt;阶段1：数据准备（决定上限的环节）&lt;/h3&gt;&#xA;&lt;p&gt;原始数据 → 清洗 → 分块 → 向量化 → 存储&lt;/p&gt;&#xA;&lt;h4 id=&#34;关键步骤&#34;&gt;关键步骤：&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;数据收集&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;文档类型：PDF、Word、Markdown、Wiki、数据库、API&lt;/li&gt;&#xA;&lt;li&gt;元数据提取：作者、时间、部门、版本号、密级&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;数据清洗&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;去除噪声（页眉页脚、乱码、无关内容）&lt;/li&gt;&#xA;&lt;li&gt;格式统一（转 Markdown 或纯文本）&lt;/li&gt;&#xA;&lt;li&gt;敏感信息脱敏&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;智能分块（Chunking）&lt;/strong&gt; ⚠️ 核心&#xA;&lt;ul&gt;&#xA;&lt;li&gt;不要固定字数切分！按语义边界切&lt;/li&gt;&#xA;&lt;li&gt;重叠策略：相邻块重叠 10-20%，避免信息割裂&lt;/li&gt;&#xA;&lt;li&gt;层级分块：大文档先分章节，章节内再分块&lt;/li&gt;&#xA;&lt;li&gt;保留上下文：每个块带文档标题、章节路径&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;向量化嵌入&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;选择嵌入模型（中文推荐：bge-m3、text2vec）&lt;/li&gt;&#xA;&lt;li&gt;批量处理，控制并发&lt;/li&gt;&#xA;&lt;li&gt;记录嵌入版本（模型升级后可重新嵌入）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;存储索引&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;向量数据库：Milvus、Weaviate、Qdrant、PGVector&lt;/li&gt;&#xA;&lt;li&gt;混合索引：向量 + 关键词（BM25）+ 元数据过滤&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;阶段2检索系统决定召回质量&#34;&gt;阶段2：检索系统（决定召回质量）&lt;/h3&gt;&#xA;&lt;h4 id=&#34;检索策略&#34;&gt;检索策略：&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;多路召回&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;向量检索（语义相似）&lt;/li&gt;&#xA;&lt;li&gt;关键词检索（精确匹配）&lt;/li&gt;&#xA;&lt;li&gt;元数据过滤（时间、部门、密级）&lt;/li&gt;&#xA;&lt;li&gt;融合排序（RRF 或加权）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;查询理解&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;查询改写（同义词扩展、拼写纠错）&lt;/li&gt;&#xA;&lt;li&gt;意图识别（是事实查询？还是开放问题？）&lt;/li&gt;&#xA;&lt;li&gt;多轮对话历史融合&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;重排序（Rerank）&lt;/strong&gt; ⚠️ 提升精度的关键&#xA;&lt;ul&gt;&#xA;&lt;li&gt;召回 50-100 条 → 用 Cross-Encoder 重排 → 取 top 5-10&lt;/li&gt;&#xA;&lt;li&gt;开源模型：bge-reranker、cohere-rerank&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;阶段3生成系统决定回答质量&#34;&gt;阶段3：生成系统（决定回答质量）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Prompt 工程&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;系统指令：明确角色、回答边界、引用要求&lt;/li&gt;&#xA;&lt;li&gt;上下文组织：按相关性排序，标注来源&lt;/li&gt;&#xA;&lt;li&gt;防幻觉指令：&amp;ldquo;不知道就说不知道，不要编造&amp;rdquo;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;引用溯源&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;每个关键信息标注来源文档 + 页码/章节&lt;/li&gt;&#xA;&lt;li&gt;支持点击跳转原文&lt;/li&gt;&#xA;&lt;li&gt;低置信度答案标注&amp;quot;仅供参考&amp;quot;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;回答评估&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;自检：答案是否基于检索内容？&lt;/li&gt;&#xA;&lt;li&gt;置信度评分：检索质量 + 生成质量&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;阶段4企业级能力区别于-demo-的关键&#34;&gt;阶段4：企业级能力（区别于 demo 的关键）&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;能力&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;权限控制&lt;/td&gt;&#xA;          &lt;td&gt;文档级/字段级权限，用户只能检索有权访问的内容&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;审计日志&lt;/td&gt;&#xA;          &lt;td&gt;谁查了什么、什么时候、问了什么&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;版本管理&lt;/td&gt;&#xA;          &lt;td&gt;文档更新后，旧版本可追溯，向量索引可增量更新&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;多租户&lt;/td&gt;&#xA;          &lt;td&gt;不同部门/子公司数据隔离&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;监控告警&lt;/td&gt;&#xA;          &lt;td&gt;检索延迟、命中率、用户反馈、成本监控&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;二构建过程中的注意事项-&#34;&gt;二、构建过程中的注意事项 ⚠️&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;数据质量 &amp;gt; 模型选择&lt;/strong&gt;&lt;br&gt;&#xA;垃圾进，垃圾出。清洗和分块的质量决定上限。花 70% 时间在数据准备上，不亏。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AI Agent 三种范式深度详解</title>
-      <link>//localhost:50476///blog/posts/ai-agent-paradigm1/</link>
-      <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/ai-agent-paradigm1/</guid>
-      <description>&lt;h2 id=&#34;总览为什么会有这三种范式&#34;&gt;总览：为什么会有这三种范式？&lt;/h2&gt;&#xA;&lt;p&gt;Agent 的本质是让 LLM &lt;strong&gt;自主完成复杂任务&lt;/strong&gt;。但 LLM 原生是&amp;quot;问答机器&amp;quot;，不会主动行动、规划、纠错。三种范式解决的是同一个问题的三个递进层次：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;层次&lt;/th&gt;&#xA;          &lt;th&gt;核心问题&lt;/th&gt;&#xA;          &lt;th&gt;范式&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第一层&lt;/td&gt;&#xA;          &lt;td&gt;怎么&lt;strong&gt;边想边做&lt;/strong&gt;？&lt;/td&gt;&#xA;          &lt;td&gt;ReAct&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第二层&lt;/td&gt;&#xA;          &lt;td&gt;怎么&lt;strong&gt;先想清楚再做&lt;/strong&gt;？&lt;/td&gt;&#xA;          &lt;td&gt;Plan-and-Execute&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第三层&lt;/td&gt;&#xA;          &lt;td&gt;怎么&lt;strong&gt;做完之后反思变好&lt;/strong&gt;？&lt;/td&gt;&#xA;          &lt;td&gt;Reflection&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;范式一reactreasoning--acting&#34;&gt;范式一：ReAct（Reasoning + Acting）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;核心思想&#34;&gt;核心思想&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;交替推理与行动&lt;/strong&gt;，每一步都依赖上一步的观察结果。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;论文来源：2022 年 Google/Princeton《ReAct: Synergizing Reasoning and Acting in Language Models》&lt;/p&gt;&#xA;&lt;h3 id=&#34;运作循环&#34;&gt;运作循环&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Thought → Action → Observation → Thought → Action → Observation → ... → Final Answer&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;每一轮：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Thought&lt;/strong&gt;：LLM 想&amp;quot;我现在应该做什么&amp;quot;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Action&lt;/strong&gt;：调用工具（搜索、代码执行、API 等）&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Observation&lt;/strong&gt;：获得工具返回结果&lt;/li&gt;&#xA;&lt;li&gt;根据结果重新思考，进入下一轮&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;真实例子&#34;&gt;真实例子&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;任务：「特斯拉2024年全年营收是多少，换算成人民币是多少？」&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Thought: 需要先查特斯拉2024年营收数据&#xA;Action: search(&amp;#34;Tesla 2024 annual revenue&amp;#34;)&#xA;Observation: Tesla 2024 revenue = $97.69 billion&#xA;&#xA;Thought: 需要查当前美元兑人民币汇率&#xA;Action: search(&amp;#34;USD to CNY exchange rate&amp;#34;)&#xA;Observation: 1 USD = 7.25 CNY&#xA;&#xA;Thought: 可以计算了&#xA;Action: calculator(97.69 * 7.25 * 1e9)&#xA;Observation: 708,252,500,000&#xA;&#xA;Final Answer: 约7082亿人民币&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;核心价值&#34;&gt;核心价值&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;灵活应变&lt;/strong&gt;：每步都能根据实际结果调整方向&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;可解释性强&lt;/strong&gt;：推理过程透明，每步有据可查&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;实现简单&lt;/strong&gt;：几乎所有主流框架（LangChain、LlamaIndex）的默认模式&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;适合短任务&lt;/strong&gt;：步骤少、依赖实时反馈的任务性价比最高&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;核心缺陷&#34;&gt;核心缺陷&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;长任务容易迷失&lt;/strong&gt;：10步以上容易&amp;quot;偏航&amp;quot;，忘记最初目标&lt;/li&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;步骤间无全局规划&lt;/strong&gt;：走一步看一步，不会提前识别瓶颈&lt;/li&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;Token 消耗随步数线性增长&lt;/strong&gt;：每轮都要把历史塞入上下文&lt;/li&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;容易陷入循环&lt;/strong&gt;：某些环境下会反复调用同一工具&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;适用场景&#34;&gt;适用场景&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;信息检索 + 计算的简单组合任务&lt;/li&gt;&#xA;&lt;li&gt;步骤 ≤ 5 步的工具调用链&lt;/li&gt;&#xA;&lt;li&gt;需要实时环境反馈的交互式任务（如网页操作）&lt;/li&gt;&#xA;&lt;li&gt;快速原型验证&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;范式二plan-and-execute谋定而后动&#34;&gt;范式二：Plan-and-Execute（谋定而后动）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;核心思想-1&#34;&gt;核心思想&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;先生成完整计划，再逐步执行&lt;/strong&gt;。规划者和执行者解耦。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术思考 on Fancy Blog</title><link>/blog/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/</link><description>Recent content in 技术思考 on Fancy Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 09 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml"/><item><title>多 Agent 协作的企业落地：从框架狂热到生产现实的鸿沟</title><link>/blog/posts/multi-agent/</link><pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate><guid>/blog/posts/multi-agent/</guid><description>&lt;p&gt;&lt;strong&gt;多 Agent 系统正在从&amp;quot;Demo 炫技&amp;quot;走向&amp;quot;生产存活&amp;quot;——2026 年 4 月是关键转折点，但 75% 的试点项目仍倒在从实验到量产的最后一公里，根本原因不是技术不行，而是组织不知道自己搭的是一个需要治理的&amp;quot;AI 社会&amp;quot;。&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="一现象层你看到的世界"&gt;一、现象层：你看到的世界&lt;/h2&gt;
+&lt;p&gt;如果你过去半年参加过任何一场 AI 大会，听到最多的词不是&amp;quot;大模型&amp;quot;，而是&amp;quot;Agent&amp;quot;和&amp;quot;多 Agent 协作&amp;quot;。CrewAI、LangGraph、AutoGen、MetaGPT、Google ADK、SmolAgents——框架列表每个月都在膨胀，每个框架都在声称自己解决了&amp;quot;最难的多 Agent 编排问题&amp;quot;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数字会说话，但说的不全是好消息：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Gartner 预测 2026 年底，企业软件交互中有 30% 将由 Agentic 系统驱动&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;截至 2025 年，AI Agent 嵌入企业应用的比例不足 5%；预计 2026 年底达到 40%——这是 8 倍的增长&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大型组织中，78-97% 正在运行某种形式的 Agent 试点或实验（&lt;a href="http://Writer.com"&gt;Writer.com&lt;/a&gt; Enterprise AI Adoption 2026）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;然而，直到 2026 年 4 月，持续活跃在生产环境的项目不足 25%&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;换句话说：几乎所有企业都在玩命试点，但大多数试点永远停在试点。&lt;/p&gt;
+&lt;p&gt;这个 Gap，才是真正值得挖的东西。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="二机制层为什么多-agent-落地这么难"&gt;二、机制层：为什么多 Agent 落地这么难&lt;/h2&gt;
+&lt;h3 id="21-单体-ai-的天花板催生了多-agent-的需求"&gt;2.1 单体 AI 的天花板，催生了多 Agent 的需求&lt;/h3&gt;
+&lt;p&gt;第一波企业 AI 落地走的是&amp;quot;超级助手&amp;quot;路线：一个 LLM 负责所有任务。这种模式有三个天然瓶颈：&lt;/p&gt;</description></item><item><title>AI Agent 浪潮：从“对话”到“行动”的范式大革命</title><link>/blog/posts/ai-agent-vs-conversation/</link><pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate><guid>/blog/posts/ai-agent-vs-conversation/</guid><description>&lt;p&gt;引言：从Siri到&amp;quot;数字员工&amp;quot;，我们走了多远&lt;/p&gt;
+&lt;p&gt;2026年的AI产业，正在经历一场静默但深刻的范式转移。&lt;/p&gt;
+&lt;p&gt;如果你在2023年告诉我，AI将会在18个月内&amp;quot;学会使用工具&amp;quot;、自主规划任务、甚至替我订机票、填表格、写代码，我会觉得这是科幻。但今天，这些事情正在真实发生——不是Demo，是生产级落地。&lt;/p&gt;
+&lt;p&gt;改变的信号来自一个词：Agent（智能体）。&lt;/p&gt;
+&lt;p&gt;本文的核心论点：AI Agent不是&amp;quot;更强的聊天机器人&amp;quot;，而是从&amp;quot;回答问题&amp;quot;到&amp;quot;解决问题&amp;quot;的范式跃迁。它意味着AI从被动的信息检索工具，升级为主动的执行代理。这一转变的产业意义，可能超过ChatGPT本身的诞生。&lt;/p&gt;
+&lt;p&gt;我将用三个章节来论证这个判断：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;技术原理——Agent为何能&amp;quot;行动&amp;quot;而非仅&amp;quot;说话&amp;quot;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;产业格局——谁在布局、竞争格局如何演变&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;商业落地——Agent如何改变企业的AI采用路径&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我的思考——关于未来3-5年的判断&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;第一章：Agent为何是&amp;quot;下一代AI&amp;quot;&lt;/p&gt;
+&lt;p&gt;1.1 传统LLM的局限：它知道但做不到&lt;/p&gt;
+&lt;p&gt;我们在2023-2024年经历了LLM的爆发式增长。但一个核心问题始终存在：大模型很&amp;quot;聪明&amp;quot;，但很&amp;quot;懒&amp;quot;。&lt;/p&gt;
+&lt;p&gt;具体表现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;你问它&amp;quot;帮我查今天上海的天气&amp;quot;，它会回答但不会真的查&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你让它&amp;quot;帮我写个Python脚本清理Excel&amp;quot;，它会写但不会运行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你问&amp;quot;最近有什么AI论文&amp;quot;，它可以总结但不会真的去arXiv抓取&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这种现象，业界叫**&amp;ldquo;对齐错位&amp;rdquo;（Alignment Gap）**——模型知道答案，但无法将&amp;quot;知识&amp;quot;转化为&amp;quot;行动&amp;quot;。&lt;/p&gt;
+&lt;p&gt;1.2 Agent的三层能力：ReAct + Tool Use + Planning&lt;/p&gt;
+&lt;p&gt;Agent之所以能&amp;quot;行动&amp;quot;，核心靠三层技术能力：&lt;/p&gt;
+&lt;p&gt;第一层：ReAct（Reasoning + Acting）&lt;/p&gt;
+&lt;p&gt;2022年Google提出的ReAct范式，是Agent的理论基座。传统LLM是&amp;quot;先思考后回答&amp;quot;（Reason-then-Act），而ReAct是&amp;quot;边思考边行动&amp;quot;（Reason + Act交错）。&lt;/p&gt;
+&lt;p&gt;一个经典例子：&lt;/p&gt;
+&lt;p&gt;用户：帮我查北京到上海的航班&lt;br&gt;
+Agent Thought：我需要先查航班信息 → Action：调用航班API → Observation：返回结果 → Thought：价格偏高 → Action：再查另一个航司&amp;hellip; → Final Answer&lt;/p&gt;
+&lt;p&gt;这就是人类做决策的方式：行动-反馈-调整-再行动。ReAct让AI学会了这一点。&lt;/p&gt;
+&lt;p&gt;第二层：Tool Use（工具调用）&lt;/p&gt;
+&lt;p&gt;这是Agent落地的关键突破。2023-2024年，OpenAI、Anthropic等相继开放了Function Calling——让模型可以调用外部工具：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;搜索引擎——实时获取最新信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;API——订票、付款、发邮件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代码执行——运行Python、SQL查询&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文件系统——读写本地文档&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2025年，OpenAI的Agent框架已经支持200+工具调用，Anthropic的Computer Use甚至可以让AI&amp;quot;操纵鼠标键盘&amp;quot;——它能自己打开浏览器、点击按钮、填入表单。&lt;/p&gt;
+&lt;p&gt;第三层：Planning（任务规划）&lt;/p&gt;
+&lt;p&gt;这是最难的一层。人类可以在复杂任务中做多步规划：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;先做A&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果B发生，就做C；否则做D&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后整合结果&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这就是Agentic Workflow（智能体工作流）。Anthropic在2025年初提出的&amp;quot;Computer Use&amp;quot;论文中，展示了一个令人印象深刻的demo：AI可以独立完成&amp;quot;订一杯星巴克咖啡&amp;quot;的全流程——从打开App、搜索店铺、加购、下单、支付，全程无需人工介入。&lt;/p&gt;
+&lt;p&gt;1.3 为什么说Agent是&amp;quot;范式转移&amp;quot;&lt;/p&gt;</description></item><item><title>Token经济学：智能工业化时代的商品定价逻辑</title><link>/blog/posts/token-economics/</link><pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate><guid>/blog/posts/token-economics/</guid><description>&lt;h2 id="零一个被所有人忽视的事实"&gt;零、一个被所有人忽视的事实&lt;/h2&gt;
+&lt;p&gt;2026年，一个BTC（比特币）的价格大约在10万美元上下波动。&lt;/p&gt;
+&lt;p&gt;2026年，一枚GPT-4o API的token，大约是$2.5/百万token——一个中文用户平均每次对话消耗约3000个token，成本不到一厘钱。&lt;/p&gt;
+&lt;p&gt;这两个数字放在一起，揭示了一个极其反直觉的现实：&lt;strong&gt;人类文明历史上最复杂的智力产品，正在以远低于白菜的价格进行交易。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这不是市场失灵。这是结构性定价错误的开始，还是智能工业化的必然终点？&lt;/p&gt;
+&lt;p&gt;要回答这个问题，必须从Token经济学的第一性原理出发——而第一性原理的起点，不是token本身，是&lt;strong&gt;电力&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="一token的物理本质电力凝固成算法"&gt;一、Token的物理本质：电力凝固成算法&lt;/h2&gt;
+&lt;h3 id="11-所有token的底层都是瓦特"&gt;1.1 所有Token的底层都是瓦特&lt;/h3&gt;
+&lt;p&gt;理解Token经济学的第一步，是忘掉&amp;quot;token&amp;quot;这个概念，转而思考一个更底层的等价物：&lt;strong&gt;每秒钟，有多少度电被消耗，来生产你能用到的每一个token。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这个换算关系是确定的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一块NVIDIA H100 GPU，功耗约700W&lt;/li&gt;
+&lt;li&gt;在FP16精度下，H100的峰值算力约为989 TFLOPS（每秒989万亿次浮点运算）&lt;/li&gt;
+&lt;li&gt;训练一个GPT-4o级别的模型需要约10^25次浮点运算&lt;/li&gt;
+&lt;li&gt;假设训练时间为3个月，需要约4万块H100同时运行&lt;/li&gt;
+&lt;li&gt;这些GPU的电力消耗是多少？粗略估算：4万 × 700W × 24h × 90天 ≈ 6亿度电&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;6亿度电。&lt;/strong&gt; 以工业电价0.6元/度计算，仅电力成本就超过3.6亿人民币。这还不包括GPU的采购成本、散热成本、人才成本、网络成本。&lt;/p&gt;
+&lt;p&gt;现在，把这个庞大的物理过程，压缩到一个你花几分钱就能调用一次API的瞬间——每次调用的背后，是数毫秒的GPU运算时间，是精确计量到小数点后几位的电力消耗。&lt;/p&gt;
+&lt;p&gt;Token，本质上是&lt;strong&gt;电力的凝结产物&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id="12-三层成本结构token价格的物理基底"&gt;1.2 三层成本结构：Token价格的物理基底&lt;/h3&gt;
+&lt;p&gt;Token的定价有三个物理层面的成本，每一层都比上一层更难被用户感知：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第一层：边际计算成本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是最表层的成本——每生成一个token，GPU要跑多少计算。这是所有API定价的物理基础。OpenAI对GPT-4o的定价（$2.5/百万token输出）是基于其对边际计算成本的估算加上利润率得出的。&lt;/p&gt;
+&lt;p&gt;但这个成本高度动态：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;芯片效率在提升（H100 → H200 → B200，每代约30-40%效率提升）&lt;/li&gt;
+&lt;li&gt;推理架构在优化（KV cache、 batching、 speculative decoding）&lt;/li&gt;
+&lt;li&gt;供应链价格在波动（2024年初H100价格约为3万美元/块，2025年下跌至约2.2万美元）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这意味着，Token的边际计算成本在持续下降，&lt;strong&gt;API价格的持续下跌是一个物理必然&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第二层：固定成本摊销&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;训练一个大模型是一次性固定成本，但这个成本是天文数字。一个GPT-4o级别的模型，从预训练到RLHF，电力成本+GPU时间成本+人才成本，总投入约在10-50亿美元之间。&lt;/p&gt;
+&lt;p&gt;这个成本需要被摊销。摊销的方式不同，商业模式就不同：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OpenAI选择：&lt;strong&gt;用用户数量摊销&lt;/strong&gt;——用户越多，每个用户承担的固定成本越低&lt;/li&gt;
+&lt;li&gt;DeepSeek选择：&lt;strong&gt;用低价策略快速获取用户基数&lt;/strong&gt;——先抢占市场，摊销的事以后再说&lt;/li&gt;
+&lt;li&gt;Anthropic选择：&lt;strong&gt;用企业级定价+安全溢价&lt;/strong&gt;——不是摊销成本，是找到愿意付更高价格的细分市场&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这三种选择，是三种截然不同的商业哲学，而它们的底层都是同一个问题：&lt;strong&gt;固定成本如何回收&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第三层：基础设施成本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是最隐蔽也最容易被忽视的一层。GPU需要：机房、散热系统、网络带宽、稳定的电力供应。这些成本不直接体现在API定价里，但它们决定了谁能真正把Token生产出来。&lt;/p&gt;
+&lt;p&gt;中国在这一层有独特优势——丰富的火电/水电资源、相对低廉的电力价格、快速建设的超算中心。这意味着，&lt;strong&gt;中国生产Token的物理成本，天然低于美国&lt;/strong&gt;。这不是技术优势，是能源地缘优势。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="二token价格战一场没有胜利者的囚徒困境"&gt;二、Token价格战：一场没有胜利者的囚徒困境&lt;/h2&gt;
+&lt;h3 id="21-deepseek的价格冲击一个标志性事件"&gt;2.1 DeepSeek的价格冲击：一个标志性事件&lt;/h3&gt;
+&lt;p&gt;2025年底，DeepSeek-V3以极低的价格进入市场，直接把API价格战打到近乎为0的边缘——它的输入token价格约为$0.27/百万token，输出约为$1.1/百万token，而OpenAI同级别的模型约为$2.5和$10。&lt;/p&gt;
+&lt;p&gt;这个价格不是简单的&amp;quot;低价策略&amp;quot;。它是DeepSeek对整个行业定价逻辑的一次重新校准。&lt;/p&gt;
+&lt;p&gt;关键问题来了：&lt;strong&gt;DeepSeek能以这个价格长期维持吗？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;从成本结构分析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DeepSeek-V3的训练据报道仅用了约600万美元的GPU时间（另有说法是约600万美元的硬件成本），这个数字远低于GPT-4o的10亿美元级训练成本&lt;/li&gt;
+&lt;li&gt;这意味着DeepSeek的固定成本摊销压力远小于OpenAI&lt;/li&gt;
+&lt;li&gt;当固定成本低到一定程度，低价策略可以是长期的，而不是短期的促销&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但这个逻辑有一个隐含假设：&lt;strong&gt;DeepSeek愿意接受低利润率&lt;/strong&gt;。如果它希望提高利润率，价格就必须上涨；如果价格上涨，OpenAI和Anthropic的价格就有更大的竞争空间。&lt;/p&gt;</description></item><item><title>Agent 架构的范式转移：AI 从「回答问题」到「解决问题」的产业革命</title><link>/blog/posts/ai-agent-paradigm2/</link><pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate><guid>/blog/posts/ai-agent-paradigm2/</guid><description>&lt;p&gt;2025 年到 2026 年，AI 领域最重大的变化不是模型变大了一点、上下文长了一点——而是 AI 终于从「能说会道」进化到「能说会干」。这个「干」字，指的是 Agent（智能体）架构的成熟。&lt;/p&gt;
+&lt;p&gt;过去一年，我们见证了 OpenAI、Anthropic、Google DeepMind 纷纷推出 Agent 方向的产品和功能：Claude Agent、Operator、Project Orion、ChatGPT Tasks&amp;hellip;而这背后是一条清晰的技术线索：AI 的核心价值正从「生成内容」转向「执行任务」。&lt;/p&gt;
+&lt;p&gt;这是一个范式级的转变。本文要深度剖析的，就是这场变革背后的技术逻辑、产业影响和我们每个人的机会与挑战。&lt;/p&gt;
+&lt;p&gt;一、 为什么 Agent 是必然？&lt;/p&gt;
+&lt;p&gt;1.1 聊天机器人的天花板&lt;/p&gt;
+&lt;p&gt;在 2022-2024 年的大模型时代，AI 的主要形态是对话。用户问问题，AI 回答。这个模式解决了大量信息获取的需求，但它有一个天然天花板：它只能响应，不能主动。&lt;/p&gt;
+&lt;p&gt;想象一个场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;用户说「帮我订一张下周去上海的机票」&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对话式 AI 可以帮你查航班、给建议、甚至生成一段购票代码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;但它不能真正打开航空公司网站、填写信息、完成支付&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这就是「最后一公里」问题。AI 很聪明，但它 hands-free（ hands=0）。&lt;/p&gt;
+&lt;p&gt;1.2 Agent 的本质：AI + 工具 + 循环&lt;/p&gt;
+&lt;p&gt;Agent（智能体）的本质不是新概念，但在 LLM 时代它被重新定义。现代 Agent = 大语言模型 + 工具调用能力 + 循环执行机制。&lt;/p&gt;
+&lt;p&gt;来看看最经典的 Agent 架构模式：&lt;/p&gt;
+&lt;p&gt;User: &amp;ldquo;帮我分析一下苹果公司的投资价值&amp;rdquo;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Planning（规划）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;模型分解任务：查财报 → 提取关键指标 → 对比行业 → 生成报告&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;Tool Use（工具调用）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;调用 browser tool 访问 AAPL 财报页面&lt;/p&gt;</description></item><item><title>AI 淘汰赛：谁在丢掉工作，谁在赢得未来</title><link>/blog/posts/ai-knockout/</link><pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate><guid>/blog/posts/ai-knockout/</guid><description>&lt;h2 id="一现象层你身边的消失已经开始了"&gt;一、现象层：你身边的&amp;quot;消失&amp;quot;已经开始了&lt;/h2&gt;
+&lt;p&gt;2026年的职场正在发生一种很多人不愿意承认的位移。&lt;/p&gt;
+&lt;p&gt;不是我危言耸听，这是数据层面的现实：GitHub Copilot 2025年的使用报告显示，已经有超过 40% 的代码提交由 AI 辅助生成。注意是&amp;quot;辅助&amp;quot;，但这个比例每季度还在上升。Cursor 的用户里有相当比例是初级工程师在做&amp;quot;prompt + 审查&amp;quot;的工作，而不再是手写每一行逻辑。Claude Code 正在被越来越多的开发者用作主力开发环境，而不是调试工具。&lt;/p&gt;
+&lt;p&gt;这不是&amp;quot;AI 即将取代人类工作&amp;quot;，这是&lt;strong&gt;取代已经在发生，只是大多数当事人还没意识到&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;具体来看几个领域：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;软件开发&lt;/strong&gt;：最讽刺的地方在于，程序员是第一批大规模使用 AI 工具的人，但也是第一批因此面临裁员压力的人。原因是：生产力提升了，但需求没有同比增长。公司用 2 个会用 AI 的工程师替代了 5 个传统工程师，这不是阴谋论，这是 2025 年多个科技公司财报电话会里管理层亲口说的&amp;quot;效率提升&amp;quot;。GitHub Copilot 的数据是平均减少开发者 30% 的编码时间——但问题在于，这节省下来的时间并没有转化为更多功能，而是直接变成了人头削减。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;法律服务&lt;/strong&gt;：美国那边已经有多个法学院教授公开指出，入门级律师（associate）的工作量在过去 18 个月里下降了 40-50%。因为 AI 可以做文件审查、合同分析、判例检索这些事情，而这些恰恰是初级律师花费最多时间的工作。当然，法庭辩护和复杂谈判还需要人，但这个比例在下降。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;财务分析&lt;/strong&gt;：Bloomberg 在 2025 年初的报告指出， sell-side 分析师的基础研究工作（财报解读、行业数据整理、模型搭建）已经有大量被 LLM 取代。四大也在悄悄推进 AI 审计试点，目标是减少初级审计员的基础工作量。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;咨询服务&lt;/strong&gt;：麦肯锡 2026 年的内部文件（部分泄露）显示，AI 已经可以完成 60% 的 standard consulting deliverable。这意味着咨询公司的商业模式正在受到结构性冲击——如果客户自己用 AI 就能得到标准答案，为什么还要付几百万的咨询费？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;反直觉的现实&lt;/strong&gt;：建筑业、制造业、护理、餐饮这些&amp;quot;蓝领&amp;quot;工作反而是相对安全的。制造业因为需要精细的手工操作和现场应变，护理因为需要物理接触和情感共情，建筑业因为现场情况的不可预测性——这些领域要么 AI 机械臂成本太高，要么人机协作的性价比不如纯人工。&lt;strong&gt;真正高危的反而是高学历白领&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="二机制层为什么这一次和以前不一样"&gt;二、机制层：为什么这一次和以前不一样&lt;/h2&gt;
+&lt;p&gt;要理解为什么 AI 对职业的冲击和工业革命、自动化革命性质不同，需要先理解 AI 本身在做什么。&lt;/p&gt;
+&lt;h3 id="21-过去的自动化替代的是肌肉这一次替代的是认知"&gt;2.1 过去的自动化替代的是&amp;quot;肌肉&amp;quot;，这一次替代的是&amp;quot;认知&amp;quot;&lt;/h3&gt;
+&lt;p&gt;工业革命替代的是体力劳动，自动化替代的是重复性物理操作。但 AI 这一次，替代的是&lt;strong&gt;信息处理能力&lt;/strong&gt;——阅读、理解、分析、推理、生成文字和代码。这些恰恰是高等教育培养的核心能力。&lt;/p&gt;</description></item><item><title>AI Agent 浪潮来袭：2026年智能体商业化深度分析报告</title><link>/blog/posts/ai-agent-deeprearch/</link><pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate><guid>/blog/posts/ai-agent-deeprearch/</guid><description>&lt;h2 id="一引言一个新时代的开端"&gt;一、引言：一个新时代的开端&lt;/h2&gt;
+&lt;p&gt;2026年的AI产业，正在经历一场静默但深刻的范式转移。&lt;/p&gt;
+&lt;p&gt;如果说2022-2024年是&lt;strong&gt;大语言模型（LLM）爆发的年代&lt;/strong&gt;，那么2025-2026年则正在成为&lt;strong&gt;AI Agent（智能体）规模化落地的元年&lt;/strong&gt;。 这不是简单的技术演进，而是一次人机交互方式的根本性变革——从&amp;quot;你问我答&amp;quot;的工具，变成了&amp;quot;你说我做&amp;quot;的助理。&lt;/p&gt;
+&lt;p&gt;据业界普遍预测，2026年全球AI Agent市场规模将突破200亿美元，而到2030年有望达到千亿美元级别。微软、OpenAI、Google、Anthropic等巨头已纷纷布局，各垂直领域的AI Agent创业公司更是如雨后春笋。&lt;/p&gt;
+&lt;p&gt;但问题是：&lt;strong&gt;AI Agent到底解决了什么真问题？它的商业化路径是否清晰？与传统软件相比，它的企业级价值在哪里？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这篇文章，我将从一个产业研究者的视角，深入剖析AI Agent的技术本质、商业逻辑和产业格局，尝试回答这些关键问题。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="二技术原理ai-agent究竟是什么"&gt;二、技术原理：AI Agent究竟是什么？&lt;/h2&gt;
+&lt;h3 id="21-从llm到agent一字之差天壤之别"&gt;2.1 从LLM到Agent：一字之差，天壤之别&lt;/h3&gt;
+&lt;p&gt;要理解AI Agent，首先需要厘清它与传统LLM应用的本质区别。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;传统LLM应用&lt;/strong&gt;（以ChatGPT为代表）的核心模式是：&lt;strong&gt;输入→理解→生成→输出&lt;/strong&gt;。用户给出提示，模型生成回复，任务即完成。这是一种&lt;strong&gt;被动响应式&lt;/strong&gt;的交互方式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AI Agent&lt;/strong&gt;则完全不同。它的核心模式是：&lt;strong&gt;感知→规划→执行→反馈&lt;/strong&gt;的循环。Agent不仅能理解用户意图，还能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;制定行动计划&lt;/strong&gt;——将复杂任务分解为多个步骤&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;调用外部工具&lt;/strong&gt;——执行代码、查询数据库、操作软件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;自主决策&lt;/strong&gt;——在执行过程中根据反馈调整策略&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;持续迭代&lt;/strong&gt;——直到任务完成或达到目标&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;简单来说：&lt;strong&gt;LLM是&amp;quot;大脑&amp;quot;，Agent是&amp;quot;大脑+手+脚&amp;quot;&lt;/strong&gt;。它不仅能思考，还能行动。&lt;/p&gt;
+&lt;h3 id="22-agent的核心技术架构"&gt;2.2 Agent的核心技术架构&lt;/h3&gt;
+&lt;p&gt;一个完整的AI Agent通常包含以下核心组件：&lt;/p&gt;
+&lt;h4 id="221-规划引擎planning-engine"&gt;2.2.1 规划引擎（Planning Engine）&lt;/h4&gt;
+&lt;p&gt;这是Agent的&amp;quot;大脑皮层&amp;quot;。主流方案包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Chain-of-Thought（思维链）&lt;/strong&gt;：让模型逐步推理，类似人类的心算过程&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;ReAct（推理+行动）&lt;/strong&gt;：结合推理与动作执行，在推理中行动，在行动中推理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tree of Thought（思维树）&lt;/strong&gt;：探索多种可能路径，选择最优解&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reflexion（反思）&lt;/strong&gt;：在执行后评估结果，调整策略重新出发&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些技术让Agent具备了&lt;strong&gt;分解复杂任务&lt;/strong&gt;和&lt;strong&gt;动态规划&lt;/strong&gt;的能力。&lt;/p&gt;
+&lt;h4 id="222-工具箱toolbox"&gt;2.2.2 工具箱（Toolbox）&lt;/h4&gt;
+&lt;p&gt;Agent的&amp;quot;手&amp;quot;和&amp;quot;脚&amp;quot;体现在它能调用外部系统：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;函数调用（Function Calling）&lt;/strong&gt;：让LLM生成结构化的API调用参数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;工具定义（Tool Definition）&lt;/strong&gt;：预先注册可调用的工具及其参数规范&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;向量检索增强（RAG）&lt;/strong&gt;：结合企业知识库提供实时上下文&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;多模态工具&lt;/strong&gt;：支持图像识别、语音合成、文件处理等&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;据OpenAI 2025年底的数据，GPT-4o模型已支持超过100种内置工具调用，覆盖搜索、代码执行、数据分析等场景。&lt;/p&gt;
+&lt;h4 id="223-记忆系统memory"&gt;2.2.3 记忆系统（Memory）&lt;/h4&gt;
+&lt;p&gt;这是Agent的&amp;quot;海马体&amp;quot;，分几个层次：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;短期记忆&lt;/strong&gt;：当前会话中的上下文&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;长期记忆&lt;/strong&gt;：跨会话的用户偏好、任务历史&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;向量记忆&lt;/strong&gt;：企业知识库、RAG检索结果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;程序记忆&lt;/strong&gt;：学会的技能、工作流程&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="224-多agent协作multi-agent"&gt;2.2.4 多Agent协作（Multi-Agent）&lt;/h4&gt;
+&lt;p&gt;当单个Agent能力有限时，多个Agent可以协作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;专家混合（Mixture of Experts）&lt;/strong&gt;：不同Agent专精不同领域&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;辩论/共识机制&lt;/strong&gt;：多个Agent讨论达成最优解&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;层级指挥&lt;/strong&gt;：上层Agent分配任务，下层Agent执行&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;OpenAI的&amp;quot;Swarm&amp;quot;框架、Anthropic的&amp;quot;Computer Use&amp;quot;都展示了多Agent协作的可能。&lt;/p&gt;
+&lt;h3 id="23-技术瓶颈与突破"&gt;2.3 技术瓶颈与突破&lt;/h3&gt;
+&lt;p&gt;尽管Agent概念火热，但技术挑战依然严峻：&lt;/p&gt;</description></item><item><title>Vibe Coding 凉了，2026年最火的新职业是：驯兽师</title><link>/blog/posts/vibe-coding-harness/</link><pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate><guid>/blog/posts/vibe-coding-harness/</guid><description>&lt;p&gt;你刚学会用Cursor写代码，感觉自己终于跟上时代了。&lt;/p&gt;
+&lt;p&gt;结果：别人已经开始用AI批量生成项目，代码质量还比你稳定。&lt;/p&gt;
+&lt;p&gt;问题来了：&lt;strong&gt;光会&amp;quot;和AI对话&amp;quot;，够用吗？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2026年，程序员最值钱的能力，不是写代码，是&lt;strong&gt;驾驭AI&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;一个新职业正在诞生——&lt;strong&gt;Harness Engineer（驯兽师）&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="llm的四大原罪为什么ai写代码总出错"&gt;LLM的四大&amp;quot;原罪&amp;quot;——为什么AI写代码总出错？&lt;/h2&gt;
+&lt;p&gt;先说问题，再给答案。&lt;/p&gt;
+&lt;p&gt;AI看起来很聪明，能陪你聊人生哲学，能帮你写代码，看起来无所不能。&lt;/p&gt;
+&lt;p&gt;但实际上，它有&lt;strong&gt;四个致命缺陷&lt;/strong&gt;：&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;1. 幻觉——一本正经地胡说八道&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;AI最擅长的是什么？&lt;/p&gt;
+&lt;p&gt;是&lt;strong&gt;编&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;它会用非常确定的语气，告诉你一个完全错误的API用法、一个根本不存在的函数名、一段看起来逻辑完美但跑不通的代码。&lt;/p&gt;
+&lt;p&gt;你问它：&amp;ldquo;这个库怎么用？&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;它答：&amp;ldquo;用&lt;code&gt;super_awesome_function()&lt;/code&gt;就行。&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;你一查文档——不存在。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这不是AI在骗你，而是它真的&amp;quot;相信&amp;quot;这是对的。&lt;/p&gt;
+&lt;p&gt;因为它的本质是&amp;quot;预测下一个词&amp;quot;，不是&amp;quot;核实事实&amp;quot;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;2. 上下文限制——超过极限就&amp;quot;失忆&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;AI处理信息的能力是有限的。&lt;/p&gt;
+&lt;p&gt;这个限制叫做&amp;quot;上下文窗口&amp;quot;。就好比你让一个人同时记住20件事——超过20件，他就开始遗忘。&lt;/p&gt;
+&lt;p&gt;对AI来说，一旦代码库太大，它就会：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;忘记你5分钟前说的话&lt;/li&gt;
+&lt;li&gt;忽略你新加的需求&lt;/li&gt;
+&lt;li&gt;把之前否定的方案又拿出来重提&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;所以AI不是记性不好，是&lt;strong&gt;内存就那么大&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;你不能怪手机打不开10G的游戏——硬件限制摆在那。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;3. 推理不稳定——同样的问题，这次对，下次错&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;你有没有遇到过这种情况：&lt;/p&gt;
+&lt;p&gt;同一个问题，换了个问法，AI的答案完全不一样。&lt;/p&gt;
+&lt;p&gt;或者：&lt;/p&gt;
+&lt;p&gt;第一次它写对了，你让AI按这个风格继续，结果后面全是错的。&lt;/p&gt;
+&lt;p&gt;这不是你操作失误。&lt;/p&gt;
+&lt;p&gt;而是LLM的推理本身有&lt;strong&gt;随机性&lt;/strong&gt;。它像是一个天才，但心情时好时坏。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;换句话说：&lt;strong&gt;AI的输出不是确定性的，是概率性的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;同样的输入，可能产生完全不同的输出。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;4. 不懂边界——你不说&amp;quot;不能做&amp;quot;，它什么都敢干&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是最要命的一个。&lt;/p&gt;
+&lt;p&gt;AI没有&amp;quot;常识&amp;quot;。它不知道什么是危险的，什么是不可逆的。&lt;/p&gt;
+&lt;p&gt;你让它&amp;quot;删除没用的代码&amp;quot;，它可能把你整个项目删了——因为它真的觉得这是&amp;quot;没用&amp;quot;的。&lt;/p&gt;
+&lt;p&gt;你让它&amp;quot;优化一下性能&amp;quot;，它可能把核心业务逻辑改崩了——因为它不知道哪个逻辑是&amp;quot;不能碰的&amp;quot;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;AI像是一个听话但没分寸感的下属。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;你说：&amp;ldquo;把事情做好。&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;它理解成：&amp;ldquo;不惜一切代价做好。&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;然后把公司搞没了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;一个扎心的真相：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI写代码，就像让一个记忆力很好但情商为负的天才员工——&lt;/p&gt;
+&lt;p&gt;它能一晚上写出你一周的代码量。&lt;/p&gt;
+&lt;p&gt;但你得时时刻刻盯着它，否则它就会搞出&amp;quot;史诗级灾难&amp;quot;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;这就是为什么：光有AI不够，需要Harness。&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="vibe-coding-为什么凉了"&gt;Vibe Coding 为什么凉了？&lt;/h2&gt;
+&lt;p&gt;说完了LLM的缺陷，你就能理解为什么&amp;quot;Vibe Coding&amp;quot;凉了。&lt;/p&gt;
+&lt;p&gt;什么是Vibe Coding？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Vibe Coding = 跟着感觉走，让AI帮你写，你负责改。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;代表工具：Cursor、Copilot早期版本。&lt;/p&gt;
+&lt;p&gt;巅峰期：2024-2025年。&lt;/p&gt;
+&lt;p&gt;当时的口号是：&amp;ldquo;你只管说，代码我来写！&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;听起来很爽对不对？&lt;/p&gt;</description></item><item><title>RAG 企业级构建指南</title><link>/blog/posts/rag-guild/</link><pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate><guid>/blog/posts/rag-guild/</guid><description>&lt;p&gt;从第一性原理来看，RAG 的本质是让 AI 在回答时能够&amp;quot;查阅&amp;quot;你的私有数据。企业级意味着要解决规模、安全、可靠、成本这四个基本约束。&lt;/p&gt;
+&lt;h2 id="一构建步骤从0到1"&gt;一、构建步骤（从0到1）&lt;/h2&gt;
+&lt;h3 id="阶段1数据准备决定上限的环节"&gt;阶段1：数据准备（决定上限的环节）&lt;/h3&gt;
+&lt;p&gt;原始数据 → 清洗 → 分块 → 向量化 → 存储&lt;/p&gt;
+&lt;h4 id="关键步骤"&gt;关键步骤：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据收集&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;文档类型：PDF、Word、Markdown、Wiki、数据库、API&lt;/li&gt;
+&lt;li&gt;元数据提取：作者、时间、部门、版本号、密级&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据清洗&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;去除噪声（页眉页脚、乱码、无关内容）&lt;/li&gt;
+&lt;li&gt;格式统一（转 Markdown 或纯文本）&lt;/li&gt;
+&lt;li&gt;敏感信息脱敏&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能分块（Chunking）&lt;/strong&gt; ⚠️ 核心
+&lt;ul&gt;
+&lt;li&gt;不要固定字数切分！按语义边界切&lt;/li&gt;
+&lt;li&gt;重叠策略：相邻块重叠 10-20%，避免信息割裂&lt;/li&gt;
+&lt;li&gt;层级分块：大文档先分章节，章节内再分块&lt;/li&gt;
+&lt;li&gt;保留上下文：每个块带文档标题、章节路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;向量化嵌入&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;选择嵌入模型（中文推荐：bge-m3、text2vec）&lt;/li&gt;
+&lt;li&gt;批量处理，控制并发&lt;/li&gt;
+&lt;li&gt;记录嵌入版本（模型升级后可重新嵌入）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;存储索引&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;向量数据库：Milvus、Weaviate、Qdrant、PGVector&lt;/li&gt;
+&lt;li&gt;混合索引：向量 + 关键词（BM25）+ 元数据过滤&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="阶段2检索系统决定召回质量"&gt;阶段2：检索系统（决定召回质量）&lt;/h3&gt;
+&lt;h4 id="检索策略"&gt;检索策略：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;多路召回&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;向量检索（语义相似）&lt;/li&gt;
+&lt;li&gt;关键词检索（精确匹配）&lt;/li&gt;
+&lt;li&gt;元数据过滤（时间、部门、密级）&lt;/li&gt;
+&lt;li&gt;融合排序（RRF 或加权）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;查询理解&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;查询改写（同义词扩展、拼写纠错）&lt;/li&gt;
+&lt;li&gt;意图识别（是事实查询？还是开放问题？）&lt;/li&gt;
+&lt;li&gt;多轮对话历史融合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;重排序（Rerank）&lt;/strong&gt; ⚠️ 提升精度的关键
+&lt;ul&gt;
+&lt;li&gt;召回 50-100 条 → 用 Cross-Encoder 重排 → 取 top 5-10&lt;/li&gt;
+&lt;li&gt;开源模型：bge-reranker、cohere-rerank&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="阶段3生成系统决定回答质量"&gt;阶段3：生成系统（决定回答质量）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Prompt 工程&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;系统指令：明确角色、回答边界、引用要求&lt;/li&gt;
+&lt;li&gt;上下文组织：按相关性排序，标注来源&lt;/li&gt;
+&lt;li&gt;防幻觉指令：&amp;ldquo;不知道就说不知道，不要编造&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;引用溯源&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;每个关键信息标注来源文档 + 页码/章节&lt;/li&gt;
+&lt;li&gt;支持点击跳转原文&lt;/li&gt;
+&lt;li&gt;低置信度答案标注&amp;quot;仅供参考&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;回答评估&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;自检：答案是否基于检索内容？&lt;/li&gt;
+&lt;li&gt;置信度评分：检索质量 + 生成质量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="阶段4企业级能力区别于-demo-的关键"&gt;阶段4：企业级能力（区别于 demo 的关键）&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;能力&lt;/th&gt;
+ &lt;th&gt;说明&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;权限控制&lt;/td&gt;
+ &lt;td&gt;文档级/字段级权限，用户只能检索有权访问的内容&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;审计日志&lt;/td&gt;
+ &lt;td&gt;谁查了什么、什么时候、问了什么&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;版本管理&lt;/td&gt;
+ &lt;td&gt;文档更新后，旧版本可追溯，向量索引可增量更新&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;多租户&lt;/td&gt;
+ &lt;td&gt;不同部门/子公司数据隔离&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;监控告警&lt;/td&gt;
+ &lt;td&gt;检索延迟、命中率、用户反馈、成本监控&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="二构建过程中的注意事项-"&gt;二、构建过程中的注意事项 ⚠️&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数据质量 &amp;gt; 模型选择&lt;/strong&gt;&lt;br&gt;
+垃圾进，垃圾出。清洗和分块的质量决定上限。花 70% 时间在数据准备上，不亏。&lt;/p&gt;</description></item><item><title>AI Agent 三种范式深度详解</title><link>/blog/posts/ai-agent-paradigm1/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>/blog/posts/ai-agent-paradigm1/</guid><description>&lt;h2 id="总览为什么会有这三种范式"&gt;总览：为什么会有这三种范式？&lt;/h2&gt;
+&lt;p&gt;Agent 的本质是让 LLM &lt;strong&gt;自主完成复杂任务&lt;/strong&gt;。但 LLM 原生是&amp;quot;问答机器&amp;quot;，不会主动行动、规划、纠错。三种范式解决的是同一个问题的三个递进层次：&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;层次&lt;/th&gt;
+ &lt;th&gt;核心问题&lt;/th&gt;
+ &lt;th&gt;范式&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;第一层&lt;/td&gt;
+ &lt;td&gt;怎么&lt;strong&gt;边想边做&lt;/strong&gt;？&lt;/td&gt;
+ &lt;td&gt;ReAct&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;第二层&lt;/td&gt;
+ &lt;td&gt;怎么&lt;strong&gt;先想清楚再做&lt;/strong&gt;？&lt;/td&gt;
+ &lt;td&gt;Plan-and-Execute&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;第三层&lt;/td&gt;
+ &lt;td&gt;怎么&lt;strong&gt;做完之后反思变好&lt;/strong&gt;？&lt;/td&gt;
+ &lt;td&gt;Reflection&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="范式一reactreasoning--acting"&gt;范式一：ReAct（Reasoning + Acting）&lt;/h2&gt;
+&lt;h3 id="核心思想"&gt;核心思想&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;交替推理与行动&lt;/strong&gt;，每一步都依赖上一步的观察结果。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;论文来源：2022 年 Google/Princeton《ReAct: Synergizing Reasoning and Acting in Language Models》&lt;/p&gt;
+&lt;h3 id="运作循环"&gt;运作循环&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Thought → Action → Observation → Thought → Action → Observation → ... → Final Answer
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;每一轮：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Thought&lt;/strong&gt;：LLM 想&amp;quot;我现在应该做什么&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Action&lt;/strong&gt;：调用工具（搜索、代码执行、API 等）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Observation&lt;/strong&gt;：获得工具返回结果&lt;/li&gt;
+&lt;li&gt;根据结果重新思考，进入下一轮&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="真实例子"&gt;真实例子&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;任务：「特斯拉2024年全年营收是多少，换算成人民币是多少？」&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Thought: 需要先查特斯拉2024年营收数据
+Action: search(&amp;#34;Tesla 2024 annual revenue&amp;#34;)
+Observation: Tesla 2024 revenue = $97.69 billion
+
+Thought: 需要查当前美元兑人民币汇率
+Action: search(&amp;#34;USD to CNY exchange rate&amp;#34;)
+Observation: 1 USD = 7.25 CNY
+
+Thought: 可以计算了
+Action: calculator(97.69 * 7.25 * 1e9)
+Observation: 708,252,500,000
+
+Final Answer: 约7082亿人民币
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="核心价值"&gt;核心价值&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ &lt;strong&gt;灵活应变&lt;/strong&gt;：每步都能根据实际结果调整方向&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;可解释性强&lt;/strong&gt;：推理过程透明，每步有据可查&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;实现简单&lt;/strong&gt;：几乎所有主流框架（LangChain、LlamaIndex）的默认模式&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;适合短任务&lt;/strong&gt;：步骤少、依赖实时反馈的任务性价比最高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="核心缺陷"&gt;核心缺陷&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;❌ &lt;strong&gt;长任务容易迷失&lt;/strong&gt;：10步以上容易&amp;quot;偏航&amp;quot;，忘记最初目标&lt;/li&gt;
+&lt;li&gt;❌ &lt;strong&gt;步骤间无全局规划&lt;/strong&gt;：走一步看一步，不会提前识别瓶颈&lt;/li&gt;
+&lt;li&gt;❌ &lt;strong&gt;Token 消耗随步数线性增长&lt;/strong&gt;：每轮都要把历史塞入上下文&lt;/li&gt;
+&lt;li&gt;❌ &lt;strong&gt;容易陷入循环&lt;/strong&gt;：某些环境下会反复调用同一工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="适用场景"&gt;适用场景&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;信息检索 + 计算的简单组合任务&lt;/li&gt;
+&lt;li&gt;步骤 ≤ 5 步的工具调用链&lt;/li&gt;
+&lt;li&gt;需要实时环境反馈的交互式任务（如网页操作）&lt;/li&gt;
+&lt;li&gt;快速原型验证&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="范式二plan-and-execute谋定而后动"&gt;范式二：Plan-and-Execute（谋定而后动）&lt;/h2&gt;
+&lt;h3 id="核心思想-1"&gt;核心思想&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;先生成完整计划，再逐步执行&lt;/strong&gt;。规划者和执行者解耦。&lt;/p&gt;</description></item></channel></rss>

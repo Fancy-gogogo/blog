@@ -1,33 +1,196 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>范式 on Fancy Blog</title>
-    <link>//localhost:50476///blog/tags/%E8%8C%83%E5%BC%8F/</link>
-    <description>Recent content in 范式 on Fancy Blog</description>
-    <generator>Hugo</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:50476///blog/tags/%E8%8C%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI Agent 浪潮：从“对话”到“行动”的范式大革命</title>
-      <link>//localhost:50476///blog/posts/ai-agent-vs-conversation/</link>
-      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/ai-agent-vs-conversation/</guid>
-      <description>&lt;p&gt;引言：从Siri到&amp;quot;数字员工&amp;quot;，我们走了多远&lt;/p&gt;&#xA;&lt;p&gt;2026年的AI产业，正在经历一场静默但深刻的范式转移。&lt;/p&gt;&#xA;&lt;p&gt;如果你在2023年告诉我，AI将会在18个月内&amp;quot;学会使用工具&amp;quot;、自主规划任务、甚至替我订机票、填表格、写代码，我会觉得这是科幻。但今天，这些事情正在真实发生——不是Demo，是生产级落地。&lt;/p&gt;&#xA;&lt;p&gt;改变的信号来自一个词：Agent（智能体）。&lt;/p&gt;&#xA;&lt;p&gt;本文的核心论点：AI Agent不是&amp;quot;更强的聊天机器人&amp;quot;，而是从&amp;quot;回答问题&amp;quot;到&amp;quot;解决问题&amp;quot;的范式跃迁。它意味着AI从被动的信息检索工具，升级为主动的执行代理。这一转变的产业意义，可能超过ChatGPT本身的诞生。&lt;/p&gt;&#xA;&lt;p&gt;我将用三个章节来论证这个判断：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;技术原理——Agent为何能&amp;quot;行动&amp;quot;而非仅&amp;quot;说话&amp;quot;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;产业格局——谁在布局、竞争格局如何演变&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;商业落地——Agent如何改变企业的AI采用路径&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;我的思考——关于未来3-5年的判断&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;第一章：Agent为何是&amp;quot;下一代AI&amp;quot;&lt;/p&gt;&#xA;&lt;p&gt;1.1 传统LLM的局限：它知道但做不到&lt;/p&gt;&#xA;&lt;p&gt;我们在2023-2024年经历了LLM的爆发式增长。但一个核心问题始终存在：大模型很&amp;quot;聪明&amp;quot;，但很&amp;quot;懒&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;具体表现：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;你问它&amp;quot;帮我查今天上海的天气&amp;quot;，它会回答但不会真的查&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;你让它&amp;quot;帮我写个Python脚本清理Excel&amp;quot;，它会写但不会运行&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;你问&amp;quot;最近有什么AI论文&amp;quot;，它可以总结但不会真的去arXiv抓取&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这种现象，业界叫**&amp;ldquo;对齐错位&amp;rdquo;（Alignment Gap）**——模型知道答案，但无法将&amp;quot;知识&amp;quot;转化为&amp;quot;行动&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;1.2 Agent的三层能力：ReAct + Tool Use + Planning&lt;/p&gt;&#xA;&lt;p&gt;Agent之所以能&amp;quot;行动&amp;quot;，核心靠三层技术能力：&lt;/p&gt;&#xA;&lt;p&gt;第一层：ReAct（Reasoning + Acting）&lt;/p&gt;&#xA;&lt;p&gt;2022年Google提出的ReAct范式，是Agent的理论基座。传统LLM是&amp;quot;先思考后回答&amp;quot;（Reason-then-Act），而ReAct是&amp;quot;边思考边行动&amp;quot;（Reason + Act交错）。&lt;/p&gt;&#xA;&lt;p&gt;一个经典例子：&lt;/p&gt;&#xA;&lt;p&gt;用户：帮我查北京到上海的航班&lt;br&gt;&#xA;Agent Thought：我需要先查航班信息 → Action：调用航班API → Observation：返回结果 → Thought：价格偏高 → Action：再查另一个航司&amp;hellip; → Final Answer&lt;/p&gt;&#xA;&lt;p&gt;这就是人类做决策的方式：行动-反馈-调整-再行动。ReAct让AI学会了这一点。&lt;/p&gt;&#xA;&lt;p&gt;第二层：Tool Use（工具调用）&lt;/p&gt;&#xA;&lt;p&gt;这是Agent落地的关键突破。2023-2024年，OpenAI、Anthropic等相继开放了Function Calling——让模型可以调用外部工具：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;搜索引擎——实时获取最新信息&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;API——订票、付款、发邮件&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;代码执行——运行Python、SQL查询&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;文件系统——读写本地文档&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;2025年，OpenAI的Agent框架已经支持200+工具调用，Anthropic的Computer Use甚至可以让AI&amp;quot;操纵鼠标键盘&amp;quot;——它能自己打开浏览器、点击按钮、填入表单。&lt;/p&gt;&#xA;&lt;p&gt;第三层：Planning（任务规划）&lt;/p&gt;&#xA;&lt;p&gt;这是最难的一层。人类可以在复杂任务中做多步规划：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;先做A&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;如果B发生，就做C；否则做D&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;最后整合结果&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;这就是Agentic Workflow（智能体工作流）。Anthropic在2025年初提出的&amp;quot;Computer Use&amp;quot;论文中，展示了一个令人印象深刻的demo：AI可以独立完成&amp;quot;订一杯星巴克咖啡&amp;quot;的全流程——从打开App、搜索店铺、加购、下单、支付，全程无需人工介入。&lt;/p&gt;&#xA;&lt;p&gt;1.3 为什么说Agent是&amp;quot;范式转移&amp;quot;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Agent 架构的范式转移：AI 从「回答问题」到「解决问题」的产业革命</title>
-      <link>//localhost:50476///blog/posts/ai-agent-paradigm2/</link>
-      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/ai-agent-paradigm2/</guid>
-      <description>&lt;p&gt;2025 年到 2026 年，AI 领域最重大的变化不是模型变大了一点、上下文长了一点——而是 AI 终于从「能说会道」进化到「能说会干」。这个「干」字，指的是 Agent（智能体）架构的成熟。&lt;/p&gt;&#xA;&lt;p&gt;过去一年，我们见证了 OpenAI、Anthropic、Google DeepMind 纷纷推出 Agent 方向的产品和功能：Claude Agent、Operator、Project Orion、ChatGPT Tasks&amp;hellip;而这背后是一条清晰的技术线索：AI 的核心价值正从「生成内容」转向「执行任务」。&lt;/p&gt;&#xA;&lt;p&gt;这是一个范式级的转变。本文要深度剖析的，就是这场变革背后的技术逻辑、产业影响和我们每个人的机会与挑战。&lt;/p&gt;&#xA;&lt;p&gt;一、 为什么 Agent 是必然？&lt;/p&gt;&#xA;&lt;p&gt;1.1 聊天机器人的天花板&lt;/p&gt;&#xA;&lt;p&gt;在 2022-2024 年的大模型时代，AI 的主要形态是对话。用户问问题，AI 回答。这个模式解决了大量信息获取的需求，但它有一个天然天花板：它只能响应，不能主动。&lt;/p&gt;&#xA;&lt;p&gt;想象一个场景：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;用户说「帮我订一张下周去上海的机票」&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;对话式 AI 可以帮你查航班、给建议、甚至生成一段购票代码&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;但它不能真正打开航空公司网站、填写信息、完成支付&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这就是「最后一公里」问题。AI 很聪明，但它 hands-free（ hands=0）。&lt;/p&gt;&#xA;&lt;p&gt;1.2 Agent 的本质：AI + 工具 + 循环&lt;/p&gt;&#xA;&lt;p&gt;Agent（智能体）的本质不是新概念，但在 LLM 时代它被重新定义。现代 Agent = 大语言模型 + 工具调用能力 + 循环执行机制。&lt;/p&gt;&#xA;&lt;p&gt;来看看最经典的 Agent 架构模式：&lt;/p&gt;&#xA;&lt;p&gt;User: &amp;ldquo;帮我分析一下苹果公司的投资价值&amp;rdquo;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Planning（规划）&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;模型分解任务：查财报 → 提取关键指标 → 对比行业 → 生成报告&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;Tool Use（工具调用）&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;调用 browser tool 访问 AAPL 财报页面&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AI Agent 三种范式深度详解</title>
-      <link>//localhost:50476///blog/posts/ai-agent-paradigm1/</link>
-      <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:50476///blog/posts/ai-agent-paradigm1/</guid>
-      <description>&lt;h2 id=&#34;总览为什么会有这三种范式&#34;&gt;总览：为什么会有这三种范式？&lt;/h2&gt;&#xA;&lt;p&gt;Agent 的本质是让 LLM &lt;strong&gt;自主完成复杂任务&lt;/strong&gt;。但 LLM 原生是&amp;quot;问答机器&amp;quot;，不会主动行动、规划、纠错。三种范式解决的是同一个问题的三个递进层次：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;层次&lt;/th&gt;&#xA;          &lt;th&gt;核心问题&lt;/th&gt;&#xA;          &lt;th&gt;范式&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第一层&lt;/td&gt;&#xA;          &lt;td&gt;怎么&lt;strong&gt;边想边做&lt;/strong&gt;？&lt;/td&gt;&#xA;          &lt;td&gt;ReAct&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第二层&lt;/td&gt;&#xA;          &lt;td&gt;怎么&lt;strong&gt;先想清楚再做&lt;/strong&gt;？&lt;/td&gt;&#xA;          &lt;td&gt;Plan-and-Execute&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第三层&lt;/td&gt;&#xA;          &lt;td&gt;怎么&lt;strong&gt;做完之后反思变好&lt;/strong&gt;？&lt;/td&gt;&#xA;          &lt;td&gt;Reflection&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;范式一reactreasoning--acting&#34;&gt;范式一：ReAct（Reasoning + Acting）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;核心思想&#34;&gt;核心思想&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;交替推理与行动&lt;/strong&gt;，每一步都依赖上一步的观察结果。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;论文来源：2022 年 Google/Princeton《ReAct: Synergizing Reasoning and Acting in Language Models》&lt;/p&gt;&#xA;&lt;h3 id=&#34;运作循环&#34;&gt;运作循环&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Thought → Action → Observation → Thought → Action → Observation → ... → Final Answer&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;每一轮：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Thought&lt;/strong&gt;：LLM 想&amp;quot;我现在应该做什么&amp;quot;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Action&lt;/strong&gt;：调用工具（搜索、代码执行、API 等）&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Observation&lt;/strong&gt;：获得工具返回结果&lt;/li&gt;&#xA;&lt;li&gt;根据结果重新思考，进入下一轮&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;真实例子&#34;&gt;真实例子&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;任务：「特斯拉2024年全年营收是多少，换算成人民币是多少？」&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Thought: 需要先查特斯拉2024年营收数据&#xA;Action: search(&amp;#34;Tesla 2024 annual revenue&amp;#34;)&#xA;Observation: Tesla 2024 revenue = $97.69 billion&#xA;&#xA;Thought: 需要查当前美元兑人民币汇率&#xA;Action: search(&amp;#34;USD to CNY exchange rate&amp;#34;)&#xA;Observation: 1 USD = 7.25 CNY&#xA;&#xA;Thought: 可以计算了&#xA;Action: calculator(97.69 * 7.25 * 1e9)&#xA;Observation: 708,252,500,000&#xA;&#xA;Final Answer: 约7082亿人民币&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;核心价值&#34;&gt;核心价值&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;灵活应变&lt;/strong&gt;：每步都能根据实际结果调整方向&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;可解释性强&lt;/strong&gt;：推理过程透明，每步有据可查&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;实现简单&lt;/strong&gt;：几乎所有主流框架（LangChain、LlamaIndex）的默认模式&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;适合短任务&lt;/strong&gt;：步骤少、依赖实时反馈的任务性价比最高&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;核心缺陷&#34;&gt;核心缺陷&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;长任务容易迷失&lt;/strong&gt;：10步以上容易&amp;quot;偏航&amp;quot;，忘记最初目标&lt;/li&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;步骤间无全局规划&lt;/strong&gt;：走一步看一步，不会提前识别瓶颈&lt;/li&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;Token 消耗随步数线性增长&lt;/strong&gt;：每轮都要把历史塞入上下文&lt;/li&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;容易陷入循环&lt;/strong&gt;：某些环境下会反复调用同一工具&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;适用场景&#34;&gt;适用场景&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;信息检索 + 计算的简单组合任务&lt;/li&gt;&#xA;&lt;li&gt;步骤 ≤ 5 步的工具调用链&lt;/li&gt;&#xA;&lt;li&gt;需要实时环境反馈的交互式任务（如网页操作）&lt;/li&gt;&#xA;&lt;li&gt;快速原型验证&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;范式二plan-and-execute谋定而后动&#34;&gt;范式二：Plan-and-Execute（谋定而后动）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;核心思想-1&#34;&gt;核心思想&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;先生成完整计划，再逐步执行&lt;/strong&gt;。规划者和执行者解耦。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>范式 on Fancy Blog</title><link>/blog/tags/%E8%8C%83%E5%BC%8F/</link><description>Recent content in 范式 on Fancy Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="/blog/tags/%E8%8C%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml"/><item><title>AI Agent 浪潮：从“对话”到“行动”的范式大革命</title><link>/blog/posts/ai-agent-vs-conversation/</link><pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate><guid>/blog/posts/ai-agent-vs-conversation/</guid><description>&lt;p&gt;引言：从Siri到&amp;quot;数字员工&amp;quot;，我们走了多远&lt;/p&gt;
+&lt;p&gt;2026年的AI产业，正在经历一场静默但深刻的范式转移。&lt;/p&gt;
+&lt;p&gt;如果你在2023年告诉我，AI将会在18个月内&amp;quot;学会使用工具&amp;quot;、自主规划任务、甚至替我订机票、填表格、写代码，我会觉得这是科幻。但今天，这些事情正在真实发生——不是Demo，是生产级落地。&lt;/p&gt;
+&lt;p&gt;改变的信号来自一个词：Agent（智能体）。&lt;/p&gt;
+&lt;p&gt;本文的核心论点：AI Agent不是&amp;quot;更强的聊天机器人&amp;quot;，而是从&amp;quot;回答问题&amp;quot;到&amp;quot;解决问题&amp;quot;的范式跃迁。它意味着AI从被动的信息检索工具，升级为主动的执行代理。这一转变的产业意义，可能超过ChatGPT本身的诞生。&lt;/p&gt;
+&lt;p&gt;我将用三个章节来论证这个判断：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;技术原理——Agent为何能&amp;quot;行动&amp;quot;而非仅&amp;quot;说话&amp;quot;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;产业格局——谁在布局、竞争格局如何演变&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;商业落地——Agent如何改变企业的AI采用路径&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我的思考——关于未来3-5年的判断&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;第一章：Agent为何是&amp;quot;下一代AI&amp;quot;&lt;/p&gt;
+&lt;p&gt;1.1 传统LLM的局限：它知道但做不到&lt;/p&gt;
+&lt;p&gt;我们在2023-2024年经历了LLM的爆发式增长。但一个核心问题始终存在：大模型很&amp;quot;聪明&amp;quot;，但很&amp;quot;懒&amp;quot;。&lt;/p&gt;
+&lt;p&gt;具体表现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;你问它&amp;quot;帮我查今天上海的天气&amp;quot;，它会回答但不会真的查&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你让它&amp;quot;帮我写个Python脚本清理Excel&amp;quot;，它会写但不会运行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你问&amp;quot;最近有什么AI论文&amp;quot;，它可以总结但不会真的去arXiv抓取&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这种现象，业界叫**&amp;ldquo;对齐错位&amp;rdquo;（Alignment Gap）**——模型知道答案，但无法将&amp;quot;知识&amp;quot;转化为&amp;quot;行动&amp;quot;。&lt;/p&gt;
+&lt;p&gt;1.2 Agent的三层能力：ReAct + Tool Use + Planning&lt;/p&gt;
+&lt;p&gt;Agent之所以能&amp;quot;行动&amp;quot;，核心靠三层技术能力：&lt;/p&gt;
+&lt;p&gt;第一层：ReAct（Reasoning + Acting）&lt;/p&gt;
+&lt;p&gt;2022年Google提出的ReAct范式，是Agent的理论基座。传统LLM是&amp;quot;先思考后回答&amp;quot;（Reason-then-Act），而ReAct是&amp;quot;边思考边行动&amp;quot;（Reason + Act交错）。&lt;/p&gt;
+&lt;p&gt;一个经典例子：&lt;/p&gt;
+&lt;p&gt;用户：帮我查北京到上海的航班&lt;br&gt;
+Agent Thought：我需要先查航班信息 → Action：调用航班API → Observation：返回结果 → Thought：价格偏高 → Action：再查另一个航司&amp;hellip; → Final Answer&lt;/p&gt;
+&lt;p&gt;这就是人类做决策的方式：行动-反馈-调整-再行动。ReAct让AI学会了这一点。&lt;/p&gt;
+&lt;p&gt;第二层：Tool Use（工具调用）&lt;/p&gt;
+&lt;p&gt;这是Agent落地的关键突破。2023-2024年，OpenAI、Anthropic等相继开放了Function Calling——让模型可以调用外部工具：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;搜索引擎——实时获取最新信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;API——订票、付款、发邮件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代码执行——运行Python、SQL查询&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文件系统——读写本地文档&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2025年，OpenAI的Agent框架已经支持200+工具调用，Anthropic的Computer Use甚至可以让AI&amp;quot;操纵鼠标键盘&amp;quot;——它能自己打开浏览器、点击按钮、填入表单。&lt;/p&gt;
+&lt;p&gt;第三层：Planning（任务规划）&lt;/p&gt;
+&lt;p&gt;这是最难的一层。人类可以在复杂任务中做多步规划：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;先做A&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果B发生，就做C；否则做D&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后整合结果&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这就是Agentic Workflow（智能体工作流）。Anthropic在2025年初提出的&amp;quot;Computer Use&amp;quot;论文中，展示了一个令人印象深刻的demo：AI可以独立完成&amp;quot;订一杯星巴克咖啡&amp;quot;的全流程——从打开App、搜索店铺、加购、下单、支付，全程无需人工介入。&lt;/p&gt;
+&lt;p&gt;1.3 为什么说Agent是&amp;quot;范式转移&amp;quot;&lt;/p&gt;</description></item><item><title>Agent 架构的范式转移：AI 从「回答问题」到「解决问题」的产业革命</title><link>/blog/posts/ai-agent-paradigm2/</link><pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate><guid>/blog/posts/ai-agent-paradigm2/</guid><description>&lt;p&gt;2025 年到 2026 年，AI 领域最重大的变化不是模型变大了一点、上下文长了一点——而是 AI 终于从「能说会道」进化到「能说会干」。这个「干」字，指的是 Agent（智能体）架构的成熟。&lt;/p&gt;
+&lt;p&gt;过去一年，我们见证了 OpenAI、Anthropic、Google DeepMind 纷纷推出 Agent 方向的产品和功能：Claude Agent、Operator、Project Orion、ChatGPT Tasks&amp;hellip;而这背后是一条清晰的技术线索：AI 的核心价值正从「生成内容」转向「执行任务」。&lt;/p&gt;
+&lt;p&gt;这是一个范式级的转变。本文要深度剖析的，就是这场变革背后的技术逻辑、产业影响和我们每个人的机会与挑战。&lt;/p&gt;
+&lt;p&gt;一、 为什么 Agent 是必然？&lt;/p&gt;
+&lt;p&gt;1.1 聊天机器人的天花板&lt;/p&gt;
+&lt;p&gt;在 2022-2024 年的大模型时代，AI 的主要形态是对话。用户问问题，AI 回答。这个模式解决了大量信息获取的需求，但它有一个天然天花板：它只能响应，不能主动。&lt;/p&gt;
+&lt;p&gt;想象一个场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;用户说「帮我订一张下周去上海的机票」&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对话式 AI 可以帮你查航班、给建议、甚至生成一段购票代码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;但它不能真正打开航空公司网站、填写信息、完成支付&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这就是「最后一公里」问题。AI 很聪明，但它 hands-free（ hands=0）。&lt;/p&gt;
+&lt;p&gt;1.2 Agent 的本质：AI + 工具 + 循环&lt;/p&gt;
+&lt;p&gt;Agent（智能体）的本质不是新概念，但在 LLM 时代它被重新定义。现代 Agent = 大语言模型 + 工具调用能力 + 循环执行机制。&lt;/p&gt;
+&lt;p&gt;来看看最经典的 Agent 架构模式：&lt;/p&gt;
+&lt;p&gt;User: &amp;ldquo;帮我分析一下苹果公司的投资价值&amp;rdquo;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Planning（规划）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;模型分解任务：查财报 → 提取关键指标 → 对比行业 → 生成报告&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;Tool Use（工具调用）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;调用 browser tool 访问 AAPL 财报页面&lt;/p&gt;</description></item><item><title>AI Agent 三种范式深度详解</title><link>/blog/posts/ai-agent-paradigm1/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>/blog/posts/ai-agent-paradigm1/</guid><description>&lt;h2 id="总览为什么会有这三种范式"&gt;总览：为什么会有这三种范式？&lt;/h2&gt;
+&lt;p&gt;Agent 的本质是让 LLM &lt;strong&gt;自主完成复杂任务&lt;/strong&gt;。但 LLM 原生是&amp;quot;问答机器&amp;quot;，不会主动行动、规划、纠错。三种范式解决的是同一个问题的三个递进层次：&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;层次&lt;/th&gt;
+ &lt;th&gt;核心问题&lt;/th&gt;
+ &lt;th&gt;范式&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;第一层&lt;/td&gt;
+ &lt;td&gt;怎么&lt;strong&gt;边想边做&lt;/strong&gt;？&lt;/td&gt;
+ &lt;td&gt;ReAct&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;第二层&lt;/td&gt;
+ &lt;td&gt;怎么&lt;strong&gt;先想清楚再做&lt;/strong&gt;？&lt;/td&gt;
+ &lt;td&gt;Plan-and-Execute&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;第三层&lt;/td&gt;
+ &lt;td&gt;怎么&lt;strong&gt;做完之后反思变好&lt;/strong&gt;？&lt;/td&gt;
+ &lt;td&gt;Reflection&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="范式一reactreasoning--acting"&gt;范式一：ReAct（Reasoning + Acting）&lt;/h2&gt;
+&lt;h3 id="核心思想"&gt;核心思想&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;交替推理与行动&lt;/strong&gt;，每一步都依赖上一步的观察结果。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;论文来源：2022 年 Google/Princeton《ReAct: Synergizing Reasoning and Acting in Language Models》&lt;/p&gt;
+&lt;h3 id="运作循环"&gt;运作循环&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Thought → Action → Observation → Thought → Action → Observation → ... → Final Answer
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;每一轮：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Thought&lt;/strong&gt;：LLM 想&amp;quot;我现在应该做什么&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Action&lt;/strong&gt;：调用工具（搜索、代码执行、API 等）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Observation&lt;/strong&gt;：获得工具返回结果&lt;/li&gt;
+&lt;li&gt;根据结果重新思考，进入下一轮&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="真实例子"&gt;真实例子&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;任务：「特斯拉2024年全年营收是多少，换算成人民币是多少？」&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Thought: 需要先查特斯拉2024年营收数据
+Action: search(&amp;#34;Tesla 2024 annual revenue&amp;#34;)
+Observation: Tesla 2024 revenue = $97.69 billion
+
+Thought: 需要查当前美元兑人民币汇率
+Action: search(&amp;#34;USD to CNY exchange rate&amp;#34;)
+Observation: 1 USD = 7.25 CNY
+
+Thought: 可以计算了
+Action: calculator(97.69 * 7.25 * 1e9)
+Observation: 708,252,500,000
+
+Final Answer: 约7082亿人民币
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="核心价值"&gt;核心价值&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ &lt;strong&gt;灵活应变&lt;/strong&gt;：每步都能根据实际结果调整方向&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;可解释性强&lt;/strong&gt;：推理过程透明，每步有据可查&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;实现简单&lt;/strong&gt;：几乎所有主流框架（LangChain、LlamaIndex）的默认模式&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;适合短任务&lt;/strong&gt;：步骤少、依赖实时反馈的任务性价比最高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="核心缺陷"&gt;核心缺陷&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;❌ &lt;strong&gt;长任务容易迷失&lt;/strong&gt;：10步以上容易&amp;quot;偏航&amp;quot;，忘记最初目标&lt;/li&gt;
+&lt;li&gt;❌ &lt;strong&gt;步骤间无全局规划&lt;/strong&gt;：走一步看一步，不会提前识别瓶颈&lt;/li&gt;
+&lt;li&gt;❌ &lt;strong&gt;Token 消耗随步数线性增长&lt;/strong&gt;：每轮都要把历史塞入上下文&lt;/li&gt;
+&lt;li&gt;❌ &lt;strong&gt;容易陷入循环&lt;/strong&gt;：某些环境下会反复调用同一工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="适用场景"&gt;适用场景&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;信息检索 + 计算的简单组合任务&lt;/li&gt;
+&lt;li&gt;步骤 ≤ 5 步的工具调用链&lt;/li&gt;
+&lt;li&gt;需要实时环境反馈的交互式任务（如网页操作）&lt;/li&gt;
+&lt;li&gt;快速原型验证&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="范式二plan-and-execute谋定而后动"&gt;范式二：Plan-and-Execute（谋定而后动）&lt;/h2&gt;
+&lt;h3 id="核心思想-1"&gt;核心思想&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;先生成完整计划，再逐步执行&lt;/strong&gt;。规划者和执行者解耦。&lt;/p&gt;</description></item></channel></rss>

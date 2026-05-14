@@ -43,7 +43,9 @@
       "Bash(curl -sI https://fancy-gogogo.github.io/)",
       "Bash(curl -sI https://fancy-gogogo.github.io/blog/posts/)",
       "Bash(curl -sI https://fancy-gogogo.github.io/blog/favicon.ico)",
-      "Bash(git check-ignore *)"
+      "Bash(git check-ignore *)",
+      "Bash(\"C:\\\\Users\\\\HUAWEI\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Packages\\\\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe\\\\hugo.exe\" list *)",
+      "Bash(\"C:\\\\Users\\\\HUAWEI\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Packages\\\\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe\\\\hugo.exe\" --minify)"
     ]
   }
 }
