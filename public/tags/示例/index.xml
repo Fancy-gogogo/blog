@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>示例 on Fancy Blog</title>
+    <link>//localhost:50476///blog/tags/%E7%A4%BA%E4%BE%8B/</link>
+    <description>Recent content in 示例 on Fancy Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:50476///blog/tags/%E7%A4%BA%E4%BE%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTML页面示例：用HTML直接写博客</title>
+      <link>//localhost:50476///blog/posts/demo-html-page/</link>
+      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:50476///blog/posts/demo-html-page/</guid>
+      <description>&lt;div class=&#34;demo-html-page&#34;&gt;&#xA;&#xA;&lt;h2&gt;这是HTML页面的标题&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;这段内容来自一个 &lt;code&gt;.html&lt;/code&gt; 文件，而不是 &lt;code&gt;.md&lt;/code&gt; 文件。它被 Hugo 直接渲染为博客文章，复用了博客的主题样式——导航栏、侧边栏、页脚都在。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;你可以做什么&lt;/h3&gt;&#xA;&#xA;&lt;ul&gt;&#xA;  &lt;li&gt;使用任意 HTML 标签和结构&lt;/li&gt;&#xA;  &lt;li&gt;嵌入 &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt; 块自定义样式&lt;/li&gt;&#xA;  &lt;li&gt;嵌入 &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 添加交互&lt;/li&gt;&#xA;  &lt;li&gt;使用 CSS 动画、Canvas、SVG 等&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;h3&gt;注意事项&lt;/h3&gt;&#xA;&#xA;&lt;ol&gt;&#xA;  &lt;li&gt;只放 body 内的内容，不要粘贴完整的 HTML 文档&lt;/li&gt;&#xA;  &lt;li&gt;自定义样式用唯一类名包裹（如本页的 &lt;code&gt;.demo-html-page&lt;/code&gt;），避免与主题冲突&lt;/li&gt;&#xA;  &lt;li&gt;front matter 中的 &lt;code&gt;description&lt;/code&gt; 字段要填，用于搜索和卡片预览&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;style&gt;&#xA;.demo-html-page {&#xA;  line-height: 1.8;&#xA;}&#xA;.demo-html-page h2 {&#xA;  margin-top: 1.5em;&#xA;  border-bottom: 2px solid var(--color-accent, #4a9eff);&#xA;  padding-bottom: 0.3em;&#xA;}&#xA;.demo-html-page h3 {&#xA;  margin-top: 1.2em;&#xA;  color: var(--color-text-secondary, #666);&#xA;}&#xA;.demo-html-page code {&#xA;  background: var(--color-bg-inline-code, #f0f0f0);&#xA;  padding: 0.15em 0.4em;&#xA;  border-radius: 3px;&#xA;  font-size: 0.9em;&#xA;}&#xA;.demo-html-page ul, .demo-html-page ol {&#xA;  padding-left: 1.5em;&#xA;}&#xA;.demo-html-page li {&#xA;  margin-bottom: 0.4em;&#xA;}&#xA;&lt;/style&gt;&#xA;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

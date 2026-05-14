@@ -42,7 +42,8 @@
       "Bash(curl -sI https://fancy-gogogo.github.io/blog/)",
       "Bash(curl -sI https://fancy-gogogo.github.io/)",
       "Bash(curl -sI https://fancy-gogogo.github.io/blog/posts/)",
-      "Bash(curl -sI https://fancy-gogogo.github.io/blog/favicon.ico)"
+      "Bash(curl -sI https://fancy-gogogo.github.io/blog/favicon.ico)",
+      "Bash(git check-ignore *)"
     ]
   }
 }

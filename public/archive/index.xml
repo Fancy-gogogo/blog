@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>归档 on Fancy Blog</title>
-    <link>//localhost:1313///blog/archive/</link>
+    <link>//localhost:50476///blog/archive/</link>
     <description>Recent content in 归档 on Fancy Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <atom:link href="//localhost:1313///blog/archive/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:50476///blog/archive/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,0 +1,60 @@
+---
+title: "HTML页面示例：用HTML直接写博客"
+date: 2026-05-14
+draft: false
+tags: ["示例"]
+categories: ["技术"]
+description: "这是一个用HTML文件直接编写的博客页面示例，展示如何通过push HTML文件来更新博客。"
+---
+
+<div class="demo-html-page">
+
+<h2>这是HTML页面的标题</h2>
+
+<p>这段内容来自一个 <code>.html</code> 文件，而不是 <code>.md</code> 文件。它被 Hugo 直接渲染为博客文章，复用了博客的主题样式——导航栏、侧边栏、页脚都在。</p>
+
+<h3>你可以做什么</h3>
+
+<ul>
+  <li>使用任意 HTML 标签和结构</li>
+  <li>嵌入 <code>&lt;style&gt;</code> 块自定义样式</li>
+  <li>嵌入 <code>&lt;script&gt;</code> 添加交互</li>
+  <li>使用 CSS 动画、Canvas、SVG 等</li>
+</ul>
+
+<h3>注意事项</h3>
+
+<ol>
+  <li>只放 body 内的内容，不要粘贴完整的 HTML 文档</li>
+  <li>自定义样式用唯一类名包裹（如本页的 <code>.demo-html-page</code>），避免与主题冲突</li>
+  <li>front matter 中的 <code>description</code> 字段要填，用于搜索和卡片预览</li>
+</ol>
+
+<style>
+.demo-html-page {
+  line-height: 1.8;
+}
+.demo-html-page h2 {
+  margin-top: 1.5em;
+  border-bottom: 2px solid var(--color-accent, #4a9eff);
+  padding-bottom: 0.3em;
+}
+.demo-html-page h3 {
+  margin-top: 1.2em;
+  color: var(--color-text-secondary, #666);
+}
+.demo-html-page code {
+  background: var(--color-bg-inline-code, #f0f0f0);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+.demo-html-page ul, .demo-html-page ol {
+  padding-left: 1.5em;
+}
+.demo-html-page li {
+  margin-bottom: 0.4em;
+}
+</style>
+
+</div>

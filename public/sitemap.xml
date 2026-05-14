@@ -2,240 +2,249 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313///blog/posts/ai-data/</loc>
+    <loc>//localhost:50476///blog/posts/ai-data/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/</loc>
+    <loc>//localhost:50476///blog/categories/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E6%95%B0%E6%8D%AE%E9%A3%9E%E8%BD%AE/</loc>
+    <loc>//localhost:50476///blog/posts/demo-html-page/</loc>
     <lastmod>2026-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E5%88%86%E6%9E%90/</loc>
+    <loc>//localhost:50476///blog/tags/</loc>
+    <lastmod>2026-05-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:50476///blog/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2026-05-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:50476///blog/tags/%E6%95%B0%E6%8D%AE%E9%A3%9E%E8%BD%AE/</loc>
+    <lastmod>2026-05-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:50476///blog/tags/%E7%A4%BA%E4%BE%8B/</loc>
+    <lastmod>2026-05-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:50476///blog/tags/%E5%88%86%E6%9E%90/</loc>
     <lastmod>2026-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E8%AE%A4%E7%9F%A5/</loc>
+    <loc>//localhost:50476///blog/tags/%E8%AE%A4%E7%9F%A5/</loc>
     <lastmod>2026-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/ai-analysis/</loc>
+    <loc>//localhost:50476///blog/posts/ai-analysis/</loc>
     <lastmod>2026-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/agent/</loc>
+    <loc>//localhost:50476///blog/tags/agent/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/ai-agent-commercial/</loc>
+    <loc>//localhost:50476///blog/posts/ai-agent-commercial/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E6%95%B0%E5%AD%97%E5%91%98%E5%B7%A5/</loc>
+    <loc>//localhost:50476///blog/tags/%E6%95%B0%E5%AD%97%E5%91%98%E5%B7%A5/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/digital-employee/</loc>
+    <loc>//localhost:50476///blog/posts/digital-employee/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E6%99%BA%E8%83%BD%E4%BD%93/</loc>
+    <loc>//localhost:50476///blog/tags/%E6%99%BA%E8%83%BD%E4%BD%93/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/opc/</loc>
+    <loc>//localhost:50476///blog/tags/opc/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8/</loc>
+    <loc>//localhost:50476///blog/tags/%E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/ai-opc/</loc>
+    <loc>//localhost:50476///blog/posts/ai-opc/</loc>
     <lastmod>2026-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/categories/</loc>
+    <loc>//localhost:50476///blog/posts/multi-agent/</loc>
     <lastmod>2026-05-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/multi-agent/</loc>
+    <loc>//localhost:50476///blog/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/</loc>
     <lastmod>2026-05-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/</loc>
-    <lastmod>2026-05-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313///blog/categories/ai%E7%A7%91%E6%99%AE/</loc>
+    <loc>//localhost:50476///blog/categories/ai%E7%A7%91%E6%99%AE/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E5%BC%80%E6%BA%90/</loc>
+    <loc>//localhost:50476///blog/tags/%E5%BC%80%E6%BA%90/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/knowledge-distillation/</loc>
+    <loc>//localhost:50476///blog/posts/knowledge-distillation/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E8%92%B8%E9%A6%8F/</loc>
+    <loc>//localhost:50476///blog/tags/%E8%92%B8%E9%A6%8F/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/ai-agent-vs-conversation/</loc>
+    <loc>//localhost:50476///blog/posts/ai-agent-vs-conversation/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E8%8C%83%E5%BC%8F/</loc>
+    <loc>//localhost:50476///blog/tags/%E8%8C%83%E5%BC%8F/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/ai%E5%95%86%E4%B8%9A/</loc>
+    <loc>//localhost:50476///blog/tags/ai%E5%95%86%E4%B8%9A/</loc>
     <lastmod>2026-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/token/</loc>
+    <loc>//localhost:50476///blog/tags/token/</loc>
     <lastmod>2026-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/token-economics/</loc>
+    <loc>//localhost:50476///blog/posts/token-economics/</loc>
     <lastmod>2026-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/ai-agent-paradigm2/</loc>
+    <loc>//localhost:50476///blog/posts/ai-agent-paradigm2/</loc>
     <lastmod>2026-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/ai-knockout/</loc>
+    <loc>//localhost:50476///blog/posts/ai-knockout/</loc>
     <lastmod>2026-05-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E6%9C%AA%E6%9D%A5/</loc>
+    <loc>//localhost:50476///blog/tags/%E6%9C%AA%E6%9D%A5/</loc>
     <lastmod>2026-05-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E8%81%8C%E5%9C%BA/</loc>
+    <loc>//localhost:50476///blog/tags/%E8%81%8C%E5%9C%BA/</loc>
     <lastmod>2026-05-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/ai-agent-deeprearch/</loc>
+    <loc>//localhost:50476///blog/posts/ai-agent-deeprearch/</loc>
     <lastmod>2026-04-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/github/</loc>
+    <loc>//localhost:50476///blog/tags/github/</loc>
     <lastmod>2026-04-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-12-mattpocock-skills/</loc>
+    <loc>//localhost:50476///blog/posts/github-12-mattpocock-skills/</loc>
     <lastmod>2026-04-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/skill/</loc>
+    <loc>//localhost:50476///blog/tags/skill/</loc>
     <lastmod>2026-04-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/categories/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</loc>
+    <loc>//localhost:50476///blog/categories/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</loc>
     <lastmod>2026-04-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-11-finceptterminal/</loc>
+    <loc>//localhost:50476///blog/posts/github-11-finceptterminal/</loc>
     <lastmod>2026-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E9%87%91%E8%9E%8D/</loc>
+    <loc>//localhost:50476///blog/tags/%E9%87%91%E8%9E%8D/</loc>
     <lastmod>2026-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-10-karpathy-skills/</loc>
+    <loc>//localhost:50476///blog/posts/github-10-karpathy-skills/</loc>
     <lastmod>2026-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-9-markitdown/</loc>
+    <loc>//localhost:50476///blog/posts/github-9-markitdown/</loc>
     <lastmod>2026-04-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/markdown/</loc>
+    <loc>//localhost:50476///blog/tags/markdown/</loc>
     <lastmod>2026-04-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-8-kronos/</loc>
+    <loc>//localhost:50476///blog/posts/github-8-kronos/</loc>
     <lastmod>2026-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E9%87%8F%E5%8C%96/</loc>
+    <loc>//localhost:50476///blog/tags/%E9%87%8F%E5%8C%96/</loc>
     <lastmod>2026-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-7-hermes-agent/</loc>
+    <loc>//localhost:50476///blog/posts/github-7-hermes-agent/</loc>
     <lastmod>2026-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/llm-ppt/</loc>
+    <loc>//localhost:50476///blog/posts/llm-ppt/</loc>
     <lastmod>2026-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>//localhost:50476///blog/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2026-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E7%A7%91%E6%99%AE/</loc>
+    <loc>//localhost:50476///blog/tags/%E7%A7%91%E6%99%AE/</loc>
     <lastmod>2026-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-6-mempalace/</loc>
+    <loc>//localhost:50476///blog/posts/github-6-mempalace/</loc>
     <lastmod>2026-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>//localhost:50476///blog/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2026-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-5-openscreen/</loc>
+    <loc>//localhost:50476///blog/posts/github-5-openscreen/</loc>
     <lastmod>2026-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</loc>
+    <loc>//localhost:50476///blog/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2026-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/claude-code/</loc>
+    <loc>//localhost:50476///blog/tags/claude-code/</loc>
     <lastmod>2026-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-4-claw-code/</loc>
+    <loc>//localhost:50476///blog/posts/github-4-claw-code/</loc>
     <lastmod>2026-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-3-superpowers/</loc>
+    <loc>//localhost:50476///blog/posts/github-3-superpowers/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/vibe-coding/</loc>
+    <loc>//localhost:50476///blog/tags/vibe-coding/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-2-agency-agents/</loc>
+    <loc>//localhost:50476///blog/posts/github-2-agency-agents/</loc>
     <lastmod>2026-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/github-1-openclaw/</loc>
+    <loc>//localhost:50476///blog/posts/github-1-openclaw/</loc>
     <lastmod>2026-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/openclaw/</loc>
+    <loc>//localhost:50476///blog/tags/openclaw/</loc>
     <lastmod>2026-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/agi/</loc>
+    <loc>//localhost:50476///blog/tags/agi/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/arc-agi-3/</loc>
+    <loc>//localhost:50476///blog/posts/arc-agi-3/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/harness-engineering/</loc>
+    <loc>//localhost:50476///blog/tags/harness-engineering/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/llm/</loc>
+    <loc>//localhost:50476///blog/tags/llm/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/vibe-coding-harness/</loc>
+    <loc>//localhost:50476///blog/posts/vibe-coding-harness/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/rag/</loc>
+    <loc>//localhost:50476///blog/tags/rag/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/rag-guild/</loc>
+    <loc>//localhost:50476///blog/posts/rag-guild/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/</loc>
+    <loc>//localhost:50476///blog/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/about/</loc>
+    <loc>//localhost:50476///blog/about/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/ai-agent-paradigm1/</loc>
+    <loc>//localhost:50476///blog/posts/ai-agent-paradigm1/</loc>
     <lastmod>2026-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/harness/</loc>
+    <loc>//localhost:50476///blog/tags/harness/</loc>
     <lastmod>2026-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/lesson-6-harness/</loc>
+    <loc>//localhost:50476///blog/posts/lesson-6-harness/</loc>
     <lastmod>2026-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/skills/</loc>
+    <loc>//localhost:50476///blog/tags/skills/</loc>
     <lastmod>2026-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/lesson-5-skill/</loc>
+    <loc>//localhost:50476///blog/posts/lesson-5-skill/</loc>
     <lastmod>2026-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/lesson-4-vibecoding/</loc>
+    <loc>//localhost:50476///blog/posts/lesson-4-vibecoding/</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/tags/prompt/</loc>
+    <loc>//localhost:50476///blog/tags/prompt/</loc>
     <lastmod>2026-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/lesson-3-prompt/</loc>
+    <loc>//localhost:50476///blog/posts/lesson-3-prompt/</loc>
     <lastmod>2026-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/lesson-2-token/</loc>
+    <loc>//localhost:50476///blog/posts/lesson-2-token/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/lesson-1-llm/</loc>
+    <loc>//localhost:50476///blog/posts/lesson-1-llm/</loc>
     <lastmod>2026-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/posts/</loc>
+    <loc>//localhost:50476///blog/posts/</loc>
     <lastmod>2023-01-01T08:30:00-07:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/</loc>
+    <loc>//localhost:50476///blog/</loc>
     <lastmod>2023-01-01T08:00:00-07:00</lastmod>
   </url><url>
-    <loc>//localhost:1313///blog/archive/</loc>
+    <loc>//localhost:50476///blog/archive/</loc>
   </url>
 </urlset>
