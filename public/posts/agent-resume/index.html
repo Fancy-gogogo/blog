@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="///blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=//blog/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Blog</title>
+  <meta name="description" content="记录技术、思考与生活、大模型科普知识">
+  <link rel="canonical" href="//localhost:1313///blog/posts/agent-resume/">
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fancy Blog">
+  <meta property="og:description" content="记录技术、思考与生活、大模型科普知识">
+  <meta property="og:url" content="//localhost:1313///blog/posts/agent-resume/">
+  <meta property="og:site_name" content="Fancy Blog">
+  
+  
+  <meta property="og:image" content="//localhost:1313/cover.jpg">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fancy Blog">
+  <meta name="twitter:description" content="记录技术、思考与生活、大模型科普知识">
+  
+  <meta name="twitter:image" content="//localhost:1313/cover.jpg">
+  
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "用 AI Agent 一个人搞定招聘筛选：一个真实场景拆解 AI Agent 的核心能力",
+    "description": "本文不从概念出发，而是从一个真实的 HR 场景倒推：如果要用 AI Agent 替代人工筛选简历，Agent 需要具备哪些核心能力？这些能力如何协同工作？落地时又会遇到哪些坑？",
+    "datePublished": "2026-05-22",
+    "dateModified": "2026-05-22",
+    "author": { "@type": "Person", "name": "Fancy" },
+    "url": "\/\/localhost:1313\/\/\/blog\/posts\/agent-resume\/"
+  }
+  </script>
+  
+
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="///blog/css/style.e908a37c9c025472c9f66f4f086658efc36f9fc3ba8073d058934fc0f7994061.css">
+  <link rel="alternate" type="application/rss+xml" href="//localhost:1313/blog/index.xml">
+  
+
+<script async src="https://hm.baidu.com/hm.js?c0d5e3279e4ca68c51881d0322d024e1"></script>
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+  
+  <img src="/blog/cover.jpg" alt="cover" class="cover-image">
+
+  
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="//localhost:1313///blog/" class="navbar-brand">
+        Fancy Blog
+      </a>
+      <ul class="navbar-links">
+        
+        <li><a href="/blog/" >主页</a></li>
+        
+        <li><a href="/blog/archive/" >归档</a></li>
+        
+        <li><a href="/blog/about/" >关于</a></li>
+        
+      </ul>
+      <div class="navbar-actions">
+        <button class="search-btn" aria-label="搜索" onclick="toggleSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="切换主题" onclick="toggleTheme()"></button>
+        <button class="mobile-menu-btn" aria-label="菜单" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索文章…  (Ctrl+K)" oninput="doSearch(this.value)">
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  
+  <div class="site-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">分类</h3>
+        <div class="category-list">
+          
+          <a href="//localhost:1313///blog/categories/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" class="category-tag">项目实战<span class="cat-count">12</span></a>
+          
+          <a href="//localhost:1313///blog/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/" class="category-tag">技术思考<span class="cat-count">10</span></a>
+          
+          <a href="//localhost:1313///blog/categories/ai%E7%A7%91%E6%99%AE/" class="category-tag">AI科普<span class="cat-count">9</span></a>
+          
+          <a href="//localhost:1313///blog/categories/%E5%95%86%E4%B8%9A%E6%80%9D%E8%80%83/" class="category-tag">商业思考<span class="cat-count">3</span></a>
+          
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">标签</h3>
+        <div class="tag-cloud">
+          
+          <a href="//localhost:1313///blog/tags/agent/" class="tag-item">Agent</a>
+          
+          <a href="//localhost:1313///blog/tags/agi/" class="tag-item">AGI</a>
+          
+          <a href="//localhost:1313///blog/tags/ai%E5%95%86%E4%B8%9A/" class="tag-item">AI商业</a>
+          
+          <a href="//localhost:1313///blog/tags/api/" class="tag-item">API</a>
+          
+          <a href="//localhost:1313///blog/tags/claude-code/" class="tag-item">Claude Code</a>
+          
+          <a href="//localhost:1313///blog/tags/github/" class="tag-item">GitHub</a>
+          
+          <a href="//localhost:1313///blog/tags/harness/" class="tag-item">Harness</a>
+          
+          <a href="//localhost:1313///blog/tags/harness-engineering/" class="tag-item">Harness Engineering</a>
+          
+          <a href="//localhost:1313///blog/tags/llm/" class="tag-item">LLM</a>
+          
+          <a href="//localhost:1313///blog/tags/markdown/" class="tag-item">Markdown</a>
+          
+          <a href="//localhost:1313///blog/tags/opc/" class="tag-item">OPC</a>
+          
+          <a href="//localhost:1313///blog/tags/openclaw/" class="tag-item">OpenClaw</a>
+          
+          <a href="//localhost:1313///blog/tags/prompt/" class="tag-item">Prompt</a>
+          
+          <a href="//localhost:1313///blog/tags/rag/" class="tag-item">RAG</a>
+          
+          <a href="//localhost:1313///blog/tags/skill/" class="tag-item">Skill</a>
+          
+          <a href="//localhost:1313///blog/tags/skills/" class="tag-item">Skills</a>
+          
+          <a href="//localhost:1313///blog/tags/token/" class="tag-item">Token</a>
+          
+          <a href="//localhost:1313///blog/tags/vibe-coding/" class="tag-item">Vibe Coding</a>
+          
+          <a href="//localhost:1313///blog/tags/%E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8/" class="tag-item">一人公司</a>
+          
+          <a href="//localhost:1313///blog/tags/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/" class="tag-item">企业应用</a>
+          
+          <a href="//localhost:1313///blog/tags/%E5%88%86%E6%9E%90/" class="tag-item">分析</a>
+          
+          <a href="//localhost:1313///blog/tags/%E5%95%86%E4%B8%9A/" class="tag-item">商业</a>
+          
+          <a href="//localhost:1313///blog/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="tag-item">大模型</a>
+          
+          <a href="//localhost:1313///blog/tags/%E5%BC%80%E6%BA%90/" class="tag-item">开源</a>
+          
+          <a href="//localhost:1313///blog/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/" class="tag-item">开源工具</a>
+          
+          <a href="//localhost:1313///blog/tags/%E6%95%B0%E5%AD%97%E5%91%98%E5%B7%A5/" class="tag-item">数字员工</a>
+          
+          <a href="//localhost:1313///blog/tags/%E6%95%B0%E6%8D%AE%E9%A3%9E%E8%BD%AE/" class="tag-item">数据飞轮</a>
+          
+          <a href="//localhost:1313///blog/tags/%E6%99%BA%E8%83%BD%E4%BD%93/" class="tag-item">智能体</a>
+          
+          <a href="//localhost:1313///blog/tags/%E6%9C%AA%E6%9D%A5/" class="tag-item">未来</a>
+          
+          <a href="//localhost:1313///blog/tags/%E7%A7%91%E6%99%AE/" class="tag-item">科普</a>
+          
+          <a href="//localhost:1313///blog/tags/%E7%BB%84%E7%BB%87/" class="tag-item">组织</a>
+          
+          <a href="//localhost:1313///blog/tags/%E8%81%8C%E5%9C%BA/" class="tag-item">职场</a>
+          
+          <a href="//localhost:1313///blog/tags/%E8%8C%83%E5%BC%8F/" class="tag-item">范式</a>
+          
+          <a href="//localhost:1313///blog/tags/%E8%92%B8%E9%A6%8F/" class="tag-item">蒸馏</a>
+          
+          <a href="//localhost:1313///blog/tags/%E8%AE%A4%E7%9F%A5/" class="tag-item">认知</a>
+          
+          <a href="//localhost:1313///blog/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/" class="tag-item">记忆系统</a>
+          
+          <a href="//localhost:1313///blog/tags/%E9%87%8F%E5%8C%96/" class="tag-item">量化</a>
+          
+          <a href="//localhost:1313///blog/tags/%E9%87%91%E8%9E%8D/" class="tag-item">金融</a>
+          
+        </div>
+      </div>
+
+      
+    </aside>
+
+    
+    <main class="main-content">
+      
+<div class="about-section">
+  <div class="page-header">
+    <h1 class="page-title">用 AI Agent 一个人搞定招聘筛选：一个真实场景拆解 AI Agent 的核心能力</h1>
+    <p class="page-subtitle">本文不从概念出发，而是从一个真实的 HR 场景倒推：如果要用 AI Agent 替代人工筛选简历，Agent 需要具备哪些核心能力？这些能力如何协同工作？落地时又会遇到哪些坑？</p>
+  </div>
+  <div class="post-detail-body">
+    <p>一、场景引入：一个 HR 的真实崩溃</p>
+<p>周一早上 9 点，互联网公司 HR 小王打开电脑，面临的是一个烂摊子：</p>
+<ul>
+<li>
+<p>上周发布的「高级 Java 开发」岗位，在 BOSS 直聘收到 87 份简历，拉勾 52 份，猎聘 41 份，智联 28 份</p>
+</li>
+<li>
+<p>总计 208 份在线简历，来自 4 个不同平台</p>
+</li>
+<li>
+<p>筛选条件：3 年以上 Java 经验、本科、大厂背景、北京</p>
+</li>
+</ul>
+<p>理想情况：2 小时筛选完，推给业务部门。</p>
+<p>现实情况：</p>
+<ul>
+<li>
+<p>4 个平台 UI 各不相同，点开每个简历都要重复操作</p>
+</li>
+<li>
+<p>候选人写「精通 Java」，实际只用过 1 年 Spring MVC</p>
+</li>
+<li>
+<p>有的简历是 PDF，有的是图片，有的只在网页展示</p>
+</li>
+<li>
+<p>这周刚装的 ATS 系统解析脚本又崩了</p>
+</li>
+</ul>
+<p>小王的感受是：每天都在做「Ctrl C + Ctrl V」的体力活，感觉自己的工作毫无技术含量。</p>
+<p>二、要解决这个场景，AI Agent 需要哪几项能力？</p>
+<p>传统软件能做什么？——输入关键词，返回匹配结果。这是静态的、一次的请求。</p>
+<p>AI Agent 能做什么？——它能自主完成一个多步骤的任务，并在执行中学习和适应。</p>
+<p>从上述 HR 场景倒推，一个合格的「简历筛选 Agent」需要以下四项核心能力：</p>
+<p>2.1 能力一：工具调用（Tools）</p>
+<p>定义：Agent 能够调用外部工具（API、软件、硬件）完成具体任务，而不是仅仅在模型内部打转。</p>
+<p>在这个场景中：</p>
+<ul>
+<li>
+<p>自动登录 4 个招聘平台（需要调用浏览器自动化工具）</p>
+</li>
+<li>
+<p>从网页抓取简历信息（需要调用 HTML 解析工具）</p>
+</li>
+<li>
+<p>把 PDF/Word/图片转成结构化文本（需要调用 OCR/文档解析工具）</p>
+</li>
+<li>
+<p>将筛选结果写入 Excel 或 ATS 系统（需要调用文件/数据库工具）</p>
+</li>
+</ul>
+<p>我的核心观点：工具调用是 Agent 的「手」和「脚」，没有工具调用能力的 Agent 只是一个会说话的搜索引擎。用 Agent 的行话说：这叫「Agentic」，即 Agent 能主动操作外部世界，而不只是被动响应。</p>
+<p>技术实现：目前主流方案是 MCP（Model Context Protocol），它定义了一个统一的标准，让 Agent 能够以「插拔」的方式调用各种工具——就像 USB-C 接口一样，不同设备可以用同一个标准接入。</p>
+<p>2.2 能力二：长期记忆（Memory）</p>
+<p>定义：Agent 能够在多轮对话或多天运行中记住上下文信息，而不是每次都从零开始。</p>
+<p>在这个场景中：</p>
+<ul>
+<li>
+<p>记住 HR 的偏好：「这个岗位需要 Java，不看 Python 手游履历」</p>
+</li>
+<li>
+<p>记住候选人状态：「张三上周已面试，进入了二面流程」</p>
+</li>
+<li>
+<p>记住历史数据：「之前标记过 3 份简历是培训机构包装，需要过滤」</p>
+</li>
+</ul>
+<p>如果没有记忆能力，Agent 就是「金鱼脑」——每次响应都是孤立的，无法形成连续的业务逻辑。</p>
+<p>我的核心观点：长期记忆是 Agent 的「脑子」。但记忆不是越多越好——很多 Agent 项目失败的原因不是「记不住」，而是「记了不该记的」。在这个场景中，HR 的反馈数据（哪些通过了、哪些拒绝了）是最重要的记忆，而不是候选人的简历原文。</p>
+<p>技术实现：目前有两种主流方案：</p>
+<ol>
+<li>
+<p>向量数据库（Milvus、Pinecone）：存「语义片段」，用相似度检索</p>
+</li>
+<li>
+<p>结构化存储（SQL / NoSQL）：存「业务事实」，用条件查询我的建议是混合使用——业务事实（如状态、分数）存结构化，语义知识（如偏好、标签）存向量。</p>
+</li>
+</ol>
+<p>2.3 能力三：多步推理（Reasoning）</p>
+<p>定义：Agent 能够进行链式思考（Chain-of-Thought），把一个复杂问题拆解成多个步骤，逐步求解。</p>
+<p>在这个场景中：</p>
+<ul>
+<li>
+<p>第一步：判断候选人是否有 Java 经验（不是「写过 Java」，而是「工作用过」）</p>
+</li>
+<li>
+<p>第二步：判断经验年限是否达标（工作经历的时间线要能串起来）</p>
+</li>
+<li>
+<p>第三步：判断学历是否符合（有些专科是通过成人本科进的，要能识别）</p>
+</li>
+<li>
+<p>第四步：综合加权，给出匹配度评分</p>
+</li>
+</ul>
+<p>我的核心观点：多步推理是区分「聪明 Agent」和「笨 Agent」的关键。一个只会做单步匹配的 Agent（比如关键词匹配），和多步推理的 Agent 之间的差距，就像「计算器」和「数学家」的差距。</p>
+<p>一个反直觉的观察：很多 LLM 在单步推理上表现很好，但在多步推理上会「犯傻」——比如前面步骤得出的结论，到后面步骤就忘了。这是因为 Transformer 的上下文窗口有限，需要做一些工程手段来保持一致性（如分段处理、中间结果显式存储）。</p>
+<p>2.4 能力四：规划与编排（Planning &amp; Orchestration）</p>
+<p>定义：Agent 能够自主制定执行计划，并根据执行结果动态调整。</p>
+<p>在这个场景中：</p>
+<ul>
+<li>
+<p>任务分解：「先抓取 BOSS → 解析 → 匹配拉勾JD → 匹配猎聘JD → 去重 → 输出」</p>
+</li>
+<li>
+<p>动态调整：「如果 BOSS 网站被封禁，切换到备用代理；如果 OCR 失败，跳过图片简历，先处理文字版」</p>
+</li>
+<li>
+<p>并行执行：「4 个平台可以同时抓取，互不依赖」</p>
+</li>
+</ul>
+<p>我的核心观点：规划和编排是 Agent 的「指挥中心」。这也是目前最被低估的能力——大多数 Agent show 还停留在「单轮对话」层面，真正比拼的是「多任务编排」能力。</p>
+<p>一个务实的建议：不要一开始就想做全自动。先做「半自动」——Agent 负责抓取和解析，人类负责最终判断。跑通了再逐步增加自动化比例。</p>
+<p>三、架构设计：用这个案例画 Agent 架构图</p>
+<p>综合上述，一个「简历筛选 Agent」的完整架构应该是这样：</p>
+<p>┌─────────────────────────────────┐</p>
+<p>│ 用户层（HR） │</p>
+<p>│ - 自然语言指令：「帮我筛一下 │</p>
+<p>│ 本周java岗的简历」 │</p>
+<p>└─────────────────────────────────┘</p>
+<p>↓</p>
+<p>┌─────────────────────────────────┐</p>
+<p>│ 意图理解层（Planner） │</p>
+<p>│ - 解析用户意图：「筛选简历」 │</p>
+<p>│ - 任务拆分：如上所述 4 个步骤 │</p>
+<p>│ - 确定执行顺序 │</p>
+<p>└─────────────────────────────────┘</p>
+<p>↓</p>
+<p>┌───────────────────────┼───────────────────────┐</p>
+<p>↓ ↓ ↓</p>
+<p>┌───────────────┐ ┌───────────────┐ ┌───────────────┐</p>
+<p>│ 工具层 │ │ 记忆层 │ │ 推理层 │</p>
+<p>│(Tool Layer) │ │(Memory Layer)│ │(Reasoning) │</p>
+<p>│ │ │ │ │ │</p>
+<p>│+ Playwright │ │ + 历史偏好 │ │ + CoT Chain │</p>
+<p>│+ MCP Server │ │ + 向量库 │ │ + Few-shot │</p>
+<p>│+ OCR Engine │ │ + 结构化存储 │ │ + ReAct Loop │</p>
+<p>│+ API Clients │ │ │ │ │</p>
+<p>└───────────────┘ └───────────────┘ └───────────────┘</p>
+<p>↓ ↓ ↓</p>
+<p>「用手做事」 「用脑记事」 「用脑思考」</p>
+<p>核心模块说明：</p>
+<ol>
+<li>工具层（Tools）——Agent 的手足</li>
+</ol>
+<ul>
+<li>
+<p>账号管理：用 Playwright 模拟登录，维持 cookie</p>
+</li>
+<li>
+<p>简历抓取：每个平台一个专属解析器（Parser）</p>
+</li>
+<li>
+<p>OCR 处理：识别图片版简历（Qilin-OCR、PaddleOCR）</p>
+</li>
+<li>
+<p>结果导出：写入 CSV、Excel，或推送到 ATS</p>
+</li>
+</ul>
+<ol start="2">
+<li>记忆层（Memory）——Agent 的大脑</li>
+</ol>
+<ul>
+<li>
+<p>短期记忆：本轮对话的上下文（存在对话窗口）</p>
+</li>
+<li>
+<p>中期记忆：本周的筛选结果（存在 Redis/MongoDB）</p>
+</li>
+<li>
+<p>长期记忆：HR 的偏好、候选人标签（存在向量库）</p>
+</li>
+</ul>
+<ol start="3">
+<li>推理层（Reasoning）——Agent 的思考</li>
+</ol>
+<ul>
+<li>
+<p>CoT（Chain of Thought）：让模型把思考过程显式写出来</p>
+</li>
+<li>
+<p>ReAct（Reason + Act）：先推理下一步要做什么，再执行</p>
+</li>
+<li>
+<p>Few-shot：把 HR 之前标注的例子放在 Prompt 里作为参考</p>
+</li>
+</ul>
+<ol start="4">
+<li>规划层（Planner）——Agent 的指挥官</li>
+</ol>
+<ul>
+<li>
+<p>任务拆分：把「筛选简历」拆成「登录→抓取→解析→匹配→去重→推送」</p>
+</li>
+<li>
+<p>容错机制：每个步骤有「成功/失败/超时」三种分支</p>
+</li>
+<li>
+<p>并行/串行：4 个平台可以并行抓取，但匹配要串行（受限于 API 调用次数）</p>
+</li>
+</ul>
+<p>四、难点：落地有哪些坑？</p>
+<p>4.1 平台反爬与登录维持</p>
+<p>问题：BOSS 直聘、拉勾们对爬虫的态度是「发现即封禁」，不会跟你商量。</p>
+<p>翻车现场：</p>
+<ul>
+<li>
+<p>好不容易登录成功，第二天 cookie 过期了</p>
+</li>
+<li>
+<p>请求频率太高，IP 被封禁</p>
+</li>
+<li>
+<p>UI 大版本更新，之前的 XPath 全部失效</p>
+</li>
+</ul>
+<p>我的核心观点：这不是技术问题，是商业利益的冲突。招聘平台靠「贩卖简历下载次数」赚钱，你用 Agent 高效筛选 = 断了它的财路。所以反爬不是「能不能绕过」，而是「人家愿不愿意让你过」。</p>
+<p>务实的应对：</p>
+<ol>
+<li>
+<p>使用 Playwright 真身模拟，别用 requests（在平台眼里你是「正常用户」）</p>
+</li>
+<li>
+<p>设置请求间隔（每份简历间隔 3-5 秒，别一口气抓 200 份）</p>
+</li>
+<li>
+<p>准备备用方案（一个账号被封，还有 3 个备用账号）</p>
+</li>
+</ol>
+<p>4.2 简历质量的识别</p>
+<p>问题：有些候选人的简历是「纯金」，有些是「镀金」——AI 很难区分。</p>
+<p>翻车现场：</p>
+<ul>
+<li>
+<p>候选人写「精通 Java」，实际只在培训班学过</p>
+</li>
+<li>
+<p>候选人写了 3 年工作经验，但其中 1 年是「待业」，简历上写「休息」</p>
+</li>
+<li>
+<p>候选人把所有接触到的技术都罗列了 20 项，其实都是培训班的练习项目</p>
+</li>
+</ul>
+<p>我的核心观点：AI 无法 100% 解决「简历注水」问题，因为「水」和「不水」本身就是主观判断。 一个 5 年的「资深工程师」写的简历，可能不如一个应届生写得漂亮。</p>
+<p>务实的应对：</p>
+<ol>
+<li>
+<p>设置「最低信息量阈值」：姓名+手机号+工作经历，有一个为空就标记为「待人工复核」</p>
+</li>
+<li>
+<p>让 Agent 打一个「简历可信度」分，而不是只打「匹配度」分</p>
+</li>
+<li>
+<p>把「疑似注水」的简历单独推给人做人工复核，而不是试图用 AI 完全替代人工</p>
+</li>
+</ol>
+<p>4.3 筛选准确率的瓶颈</p>
+<p>问题：用 LLM 做匹配，看起来很美好，但准确率很难提升。</p>
+<p>翻车现场：</p>
+<ul>
+<li>
+<p>Agent 说「匹配」，HR 看了简历后发现不匹配（假阳性）</p>
+</li>
+<li>
+<p>Agent 说「不匹配」，但 HR 认为可以聊聊（假阴性）</p>
+</li>
+<li>
+<p>Agent 给出的理由很牵强：「候选人虽然经验不足，但态度积极」</p>
+</li>
+</ul>
+<p>我的核心观点：目前的 LLM 做的是「文字游戏」，而不是「招聘判断」。 它能理解文字意思，但没有人家的「行业常识」——它不知道「3 年经验的 Java 开发应该会什么」，它不知道「这条简历的包装感有多重」。</p>
+<p>几个可能有用的优化方向：</p>
+<ol>
+<li>分层筛选：</li>
+</ol>
+<ul>
+<li>
+<p>第一层：规则过滤（学历、年限、薪资）——这一步解决 60% 的明显不匹配</p>
+</li>
+<li>
+<p>第二层：LLM 技能匹配——这一步解决 30% 的模糊匹配</p>
+</li>
+<li>
+<p>第三层：人工兜底——剩下 10% 交给人</p>
+</li>
+</ul>
+<ol>
+<li>Few-shot Learning（少样本学习）：</li>
+</ol>
+<ul>
+<li>
+<p>让 HR 手动标注 20 份「典型匹配」和「典型不匹配」的简历</p>
+</li>
+<li>
+<p>把这些案例放在 Prompt 里，让 LLM 学习「这个 HR 要什么人」</p>
+</li>
+</ul>
+<ol>
+<li>定期校准：</li>
+</ol>
+<ul>
+<li>
+<p>每周末抽出 10 份 Agent 判为「匹配」的简历</p>
+</li>
+<li>
+<p>让 HR 复盘准确率，用这个数据来调模型，而不是只看 Agent 自己给出的分数</p>
+</li>
+</ul>
+<p>4.4 数据隐私与合规</p>
+<p>问题：简历涉及候选人的个人信息，处理不当有法律风险。</p>
+<p>翻车现场：</p>
+<ul>
+<li>
+<p>把候选人简历传到境外 LLM（如 GPT），可能涉及数据出境</p>
+</li>
+<li>
+<p>未经候选人同意，把简历存到第三方数据库</p>
+</li>
+<li>
+<p>在筛选中泄露候选人的年龄、性别（简历里有，但不应用作筛选依据）</p>
+</li>
+</ul>
+<p>我的核心观点：**隐私合规不是「可选项」，是「必选项」。现在行业内大家在宣传「AI 筛选」时闭口不提合规，这不是技术问题，是良心问题。</p>
+<p>务实的应对：</p>
+<ol>
+<li>
+<p>本地化部署：使用国产 LLM（Qwen、DeepSeek）在境内处理</p>
+</li>
+<li>
+<p>脱敏处理：在送给 LLM 之前，去除姓名、照片、身份证号等敏感字段</p>
+</li>
+<li>
+<p>合规审计：把数据处理流程写清楚，定期检查是否符合《个人信息保护法》</p>
+</li>
+</ol>
+<p>五、总结：AI Agent 能做什么、不能做什么？</p>
+<p>回到开头 HR 小王的场景。一个理想的「简历筛选 Agent」应该做到：</p>
+<ol>
+<li>
+<p>自动抓取：每天早上自动登录 4 个平台，把新简历抓下来</p>
+</li>
+<li>
+<p>智能解析：把网页/PDF/图片 转成结构化数据</p>
+</li>
+<li>
+<p>语义匹配：用 LLM 判断候选人是否匹配 JD，给出理由</p>
+</li>
+<li>
+<p>及时推送：每天上午推送给 HR：「收到 X 份简历，X 份匹配」</p>
+</li>
+</ol>
+<p>AI Agent 能做的：</p>
+<ul>
+<li>
+<p>重复性劳动：登录、抓取、解析、导出，这些脏活累活 Agent 能做得比人快</p>
+</li>
+<li>
+<p>规模化处理：200 份简历同时处理，Agent 不会累，人会累</p>
+</li>
+<li>
+<p>一致性输出：按同一套规则筛选，不会「心情好就松一点，心情差就严一点」</p>
+</li>
+</ul>
+<p>AI Agent 不能做的：</p>
+<ul>
+<li>
+<p>招聘直觉：候选人是不是「对的人」，这个判断最终要靠人</p>
+</li>
+<li>
+<p>异常处理：候选人打电话来问「什么时候面试」，这个要人接</p>
+</li>
+<li>
+<p>责任承担：招错了人，这个锅 Agent 背不了</p>
+</li>
+</ul>
+<p>最后说几句得罪人的话：</p>
+<p>很多厂商宣传「AI Agent 替代 HR」，我的观点是：替代 80% 的体力活可以，替代 20% 的判断力不可能。</p>
+<p>正确的姿势是：用 Agent 做「筛选」，让人做「决定」——这才是人机协同的正确解法。</p>
+
+  </div>
+</div>
+
+    </main>
+
+    
+    <footer class="site-footer">
+      <span>© 2026 Fancy · 用文字记录思考</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="/index.xml">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+  
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  
+  <script>
+    window.searchData = [
+      
+      { title: "\"用 AI Agent 一个人搞定招聘筛选：一个真实场景拆解 AI Agent 的核心能力\"", excerpt: "\"本文不从概念出发，而是从一个真实的 HR 场景倒推：如果要用 AI Agent 替代人工筛选简历，Agent 需要具备哪些核心能力？这些能力如何协同工作？落地时又会遇到哪些坑？\"", url: "\"//localhost:1313///blog/posts/agent-resume/\"", tags: ["\"Agent\"",] },
+      
+      { title: "\"大模型API价格战：一场没有胜利者的军备竞赛\"", excerpt: "\"当API的价格，99%的跌幅成为现实，活下来不是靠更低的价格，而是靠别人先倒下。\"", url: "\"//localhost:1313///blog/posts/ai-token-price/\"", tags: ["\"API\"","\"Token\"",] },
+      
+      { title: "\"85%的企业AI项目死于组织，不死于技术\"", excerpt: "\"AI落地的真正杀手：不是技术，是组织； 为什么你的AI战略正在重蹈ERP的覆辙；能用AI 和 能用AI解决业务问题 是两回事\"", url: "\"//localhost:1313///blog/posts/ai-strategy/\"", tags: ["\"组织\"","\"商业\"",] },
+      
+      { title: "\"Manus 与 OpenClaw：大模型公司为什么要收购 Agent 公司？\"", excerpt: "\"模型战争已经结束，应用战争刚刚开始；Agent公司的价值，不是AI有多强，而是有多少用户愿意为AI付费；大模型公司买Agent，买的不是技术，是时间\"", url: "\"//localhost:1313///blog/posts/manus-openclaw/\"", tags: ["\"Agent\"","\"商业\"",] },
+      
+      { title: "\"AI数据飞轮：谁在挖真正的护城河，谁在烧钱挖幻觉\"", excerpt: "\"真正的AI护城河只有三种：物理世界数据（Tesla的100亿英里）、嵌入工作流的数据闭环（CrowdStrike/Palantir）、带切换成本的网络效应。其余“数据量”护城河多是无根幻觉——Google数据最多却AI落后，垂直AI的数据壁垒通用模型正在侵蚀。\"", url: "\"//localhost:1313///blog/posts/ai-data/\"", tags: ["\"数据飞轮\"",] },
+      
+      { title: "\"B2B行业的数据飞轮：机制、护城河与七个典型失败模式\"", excerpt: "\"B2B行业的AI飞轮，不是用户多→数据多→模型好，而是工作流嵌入→私有数据积累→信任资产。本文深度拆解B2B飞轮的真正机制、七个典型失败模式，以及如何评估飞轮健康度。\"", url: "\"//localhost:1313///blog/posts/b2b-data-flywheel1/\"", tags: ["\"数据飞轮\"",] },
+      
+      { title: "\"认知工具箱：如何建立AI时代的分析框架\"", excerpt: "\"AI时代最大的认知陷阱，是把“知道很多”当成“能判断”。信息唾手可得，但判断力无法通过搜索获得。4个工具教会你在AI时代全新的认知框架\"", url: "\"//localhost:1313///blog/posts/ai-analysis/\"", tags: ["\"分析\"","\"认知\"",] },
+      
+      { title: "\"AI Agent 商业化突破：从Demo到生产级的关键跃迁\"", excerpt: "\"AI Agent的商业化挑战之路？未来的人类何去何从？人类更需要的是“定义问题”和“判断结果”的能力，而非“执行”的能力\"", url: "\"//localhost:1313///blog/posts/ai-agent-commercial/\"", tags: ["\"Agent\"","\"智能体\"",] },
+      
+      { title: "\"数字员工入职季：你的AI团队已到岗，请查收入职通知\"", excerpt: "\"硅基员工（数字员工），要代替碳基员工（人类员工），你觉得有可能吗？需要怎样使用好数字员工？\"", url: "\"//localhost:1313///blog/posts/digital-employee/\"", tags: ["\"数字员工\"","\"Agent\"",] },
+      
+      { title: "\"一人独角兽：AI正在终结公司制\"", excerpt: "\"在乐观主义者描绘的蓝图里，每个人都是自己的CEO，AI agent包揽一切。但这与现实之间，还隔着几道真实的壁垒，有哪些壁垒，我来告诉你\"", url: "\"//localhost:1313///blog/posts/ai-opc/\"", tags: ["\"OPC\"","\"一人公司\"",] },
+      
+      { title: "\"多 Agent 协作的企业落地：从框架狂热到生产现实的鸿沟\"", excerpt: "\"多Agent是趋势，是未来，但是如何更好的落地多Agent，是这篇文章要讲清楚的\"", url: "\"//localhost:1313///blog/posts/multi-agent/\"", tags: ["\"Agent\"",] },
+      
+      { title: "\"模型蒸馏战争：为什么 OpenAI 和 Anthropic 开始害怕开源？\"", excerpt: "\"一篇文章，深度了解蒸馏的技术原理、产业格局等问题\"", url: "\"//localhost:1313///blog/posts/knowledge-distillation/\"", tags: ["\"蒸馏\"","\"开源\"",] },
+      
+      { title: "\"AI Agent 浪潮：从“对话”到“行动”的范式大革命\"", excerpt: "\" 从技术原理、产业格局、商业落地三个角度，再次法系AI Agent\"", url: "\"//localhost:1313///blog/posts/ai-agent-vs-conversation/\"", tags: ["\"Agent\"","\"范式\"",] },
+      
+      { title: "\"Token经济学：智能工业化时代的商品定价逻辑\"", excerpt: "\"Token Economics的本质，是智能工业化时代的商品定价逻辑——它正在重塑全球价值链，而这场重构的深层驱动力不是算法，是能源与算力的地缘政治。\"", url: "\"//localhost:1313///blog/posts/token-economics/\"", tags: ["\"Token\"","\"AI商业\"",] },
+      
+      { title: "\"Agent 架构的范式转移：AI 从「回答问题」到「解决问题」的产业革命\"", excerpt: "\" Agent 的本质：AI + 工具 + 循环，Agent 不会「取代」人，而是「放大」人\"", url: "\"//localhost:1313///blog/posts/ai-agent-paradigm2/\"", tags: ["\"Agent\"","\"范式\"",] },
+      
+      { title: "\"AI 淘汰赛：谁在丢掉工作，谁在赢得未来\"", excerpt: "\"这一轮 AI 浪潮淘汰的不是蓝领，而是知识型白领——程序员、分析师、律师、顾问——这些曾经以为自己是“安全区”的人。真正的不可替代性来自创意、关系和不可标准化的判断，而不是学历和流程执行力\"", url: "\"//localhost:1313///blog/posts/ai-knockout/\"", tags: ["\"职场\"","\"未来\"",] },
+      
+      { title: "\"AI Agent 浪潮来袭：2026年智能体商业化深度分析报告\"", excerpt: "\"从未来趋势、技术架构、商业模式等方面，深度分析AI agent；解释为什么今年是AI智能体元年\"", url: "\"//localhost:1313///blog/posts/ai-agent-deeprearch/\"", tags: ["\"Agent\"","\"智能体\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列十二：mattpocock-skills\"", excerpt: "\"一个TypeScript 社区的知名教育者，将自己日常使用AI编程工具的完整工作流，开原味一个Skills集合\"", url: "\"//localhost:1313///blog/posts/github-12-mattpocock-skills/\"", tags: ["\"Skill\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列十一：FinceptTerminal\"", excerpt: "\"一个 Markdown 文件，装了 4 条规矩，让 AI 写代码少犯低级错误，这就是这个skill的\"", url: "\"//localhost:1313///blog/posts/github-11-finceptterminal/\"", tags: ["\"金融\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列十：andrej-karpathy-skills\"", excerpt: "\"一个 Markdown 文件，装了 4 条规矩，让 AI 写代码少犯低级错误，这就是这个skill的价值\"", url: "\"//localhost:1313///blog/posts/github-10-karpathy-skills/\"", tags: ["\"Skill\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列九：markitdown\"", excerpt: "\"专注于将各种文件格式转换为 Markdown——但它的目标用户不是人类，而是 LLM 和 RAG 管道\"", url: "\"//localhost:1313///blog/posts/github-9-markitdown/\"", tags: ["\"Markdown\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列八：Kronos\"", excerpt: "\"清华大学信息科学研究院，基于K 线数据有其独特的语法，开发的第一个专门为金融 K 线序列设计的开源基础大模型（Foundation Model）。\"", url: "\"//localhost:1313///blog/posts/github-8-kronos/\"", tags: ["\"量化\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列七：Hermes-Agent\"", excerpt: "\"Hermes Agent 最大的价值不在于某一个具体功能，而在于它提出并验证了一个新的范式：Agent 可以是“活的”——它从经验中学习、在使用中成长、跨会话积累对用户的理解。\"", url: "\"//localhost:1313///blog/posts/github-7-hermes-agent/\"", tags: ["\"Agent\"","\"GitHub\"",] },
+      
+      { title: "\"一文讲明白AI大模型基本知识\"", excerpt: "\"大模型到底能做什么？怎么解决大模型的幻觉？我们会被AI替代吗？\"", url: "\"//localhost:1313///blog/posts/llm-ppt/\"", tags: ["\"科普\"","\"大模型\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列六：mempalace\"", excerpt: "\"一个好莱坞演员亲自发布 GitHub 仓库，解决AI遗忘问题，史上基准测试最高分 +完全免费 + 纯本地运行\"", url: "\"//localhost:1313///blog/posts/github-6-mempalace/\"", tags: ["\"记忆系统\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列五：OpenScreen\"", excerpt: "\"订阅经济时代的反叛者——一个开源工具如何在两周内收获2.5万颗星，OpenScreen 是一款免费、开源的屏幕录制和演示视频制作工具\"", url: "\"//localhost:1313///blog/posts/github-5-openscreen/\"", tags: ["\"开源工具\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列四：Claw-Code\"", excerpt: "\"对 Anthropic 公司 Claude Code 智能体架构的“净室重写”（Clean-Room Rewrite）。它不复制任何专有代码，而是基于公开的架构模式，使用 Python 和 Rust 从零开始独立实现。\"", url: "\"//localhost:1313///blog/posts/github-4-claw-code/\"", tags: ["\"Claude Code\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列三：superpowers\"", excerpt: "\"superpowers 是一套给编码AI智能体（Coding Agent）安装“行为规范”的技能框架。定义了一套完整的软件开发工作流，教AI成为一个合格的工程师\"", url: "\"//localhost:1313///blog/posts/github-3-superpowers/\"", tags: ["\"Vibe Coding\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列二：agency-agents\"", excerpt: "\"提供了一套“AI员工岗位说明书”，让你可以把Claude Code、Cursor、GitHub Copilot等AI编程工具，一键“变身”为你需要的专业角色\"", url: "\"//localhost:1313///blog/posts/github-2-agency-agents/\"", tags: ["\"Agent\"","\"GitHub\"",] },
+      
+      { title: "\"GitHub开源项目深度分析系列一：OpenClaw\"", excerpt: "\"大家熟悉的“龙虾”，大家有详细了解过她吗？她为什么成为GitHub历史上增长最快的项目？\"", url: "\"//localhost:1313///blog/posts/github-1-openclaw/\"", tags: ["\"OpenClaw\"","\"GitHub\"",] },
+      
+      { title: "\"ARC-AGI-3 深度解析：为什么当前的 AI 在“抽象游戏”面前依然像一个婴儿？？\"", excerpt: "\"AI擅长干什么？人类擅长干什么？一文告诉你\"", url: "\"//localhost:1313///blog/posts/arc-agi-3/\"", tags: ["\"AGI\"","\"LLM\"",] },
+      
+      { title: "\"Vibe Coding 凉了，2026年最火的新职业是：驯兽师\"", excerpt: "\"LMM的幻觉、失忆、不可控、不懂边界，如何通过Harness Engineering解决？\"", url: "\"//localhost:1313///blog/posts/vibe-coding-harness/\"", tags: ["\"Harness Engineering\"","\"Vibe Coding\"",] },
+      
+      { title: "\"RAG 企业级构建指南\"", excerpt: "\"企业应用大模型，RAG知识库是第一优先级的选择，员工与管理者都有感知、可量化价值、可落地的最佳方案\"", url: "\"//localhost:1313///blog/posts/rag-guild/\"", tags: ["\"RAG\"","\"企业应用\"",] },
+      
+      { title: "\"AI Agent 三种范式深度详解\"", excerpt: "\"三种范式：ReAct（Reasoning + Acting）、Plan-and-Execute（谋定而后动）、Reflection（反思与自我改进）\"", url: "\"//localhost:1313///blog/posts/ai-agent-paradigm1/\"", tags: ["\"Agent\"","\"范式\"",] },
+      
+      { title: "\"大模型科普系列六：Agent = Model +Harness？\"", excerpt: "\"为什么同一个模型，在不同的产品，差异那么大？这篇文章告诉你，关键是Harness\"", url: "\"//localhost:1313///blog/posts/lesson-6-harness/\"", tags: ["\"科普\"","\"Agent\"","\"Harness\"",] },
+      
+      { title: "\"大模型科普系列五：什么是AI Agent Skills？\"", excerpt: "\"Skill = 工具 + 使用指南 + 场景说明。一种结构化的能力封装：把「做什么 + 怎么做」打包成一个可复用、可组合的单元。\"", url: "\"//localhost:1313///blog/posts/lesson-5-skill/\"", tags: ["\"科普\"","\"Skills\"",] },
+      
+      { title: "\"大模型科普系列四：什么是Vibe Coding？\"", excerpt: "\"一个编码小白，如何写代码？想做一个小程序记录每天读书笔记？想给自己做一个自动化的爬虫脚本？\"", url: "\"//localhost:1313///blog/posts/lesson-4-vibecoding/\"", tags: ["\"科普\"","\"Vibe Coding\"",] },
+      
+      { title: "\"大模型科普系列三：普通人如何用好提示词？\"", excerpt: "\"写提示词（Prompt）这件事，跟使唤人有点像。这篇文章，就教你几个简单实用的提示词技巧\"", url: "\"//localhost:1313///blog/posts/lesson-3-prompt/\"", tags: ["\"科普\"","\"Prompt\"",] },
+      
+      { title: "\"大模型科普系列二：Token 是什么？\"", excerpt: "\"大模型的字数，以及它背后的能源战争\"", url: "\"//localhost:1313///blog/posts/lesson-2-token/\"", tags: ["\"科普\"","\"Token\"",] },
+      
+      { title: "\"大模型科普系列一：大模型到底是什么？\"", excerpt: "\"用它写周报、问问题、生成内容——好像什么都会。但为什么有时候它会一本正经地胡说八道？大模型的原理、能耐与边界，这篇文章一次讲清楚\"", url: "\"//localhost:1313///blog/posts/lesson-1-llm/\"", tags: ["\"科普\"","\"LLM\"",] },
+      
+    ];
+  </script>
+
+  <script>
+    
+    function toggleTheme() {
+      const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      const d = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = d
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    
+    (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s);else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');updateThemeIcon();})();
+
+    
+    function toggleMobileMenu(){document.querySelector('.navbar-links').classList.toggle('mobile-open');}
+
+    
+    function toggleSearch(){const o=document.getElementById('searchOverlay');o.classList.toggle('active');if(o.classList.contains('active'))document.getElementById('searchInput').focus();}
+    function closeSearch(){document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+    function doSearch(q){const r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return;}const ql=q.toLowerCase();const m=(window.searchData||[]).filter(p=>p.title.toLowerCase().includes(ql)||p.excerpt.toLowerCase().includes(ql)||p.tags.some(t=>t.toLowerCase().includes(ql)));if(!m.length){r.innerHTML='<div class="search-empty">没有找到相关文章</div>';return;}r.innerHTML=m.map(p=>`<a href="${p.url}" class="search-result-item"><div class="search-result-title">${p.title}</div><div class="search-result-excerpt">${p.excerpt.slice(0,80)}…</div></a>`).join('');}
+    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();toggleSearch();}if(e.key==='Escape')closeSearch();});
+
+    
+    window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('visible',window.scrollY>300);});
+
+    
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.transitionDelay=`${i*60}ms`;obs.observe(el);});
+  </script>
+</body>
+</html>

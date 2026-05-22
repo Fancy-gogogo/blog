@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>组织 on Fancy Blog</title>
+    <link>//localhost:1313///blog/tags/%E7%BB%84%E7%BB%87/</link>
+    <description>Recent content in 组织 on Fancy Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 15 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313///blog/tags/%E7%BB%84%E7%BB%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>85%的企业AI项目死于组织，不死于技术</title>
+      <link>//localhost:1313///blog/posts/ai-strategy/</link>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313///blog/posts/ai-strategy/</guid>
+      <description>&lt;!DOCTYPE html&gt;&#xA;&lt;html lang=&#34;zh-CN&#34;&gt;&#xA;&lt;head&gt;&#xA;&lt;meta charset=&#34;UTF-8&#34;&gt;&#xA;&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;&#xA;&lt;title&gt;85%的企业AI项目死于组织，不死于技术&lt;/title&gt;&#xA;&lt;style&gt;&#xA;:root {&#xA;    --primary: #6c3ce1;&#xA;    --primary-dark: #4a1fb8;&#xA;    --bg: #ffffff;&#xA;    --card-bg: #f5f5f7;&#xA;    --border: #e0e0e5;&#xA;    --text: #1a1a2e;&#xA;    --text-dim: #666680;&#xA;    --accent: #5555aa;&#xA;    --accent-light: #e8e8f5;&#xA;}&#xA;* { box-sizing: border-box; margin: 0; padding: 0; }&#xA;body { background: var(--bg); color: var(--text); font-family: &#39;PingFang SC&#39;, &#39;Microsoft YaHei&#39;, sans-serif; line-height: 1.7; }&#xA;article { max-width: 860px; margin: 0 auto; padding: 56px 24px 80px; }&#xA;.section { margin: 52px 0; }&#xA;h2 { font-size: 22px; font-weight: 700; color: #1a1a2e; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #e0e0e5; }&#xA;h3 { font-size: 17px; font-weight: 600; color: #333355; margin: 28px 0 12px; }&#xA;.lead { font-size: 16px; color: #444460; margin-bottom: 24px; line-height: 1.8; }&#xA;p { margin: 14px 0; font-size: 15px; }&#xA;ul, ol { margin: 12px 0 12px 20px; }&#xA;li { margin: 8px 0; font-size: 15px; }&#xA;strong { color: #1a1a2e; font-weight: 700; }&#xA;.data-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 20px 0; }&#xA;table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }&#xA;th { background: #e8e8f0; color: #333355; padding: 10px 14px; text-align: left; font-weight: 700; border-bottom: 2px solid #d0d0da; }&#xA;td { padding: 10px 14px; border-bottom: 1px solid #eeeeef; color: #333355; }&#xA;tr:last-child td { border-bottom: none; }&#xA;tr:hover td { background: #f0f0f8; }&#xA;.blockquote { border-left: 3px solid #aaaacc; padding: 12px 20px; margin: 20px 0; background: #f5f5f8; border-radius: 0 8px 8px 0; font-size: 14px; color: #555570; }&#xA;.note { background: #fff5f5; border: 1px solid #ffd0d0; border-radius: 8px; padding: 14px 18px; margin: 16px 0; font-size: 14px; }&#xA;.note-title { color: #cc4444; font-weight: 600; margin-bottom: 6px; }&#xA;.success { background: #f0fff4; border: 1px solid #c0f0d0; border-radius: 8px; padding: 14px 18px; margin: 16px 0; font-size: 14px; }&#xA;.success-title { color: #2a8855; font-weight: 600; margin-bottom: 6px; }&#xA;&lt;/style&gt;&#xA;&lt;/head&gt;&#xA;&lt;body&gt;&#xA;&lt;article&gt;&#xA;&#xA;&lt;div style=&#34;background:#f5f5f8;border:1px solid #dcdce5;color:#1a1a2e;padding:24px 28px;border-radius:12px;margin-bottom:40px;&#34;&gt;&#xA;    &lt;div style=&#34;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#888899;margin-bottom:8px;&#34;&gt;核心结论&lt;/div&gt;&#xA;    &lt;p style=&#34;font-size:17px;line-height:1.7;color:#222240;&#34;&gt;企业AI战略的核心失败不是技术失败，而是&lt;strong&gt;组织失败&lt;/strong&gt;——80%以上的AI项目死于试点陷阱、数据质量缺位和中层不配合；真正活下来的公司，是把AI当成&lt;strong&gt;组织变革&lt;/strong&gt;而不是IT采购来推动的。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
