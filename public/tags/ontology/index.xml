@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ontology on Fancy Blog</title>
+    <link>//localhost:1313///blog/tags/ontology/</link>
+    <description>Recent content in Ontology on Fancy Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 31 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313///blog/tags/ontology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为什么LLM Agent推理需要本体</title>
+      <link>//localhost:1313///blog/posts/ontology-1-why/</link>
+      <pubDate>Sun, 31 May 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313///blog/posts/ontology-1-why/</guid>
+      <description>&lt;h2 id=&#34;一核心结论&#34;&gt;一、核心结论&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;LLM 的推理本质是统计共现概率的补全，而非逻辑演绎；本体（Ontology）的作用，是把 LLM 从「猜下一个最可能的词」约束到「在预定义的结构化关系网络中精确导航」——这条从开放语义空间到结构化符号空间的压缩路径，是当前企业级 Agent 推理可控化的唯一工程上可落地的方案。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二现象层你观察到的现实&#34;&gt;二、现象层：你观察到的现实&lt;/h2&gt;&#xA;&lt;p&gt;如果你在企业中部署过 LLM Agent，大概率遇到过这三个场景：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;场景一：同一个问题，今天一个答案，明天另一个答案。&lt;/strong&gt; 今天问「供应商 A 的评分是多少」，LLM 说「85分」；明天再问，它说「92分」；后天说「78分」。你的知识库里明明只有一个评分标准。这种不一致性不是 LLM 在「撒谎」——它根本不知道「评分」这个概念指的是什么时间点、哪个系统里的哪个字段。它只知道在训练语料中，「供应商 A」和「评分」这两个词经常一起出现，所以它按概率补全了一个数字。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;场景二：多跳推理链条处处断裂。&lt;/strong&gt; 你问：「原材料短缺会影响哪些客户的订单？」一个有语义理解能力的系统应该能回答：原材料短缺 → 影响生产线 → 影响产品交付 → 影响客户订单。但 LLM 的推理路径是：「原材料」后面最可能跟什么词？「短缺」后面最可能跟什么词？它永远在单跳概率里打转，多跳关系对它是黑盒子。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;场景三：幻觉率比你想象的高得多。&lt;/strong&gt; 行业经验值显示，在开放域问答中，LLM 的幻觉率可高达 &lt;strong&gt;30%–82%&lt;/strong&gt;，在结构化知识问答（如企业内部数据查询）中，专业模型即便有 RAG 加持，幻觉率仍在 &lt;strong&gt;5%–20%&lt;/strong&gt; 区间。这不是某个模型的缺陷，而是统计推理范式的结构性问题。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;更深层的现象是：企业正在用最先进的大模型，做最低效的知识检索。&lt;/strong&gt; 绝大多数企业 AI 项目把 LLM 当成一个高级版的搜索引擎来用——把文档向量化，往向量数据库里一存，问个问题，检索最相似的 chunk，然后塞给 LLM 总结。这套 RAG（检索增强生成）架构在简单问答上能用，但一遇到需要精确关系推理的场景——如合规审计、风险评估、供应链影响分析——立刻暴露根本缺陷：&lt;strong&gt;检索到的是「听起来相关」的文本，不是「逻辑上相关」的关系。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这不是 RAG 做得不够好，而是 RAG 的范式天花板。向量相似度解决的是语义距离问题，不是关系结构问题。「供应商 A 是供应商 B 的竞争对手」和「供应商 A 是供应商 B 的母公司」，在向量空间里可能距离完全一样——但对业务决策的影响天差地别。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;这就是本体的用武之地。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;三机制层为什么会这样&#34;&gt;三、机制层：为什么会这样&lt;/h2&gt;&#xA;&lt;h3 id=&#34;31-llm-的推理本质统计-pattern-completion&#34;&gt;3.1 LLM 的推理本质：统计 pattern completion&lt;/h3&gt;&#xA;&lt;p&gt;要理解为什么需要本体，首先要把 LLM 的推理机制解构清楚。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Fancy Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313///blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ontology</title>
+      <link>//localhost:1313///blog/tags/ontology/</link>
+      <pubDate>Sun, 31 May 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313///blog/tags/ontology/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Agent</title>
       <link>//localhost:1313///blog/tags/agent/</link>
